@@ -1,1 +1,6 @@
-<p>product-item works!</p>
+<div *ngIf="product">
+    <ul>
+        <li>Name: {{product.name}}</li>
+        <li>Category: {{product.category}}</li>
+    </ul>
+</div>

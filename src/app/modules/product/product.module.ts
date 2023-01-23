@@ -8,6 +8,8 @@ import { SortComponent } from './pages/sort/sort.component';
 import { FilterComponent } from './pages/filter/filter.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CategoryItemComponent } from './components/filter-sub/category-item/category-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ProductItemComponent,
     SortComponent,
     FilterComponent,
-    SearchComponent
+    SearchComponent,
+    CategoryItemComponent
   ],
   imports: [
     CommonModule,
     ProductRoutingModule,
-    SharedModule
+    SharedModule, 
+    ReactiveFormsModule
   ]
 })
 export class ProductModule { }

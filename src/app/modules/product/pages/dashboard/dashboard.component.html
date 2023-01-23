@@ -1,6 +1,23 @@
 <app-header></app-header>
 <app-search></app-search>
+<!-- <app-search (search)="search($event)" ></app-search> -->
+<!-- <app-sort []="allProducts$" (sort)="sort($event)"></app-sort> -->
+<!-- <app-sort (sort)="" [listToSort$]=""></app-sort> -->
 <app-sort></app-sort>
-<app-filter></app-filter>
-<app-product-item></app-product-item>
+
+<!-- FILTER -->
+
+<!-- <app-filter (filter)="filter($event)" [listToFilter$]="allProducts$"></app-filter> -->
+<app-filter (filter)="filter($event)" [allProducts$]="allProducts$"></app-filter>
+
+
+<br><br>
+
+<!-- PRODUCT LIST -->
+PRODUCTS
+<div *ngFor="let product of productsDisplay$ | async">
+    <app-product-item [product]="product" (onSelection)="onSelection()"></app-product-item>
+</div>
+
+
 <app-footer></app-footer>

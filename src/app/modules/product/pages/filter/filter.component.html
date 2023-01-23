@@ -1,1 +1,8 @@
-<p>filter works!</p>
+<div *ngIf="allProducts">
+    <!-- CATEGORY FILTER -->
+    <div>
+        <div *ngFor="let category of categories$ | async">
+            <app-category-item [category]="category" (onChanges)="onChanges($event)" ></app-category-item>
+        </div>
+    </div>
+</div>
