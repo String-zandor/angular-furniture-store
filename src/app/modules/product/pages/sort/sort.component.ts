@@ -16,47 +16,46 @@ export class SortComponent implements OnInit {
   ngOnInit():void {
     console.log(this.sortedList)
   }
-// can be refactored,
-  sortByName(){
-    this.allProducts$!.subscribe((product:Product[]) =>{
-      product.sort((a:Product,b:Product) => {
-        return ((a['name']  == b['name']) ? 0 : ((a['name']>    b['name']) ? 1 : -1 ));
-      })
-      this.sort.emit(product)
-    })
+
+  sortByNameAscending(){
+    this.sortAscending('name')
+  }
+  sortByNameDescending(){
+    this.sortDescending('name')
   }
   sortByPriceLowest(){
-    this.allProducts$!.subscribe((product:Product[]) =>{
-      product.sort((a:Product,b:Product) => {
-        return ((a['price']  == b['price']) ? 0 : ((a['price']>    b['price']) ? 1 : -1 ));
-      })
-      this.sort.emit(product)
-    })
+    this.sortAscending('price')
   }
   sortByPriceHighest(){
-    this.allProducts$!.subscribe((product:Product[]) =>{
-      product.sort((a:Product,b:Product) => {
-        return ((a['price']  == b['price']) ? 0 : ((a['price']>    b['price']) ? -1 : 1 ));
-      })
-      this.sort.emit(product)
-    })
+    this.sortDescending('price')
   }
   sortByDateOldToNew(){
-    this.allProducts$!.subscribe((product:Product[]) =>{
-      product.sort((a:Product,b:Product) => {
-        return ((a['postingDate']  == b['postingDate']) ? 0 : ((a['postingDate']>    b['postingDate']) ? 1 : -1 ));
-      })
-      this.sort.emit(product)
-    })
+    this.sortAscending('postingDate')
   }
   sortByDateNewToOld(){
+    this.sortDescending('postingDate')
+  }
+  sortAscending(key : string){
     this.allProducts$!.subscribe((product:Product[]) =>{
       product.sort((a:Product,b:Product) => {
-        return ((a['postingDate']  == b['postingDate']) ? 0 : ((a['postingDate']>    b['postingDate']) ? -1 : 1 ));
+        return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? 1 : -1 ));
       })
-      this.sort.emit(product)
+      this.sortedList = product
+      this.sort.emit(this.sortedList)
     })
   }
+
+  sortDescending(key: string){
+    this.allProducts$!.subscribe((product:Product[]) =>{
+      product.sort((a:Product,b:Product) => {
+        return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? -1 : 1 ));
+      })
+      this.sortedList = product
+      this.sort.emit(this.sortedList)
+    })
+  }
+
+  
 
   // executeAction(sortedList:Product[]){
   //   this.sort.emit(sortedList)
