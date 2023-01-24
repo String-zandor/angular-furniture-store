@@ -9,7 +9,7 @@ import { Product } from '../../models/product';
   styleUrls: ['./sort.component.scss']
 })
 export class SortComponent implements OnDestroy{
-  @Input() allProducts$?: Observable<Product[]>;
+  @Input() productsToSort$?: Observable<Product[]>;
   @Output() sort = new EventEmitter<Product[]>();
   subscription = new Subscription();
 
