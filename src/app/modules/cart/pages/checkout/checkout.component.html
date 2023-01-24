@@ -1,0 +1,8 @@
+<p><strong>CHECKOUT - PAGE</strong></p>
+<br>
+<div *ngFor="let item of cartItems">
+    <app-checkout-item [cartItem]="item"></app-checkout-item>
+</div>
+<br>
+<div>Total: {{totalAmmountToPay}}</div>
+<button (click)="proceedCheckout()">Place Order</button>
