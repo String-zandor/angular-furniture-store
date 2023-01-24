@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CartItem } from '../../models/cart-item';
+import { CartItem } from '../../../cart/models/cart-item';
 import { Product } from '../../models/product';
 
 @Component({
@@ -20,7 +20,7 @@ export class ProductItemComponent {
   addQuantity() {
     this.quantity += 1;
   }
-  
+
   subractQuantity() {
     if (this.quantity != 0)
       this.quantity--;

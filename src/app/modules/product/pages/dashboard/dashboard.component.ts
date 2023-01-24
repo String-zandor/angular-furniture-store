@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { CartItem } from '../../models/cart-item';
+import { CartService } from 'src/app/modules/cart/services/cart.service';
+import { CartItem } from '../../../cart/models/cart-item';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -10,19 +11,26 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  /** 
+   * to be refactored into a DisplayService
+   */
   private subject = new BehaviorSubject<Product[]>([]);
   productsDisplay$: Observable<Product[]> = this.subject.asObservable();
   allProducts$?: Observable<Product[]>;
-  
-  /** DisplayService
-   * 
-   * TEST
-   */
+
   private sortSubject = new BehaviorSubject<Product[]>([]);
   productsToSort$?: Observable<Product[]> = this.sortSubject.asObservable();
+  
+  /**
+   * to be used later in showing the number of cart items beside the cart icon
+   */
+  totalCartItems: number = 0;
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService, 
+    private cartService: CartService) {
+
+  }
 
   ngOnInit(): void {
     this.getProducts();
@@ -49,8 +57,7 @@ export class DashboardComponent implements OnInit {
   }
 
   addToCart(cartItem: CartItem): void {
-    console.log('inside addToCart: ', cartItem);
-    // pass this to cart page
+    this.cartService.create(cartItem).subscribe(() => this.totalCartItems++);
   }
 
 }
