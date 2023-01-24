@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { Product } from '../../models/product';
 
@@ -11,10 +10,12 @@ import { Product } from '../../models/product';
 export class SortComponent implements OnDestroy{
   @Input() productsToSort$?: Observable<Product[]>;
   @Output() sort = new EventEmitter<Product[]>();
-  subscription = new Subscription();
-
+  subscription:Subscription[]=[];
+  
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    for(let sub of this.subscription){
+      sub.unsubscribe();
+    }
   }
   
   sortByNameAscending(){
@@ -36,21 +37,22 @@ export class SortComponent implements OnDestroy{
     this.sortDescending('postingDate')
   }
   sortAscending(key : string){
-    this.subscription = this.allProducts$!.subscribe((product:Product[]) =>{
+    this.subscription.push(this.productsToSort$!.subscribe((product:Product[]) =>{
       product.sort((a:Product,b:Product) => {
         return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? 1 : -1 ));
       })
       this.sort.emit(product)
-    })
+    }))
+    
   }
 
   sortDescending(key: string){
-    this.subscription = this.allProducts$!.subscribe((product:Product[]) =>{
+    this.subscription.push(this.productsToSort$!.subscribe((product:Product[]) =>{
       product.sort((a:Product,b:Product) => {
         return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? -1 : 1 ));
       })
       this.sort.emit(product)
-    })
+    }))
   }
 
   
