@@ -15,14 +15,12 @@ export class DashboardComponent implements OnInit {
   productsDisplay$: Observable<Product[]> = this.subject.asObservable();
   allProducts$?: Observable<Product[]>;
   
-  
   /** DisplayService
    * 
    * TEST
    */
   private sortSubject = new BehaviorSubject<Product[]>([]);
   productsToSort$?: Observable<Product[]> = this.sortSubject.asObservable();
-  
 
   constructor(private productService: ProductService) { }
 
