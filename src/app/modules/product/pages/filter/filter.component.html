@@ -1,8 +1,18 @@
 <div *ngIf="allProducts">
     <!-- CATEGORY FILTER -->
+    <span>Category</span>
     <div>
         <div *ngFor="let category of categories$ | async">
             <app-category-item [category]="category" (onChanges)="onChanges($event)" ></app-category-item>
         </div>
     </div>
+
+    <!-- PRICE FILTER -->
+    <span>Price</span>
+    <div *ngFor="let range of PR">
+        <app-price-item [range]="range" (onChanges)="onChanges($event)"></app-price-item>
+    </div>
+
+    <button (click)="clearAll()" >Clear all</button>
+    
 </div>

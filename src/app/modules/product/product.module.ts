@@ -10,7 +10,7 @@ import { SearchComponent } from './pages/search/search.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CategoryItemComponent } from './components/filter-sub/category-item/category-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { PriceItemComponent } from './components/filter-sub/price-item/price-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SortComponent,
     FilterComponent,
     SearchComponent,
-    CategoryItemComponent
+    CategoryItemComponent,
+    PriceItemComponent
   ],
   imports: [
     CommonModule,
