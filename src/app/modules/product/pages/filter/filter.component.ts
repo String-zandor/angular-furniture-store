@@ -1,5 +1,8 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { map, Observable, of, Subscription } from 'rxjs';
+import { CategoryItemComponent } from '../../components/filter-sub/category-item/category-item.component';
+import { PriceItemComponent } from '../../components/filter-sub/price-item/price-item.component';
+import { PriceRange, PRICE_RANGES } from '../../models/price-range';
 import { Product } from '../../models/product';
 
 @Component({
@@ -9,14 +12,23 @@ import { Product } from '../../models/product';
 })
 export class FilterComponent implements OnInit, OnDestroy {
 
+  // PROPERTIES FOR ALL
   @Input() allProducts$?: Observable<Product[]>;
   @Output() filter = new EventEmitter<Product[]>();
-
-  categories$: Observable<string[]> = of([]);
   allProducts: Product[] = [];
-
-  filteredList: Product[] = [];
   subscriptions: Subscription[] = [];
+
+  // PROPERTIES FOR CATEGORY
+  categories$: Observable<string[]> = of([]);
+  activeCateg: string[] = [];
+  @ViewChildren(CategoryItemComponent)
+  categoryItems?: QueryList<CategoryItemComponent>;
+
+  // PROPERTIES FOR PRICE RANGE
+  PR: PriceRange[] = PRICE_RANGES;
+  activePR: PriceRange[] = [];
+  @ViewChildren(PriceItemComponent)
+  priceItems?: QueryList<PriceItemComponent>;
 
   ngOnInit(): void {
     this.getCategories();
@@ -34,28 +46,93 @@ export class FilterComponent implements OnInit, OnDestroy {
     }
   }
 
-  onChanges(data: { category: string, show: boolean }): void {
-    if (data.show) {
-      this.addToList(data.category);
+  onChanges(data: { category?: string, range?: PriceRange, show: boolean }): void {
+    let filteredList: Product[] = this.allProducts;
+    if (data.category) {
+      this.onCategChanges(data.category, data.show);
+    }
+
+    if (this.activeCateg.length > 0) {
+      filteredList = this.filterByCategory(filteredList);
+    }
+
+    if (data.range) {
+      this.onPriceChanges(data.range, data.show);
+    }
+
+    if (this.activePR.length > 0) {
+      filteredList = this.filterByPrice(filteredList);
+    }
+
+    console.log('Inside OnChanges', filteredList);
+    this.filter.emit(filteredList);
+  }
+
+  /**
+   * METHODS FOR CATEGORY FILTER
+   */
+  onCategChanges(category: string, show: boolean) {
+    if (show) {
+      this.activeCateg.push(category);
     } else {
-      this.removeFromList(data.category);
-    }
-    this.filter.emit(this.filteredList);
-  }
-
-  addToList(category: string): void {
-    const product = this.allProducts.find(product => product.category === category);
-    if (product) {
-      this.filteredList.push(product);
+      this.activeCateg = this.activeCateg.filter(categ => categ !== category);
     }
   }
 
-  removeFromList(category: string): void {
-    this.filteredList = this.filteredList.filter(product => product.category !== category);
+  filterByCategory(products: Product[]): Product[] {
+    let filtered: Product[] = [];
+    for (const categ of this.activeCateg) {
+      let list = products.filter(product => product.category === categ);
+      filtered = filtered.concat(list);
+    }
+    return filtered;
+  }
+
+  /**
+   * METHODS FOR PRICE FILTER
+   */
+  onPriceChanges(range: PriceRange, show: boolean): void {
+    if (show) {
+      this.activePR.push(range);
+    } else {
+      this.activePR = this.activePR.filter(pr => pr.min !== range.min);
+    }
+
+    //test only
+    console.log('filteredByPrice', this.filterByPrice(this.allProducts));
+  }
+
+  filterByPrice(products: Product[]): Product[] {
+    let filtered: Product[] = [];
+    for (const pr of this.activePR) {
+      let list = products.filter(product => {
+        let result: boolean;
+        if (pr.max) {
+          result = (product.price >= pr.min && product.price <= pr.max);
+        } else {
+          result = (product.price >= pr.min);
+        }
+        return result;
+      });
+
+      // add list filtered by specific price range to the overall filteredlist
+      filtered = filtered.concat(list);
+    }
+    return filtered;
+  }
+
+  /**
+   * Implement method that will reset the form
+   */
+  clearAll(): void {
+    this.categoryItems?.forEach(child => child.reset());
+    this.priceItems?.forEach(child => child.reset());
   }
 
   ngOnDestroy(): void {
-    //TODO
+    for (const sub of this.subscriptions) {
+      sub.unsubscribe();
+    }
   }
 
 }

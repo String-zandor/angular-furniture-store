@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { CartItem } from '../../models/cart-item';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -9,38 +10,34 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  
 
   private subject = new BehaviorSubject<Product[]>([]);
   productsDisplay$: Observable<Product[]> = this.subject.asObservable();
   allProducts$?: Observable<Product[]>;
-  allProducts: Product[] = [];
-  searchResults: Product[] = []
+  
+  /** DisplayService
+   * 
+   * TEST
+   */
+  private sortSubject = new BehaviorSubject<Product[]>([]);
+  productsToSort$?: Observable<Product[]> = this.sortSubject.asObservable();
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getProducts();
-    this.productsDisplay$.subscribe(products => console.log('test to confirm subject working: ', products));
   }
 
   getProducts() {
-    this.allProducts$ =  this.productService.getProducts();
+    this.allProducts$ = this.productService.getProducts();
     this.productService.getProducts().subscribe(products => {
       this.subject.next(products);
-      this.allProducts = products;
+      this.sortSubject.next(products);
     });
   }
 
   filter(filteredList: Product[]): void {
-    if (filteredList.length > 0) {
-      console.log('inside filter method in dashboard', filteredList);
-      this.subject.next(filteredList);
-    } else {
-      console.log('all products (inside filter): ', this.allProducts);
-      this.subject.next(this.allProducts);
-    }
-    
+    this.sortSubject.next(filteredList);
   }
 
   sort(sortedList: Product[]): void {
@@ -51,13 +48,9 @@ export class DashboardComponent implements OnInit {
     this.subject.next(searchResult);
   }
 
-  searchResult(searchResults: any){
-    this.searchResults = searchResults
-    console.log(searchResults)
-  }
-
-  onSelection(): void {
-    //TODO revise method
+  addToCart(cartItem: CartItem): void {
+    console.log('inside addToCart: ', cartItem);
+    // pass this to cart page
   }
 
 }
