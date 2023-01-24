@@ -9,11 +9,13 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  
 
   private subject = new BehaviorSubject<Product[]>([]);
   productsDisplay$: Observable<Product[]> = this.subject.asObservable();
   allProducts$?: Observable<Product[]>;
   allProducts: Product[] = [];
+  searchResults: Product[] = []
 
   constructor(private productService: ProductService) { }
 
@@ -47,6 +49,11 @@ export class DashboardComponent implements OnInit {
 
   search(searchResult: Product[]): void {
     this.subject.next(searchResult);
+  }
+
+  searchResult(searchResults: any){
+    this.searchResults = searchResults
+    console.log(searchResults)
   }
 
   onSelection(): void {
