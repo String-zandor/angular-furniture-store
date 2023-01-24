@@ -8,7 +8,7 @@ import { Product } from '../../models/product';
   styleUrls: ['./sort.component.scss']
 })
 export class SortComponent{
-  @Input() allProducts$?: Observable<Product[]>;
+  @Input() productsToSort$?: Observable<Product[]>;
   @Output() sort = new EventEmitter<Product[]>();
 
   sortByNameAscending(){
@@ -30,7 +30,7 @@ export class SortComponent{
     this.sortDescending('postingDate')
   }
   sortAscending(key : string){
-    this.allProducts$!.subscribe((product:Product[]) =>{
+    this.productsToSort$!.subscribe((product:Product[]) =>{
       product.sort((a:Product,b:Product) => {
         return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? 1 : -1 ));
       })
@@ -39,7 +39,7 @@ export class SortComponent{
   }
 
   sortDescending(key: string){
-    this.allProducts$!.subscribe((product:Product[]) =>{
+    this.productsToSort$!.subscribe((product:Product[]) =>{
       product.sort((a:Product,b:Product) => {
         return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? -1 : 1 ));
       })

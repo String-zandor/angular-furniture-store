@@ -14,7 +14,15 @@ export class DashboardComponent implements OnInit {
   private subject = new BehaviorSubject<Product[]>([]);
   productsDisplay$: Observable<Product[]> = this.subject.asObservable();
   allProducts$?: Observable<Product[]>;
-  allProducts: Product[] = [];
+  
+  
+  /** DisplayService
+   * 
+   * TEST
+   */
+  private sortSubject = new BehaviorSubject<Product[]>([]);
+  productsToSort$?: Observable<Product[]> = this.sortSubject.asObservable();
+  
 
   constructor(private productService: ProductService) { }
 
@@ -26,12 +34,12 @@ export class DashboardComponent implements OnInit {
     this.allProducts$ = this.productService.getProducts();
     this.productService.getProducts().subscribe(products => {
       this.subject.next(products);
-      this.allProducts = products;
+      this.sortSubject.next(products);
     });
   }
 
   filter(filteredList: Product[]): void {
-    this.subject.next(filteredList);
+    this.sortSubject.next(filteredList);
   }
 
   sort(sortedList: Product[]): void {
