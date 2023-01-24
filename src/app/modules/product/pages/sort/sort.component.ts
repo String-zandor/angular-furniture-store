@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { Product } from '../../models/product';
 
@@ -15,7 +16,7 @@ export class SortComponent implements OnDestroy{
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
+  
   sortByNameAscending(){
     this.sortAscending('name')
   }
