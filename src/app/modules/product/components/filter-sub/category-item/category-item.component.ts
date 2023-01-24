@@ -13,8 +13,6 @@ export class CategoryItemComponent implements OnInit {
 
   categoryItem = new FormControl(false);
 
-  constructor(private fb: FormBuilder) { }
-
   ngOnInit(): void {
     this.categoryItem.valueChanges.subscribe(() => {
       if (this.categoryItem.value) {
@@ -30,6 +28,10 @@ export class CategoryItemComponent implements OnInit {
       const data: { category: string, show: boolean } = { category: this.category, show: show };
       this.onChanges.emit(data);
     }
+  }
+
+  reset(): void {
+    this.categoryItem.setValue(false);
   }
 
 }

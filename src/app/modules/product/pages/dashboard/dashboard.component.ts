@@ -19,11 +19,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
-    this.productsDisplay$.subscribe(products => console.log('test to confirm subject working: ', products));
   }
 
   getProducts() {
-    this.allProducts$ =  this.productService.getProducts();
+    this.allProducts$ = this.productService.getProducts();
     this.productService.getProducts().subscribe(products => {
       this.subject.next(products);
       this.allProducts = products;
@@ -31,14 +30,7 @@ export class DashboardComponent implements OnInit {
   }
 
   filter(filteredList: Product[]): void {
-    if (filteredList.length > 0) {
-      console.log('inside filter method in dashboard', filteredList);
-      this.subject.next(filteredList);
-    } else {
-      console.log('all products (inside filter): ', this.allProducts);
-      this.subject.next(this.allProducts);
-    }
-    
+    this.subject.next(filteredList);
   }
 
   sort(sortedList: Product[]): void {
