@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { CartItem } from '../../models/cart-item';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -41,8 +42,9 @@ export class DashboardComponent implements OnInit {
     this.subject.next(searchResult);
   }
 
-  onSelection(): void {
-    //TODO revise method
+  addToCart(cartItem: CartItem): void {
+    console.log('inside addToCart: ', cartItem);
+    // pass this to cart page
   }
 
 }
