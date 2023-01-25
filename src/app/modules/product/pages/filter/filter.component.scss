@@ -1,4 +1,6 @@
 //-- filter by category --
+
+
 .filter{
     /* position: fixed; */
     position: relative;
@@ -8,7 +10,7 @@
     z-index: 1000;
     display: relative;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     background: transparent;
     padding: 0;
     transition: all .50s ease;
@@ -16,10 +18,7 @@
     /* margin: 100px */
     
 }
-// .filter-by-category{
-//     position: relative;
-//     display:inline-block;
-// }
+
 .filter-by-category p{
     color:aliceblue;
     position: relative;
@@ -131,6 +130,16 @@
     max-width: 200%
 
     
+}
+
+// clear all button
+
+button{
+    text-decoration: underline;
+    background: transparent;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
 }
 
 

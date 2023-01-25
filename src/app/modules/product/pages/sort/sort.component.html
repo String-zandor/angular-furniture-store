@@ -1,19 +1,22 @@
-<p>sort works!gg</p>
-<!-- <button (click)="test()">Sort Component!</button> -->
+<p>FILTER:</p>
+
 
  <div class = "filter-by">
     
-        <!-- <li><h2 class = "filter-title">Filter:</h2></li> -->
-        <!-- <button class = "drpdwn">Filter By <i class="ri-arrow-drop-down-fill"></i></button> -->
-        <p>Filter By<i class="ri-arrow-drop-down-fill"></i></p>
+        
+        <p>Sort By<i class="ri-arrow-drop-down-fill"></i></p>
             <div class = "dropdown-content">
-                <button (click)="sortByNameAscending()">Filter by Name Ascending</button><br>
-                <button (click)="sortByNameDescending()">Filter by Name Descending</button><br>
-                <button (click)="sortByPriceLowest()">Sort by Price Lowest</button><br>
-                <button (click)="sortByPriceHighest()">Sort by Price Highest</button><br>
-                <button (click)="sortByDateOldToNew()">Sort by Date (Old TO Latest)</button><br>
-                <button (click)="sortByDateNewToOld()">Sort by Date (Latest TO Old)</button>
+                <li><input type ="radio" name="sortInputs" (click)="sortByDateOldToNew()">Date, Old to New </li>
+                <li><input type ="radio" name="sortInputs" (click)="sortByDateNewToOld()">Date, New to Old </li>
+                <li><input type ="radio" name="sortInputs" (click)="sortByNameAscending()">Name, A-Z </li>
+                <li><input type ="radio" name="sortInputs" (click)="sortByNameDescending()">Name, Z-A </li>
+                <li><input type ="radio" name="sortInputs" (click)="sortByPriceLowest()">Price, Low to High</li>
+                <li><input type ="radio" name="sortInputs" (click)="sortByPriceHighest()">Price, High to Low</li>
+
+
+                
                     
             </div>
        
 </div>
+

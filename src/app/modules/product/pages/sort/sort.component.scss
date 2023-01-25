@@ -34,7 +34,7 @@
 
 }
 
-.dropdown-content button{
+.dropdown-content li{
     background-color: transparent;
     color: aliceblue;
     border: none;
@@ -44,11 +44,13 @@
  /* Show the dropdown menu on hover */
 .filter-by:hover .dropdown-content {
     display: block;
+    
 } 
 
-.dropdown-content button:hover{
+.dropdown-content li:hover{
     background-color: rgb(83, 96, 86);
-    max-width: 200%
+    // max-width: 200%;
+    
 
     
 }
