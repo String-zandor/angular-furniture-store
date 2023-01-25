@@ -2,7 +2,7 @@
     position: relative;
     display:inline-block;
 }
-.filter-by a{
+.filter-by p{
     color:aliceblue;
     position: relative;
     display: inline-block;
@@ -14,8 +14,9 @@
     
 }
 
-.filter-by a:hover{
-    background-color: rgb(166, 191, 172, 0.5)
+.filter-by p:hover{
+    background-color: rgb(166, 191, 172, 0.5);
+    cursor: pointer;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -46,7 +47,7 @@
 } 
 
 .dropdown-content button:hover{
-    background-color: rgb(166, 191, 172);
+    background-color: rgb(83, 96, 86);
     max-width: 200%
 
     
