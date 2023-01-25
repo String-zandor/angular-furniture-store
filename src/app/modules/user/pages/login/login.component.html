@@ -1,0 +1,40 @@
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <label for="username">Username:</label>
+        <input id="username" type="text" formControlName="username" />
+
+        <!-- displays whenever username is invalid (no input) -->
+        <div *ngIf="username.invalid && (username.dirty || username.touched)">
+            <div *ngIf="username.errors?.['required']">
+                Username is required.
+            </div>
+        </div>
+
+        <br>
+        <label for="password">Password:</label>
+        <input id="password" type="password" formControlName="password" />
+
+        <!-- displays whenever password is invalid (no input) -->
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors?.['required']">
+                Password is required.
+            </div>
+        </div>
+
+        <div *ngIf="unsuccessful">
+            The username and password combination is incorrect.
+        </div>
+
+        <br>
+        <button type="submit" [disabled]="loginForm.invalid && (loginForm.dirty || loginForm.touched)" >Log-in</button>
+        <button type="button">Register</button>
+        <br>
+        <a href="">Forgot password?</a>
+        <div *ngIf="!loginAsAdmin">
+            <a routerLink="admin">Log-in as administrator</a>
+        </div>
+        <div *ngIf="loginAsAdmin">
+            <a routerLink="../">Log-in as user</a>
+        </div>
+    </form>
+</div>
