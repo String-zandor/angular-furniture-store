@@ -1,7 +1,7 @@
 
 <p><strong>SORT</strong></p>
-<input type="radio" name="sortInputs" (click)="sortByDateOldToNew()">(Old To Latest) <br>
-<input type="radio" name="sortInputs" (click)="sortByDateNewToOld()">(Latest To Old) <br>
+<input type="radio" name="sortInputs" (click)="sortByDateNewToOld()" [checked]="true">(Latest To Old) <br>
+<input type="radio" name="sortInputs" (click)="sortByDateOldToNew()" >(Old To Latest) <br>
 <input type="radio" name="sortInputs" (click)="sortByNameAscending()">Name Ascending <br>
 <input type="radio" name="sortInputs" (click)="sortByNameDescending()">Name Descending <br>
 <input type="radio" name="sortInputs" (click)="sortByPriceLowest()">Price Lowest <br>
