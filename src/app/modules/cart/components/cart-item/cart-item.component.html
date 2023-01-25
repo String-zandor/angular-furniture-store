@@ -1,1 +1,7 @@
-<p>cart-item works!</p>
+<div *ngIf="cartItem">
+    <ul>
+        <li>Name: {{cartItem.product.name}}</li>
+        <li>Price: {{cartItem.product.price}}</li>
+        <li>Qty: {{cartItem.qty}}</li>
+    </ul>
+</div>

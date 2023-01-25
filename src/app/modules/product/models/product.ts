@@ -1,26 +1,18 @@
 export interface Product {
     id: number,
-    srcUrl: { color1: string, color2: string },
+    srcUrl: string,
     name: string,
     category: string,
-    color: string[],
+    color: string,
+
     description: {
         desc: string,
         dimensions: string,
         material: string,
         weight: string,
     },
-    postingDate: Date,
+    postingDate: string,
     price: number
 }
 
-// TEST PRODUCT INTERFACE
-// export interface Product {
-//     id: number,
-//     name: string,
-//     category: string,
-//     price: number,
-//     postingDate: string, /* String for now */
-    
-// }
 
