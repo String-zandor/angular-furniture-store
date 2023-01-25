@@ -1,8 +1,8 @@
-<p>sort works!gg</p>
-<!-- <button (click)="test()">Sort Component!</button> -->
-<button (click)="sortByNameAscending()">Filter by Name Ascending</button><br>
-<button (click)="sortByNameDescending()">Filter by Name Descending</button><br>
-<button (click)="sortByPriceLowest()">Sort by Price Lowest</button><br>
-<button (click)="sortByPriceHighest()">Sort by Price Highest</button><br>
-<button (click)="sortByDateOldToNew()">Sort by Date (Old TO Latest)</button><br>
-<button (click)="sortByDateNewToOld()">Sort by Date (Latest TO Old)</button><br>
+
+<p><strong>SORT</strong></p>
+<input type="radio" name="sortInputs" (click)="sortByDateOldToNew()">(Old To Latest) <br>
+<input type="radio" name="sortInputs" (click)="sortByDateNewToOld()">(Latest To Old) <br>
+<input type="radio" name="sortInputs" (click)="sortByNameAscending()">Name Ascending <br>
+<input type="radio" name="sortInputs" (click)="sortByNameDescending()">Name Descending <br>
+<input type="radio" name="sortInputs" (click)="sortByPriceLowest()">Price Lowest <br>
+<input type="radio" name="sortInputs" (click)="sortByPriceHighest()">Price Highest <br> <br>

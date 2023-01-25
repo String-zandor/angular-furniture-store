@@ -1,5 +1,5 @@
 <app-header></app-header>
-<app-search></app-search>
+<app-search [allProducts$]="allProducts$"></app-search>
 <!-- <app-search (search)="search($event)" ></app-search> -->
 <!-- <app-sort [allProducts$]="allProducts$" (sort)="sort($event)"></app-sort> -->
 <app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
