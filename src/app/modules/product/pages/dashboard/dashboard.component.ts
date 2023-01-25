@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { CartService } from 'src/app/modules/cart/services/cart.service';
+import { CartItem } from '../../../cart/models/cart-item';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -9,13 +11,26 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  /** 
+   * to be refactored into a DisplayService
+   */
   private subject = new BehaviorSubject<Product[]>([]);
   productsDisplay$: Observable<Product[]> = this.subject.asObservable();
   allProducts$?: Observable<Product[]>;
-  allProducts: Product[] = [];
 
-  constructor(private productService: ProductService) { }
+  private sortSubject = new BehaviorSubject<Product[]>([]);
+  productsToSort$?: Observable<Product[]> = this.sortSubject.asObservable();
+  
+  /**
+   * to be used later in showing the number of cart items beside the cart icon
+   */
+  totalCartItems: number = 0;
+
+  constructor(
+    private productService: ProductService, 
+    private cartService: CartService) {
+
+  }
 
   ngOnInit(): void {
     this.getProducts();
@@ -25,12 +40,12 @@ export class DashboardComponent implements OnInit {
     this.allProducts$ = this.productService.getProducts();
     this.productService.getProducts().subscribe(products => {
       this.subject.next(products);
-      this.allProducts = products;
+      this.sortSubject.next(products);
     });
   }
 
   filter(filteredList: Product[]): void {
-    this.subject.next(filteredList);
+    this.sortSubject.next(filteredList);
   }
 
   sort(sortedList: Product[]): void {
@@ -41,8 +56,8 @@ export class DashboardComponent implements OnInit {
     this.subject.next(searchResult);
   }
 
-  onSelection(): void {
-    //TODO revise method
+  addToCart(cartItem: CartItem): void {
+    this.cartService.create(cartItem).subscribe(() => this.totalCartItems++);
   }
 
 }

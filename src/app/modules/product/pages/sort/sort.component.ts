@@ -8,6 +8,7 @@ import { Product } from '../../models/product';
   styleUrls: ['./sort.component.scss']
 })
 export class SortComponent implements OnDestroy{
+
   @Input() productsToSort$?: Observable<Product[]>;
   @Output() sort = new EventEmitter<Product[]>();
   subscription:Subscription[]=[];
@@ -38,6 +39,7 @@ export class SortComponent implements OnDestroy{
   }
   sortAscending(key : string){
     this.subscription.push(this.productsToSort$!.subscribe((product:Product[]) =>{
+
       product.sort((a:Product,b:Product) => {
         return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? 1 : -1 ));
       })

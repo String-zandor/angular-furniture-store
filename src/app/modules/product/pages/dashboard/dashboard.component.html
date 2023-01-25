@@ -2,7 +2,7 @@
 <app-search></app-search>
 <!-- <app-search (search)="search($event)" ></app-search> -->
 <!-- <app-sort [allProducts$]="allProducts$" (sort)="sort($event)"></app-sort> -->
-<app-sort [allProducts$]="allProducts$" (sort)="sort($event)"></app-sort>
+<app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
 <!-- <app-sort (sort)="" [listToSort$]=""></app-sort> -->
 <!-- <app-sort></app-sort> -->
 
@@ -17,7 +17,7 @@
 <!-- PRODUCT LIST -->
 PRODUCTS
 <div *ngFor="let product of productsDisplay$ | async">
-    <app-product-item [product]="product" (onSelection)="onSelection()"></app-product-item>
+    <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
 </div>
 
 
