@@ -1,1 +1,17 @@
-<p>search works!</p>
+<p>Search Works</p>
+<input type="text" [formControl]="searchInput">
+<button type="button" (click)="searchProduct()" >Search</button>
+<div>
+    <div *ngFor="let product of result" result="result">
+        <br>
+        id: {{product.id}} <br>
+        srcUrl:  {{product.srcUrl}} <br>
+        name:  {{product.name}} <br>
+        category:  {{product.category}} <br>
+        color:  {{product.color}} <br>
+        description:  {{product.description}} <br>
+        postingDate:  {{product.postingDate}} <br>
+        price:  {{product.price}} <br>
+        <br>
+    </div>
+</div>
