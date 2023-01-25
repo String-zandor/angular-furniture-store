@@ -1,3 +1,4 @@
+
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -12,7 +13,7 @@ export class SearchComponent {
   
   @Output () products = new EventEmitter<Product[]>()
   @Input () allProducts$?: Observable<Product[]>;
-
+  
   searchInput = new FormControl('');
   result: Product[] | undefined
 
