@@ -21,11 +21,6 @@ export class DashboardComponent implements OnInit {
   private sortSubject = new BehaviorSubject<Product[]>([]);
   productsToSort$?: Observable<Product[]> = this.sortSubject.asObservable();
   
-  /**
-   * to be used later in showing the number of cart items beside the cart icon
-   */
-  totalCartItems: number = 0;
-
   constructor(
     private productService: ProductService, 
     private cartService: CartService) {
@@ -57,7 +52,15 @@ export class DashboardComponent implements OnInit {
   }
 
   addToCart(cartItem: CartItem): void {
-    this.cartService.create(cartItem).subscribe(() => this.totalCartItems++);
+    this.cartService.getCartItemOfProduct(cartItem.product.id).subscribe((item) => {
+      if (item) {
+        item.qty += cartItem.qty;
+        this.cartService.update(item).subscribe();
+      } else {
+        this.cartService.create(cartItem).subscribe();
+      }
+    });
+    
   }
 
 }

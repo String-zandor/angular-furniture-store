@@ -31,19 +31,8 @@
         "price": 12000,
         "postingDate": "2015-05-10 11:00AM"
       },
-      "qty": 1,
+      "qty": 11,
       "id": 1
-    },
-    {
-      "product": {
-        "id": 2,
-        "name": "Utility Chair",
-        "category": "Chairs",
-        "price": 1000,
-        "postingDate": "2015-08-01 01:00PM"
-      },
-      "qty": 2,
-      "id": 2
     },
     {
       "product": {
@@ -53,19 +42,19 @@
         "price": 23000,
         "postingDate": "2015-07-01 12:00AM"
       },
-      "qty": 1,
-      "id": 3
+      "qty": 10,
+      "id": 2
     },
     {
       "product": {
-        "id": 1,
-        "name": "Comfy Bed",
-        "category": "Beds",
-        "price": 12000,
-        "postingDate": "2015-05-10 11:00AM"
+        "id": 2,
+        "name": "Utility Chair",
+        "category": "Chairs",
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
       },
-      "qty": 1,
-      "id": 4
+      "qty": 10,
+      "id": 3
     }
   ]
 }
