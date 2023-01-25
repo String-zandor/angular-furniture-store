@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { catchError, of, Subscription, switchMap } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 import { OrderItem } from '../../models/order-item';
@@ -8,66 +9,77 @@ import { OrderService } from '../../services/order.service';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss']
+  styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent implements OnInit, OnDestroy {
+  constructor(
+    private cartService: CartService,
+    private orderService: OrderService,
+    private router: Router
+  ) { }
 
-  constructor(private cartService : CartService, private orderService:OrderService){}
-  
-  cartItems:CartItem[] = [];
-  totalAmmountToPay?:number
-  subscriptions:Subscription[]=[]
+  cartItems: CartItem[] = [];
+  totalAmmountToPay!: number;
+  subtotal!: number;
+  deliveryFee: number = 100;
+  subscriptions: Subscription[] = [];
+  date = new Date();
+
   ngOnInit(): void {
-    this.loadCartItems()
+    this.loadCartItems();
   }
   ngOnDestroy(): void {
-    for(let subs of this.subscriptions){
-      subs.unsubscribe()
+    for (let subs of this.subscriptions) {
+      subs.unsubscribe();
     }
   }
-  
+
   loadCartItems(): void {
-    let sub:Subscription =  this.cartService.getCartItems().subscribe((items:CartItem[]) => {
-      this.cartItems = items;
-      this.getTotalToPrice(items)
-    })
-    this.subscriptions.push(sub)
+    let sub: Subscription = this.cartService
+      .getCartItems()
+      .subscribe((items: CartItem[]) => {
+        this.cartItems = items;
+        this.getTotalPrice(items);
+      });
+    this.subscriptions.push(sub);
   }
 
-  getTotalToPrice(cartItems:CartItem[]){
-    var total:number = 0
-    for(let amount of cartItems){
-      total += amount.product.price * amount.qty
+  getTotalPrice(cartItems: CartItem[]) {
+    var subtotal: number = 0;
+    for (let amount of cartItems) {
+      subtotal += amount.product.price * amount.qty;
     }
-    this.totalAmmountToPay = total
+    this.subtotal = subtotal;
+    this.totalAmmountToPay = subtotal + this.deliveryFee;
   }
 
-  displayCart(){
-    console.log(this.cartItems)
-  }
-
-  proceedCheckout(){
-    if(this.cartItems.length > 0){
-      this.saveToOrderDB()
-      this.cartItems.forEach((item:CartItem)=> {
-      this.deleteCartItem(item.id as number)
-    })
+  proceedCheckout() {
+    if (this.cartItems.length > 0) {
+      this.saveToOrderDataBase();
+      this.cartItems.forEach((item: CartItem) => {
+        this.deleteCartItem(item.id as number);
+      });
+      this.redirectToHome()
     }
-    
   }
-  deleteCartItem(id:number){
-    let sub:Subscription = this.cartService.delete(id).pipe(
-      //this will update the UI when deleting a blog item
-      switchMap(async () => this.loadCartItems()),catchError(_err => of (null))).subscribe()
-    this.subscriptions.push(sub)
+  deleteCartItem(id: number) {
+    let sub: Subscription = this.cartService.delete(id).subscribe();
+    this.subscriptions.push(sub);
   }
-  saveToOrderDB(){
-    let orderItem:OrderItem ={
+  saveToOrderDataBase() {
+    let orderItem: OrderItem = {
       status: 'pending',
-      cart: this.cartItems
-    }
-    let sub:Subscription = this.orderService.create(orderItem).subscribe()
-    this.subscriptions.push(sub)
+      subtotal: this.subtotal,
+      deliveryFee: this.deliveryFee,
+      totalPrice: this.totalAmmountToPay,
+      orderDate: this.date.toJSON(),
+      cart: this.cartItems,
+    };
+    let sub: Subscription = this.orderService.create(orderItem).subscribe();
+    this.subscriptions.push(sub);
   }
 
+  redirectToHome(){ /**redirect to HOME FOR NOW */
+    this.router.navigate(['home'])
+  }
 }

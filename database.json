@@ -57,26 +57,5 @@
       }
     }
   ],
-  "orders": [
-    {
-      "status": "pending",
-      "id": 1,
-      "cart": [
-        {
-          "id": 1,
-          "name": "Comfy Bed",
-          "category": "Beds",
-          "price": 12000,
-          "postingDate": "2015-05-10 11:00AM"
-        },
-        {
-          "id": 1,
-          "name": "Comfy Bed",
-          "category": "Beds",
-          "price": 12000,
-          "postingDate": "2015-05-10 11:00AM"
-        }
-      ]
-    }
-  ]
+  "orders": []
 }
