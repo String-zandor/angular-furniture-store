@@ -1,0 +1,55 @@
+.filter-by{
+    position: relative;
+    display:inline-block;
+}
+.filter-by a{
+    color:aliceblue;
+    position: relative;
+    display: inline-block;
+    padding:  10px 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(45, 45, 45);
+    
+}
+
+.filter-by a:hover{
+    background-color: rgb(166, 191, 172, 0.5)
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: relative;
+    // position: absolute;
+    background-color: transparent;
+    
+    z-index: 1;
+    border: 0.5rem;
+    border-color: aliceblue;
+    
+    
+
+}
+
+.dropdown-content button{
+    background-color: transparent;
+    color: aliceblue;
+    border: none;
+    // margin-left: 10px;
+}
+
+ /* Show the dropdown menu on hover */
+.filter-by:hover .dropdown-content {
+    display: block;
+} 
+
+.dropdown-content button:hover{
+    background-color: rgb(166, 191, 172);
+    max-width: 200%
+
+    
+}
+
+

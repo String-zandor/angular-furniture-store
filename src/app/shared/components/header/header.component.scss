@@ -1,0 +1,135 @@
+header{
+    /* position: fixed; */
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all .50s ease;
+    
+    /* margin: 100px */
+    
+}
+
+// -- HEADER ICON
+
+.main i:hover{
+    color: #a6beac;
+}
+
+.main :hover{
+    color: #a6beac;
+}
+
+.main{
+    display:flex;
+    align-items: center;
+}
+
+.main a{
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+    
+}
+
+.main i{
+    font-size: 25px;
+    
+}
+
+.ri-shopping-cart-line{
+    color: #a6beac;
+}
+
+#menu-icon{
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10001;
+    
+}
+
+#search-button{
+    display: none;
+}
+
+
+//-- SEARCH BAR 
+
+
+.search-bar{
+    width: 100%;
+    max-width: 3000px;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+}
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    /* padding: 5px 5px; */
+    font-size: 15px;
+    color: rgb(254, 254, 254)
+}
+
+.search-bar button{
+    border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(166, 190, 172, 0.5);
+    
+    cursor: pointer;
+}
+
+/* media queries  */
+/* RESPONSIVE WEB */
+/* MAIN DISPLAY WILL BE SIDE NAV INCLUDES FILTER*/
+
+
+@media screen and (max-width: 500px) {
+    header{
+      float: none; 
+      max-width: 100%;   
+      display: inline-block;
+      /* text-align: center; */
+      /* align-items: center; */
+    }
+    img{
+        /* display: inline-block; */
+        max-width: 100%;
+        align-items: left;
+    }
+    
+    
+    .main{
+        display: none;
+    }
+
+   
+
+    .search-bar{
+        display: none;
+    }
+
+    .main #search-button{
+        display: inline-block;
+    }
+
+    
+
+    
+    
+}
+

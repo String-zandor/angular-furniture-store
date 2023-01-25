@@ -1,8 +1,19 @@
 <p>sort works!gg</p>
 <!-- <button (click)="test()">Sort Component!</button> -->
-<button (click)="sortByNameAscending()">Filter by Name Ascending</button><br>
-<button (click)="sortByNameDescending()">Filter by Name Descending</button><br>
-<button (click)="sortByPriceLowest()">Sort by Price Lowest</button><br>
-<button (click)="sortByPriceHighest()">Sort by Price Highest</button><br>
-<button (click)="sortByDateOldToNew()">Sort by Date (Old TO Latest)</button><br>
-<button (click)="sortByDateNewToOld()">Sort by Date (Latest TO Old)</button><br>
+
+ <div class = "filter-by">
+    
+        <!-- <li><h2 class = "filter-title">Filter:</h2></li> -->
+        <!-- <button class = "drpdwn">Filter By <i class="ri-arrow-drop-down-fill"></i></button> -->
+        <a href = "#">Filter By<i class="ri-arrow-drop-down-fill"></i></a>
+            <div class = "dropdown-content">
+                <button (click)="sortByNameAscending()">Filter by Name Ascending</button><br>
+                <button (click)="sortByNameDescending()">Filter by Name Descending</button><br>
+                <button (click)="sortByPriceLowest()">Sort by Price Lowest</button><br>
+                <button (click)="sortByPriceHighest()">Sort by Price Highest</button><br>
+                <button (click)="sortByDateOldToNew()">Sort by Date (Old TO Latest)</button><br>
+                <button (click)="sortByDateNewToOld()">Sort by Date (Latest TO Old)</button>
+                    
+            </div>
+       
+</div>

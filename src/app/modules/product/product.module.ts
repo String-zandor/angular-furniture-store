@@ -27,6 +27,10 @@ import { PriceItemComponent } from './components/filter-sub/price-item/price-ite
     ProductRoutingModule,
     SharedModule, 
     ReactiveFormsModule
+  ],
+  exports:[
+    SearchComponent
+
   ]
 })
 export class ProductModule { }
