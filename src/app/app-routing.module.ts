@@ -10,7 +10,11 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./modules/product/product.module').then(mod => mod.ProductModule)
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'orders',
+    loadChildren: () => import('./modules/order/order.module').then (m => m.OrderModule)
+  }
 ];
 
 @NgModule({
