@@ -1,1 +1,15 @@
-<p>cart-item works!</p>
+<div *ngIf="cartItem">
+    <ul>
+        <li>Name: {{cartItem.product.name}}</li>
+        <li>Price: {{cartItem.product.price}}</li>
+        <li>Qty: {{cartItem.qty}}</li>
+        
+
+        <button type="button" id="min" [disabled]="quantity.value === 1" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
+        <input type="text" [formControl]="quantity">
+        <button type="button" id="max" (click)="addQuantity()"><i class="fa fa-plus">+</i></button><br><br>
+        <button type="button" id="delete" (click) = "executeAction('REMOVE')">Remove</button>
+
+
+    </ul>
+</div>

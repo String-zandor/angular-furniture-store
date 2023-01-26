@@ -1,14 +1,6 @@
 <app-header></app-header>
-<app-search></app-search>
-<!-- <app-search (search)="search($event)" ></app-search> -->
-<!-- <app-sort [allProducts$]="allProducts$" (sort)="sort($event)"></app-sort> -->
+<app-search [allProducts$]="allProducts$"></app-search>
 <app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
-<!-- <app-sort (sort)="" [listToSort$]=""></app-sort> -->
-<!-- <app-sort></app-sort> -->
-
-<!-- FILTER -->
-
-<!-- <app-filter (filter)="filter($event)" [listToFilter$]="allProducts$"></app-filter> -->
 <app-filter (filter)="filter($event)" [allProducts$]="allProducts$"></app-filter>
 
 
