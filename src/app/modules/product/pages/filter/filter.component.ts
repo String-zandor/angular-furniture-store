@@ -19,7 +19,7 @@ export class FilterComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
 
   // PROPERTIES FOR CATEGORY
-  categories$: Observable<string[]> = of([]);
+  categories$: Observable<Set<string>> = of(new Set<string>());
   activeCateg: string[] = [];
   @ViewChildren(CategoryItemComponent)
   categoryItems?: QueryList<CategoryItemComponent>;
@@ -42,6 +42,8 @@ export class FilterComponent implements OnInit, OnDestroy {
     if (this.allProducts$) {
       this.categories$ = this.allProducts$.pipe(
         map(products => products.map(product => product.category))
+      ).pipe(
+        map(category => new Set(category))
       );
     }
   }

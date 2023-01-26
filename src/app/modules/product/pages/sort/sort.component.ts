@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Product } from '../../models/product';
 
@@ -7,12 +7,15 @@ import { Product } from '../../models/product';
   templateUrl: './sort.component.html',
   styleUrls: ['./sort.component.scss']
 })
-export class SortComponent implements OnDestroy{
-
+export class SortComponent implements OnDestroy, OnInit{
+  
   @Input() productsToSort$?: Observable<Product[]>;
   @Output() sort = new EventEmitter<Product[]>();
   subscription:Subscription[]=[];
   
+  ngOnInit(): void {
+    this.sortByDateNewToOld()
+  }
   ngOnDestroy(): void {
     for(let sub of this.subscription){
       sub.unsubscribe();
