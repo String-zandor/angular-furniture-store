@@ -12,6 +12,7 @@
     },
     {
       "id": 2,
+      "srcUrl": "",
       "name": "Utility Chair",
       "category": "Chairs",
       "description": {
@@ -48,6 +49,8 @@
       "firstName": "Seven",
       "middleName": "Seven",
       "lastName": "Seven",
+      "phone": "09777777777",
+      "address": "Earth",
       "email": "mrseven@77global.biz",
       "birthDate": "2077-07-07",
       "interests": [
@@ -56,7 +59,8 @@
       ],
       "username": "seven",
       "password": "seven",
-      "cart": []
+      "cart": [],
+      "admin": false
     }
   ]
 }
