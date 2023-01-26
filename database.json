@@ -1,38 +1,68 @@
 {
-    "products" : [
-        {
-            "id" : 1,
-            "name" : "Comfy Bed",
-            "category" : "Beds",
-            "price" : 12000,
-            "description" : {
-                "desc" : "Good"
-            },
-            "postingDate": "2015-05-10 11:00AM"
-        },
-        {
-            "id" : 2,
-            "name" : "Utility Chair",
-            "category" : "Chairs",
-            "description" : {
-                "desc" : "Better"
-            },
-            "price" : 1000,
-            "postingDate": "2015-08-01 01:00PM"
-        },
-        {
-            "id" : 3,
-            "name" : "Glass Table",
-            "category" : "Tables",
-            "description" : {
-                "desc" : "Best"
-            },
-            "price" : 23000,
-            "postingDate": "2015-07-01 12:00AM"
-        }
-    ],
-
-    "orders": [
+  "products": [
+    {
+      "id": 1,
+      "name": "Comfy Bed",
+      "category": "Beds",
+      "price": 12000,
+      "description": {
+        "desc": "Good"
+      },
+      "postingDate": "2015-05-10 11:00AM"
+    },
+    {
+      "id": 2,
+      "name": "Utility Chair",
+      "category": "Chairs",
+      "description": {
+        "desc": "Better"
+      },
+      "price": 1000,
+      "postingDate": "2015-08-01 01:00PM"
+    },
+    {
+      "id": 3,
+      "name": "Glass Table",
+      "category": "Tables",
+      "description": {
+        "desc": "Best"
+      },
+      "price": 23000,
+      "postingDate": "2015-07-01 12:00AM"
+    },
+    {
+      "id": 4,
+      "name": "Baroque Table",
+      "category": "Tables",
+      "description": {
+        "desc": "Baroque"
+      },
+      "price": 17500,
+      "postingDate": "2019-01-01 12:00AM"
+    }
+  ],
+  "cart": [],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Seven",
+      "middleName": "Seven",
+      "lastName": "Seven",
+      "phone": "09777777777",
+      "address": "Earth",
+      "email": "mrseven@77global.biz",
+      "birthDate": "2077-07-07",
+      "interests": [
+        "Java",
+        "Angular"
+      ],
+      "username": "seven",
+      "password": "seven",
+      "cart": [],
+      "admin": false
+    }
+  ],
+  "orders": [
         {
           "user": 1,
           "id": 2,
