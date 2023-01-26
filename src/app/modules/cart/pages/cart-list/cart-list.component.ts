@@ -22,6 +22,7 @@ export class CartListComponent implements OnInit, OnDestroy {
 
   }
   
+
   ngOnInit(): void {
     this.cartService.getCartItems().subscribe(cartList => this.cartList = cartList);
     const sub = this.cartService.getSubTotal().subscribe(subTotal => this.subTotal = subTotal);
@@ -46,7 +47,7 @@ export class CartListComponent implements OnInit, OnDestroy {
     if (cartItem.id) {
       this.cartService.delete(cartItem.id).subscribe(cartItem => {
         if (cartItem) {
-          this.cartList = this.cartList.filter(item => item.id === cartItem.id);
+          this.cartList = this.cartList.filter(item => item.id !== cartItem.id);
         }
       });
     }
