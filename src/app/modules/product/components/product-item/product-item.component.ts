@@ -15,7 +15,7 @@ export class ProductItemComponent {
   qtyControl = new FormControl
 
   //addandminus
-  quantity: number = 0;
+  quantity: number = 1;
 
   addQuantity() {
     this.quantity += 1;
