@@ -5,9 +5,9 @@
         <li>Category: {{product.category}}</li>
         <li>Price: {{product.price}}</li>
 
-        <button type="button" id="min" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
+        <button type="button" id="min" [disabled]="quantity === 1" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
         <input type="text" [value]="quantity">
         <button type="button" id="max" (click)="addQuantity()"><i class="fa fa-plus">+</i></button><br><br>
-        <button type="button" id="add" (click)="addToCart()">Add to Cart</button>
+        <button type="button" id="add" [disabled]="quantity === 0"  (click)="addToCart()">Add to Cart</button>
     </ul>
 </div>

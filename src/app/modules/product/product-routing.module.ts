@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
+  // { path: ':term', component: SearchResultComponent },
   { path: '', component: DashboardComponent }
 ];
 
