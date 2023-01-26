@@ -1,0 +1,43 @@
+<div>
+    <form [formGroup]="profileForm" >
+        <div *ngIf="profileForm.disabled">
+            <button type="button" (click)="editProfile()">Edit</button>
+        </div>
+
+        <label for="username">Username:</label>
+        <input id="username" type="text" formControlName="username" /> <br>
+
+        <label for="firstName">First name:</label>
+        <input id="firstName" type="text" formControlName="firstName" /> <br>
+
+        <label for="middleName">Middle name:</label>
+        <input id="middleName" type="text" formControlName="middleName" /> <br>
+
+        <label for="lastName">Last name:</label>
+        <input id="lastName" type="text" formControlName="lastName" /> <br>
+
+        <label for="phone">Phone number:</label>
+        <input id="phone" type="text" formControlName="phone" /> <br>
+
+        <label for="email">Email Address:</label>
+        <input id="email" type="text" formControlName="email" /> <br>
+
+        <label for="birthDate">Birth date:</label>
+        <input id="birthDate" type="date" formControlName="birthDate" /> <br>
+
+        <label for="address">Shipping Address:</label>
+        <textarea id="address" type="text" formControlName="address"></textarea> <br>
+
+        <label for="interests">Interests</label>
+        <div formArrayName="interests" >
+            <div *ngFor="let _ of interests.controls; index as i">
+                <input id="interest-{{i}}" type="text" [formControlName]="i" />
+            </div>
+        </div>
+        <div *ngIf="profileForm.enabled">
+            <button type="button" (click)="saveChanges()">Save Changes</button>
+        </div>
+    </form>
+
+    {{profileForm.status}}
+</div>
