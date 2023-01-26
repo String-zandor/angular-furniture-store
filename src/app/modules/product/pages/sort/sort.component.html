@@ -1,22 +1,14 @@
 <p>FILTER:</p>
 
-
  <div class = "filter-by">
     
-        
         <p>Sort By<i class="ri-arrow-drop-down-fill"></i></p>
             <div class = "dropdown-content">
+                <li><input type ="radio" name="sortInputs" [checked]="true" (click)="sortByDateNewToOld()">Date, New to Old </li>
                 <li><input type ="radio" name="sortInputs" (click)="sortByDateOldToNew()">Date, Old to New </li>
-                <li><input type ="radio" name="sortInputs" (click)="sortByDateNewToOld()">Date, New to Old </li>
                 <li><input type ="radio" name="sortInputs" (click)="sortByNameAscending()">Name, A-Z </li>
                 <li><input type ="radio" name="sortInputs" (click)="sortByNameDescending()">Name, Z-A </li>
                 <li><input type ="radio" name="sortInputs" (click)="sortByPriceLowest()">Price, Low to High</li>
                 <li><input type ="radio" name="sortInputs" (click)="sortByPriceHighest()">Price, High to Low</li>
-
-
-                
-                    
             </div>
-       
 </div>
-

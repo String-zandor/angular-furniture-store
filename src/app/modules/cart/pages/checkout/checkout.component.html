@@ -1,0 +1,18 @@
+<p><strong>CHECKOUT - PAGE</strong></p>
+<br>
+<strong>Shipping Information</strong>
+<p>John Lazy   -   09376461119</p>
+<p>Lot 6 Mercury Street, Lourdes Subdivision, Quezon</p>
+<br>
+<p><strong>ITEMS</strong></p>
+<div *ngFor="let item of cartItems">
+    <app-checkout-item [cartItem]="item"></app-checkout-item>
+</div>
+<br>
+<p><strong>Order Summary</strong></p>
+<div>Subtotal: {{subtotal| currency:'PHP'}}</div>
+<div>Delivery Fee: {{deliveryFee| currency:'PHP'}}</div>
+<div> <strong>Total: {{totalAmmountToPay| currency:'PHP'}}</strong> </div>
+<br>
+<button (click)="proceedCheckout()">Place Order</button>
+
