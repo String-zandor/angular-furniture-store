@@ -12,6 +12,8 @@ import { CategoryItemComponent } from './components/filter-sub/category-item/cat
 import { ReactiveFormsModule } from '@angular/forms';
 import { PriceItemComponent } from './components/filter-sub/price-item/price-item.component';
 
+import {MatListModule} from '@angular/material/list'
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -26,7 +28,12 @@ import { PriceItemComponent } from './components/filter-sub/price-item/price-ite
     CommonModule,
     ProductRoutingModule,
     SharedModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule
+  ],
+  exports:[
+    SearchComponent
+
   ]
 })
 export class ProductModule { }
