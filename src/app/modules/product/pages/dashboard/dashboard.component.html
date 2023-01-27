@@ -1,6 +1,6 @@
 <div class="home-img"><img src="assets\img\img-1.png"></div>
 
-<!-- FILTER -->
+<!-- SORT -->
 <app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
 
 <!-- FILTER -->
@@ -10,6 +10,7 @@
 <br><br>
 
 <!-- PRODUCT LIST -->
+
 <div *ngIf="true">
     <h1>Products</h1>
 </div>
@@ -21,3 +22,4 @@
 <div *ngFor="let product of productsDisplay$ | async">
     <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
 </div>
+

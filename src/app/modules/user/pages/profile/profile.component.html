@@ -1,4 +1,7 @@
 <div>
+    <div>
+        <button type="button" (click)="logout()">Log-out</button>
+    </div>
     <form [formGroup]="profileForm" >
         <div *ngIf="profileForm.disabled">
             <button type="button" (click)="editProfile()">Edit</button>

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/cart.service';
 
@@ -21,12 +21,16 @@ export class CartListComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute) {
 
   }
-  
 
   ngOnInit(): void {
-    this.cartService.getCartItems().subscribe(cartList => this.cartList = cartList);
+    this.cartService.cartList$.subscribe(cart => this.cartList = cart);
     const sub = this.cartService.getSubTotal().subscribe(subTotal => this.subTotal = subTotal);
     this.subscriptions.push(sub);
+    this.updateCartDisplay();
+  }
+
+  updateCartDisplay(): void {
+    this.cartService.getCartItems().subscribe();
   }
 
   onAction(data: { cartItem: CartItem, action: string }): void {
@@ -47,7 +51,7 @@ export class CartListComponent implements OnInit, OnDestroy {
     if (cartItem.id) {
       this.cartService.delete(cartItem.id).subscribe(cartItem => {
         if (cartItem) {
-          this.cartList = this.cartList.filter(item => item.id !== cartItem.id);
+          this.updateCartDisplay();
         }
       });
     }

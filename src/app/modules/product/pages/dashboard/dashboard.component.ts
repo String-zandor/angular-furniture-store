@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
+    this.cartService.getCartItems().subscribe();
   }
 
   getProducts() {
@@ -60,8 +61,8 @@ export class DashboardComponent implements OnInit {
       } else {
         this.cartService.create(cartItem).subscribe();
       }
+      this.cartService.getCartItems().subscribe();
     });
-    
   }
 
 }
