@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, of, Subscription, switchMap } from 'rxjs';
+import { Subscription} from 'rxjs';
+import { Order } from 'src/app/modules/order/models/order';
 import { CartItem } from '../../models/cart-item';
-import { OrderItem } from '../../models/order-item';
 import { CartService } from '../../services/cart.service';
 import { OrderService } from '../../services/order.service';
 
@@ -17,11 +17,13 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     private orderService: OrderService,
     private router: Router
   ) { }
-
+  userName:string ='John Lazy'
+  userContact:string ='09454278841'
+  userAddress:string ='Lot 6 Mercury Street, Lourdes Subdivision, Quezon'
   cartItems: CartItem[] = [];
   totalAmmountToPay!: number;
   subtotal!: number;
-  deliveryFee: number = 100;
+  deliveryfee: number = 100;
   subscriptions: Subscription[] = [];
   date = new Date();
 
@@ -50,7 +52,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
       subtotal += amount.product.price * amount.qty;
     }
     this.subtotal = subtotal;
-    this.totalAmmountToPay = subtotal + this.deliveryFee;
+    this.totalAmmountToPay = subtotal + this.deliveryfee;
   }
 
   proceedCheckout() {
@@ -67,15 +69,16 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.subscriptions.push(sub);
   }
   saveToOrderDataBase() {
-    let orderItem: OrderItem = {
+    let order: Order = {
+      user:1,
       status: 'pending',
       subtotal: this.subtotal,
-      deliveryFee: this.deliveryFee,
-      totalPrice: this.totalAmmountToPay,
+      deliveryfee: this.deliveryfee,
+      total: this.totalAmmountToPay,
       orderDate: this.date.toJSON(),
       cart: this.cartItems,
     };
-    let sub: Subscription = this.orderService.create(orderItem).subscribe();
+    let sub: Subscription = this.orderService.create(order).subscribe();
     this.subscriptions.push(sub);
   }
 

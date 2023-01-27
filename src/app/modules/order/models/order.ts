@@ -2,7 +2,7 @@ import { CartItem } from "../../cart/models/cart-item";
 
 export interface Order {
     user: number,
-    id: number,
+    id?: number,
     status: string,
     subtotal: number,
     deliveryfee: number,
