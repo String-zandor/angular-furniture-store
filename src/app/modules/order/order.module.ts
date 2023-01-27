@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PendingOrdersComponent } from './pending-orders/pending-orders.component';
+import { PendingOrdersComponent } from './pages/pending-orders/pending-orders.component';
 import { OrderRoutingModule } from './order-routing.module';
+import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 
 
 
 @NgModule({
   declarations: [
-    PendingOrdersComponent
+    PendingOrdersComponent,
+    OrderDetailsComponent
   ],
   imports: [
     CommonModule,
