@@ -15,6 +15,7 @@ const routes: Routes = [
       { path: 'products/edit/:id', component: AdminProductFormComponent },
       { path: 'products/new', component: AdminProductFormComponent },
       { path: 'products', component: AdminProductListComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
       // { path: 'users', component: }
     ]
   },

@@ -12,5 +12,12 @@ export interface User {
     interests: string[],
     username: string,
     password: string,
-    admin: boolean
+    active: boolean
+}
+
+export interface Admin {
+    id?: number,
+    firstName: string,
+    middleName: string,
+    lastName: string
 }

@@ -2,6 +2,11 @@
     <div>
         <button type="button" (click)="logout()">Log-out</button>
     </div>
+<br>
+    <div>
+        <a routerLink="/orders">Orders</a>
+    </div>
+<br>
     <form [formGroup]="profileForm" >
         <div *ngIf="profileForm.disabled">
             <button type="button" (click)="editProfile()">Edit</button>

@@ -2,9 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription} from 'rxjs';
 import { Order } from 'src/app/modules/order/models/order';
+import { OrderService } from 'src/app/modules/order/services/order.service';
+import { AuthService } from 'src/app/modules/user/services/auth.service';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/cart.service';
-import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -15,7 +16,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   constructor(
     private cartService: CartService,
     private orderService: OrderService,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) { }
   userName:string ='John Lazy'
   userContact:string ='09454278841'
@@ -29,6 +31,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadCartItems();
+
+    // this.auth.user$
   }
   ngOnDestroy(): void {
     for (let subs of this.subscriptions) {
