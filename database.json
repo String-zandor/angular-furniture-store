@@ -4,11 +4,15 @@
       "id": 1,
       "name": "Comfy Bed",
       "category": "Beds",
-      "price": 12000,
+      "color": "Vintage White",
       "description": {
-        "desc": "Good"
+        "desc": "Good",
+        "dimensions": "6ft x 6ft",
+        "material": "memory foam",
+        "weight": "10kg"
       },
-      "postingDate": "2015-05-10 11:00AM"
+      "price": 12000,
+      "postingDate": "\"2023-01-26T13:38:12.790Z\""
     },
     {
       "id": 2,
@@ -40,6 +44,20 @@
       },
       "price": 17500,
       "postingDate": "2019-01-01 12:00AM"
+    },
+    {
+      "id": 5,
+      "name": "Chintzy Chaise Lounge",
+      "category": "Chairs",
+      "color": "Pink",
+      "description": {
+        "desc": "Floral",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 17000,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
     }
   ],
   "cart": [],
