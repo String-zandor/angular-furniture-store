@@ -9,3 +9,25 @@ img{
       width: 100%;
     }
   }
+
+h2{
+  margin: 10px;
+  padding: 10px;
+  color: rgb(166, 191, 172, 0.5);
+}  
+
+.filter{
+  display: flex;
+  justify-content: left;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+.filter .category-price{
+  max-width: 100%;
+  width: 1000px
+}
+
+.filter .sort-by{
+  margin: 10px;
+}

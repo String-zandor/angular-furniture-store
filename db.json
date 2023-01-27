@@ -1,0 +1,112 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Comfy Bed",
+      "category": "Beds",
+      "price": 12000,
+      "description": {
+        "desc": "Good"
+      },
+      "postingDate": "2015-05-10 11:00AM"
+    },
+    {
+      "id": 2,
+      "srcUrl": "",
+      "name": "Utility Chair",
+      "category": "Chairs",
+      "description": {
+        "desc": "Better"
+      },
+      "price": 1000,
+      "postingDate": "2015-08-01 01:00PM"
+    },
+    {
+      "id": 3,
+      "name": "Glass Table",
+      "category": "Tables",
+      "description": {
+        "desc": "Best"
+      },
+      "price": 23000,
+      "postingDate": "2015-07-01 12:00AM"
+    },
+    {
+      "id": 4,
+      "name": "Baroque Table",
+      "category": "Tables",
+      "description": {
+        "desc": "Baroque"
+      },
+      "price": 17500,
+      "postingDate": "2019-01-01 12:00AM"
+    }
+  ],
+  "cart": [],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Seven",
+      "middleName": "Seven",
+      "lastName": "Seven",
+      "phone": "09777777777",
+      "address": "Earth",
+      "email": "mrseven@77global.biz",
+      "birthDate": "2077-07-07",
+      "interests": [
+        "Java",
+        "Angular"
+      ],
+      "username": "seven",
+      "password": "seven",
+      "cart": [],
+      "admin": false
+    }
+  ],
+  "orders": [
+    {
+      "user": 1,
+      "id": 2,
+      "status": "pending",
+      "subtotal": 3987,
+      "deliveryfee": 343443,
+      "total": 8932174,
+      "orderDate": "2023-01-25T08:40:15.377Z",
+      "cart": [
+        {
+          "id": 1,
+          "qty": 3,
+          "product": {
+            "id": 3,
+            "name": "Glass Table",
+            "category": "Tables",
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          }
+        },
+        {
+          "id": 2,
+          "qty": 1,
+          "product": {
+            "id": 2,
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          }
+        },
+        {
+          "id": 3,
+          "qty": 5,
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "price": 12000,
+            "postingDate": "2015-05-10 11:00AM"
+          }
+        }
+      ]
+    }
+  ]
+}
