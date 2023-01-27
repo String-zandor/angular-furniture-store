@@ -12,7 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PriceItemComponent } from './components/filter-sub/price-item/price-item.component';
 
 import {MatListModule} from '@angular/material/list';
-import { SearchResultComponent } from './pages/search-result/search-result.component'
+import { SearchResultComponent } from './pages/search-result/search-result.component';
+import { AdminProductItemComponent } from './components/admin-product-item/admin-product-item.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SearchResultComponent } from './pages/search-result/search-result.compo
     FilterComponent,
     CategoryItemComponent,
     PriceItemComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    AdminDashboardComponent,
+    AdminProductItemComponent,
   ],
   imports: [
     CommonModule,
