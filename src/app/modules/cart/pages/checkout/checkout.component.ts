@@ -56,17 +56,22 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   proceedCheckout() {
     if (this.cartItems.length > 0) {
       this.saveToOrderDataBase();
-      this.cartItems.forEach((item: CartItem) => {
-        //TEST
-        const del = () => {
-          this.deleteCartItem(item.id as number)
+      // this.cartItems.forEach((item: CartItem) => {
+      //   this.deleteCartItem(item.id as number)
+      // });
+      for (let i = 0; i < this.cartItems.length; i++) {
+        const item = this.cartItems[i];
+        if (i === this.cartItems.length - 1) {
+          this.cartService.delete(item.id as number).subscribe(() => {
+            this.cartService.getCartItems().subscribe(() => this.redirectToHome());
+          });
+        } else {
+          this.deleteCartItem(item.id as number);
         }
-        setTimeout(del, 500);
-        // this.deleteCartItem(item.id as number) --- ORIGINAL code
-      });
-      this.redirectToHome()
+      }
     }
   }
+
   deleteCartItem(id: number) {
     //test
     console.log('inside deleteCartItem')
@@ -86,7 +91,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.subscriptions.push(sub);
   }
 
-  redirectToHome(){ /**redirect to HOME FOR NOW */
+  redirectToHome() { /**redirect to HOME FOR NOW */
     this.router.navigate(['home'])
   }
 }
