@@ -14,10 +14,16 @@
 <br><br>
 
 <!-- PRODUCT LIST -->
-PRODUCTS
+<div *ngIf="true">
+    <h1>Products</h1>
+</div>
+
+<div *ngIf="false">
+    <h1>There are no products to display.</h1>
+</div>
+
 <div *ngFor="let product of productsDisplay$ | async">
     <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
 </div>
-
 
 <app-footer></app-footer>
