@@ -1,0 +1,49 @@
+.product-container{
+    display: flex;
+}
+
+// .product-list{
+//     display: flex;
+// }
+// .product-container{
+//     background-color: rgb(144, 144, 144);
+//     // padding: 20px;
+//     display: inline-block;
+//     max-width: 100%;
+
+//     max-width: 100%;
+// }
+// .product-container .img-container{
+//     background-color: green;
+    
+// }
+
+// .product-container .icons{
+   
+//     position: absolute;
+//     top:0; left:0; right: 0;
+//     background-color: aqua;
+//     z-index: 5;
+//     transform: translateY(-100%);
+//     padding: 10px;
+    
+// }
+
+// .product-container:hover .icons{
+//     transform: translateY(50%);
+// }
+
+// .product-container .icons a{
+//     color:white;
+//     /* margin-top: 500px; */
+//     font-size: 2rem;
+//     padding:5rem 1.5rem;
+// }
+
+// .product-container .content{
+//     background-color: bisque;
+// }
+
+// .product-container .add-quantity{
+//     background-color: pink;
+// }

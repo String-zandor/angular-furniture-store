@@ -16,11 +16,11 @@
 <br><br>
 
 <!-- PRODUCT LIST -->
-PRODUCTS
 
-<div *ngFor="let product of productsDisplay$ | async">
+
+<ng-container *ngFor="let product of productsDisplay$ | async">
     <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
-</div>
+</ng-container>
 
 
 <app-footer></app-footer>
