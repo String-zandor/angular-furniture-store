@@ -63,6 +63,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
     return this.profileForm.get('interests') as FormArray;
   }
 
+  deleteInterest(i: number): void {
+    this.interests.removeAt(i);
+  }
+
+  addInterest(): void {
+    this.interests.push(this.fb.control(''));
+  }
+
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }
