@@ -60,6 +60,10 @@ export class CartListComponent implements OnInit, OnDestroy {
     this.router.navigate(['checkout'], { relativeTo: this.route });
   }
 
+  goToHome(): void {
+    this.router.navigate(['/home']);
+  }
+
   ngOnDestroy(): void {
     for (const sub of this.subscriptions) {
       sub.unsubscribe();

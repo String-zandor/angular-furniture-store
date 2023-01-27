@@ -18,6 +18,7 @@ import { AdminProductComponent } from './components/admin-product/admin-product.
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminProductFormComponent } from './pages/admin-product-form/admin-product-form.component'
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
