@@ -6,6 +6,7 @@ import { OrderService } from 'src/app/modules/order/services/order.service';
 import { AuthService } from 'src/app/modules/user/services/auth.service';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/cart.service';
+import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
   selector: 'app-checkout',
@@ -17,7 +18,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     private cartService: CartService,
     private orderService: OrderService,
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private check: CheckoutService
   ) { }
   userName:string ='John Lazy'
   userContact:string ='09454278841'
@@ -38,6 +40,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     for (let subs of this.subscriptions) {
       subs.unsubscribe();
     }
+    this.check.checkout(false);
   }
 
   loadCartItems(): void {

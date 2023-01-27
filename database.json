@@ -92,38 +92,6 @@
       },
       "qty": 1,
       "id": 3
-    },
-    {
-      "product": {
-        "id": 4,
-        "srcUrl": "assets/products/1.png",
-        "name": "Baroque Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Baroque"
-        },
-        "price": 17500,
-        "postingDate": "2019-01-01 12:00AM"
-      },
-      "qty": 1,
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "product": {
-        "id": 2,
-        "srcUrl": "assets/products/3.png",
-        "name": "Utility Chair",
-        "category": "Chairs",
-        "description": {
-          "desc": "Better"
-        },
-        "price": 1000,
-        "postingDate": "2015-08-01 01:00PM"
-      },
-      "qty": 1,
-      "userId": 1,
-      "id": 5
     }
   ],
   "users": [
@@ -1940,6 +1908,95 @@
         }
       ],
       "id": 123221
+    },
+    {
+      "user": 1,
+      "status": "pending",
+      "subtotal": 23500,
+      "deliveryfee": 100,
+      "total": 23600,
+      "orderDate": "2023-01-27T14:48:46.777Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": "assets/products/1.png",
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 4
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": "assets/products/3.png",
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 6,
+          "userId": 1,
+          "id": 5
+        }
+      ],
+      "id": 123222
+    },
+    {
+      "user": 1,
+      "status": "pending",
+      "subtotal": 40000,
+      "deliveryfee": 100,
+      "total": 40100,
+      "orderDate": "2023-01-27T15:15:19.252Z",
+      "cart": [
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": "assets/products/4.png",
+            "name": "Glass Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 4
+        },
+        {
+          "product": {
+            "id": 5,
+            "name": "Chintzy Chaise Lounge",
+            "category": "Chairs",
+            "color": "Pink",
+            "description": {
+              "desc": "Floral",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 17000,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 5
+        }
+      ],
+      "id": 123223
     }
   ]
 }

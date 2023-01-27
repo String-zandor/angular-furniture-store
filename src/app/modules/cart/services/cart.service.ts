@@ -71,10 +71,6 @@ export class CartService implements OnDestroy {
     return this.http.delete<CartItem>(`${this.serverUrl}/cart/${id}`);
   }
 
-  deleteAll() {
-    
-  }
-
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }
