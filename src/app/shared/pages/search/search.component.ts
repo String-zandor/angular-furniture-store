@@ -13,33 +13,20 @@ import { Product } from '../../../modules/product/models/product';
 })
 export class SearchComponent implements OnInit {
  
-  
-  @Output () products = new EventEmitter<Product[]>()
-  @Input () allProducts$?: Observable<Product[]>;
-  
+  @Input() allProducts$?: Observable<Product>
+  allProducts?: string
+
   searchInput = new FormControl('');
   result: Product[] | undefined
 
-  constructor(
-    private productService: ProductService,
-    private router: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
+
   }
 
-  searchProduct(){
-    // console.log(this.searchInput.value?.toLowerCase() as string)
-
-    // this.productService.getProducts().subscribe((product: Product[])=>{
-    //   this.result = product.filter((product:Product) => product.name.toLowerCase().includes(this.searchInput.value?.toLowerCase() as string) ||
-    //   product.category.toLowerCase().includes(this.searchInput.value?.toLowerCase() as string) || product.description.desc.toLowerCase().includes(this.searchInput.value?.toLowerCase() as string) )
-    //   console.log(this.result)
-    //   this.products.emit(this.result)
-      
-    // })
-
-    this.router.navigate([`search/${this.searchInput}`]);
-
+  onSearch(){
+    this.router.navigate([`search/${this.searchInput.value}`]);
   }
 }

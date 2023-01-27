@@ -1,6 +1,8 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { CartItem } from 'src/app/modules/cart/models/cart-item';
+import { CartService } from 'src/app/modules/cart/services/cart.service';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -11,30 +13,46 @@ import { ProductService } from '../../services/product.service';
 })
 export class SearchResultComponent implements OnInit {
 
-  // @Output() products = new EventEmitter<Product[]>()
-  // @Input() allProducts$?: Observable<Product[]>;
-  result: Product[] | undefined
-  searchTerm: string = '';
+  products$?: Observable<Product[]>
+  results?: Observable<Product[]>
+  searchTerm: any;
+  resultItems?: Product[] 
 
   constructor(
     private productService: ProductService,
-    private route: ActivatedRoute) { }
+    private cartService: CartService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.products$ = this.productService.getProducts()
     const term = this.route.snapshot.paramMap.get('term');
-    this.searchTerm = (term) ? term : '';
-    // if no term, redirect to home
+    this.searchTerm = (term?.trim());
+    this.searchTerm ? this.searchProduct(this.searchTerm) : this.router.navigate(['/home']);
+
+    console.log(this.resultItems)
+
   }
 
-  // searchProduct() {
-  //   // console.log(this.searchInput.value?.toLowerCase() as string)
+  searchProduct(keyword: any) {
 
-  //   this.productService.getProducts().subscribe((product: Product[]) => {
-  //     this.result = product.filter((product: Product) => product.name.toLowerCase().includes(this.searchInput.value?.toLowerCase() as string) ||
-  //       product.category.toLowerCase().includes(this.searchInput.value?.toLowerCase() as string) || product.description.desc.toLowerCase().includes(this.searchInput.value?.toLowerCase() as string))
-  //     console.log(this.result)
+    this.products$!.subscribe((product: Product[]) => {
+      this.resultItems = product.filter((product: Product) => product.name.toLowerCase().includes(keyword.toLowerCase()) || product.category.toLowerCase().includes(keyword.toLowerCase()) ||
+        product.description.desc.toLowerCase().includes(keyword.toLowerCase())
+      )
+      this.results = of(this.resultItems)
+    })
+  }
 
-  //   })
+//   addToCart(cartItem: CartItem): void {
+//     this.cartService.getCartItemOfProduct(cartItem.product.id).subscribe((item) => {
+//       if (item) {
+//         item.qty += cartItem.qty;
+//         this.cartService.update(item).subscribe();
+//       } else {
+//         this.cartService.create(cartItem).subscribe();
+//       }
+//     });
+// 
 
-  // }
 }
