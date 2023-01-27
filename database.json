@@ -109,21 +109,6 @@
       "qty": 1,
       "userId": 1,
       "id": 2
-    },
-    {
-      "product": {
-        "id": 4,
-        "srcUrl": "assets/products/1.png",
-        "name": "Baroque Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Baroque"
-        },
-        "price": 17500,
-        "postingDate": "2019-01-01 12:00AM"
-      },
-      "qty": 3,
-      "id": 3
     }
   ],
   "users": [
@@ -1826,6 +1811,77 @@
         }
       ],
       "id": 123218
+    },
+    {
+      "user": 1,
+      "status": "pending",
+      "subtotal": 76500,
+      "deliveryfee": 100,
+      "total": 76600,
+      "orderDate": "2023-01-27T09:44:20.866Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": "assets/products/1.png",
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 3,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 1,
+            "srcUrl": "assets/products/1.png",
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "color": "Vintage White",
+            "description": {
+              "desc": "Good",
+              "dimensions": "6ft x 6ft",
+              "material": "memory foam",
+              "weight": "10kg"
+            },
+            "price": 12000,
+            "postingDate": "\"2023-01-26T13:38:12.790Z\""
+          },
+          "qty": 2,
+          "id": 4
+        }
+      ],
+      "id": 123219
+    },
+    {
+      "user": 1,
+      "status": "pending",
+      "subtotal": 17500,
+      "deliveryfee": 100,
+      "total": 17600,
+      "orderDate": "2023-01-27T09:45:55.010Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": "assets/products/1.png",
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "id": 3
+        }
+      ],
+      "id": 123220
     }
   ]
 }

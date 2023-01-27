@@ -40,11 +40,15 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
             }
             let found = this.orderItems.find(items => items.productId === item.productId)
             if(found){
-              this.orderItems[item.productId].productQty+= item.productQty; 
+              for(let i = 0; i < this.orderItems.length; i++){
+                if(this.orderItems[i].productId == item.productId){
+                  this.orderItems[i].productQty += item.productQty
+                  break
+                }
+              }
             }else{
               this.orderItems.push(item);
             }
-            console.log(item);
           })
         })
         this.orderItems.sort((a:OrderItem, b:OrderItem)=>{
