@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div class="home-img"><img src="assets\img\img-1.png"></div>
 
 <div class = "filter">
@@ -17,10 +16,15 @@
 
 <!-- PRODUCT LIST -->
 
+<div *ngIf="true">
+    <h1>Products</h1>
+</div>
+
+<div *ngIf="false">
+    <h1>There are no products to display.</h1>
+</div>
 
 <ng-container *ngFor="let product of productsDisplay$ | async">
     <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
 </ng-container>
 
-
-<app-footer></app-footer>

@@ -17,8 +17,13 @@ import { PriceItemComponent } from './components/filter-sub/price-item/price-ite
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 
-//
-import { SearchResultComponent } from './pages/search-result/search-result.component'
+import { SearchResultComponent } from './pages/search-result/search-result.component';
+import { AdminProductItemComponent } from './components/admin-product-item/admin-product-item.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { AdminProductListComponent } from './pages/admin-product-list/admin-product-list.component';
+import { AdminProductComponent } from './components/admin-product/admin-product.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminProductFormComponent } from './pages/admin-product-form/admin-product-form.component'
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
@@ -29,7 +34,13 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FilterComponent,
     CategoryItemComponent,
     PriceItemComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    AdminDashboardComponent,
+    AdminProductItemComponent,
+    AdminProductListComponent,
+    AdminProductComponent,
+    AdminComponent,
+    AdminProductFormComponent
   ],
   imports: [
     CommonModule,

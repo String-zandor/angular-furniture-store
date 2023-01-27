@@ -1,4 +1,7 @@
 <div>
+    <div>
+        <button type="button" (click)="logout()">Log-out</button>
+    </div>
     <form [formGroup]="profileForm" >
         <div *ngIf="profileForm.disabled">
             <button type="button" (click)="editProfile()">Edit</button>
@@ -32,12 +35,18 @@
         <div formArrayName="interests" >
             <div *ngFor="let _ of interests.controls; index as i">
                 <input id="interest-{{i}}" type="text" [formControlName]="i" />
+
+                <span *ngIf="profileForm.enabled">
+                    <button type="button" (click)="deleteInterest(i)" >Delete</button>
+                </span>
+            </div>
+            <div *ngIf="profileForm.enabled">
+                <button type="button" (click)="addInterest()" >Add</button>
             </div>
         </div>
+
         <div *ngIf="profileForm.enabled">
             <button type="button" (click)="saveChanges()">Save Changes</button>
         </div>
     </form>
-
-    {{profileForm.status}}
 </div>

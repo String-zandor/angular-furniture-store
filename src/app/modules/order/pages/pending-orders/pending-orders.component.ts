@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Order } from '../models/order';
-import { OrderService } from '../services/order.service';
+import { CartItem } from 'src/app/modules/cart/models/cart-item';
+import { Product } from 'src/app/modules/product/models/product';
+import { Order } from '../../models/order';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-pending-orders',
@@ -11,21 +14,23 @@ import { OrderService } from '../services/order.service';
 export class PendingOrdersComponent implements OnInit {
 
   orders: Order[] = [];
+  items: Product[] = [];
+  cart: CartItem[] = [];
+
   td = document.createElement('td');
 
-  constructor(private orderService: OrderService) {
+  constructor(private orderService: OrderService,
+    private router: Router) {
 
   }
 
 
   ngOnInit(): void {
 
-
-    // this.orderService.getOrders(1).subscribe(order => this.orderss = order)
-    // console.log(this.orderss)
-
     this.orderService.getOrders(1).subscribe(order => {
       this.orders = order
+
+      console.log(this.cart)
       this.showOrders()
 
     }
@@ -39,13 +44,13 @@ export class PendingOrdersComponent implements OnInit {
 
     this.orders.forEach(order => {
       this.showOrderNumber(order.id)
-      order.cart.forEach(item => {
-        this.showItems(item.product.name, item.qty)
-      })
+      // order.cart.forEach(item =>{
+      //   this.showItems(item.product.name, item.qty) 
+      // })
       this.showStatus(order.status)
       this.showTotal(order.total, order.cart.map(item => item.qty).reduce((partialSum, a) => partialSum + a, 0))
       this.showDateOrdered(order.orderDate)
-      this.view()
+      this.view(order.id)
     })
 
   }
@@ -59,7 +64,7 @@ export class PendingOrdersComponent implements OnInit {
 
   showTotal(total: any, qty: any) {
     let tr = document.createElement('tr');
-    tr.innerText = "PHP " + total + " for " + qty + " items"
+    tr.innerText = "PHP " + total
     document.getElementById('total')?.appendChild(tr)
   }
 
@@ -76,14 +81,17 @@ export class PendingOrdersComponent implements OnInit {
   }
 
   showItems(item: any, qty: any) {
-    let tr = document.createElement('tr');
+    let tr = document.createElement('div');
     tr.innerText = item + "   x" + qty
-    document.getElementById('itemName')?.appendChild(tr)
+    document.getElementById('items')?.appendChild(tr)
   }
 
-  view() {
+  view(orderId: any) {
     let tr = document.createElement('tr');
-    tr.innerText = "view ???????"
+    tr.innerText = "view order"
     document.getElementById('view')?.appendChild(tr)
+    document.getElementById('view')!.onclick = () => {
+      this.router.navigate([`orders/${orderId}`])
   }
+}
 }

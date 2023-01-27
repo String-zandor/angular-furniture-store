@@ -19,6 +19,9 @@ import { CheckoutItemComponent } from './components/checkout-item/checkout-item.
     CommonModule,
     CartRoutingModule,
     ReactiveFormsModule
+  ],
+  exports:[
+    // CartModule
   ]
 })
 export class CartModule { }

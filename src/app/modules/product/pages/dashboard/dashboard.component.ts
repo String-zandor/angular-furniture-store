@@ -4,6 +4,7 @@ import { CartService } from 'src/app/modules/cart/services/cart.service';
 import { CartItem } from '../../../cart/models/cart-item';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
+import { AdminProductComponent } from '../admin-product/admin-product.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,6 +30,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
+    this.cartService.getCartItems().subscribe();
   }
 
   getProducts() {
@@ -59,8 +61,8 @@ export class DashboardComponent implements OnInit {
       } else {
         this.cartService.create(cartItem).subscribe();
       }
+      this.cartService.getCartItems().subscribe();
     });
-    
   }
 
 }

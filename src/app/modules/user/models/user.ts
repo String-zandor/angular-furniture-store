@@ -12,6 +12,5 @@ export interface User {
     interests: string[],
     username: string,
     password: string,
-    cart: CartItem[],
     admin: boolean
 }
