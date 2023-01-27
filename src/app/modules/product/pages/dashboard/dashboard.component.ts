@@ -4,6 +4,7 @@ import { CartService } from 'src/app/modules/cart/services/cart.service';
 import { CartItem } from '../../../cart/models/cart-item';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
+import { AdminProductComponent } from '../admin-product/admin-product.component';
 
 @Component({
   selector: 'app-dashboard',
