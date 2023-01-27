@@ -2,7 +2,7 @@
 
 <header>
     
-    <a href = 'home'><img src ="assets\img\grey-space-logo.png"></a>
+    <a routerLink="/home" routerLinkActive="router-link-active" ><img src ="assets\img\grey-space-logo.png"></a>
     <div>
         <app-search></app-search>
     </div>
@@ -13,15 +13,10 @@
 
     </form> -->
 
-    
-
-    
-
-
     <div class = "main">
         <div id = "search-button"><i class="ri-search-line"></i></div>
-        <a routerLink= "user"><i class="ri-user-line"></i></a>
-        <a href="#"><i matBadge="0" matBadgeColor="warn" class="ri-shopping-cart-line"></i></a>
+        <a routerLink="/profile"><i class="ri-user-line"></i></a>
+        <a routerLink="/cart"><i matBadge="{{cartTotal$ | async}}" matBadgeColor="warn" class="ri-shopping-cart-line"></i></a>
         <div class = "ri-menu-line" id = "menu-icon"></div>
     </div>
 </header>

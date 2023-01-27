@@ -42,7 +42,69 @@
       "postingDate": "2019-01-01 12:00AM"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "product": {
+        "id": 4,
+        "name": "Baroque Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Baroque"
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": "",
+        "name": "Utility Chair",
+        "category": "Chairs",
+        "description": {
+          "desc": "Better"
+        },
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 1,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Glass Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Best"
+        },
+        "price": 23000,
+        "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Comfy Bed",
+        "category": "Beds",
+        "price": 12000,
+        "description": {
+          "desc": "Good"
+        },
+        "postingDate": "2015-05-10 11:00AM"
+      },
+      "qty": 1,
+      "userId": 1,
+      "id": 4
+    }
+  ],
   "users": [
     {
       "id": 1,
@@ -58,9 +120,7 @@
         "Angular"
       ],
       "username": "seven",
-      "password": "seven",
-      "cart": [],
-      "admin": false
+      "password": "seven"
     }
   ],
   "orders": [
@@ -107,6 +167,468 @@
           }
         }
       ]
+    },
+    {
+      "status": "pending",
+      "subtotal": 85000,
+      "deliveryFee": 100,
+      "totalPrice": 85100,
+      "orderDate": "2023-01-27T01:33:06.907Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 2,
+          "userId": 1,
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": "",
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 3,
+          "userId": 1,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 3,
+            "name": "Glass Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "price": 12000,
+            "description": {
+              "desc": "Good"
+            },
+            "postingDate": "2015-05-10 11:00AM"
+          },
+          "qty": 2,
+          "userId": 1,
+          "id": 4
+        }
+      ],
+      "id": 3
+    },
+    {
+      "status": "pending",
+      "subtotal": 54500,
+      "deliveryFee": 100,
+      "totalPrice": 54600,
+      "orderDate": "2023-01-27T01:52:10.396Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 3,
+          "userId": 1,
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": "",
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 2,
+          "userId": 1,
+          "id": 2
+        }
+      ],
+      "id": 4
+    },
+    {
+      "status": "pending",
+      "subtotal": 48000,
+      "deliveryFee": 100,
+      "totalPrice": 48100,
+      "orderDate": "2023-01-27T02:14:44.303Z",
+      "cart": [
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "price": 12000,
+            "description": {
+              "desc": "Good"
+            },
+            "postingDate": "2015-05-10 11:00AM"
+          },
+          "qty": 2,
+          "userId": 1,
+          "id": 4
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": "",
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 5
+        },
+        {
+          "product": {
+            "id": 3,
+            "name": "Glass Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 6
+        }
+      ],
+      "id": 5
+    },
+    {
+      "status": "pending",
+      "subtotal": 160500,
+      "deliveryFee": 100,
+      "totalPrice": 160600,
+      "orderDate": "2023-01-27T02:16:47.391Z",
+      "cart": [
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "price": 12000,
+            "description": {
+              "desc": "Good"
+            },
+            "postingDate": "2015-05-10 11:00AM"
+          },
+          "qty": 3,
+          "userId": 1,
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 3,
+            "name": "Glass Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 3,
+          "userId": 1,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": "",
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 3,
+          "userId": 1,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 4,
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 3,
+          "userId": 1,
+          "id": 4
+        }
+      ],
+      "id": 6
+    },
+    {
+      "status": "pending",
+      "subtotal": 113500,
+      "deliveryFee": 100,
+      "totalPrice": 113600,
+      "orderDate": "2023-01-27T02:23:48.874Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 3,
+          "userId": 1,
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": "",
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 3,
+          "userId": 1,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 3,
+            "name": "Glass Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 2,
+          "userId": 1,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "price": 12000,
+            "description": {
+              "desc": "Good"
+            },
+            "postingDate": "2015-05-10 11:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 4
+        }
+      ],
+      "id": 7
+    },
+    {
+      "status": "pending",
+      "subtotal": 58000,
+      "deliveryFee": 100,
+      "totalPrice": 58100,
+      "orderDate": "2023-01-27T02:24:25.635Z",
+      "cart": [
+        {
+          "product": {
+            "id": 3,
+            "name": "Glass Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 2,
+          "userId": 1,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "price": 12000,
+            "description": {
+              "desc": "Good"
+            },
+            "postingDate": "2015-05-10 11:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 4
+        }
+      ],
+      "id": 8
+    },
+    {
+      "status": "pending",
+      "subtotal": 18500,
+      "deliveryFee": 100,
+      "totalPrice": 18600,
+      "orderDate": "2023-01-27T02:25:50.952Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": "",
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 2
+        }
+      ],
+      "id": 9
+    },
+    {
+      "status": "pending",
+      "subtotal": 53500,
+      "deliveryFee": 100,
+      "totalPrice": 53600,
+      "orderDate": "2023-01-27T02:26:33.563Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": "",
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 3,
+            "name": "Glass Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "price": 12000,
+            "description": {
+              "desc": "Good"
+            },
+            "postingDate": "2015-05-10 11:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 4
+        }
+      ],
+      "id": 10
     }
   ]
 }

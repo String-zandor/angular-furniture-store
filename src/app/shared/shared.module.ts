@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { SearchComponent } from './pages/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     imports: [
         CommonModule,
         MatBadgeModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RouterModule
     ]
 })
 export class SharedModule { }

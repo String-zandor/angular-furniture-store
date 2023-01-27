@@ -1,4 +1,7 @@
 <div>
+    <div>
+        <button type="button" (click)="logout()">Log-out</button>
+    </div>
     <form [formGroup]="profileForm" >
         <div *ngIf="profileForm.disabled">
             <button type="button" (click)="editProfile()">Edit</button>
@@ -38,6 +41,4 @@
             <button type="button" (click)="saveChanges()">Save Changes</button>
         </div>
     </form>
-
-    {{profileForm.status}}
 </div>

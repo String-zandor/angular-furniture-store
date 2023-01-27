@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, of, Subscription, switchMap } from 'rxjs';
+import { catchError, debounce, debounceTime, delay, of, Subscription, switchMap } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 import { OrderItem } from '../../models/order-item';
 import { CartService } from '../../services/cart.service';
@@ -57,12 +57,19 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     if (this.cartItems.length > 0) {
       this.saveToOrderDataBase();
       this.cartItems.forEach((item: CartItem) => {
-        this.deleteCartItem(item.id as number);
+        //TEST
+        const del = () => {
+          this.deleteCartItem(item.id as number)
+        }
+        setTimeout(del, 500);
+        // this.deleteCartItem(item.id as number) --- ORIGINAL code
       });
       this.redirectToHome()
     }
   }
   deleteCartItem(id: number) {
+    //test
+    console.log('inside deleteCartItem')
     let sub: Subscription = this.cartService.delete(id).subscribe();
     this.subscriptions.push(sub);
   }
