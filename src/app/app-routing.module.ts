@@ -4,13 +4,11 @@ import { AdminProductComponent } from './modules/product/pages/admin-product/adm
 import { SearchResultComponent } from './modules/product/pages/search-result/search-result.component';
 
 const routes: Routes = [
+  { path: 'search/:term', component: SearchResultComponent },
   { path: 'orders', loadChildren: () => import('./modules/order/order.module').then (m => m.OrderModule) },
   { path: 'profile', loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) },
   { path: 'cart', loadChildren: () => import('./modules/cart/cart.module').then(m => m.CartModule) },
-  { path: 'home', loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
-  { path: 'search/:term', component: SearchResultComponent }, //test
-  { path: 'admin-product', component:AdminProductComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) }
 ];
 
 @NgModule({

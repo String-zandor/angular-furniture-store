@@ -4,7 +4,6 @@ export interface Product {
     name: string,
     category: string,
     color: string,
-
     description: {
         desc: string,
         dimensions: string,

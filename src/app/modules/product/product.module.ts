@@ -13,7 +13,11 @@ import { PriceItemComponent } from './components/filter-sub/price-item/price-ite
 
 import {MatListModule} from '@angular/material/list';
 import { SearchResultComponent } from './pages/search-result/search-result.component';
-import { AdminProductComponent } from './pages/admin-product/admin-product.component'
+import { AdminProductListComponent } from './pages/admin-product-list/admin-product-list.component';
+import { AdminProductComponent } from './components/admin-product/admin-product.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminProductFormComponent } from './pages/admin-product-form/admin-product-form.component'
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { AdminProductComponent } from './pages/admin-product/admin-product.compo
     CategoryItemComponent,
     PriceItemComponent,
     SearchResultComponent,
-    AdminProductComponent
+    AdminProductListComponent,
+    AdminProductComponent,
+    AdminComponent,
+    AdminProductFormComponent
   ],
   imports: [
     CommonModule,

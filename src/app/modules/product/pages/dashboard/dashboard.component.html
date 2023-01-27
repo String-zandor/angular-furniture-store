@@ -1,8 +1,4 @@
-<app-header></app-header>
 <div class="home-img"><img src="assets\img\img-1.png"></div>
-
-<!-- HOW TO EMBED THIS TO HEADER -->
-<!-- <app-search [allProducts$]="allProducts$"></app-search> -->
 
 <!-- FILTER -->
 <app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
@@ -25,5 +21,3 @@
 <div *ngFor="let product of productsDisplay$ | async">
     <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
 </div>
-
-<app-footer></app-footer>
