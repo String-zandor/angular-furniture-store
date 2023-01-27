@@ -3,7 +3,7 @@
 
 header{
     /* position: fixed; */
-    position: relative;
+    position: fixed;
     width: 100%;
     top: 0;
     right: 0;
@@ -14,6 +14,7 @@ header{
     background: transparent;
     padding: 10px 10%;
     transition: all .50s ease;
+    background-color:#1c1c1c ;
     
     /* margin: 100px */
     

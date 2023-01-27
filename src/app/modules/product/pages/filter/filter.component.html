@@ -1,25 +1,27 @@
 <div class = "filter" *ngIf="allProducts">
-    <!-- CATEGORY FILTER -->
-    <div class = "filter-by-category">
-        <p>Category<i class="ri-arrow-drop-down-fill"></i></p>
+
     
-        <div class = "dropdown-content-ctg" *ngFor="let category of categories$ | async">
+    <!-- CATEGORY FILTER -->
+    <!-- ADD stop.propagation  to stop menu from closing -->
+    
+    <button class = "btn" mat-button [matMenuTriggerFor]="category">Category<i class="ri-arrow-drop-down-fill"></i></button>
+    <mat-menu #category = "matMenu" xPosition="after" yPosition="below" >
+        <div *ngFor="let category of categories$ | async">
             <app-category-item [category]="category" (onChanges)="onChanges($event)" ></app-category-item>
         </div>
-    
-    </div>
+
+    </mat-menu>
 
     <!-- PRICE FILTER -->
-    <div class="filter-by-price">
-        <p>Price<i class="ri-arrow-drop-down-fill"></i></p>
-        <div class ="dropdown-content" *ngFor="let range of PR">
+
+    <button class = "btn" mat-button [matMenuTriggerFor]="price">Price<i class="ri-arrow-drop-down-fill"></i></button>
+    <mat-menu class="sample" #price = "matMenu" xPosition="after" yPosition="below" >
+        <div *ngFor="let range of PR">
             <app-price-item class = "price-range" [range]="range" (onChanges)="onChanges($event)"></app-price-item>
            
         </div>
-    
-    </div>
-    
-    <br><button (click)="clearAll()" >Clear all</button>
+    </mat-menu>
+    <br><button class ="clear" (click)="clearAll()" >Clear all</button>
 
     
     

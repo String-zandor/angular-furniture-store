@@ -16,6 +16,8 @@ import { PriceItemComponent } from './components/filter-sub/price-item/price-ite
 // ADDITIONAL MODULE
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 import { SearchResultComponent } from './pages/search-result/search-result.component';
 import { AdminProductItemComponent } from './components/admin-product-item/admin-product-item.component';
@@ -47,7 +49,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ProductRoutingModule,
     SharedModule, 
     ReactiveFormsModule,
-    MatListModule, MatGridListModule
+    MatListModule, MatGridListModule,MatMenuModule
   ],
   exports:[]
 })

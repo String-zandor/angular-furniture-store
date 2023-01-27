@@ -1,52 +1,124 @@
-<div>
-    <div>
-        <button type="button" (click)="logout()">Log-out</button>
+<div class = "my-account">
+    <div class = "my-account-container">
+        <h3>My Account</h3>
+        <button type ="button" (click)="logout()"><i class="ri-logout-box-r-line"></i><span>Log-out</span></button>
+        
     </div>
     <form [formGroup]="profileForm" >
-        <div *ngIf="profileForm.disabled">
-            <button type="button" (click)="editProfile()">Edit</button>
+        
+        <div class = "account-details">
+            <h2>Account details</h2> 
+            
+            
+            
+            <div *ngIf="profileForm.disabled">
+                <button class = "btn" type="button" (click)="editProfile()"><i class="ri-pencil-line"></i></button>
+            </div>
         </div>
 
-        <label for="username">Username:</label>
-        <input id="username" type="text" formControlName="username" /> <br>
+        <h3>Personal Information</h3>
+        <mat-divider></mat-divider>
+        <br>
+        
+        
+        
+        <mat-form-field appearance="outline" hideRequiredMarker="">
+            <mat-label>Username</mat-label>
+            <input id="username" type="text" formControlName="username" matInput>
+            
+        </mat-form-field>
+        
+        <br>
 
-        <label for="firstName">First name:</label>
-        <input id="firstName" type="text" formControlName="firstName" /> <br>
+        <table class ="name" cellspacing="0">
+            <td><mat-form-field appearance="outline" hideRequiredMarker="" >
+                <mat-label>First Name</mat-label>
+                <input id="firstName"  type="text" formControlName="firstName" matInput>
+                
+            </mat-form-field></td>
+            <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                <mat-label>Middle Name</mat-label>
+                <input id="middleName" type="text" formControlName="middleName" matInput>
+            </mat-form-field></td>
 
-        <label for="middleName">Middle name:</label>
-        <input id="middleName" type="text" formControlName="middleName" /> <br>
+            <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                <mat-label>Last Name</mat-label>
+                
+                <input id="lastName" type="text" formControlName="lastName" matInput>
+                
+            </mat-form-field></td>
+            
 
-        <label for="lastName">Last name:</label>
-        <input id="lastName" type="text" formControlName="lastName" /> <br>
+        </table>
 
-        <label for="phone">Phone number:</label>
-        <input id="phone" type="text" formControlName="phone" /> <br>
+        
+        <table class = "phone-bday" cellspacing = "0"> 
+            <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                    <mat-label>Phone Number <i class="ri-phone-fill"></i></mat-label>
+                    
+                    <input id="phone" type="text" formControlName="phone" matInput>
+        
+            </mat-form-field></td>
 
-        <label for="email">Email Address:</label>
-        <input id="email" type="text" formControlName="email" /> <br>
+            <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                <mat-label>Birthdate</mat-label>       
+                <input id="birthDate" type="date" formControlName="birthDate" matInput>
+            </mat-form-field></td>
+        </table>
+        
 
-        <label for="birthDate">Birth date:</label>
-        <input id="birthDate" type="date" formControlName="birthDate" /> <br>
+    
 
-        <label for="address">Shipping Address:</label>
-        <textarea id="address" type="text" formControlName="address"></textarea> <br>
+        <h3>E-mail address</h3>
+        <mat-divider></mat-divider>
+        <br>
 
-        <label for="interests">Interests</label>
-        <div formArrayName="interests" >
+        <mat-form-field appearance="outline" hideRequiredMarker="">
+            <mat-label>E-mail Address</mat-label>       
+            <input id="email" type="text" formControlName="email" matInput>
+        </mat-form-field>   
+        
+        <h3>Shipping Address</h3>
+        <mat-divider></mat-divider>
+        <br>
+
+        <mat-form-field appearance="outline" hideRequiredMarker="">
+            <mat-label>Shipping</mat-label>       
+            <textarea id="address" type="text" formControlName="address" matInput></textarea>
+        </mat-form-field> 
+        
+
+        <h3>Interest</h3>
+        
+
+        <div class = "interest" formArrayName="interests" >
             <div *ngFor="let _ of interests.controls; index as i">
-                <input id="interest-{{i}}" type="text" [formControlName]="i" />
+
+                <mat-form-field appearance="outline" hideRequiredMarker="">       
+                    <input id="interest-{{i}}" type="text" [formControlName]="i" matInput>
+                </mat-form-field> 
+
+                <!-- <input id="interest-{{i}}" type="text" [formControlName]="i" /> -->
 
                 <span *ngIf="profileForm.enabled">
-                    <button type="button" (click)="deleteInterest(i)" >Delete</button>
+                    <button type="button-del" (click)="deleteInterest(i)" ><i class="ri-close-circle-line"></i></button>
                 </span>
+
             </div>
+
             <div *ngIf="profileForm.enabled">
-                <button type="button" (click)="addInterest()" >Add</button>
+                <button  mat-raised-button color= "accent"  (click)="addInterest()">Add</button>
             </div>
+
+        </div>
+        <br>
+
+        <div class = "save-changes" *ngIf="profileForm.enabled">
+            
+            <button type="button" (click)="saveChanges()" mat-raised-button color="primary">Save</button>
         </div>
 
-        <div *ngIf="profileForm.enabled">
-            <button type="button" (click)="saveChanges()">Save Changes</button>
-        </div>
+       
     </form>
+    
 </div>

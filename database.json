@@ -50,6 +50,7 @@
     },
     {
       "id": 5,
+      "srcUrl": "assets/products/1.png",
       "name": "Chintzy Chaise Lounge",
       "category": "Chairs",
       "color": "Pink",
@@ -124,6 +125,51 @@
       "qty": 1,
       "userId": 1,
       "id": 4
+    },
+    {
+      "product": {
+        "id": 3,
+        "srcUrl": "assets/products/4.png",
+        "name": "Glass Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Best"
+        },
+        "price": 23000,
+        "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 2,
+      "id": 5
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": "assets/products/3.png",
+        "name": "Utility Chair",
+        "category": "Chairs",
+        "description": {
+          "desc": "Better"
+        },
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 2,
+      "id": 6
+    },
+    {
+      "product": {
+        "id": 4,
+        "srcUrl": "assets/products/1.png",
+        "name": "Baroque Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Baroque"
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 2,
+      "id": 7
     }
   ],
   "users": [
