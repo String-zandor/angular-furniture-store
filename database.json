@@ -2,6 +2,7 @@
   "products": [
     {
       "id": 1,
+      "srcUrl": "assets/products/1.png",
       "name": "Comfy Bed",
       "category": "Beds",
       "color": "Vintage White",
@@ -16,7 +17,7 @@
     },
     {
       "id": 2,
-      "srcUrl": "",
+      "srcUrl": "assets/products/3.png",
       "name": "Utility Chair",
       "category": "Chairs",
       "description": {
@@ -27,6 +28,7 @@
     },
     {
       "id": 3,
+      "srcUrl": "assets/products/4.png",
       "name": "Glass Table",
       "category": "Tables",
       "description": {
@@ -37,6 +39,7 @@
     },
     {
       "id": 4,
+      "srcUrl": "assets/products/1.png",
       "name": "Baroque Table",
       "category": "Tables",
       "description": {

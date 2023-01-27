@@ -1,11 +1,16 @@
 <div class="home-img"><img src="assets\img\img-1.png"></div>
 
-<!-- SORT -->
-<app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
-
-<!-- FILTER -->
-<app-filter (filter)="filter($event)" [allProducts$]="allProducts$"></app-filter>
-
+<div class = "filter">
+<!-- SORT BY-->
+    <h2>Filter:</h2>
+    <div class = "sort-by">
+        <app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
+    </div>
+    <!-- CATEGORY AND PRICE -->
+    <div class = "category-price">
+        <app-filter (filter)="filter($event)" [allProducts$]="allProducts$"></app-filter>
+    </div>
+</div>
 
 <br><br>
 
@@ -19,7 +24,7 @@
     <h1>There are no products to display.</h1>
 </div>
 
-<div *ngFor="let product of productsDisplay$ | async">
+<ng-container *ngFor="let product of productsDisplay$ | async">
     <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
-</div>
+</ng-container>
 
