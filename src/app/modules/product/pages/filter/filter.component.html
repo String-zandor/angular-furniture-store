@@ -14,7 +14,6 @@
         <p>Price<i class="ri-arrow-drop-down-fill"></i></p>
         <div class ="dropdown-content" *ngFor="let range of PR">
             <app-price-item class = "price-range" [range]="range" (onChanges)="onChanges($event)"></app-price-item>
-           
         </div>
     
     </div>
