@@ -11,9 +11,9 @@ import { Product } from '../../../modules/product/models/product';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
  
-  @Input() allProducts$?: Observable<Product>
+  @Input() autoComplete: Product[] | undefined
   allProducts?: string
 
   searchInput = new FormControl('');
@@ -21,12 +21,11 @@ export class SearchComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
 
-  }
+  onSearch(){    
+  //will use to implement auto complete
+  //console.log(this.autoComplete)
 
-  onSearch(){
     this.router.navigate([`search/${this.searchInput.value}`]);
   }
 }

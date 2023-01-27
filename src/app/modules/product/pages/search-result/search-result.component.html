@@ -2,5 +2,10 @@
     Showing results for "{{searchTerm}}""
 </div>
 
-<!-- <app-filter></app-filter>
-<app-sort></app-sort> -->
+<app-sort [productsToSort$]="results$"></app-sort>
+
+<app-filter [allProducts$]="results$"></app-filter>
+
+<ng-container *ngFor="let product of results">
+    <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
+</ng-container>

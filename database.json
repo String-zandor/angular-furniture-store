@@ -109,6 +109,54 @@
       "qty": 1,
       "userId": 1,
       "id": 2
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": "assets/products/3.png",
+        "name": "Utility Chair",
+        "category": "Chairs",
+        "description": {
+          "desc": "Better"
+        },
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 4,
+      "id": 3
+    },
+    {
+      "product": {
+        "id": 5,
+        "name": "Chintzy Chaise Lounge",
+        "category": "Chairs",
+        "color": "Pink",
+        "description": {
+          "desc": "Floral",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 17000,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "id": 4
+    },
+    {
+      "product": {
+        "id": 3,
+        "srcUrl": "assets/products/4.png",
+        "name": "Glass Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Best"
+        },
+        "price": 23000,
+        "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 1,
+      "id": 5
     }
   ],
   "users": [
