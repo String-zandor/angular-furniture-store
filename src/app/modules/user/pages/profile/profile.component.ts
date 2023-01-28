@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from '../../models/user';
 import { AuthService } from '../../services/auth.service';
@@ -27,8 +28,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthService) {
-      
+    private auth: AuthService,
+    private router: Router,
+    private route: ActivatedRoute) {
+
   }
 
   ngOnInit(): void {
@@ -62,10 +65,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
   get interests(): FormArray {
     return this.profileForm.get('interests') as FormArray;
   }
-  
-    logout(): void {
-      this.auth.logout();
-    }
+
+  logout(): void {
+    this.auth.logout();
+    this.router.navigate(['login'], { relativeTo: this.route });
+  }
 
   deleteInterest(i: number): void {
     this.interests.removeAt(i);

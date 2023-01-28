@@ -1,25 +1,28 @@
-<div id="items">
-<!-- this is a list -->
-    item1
-    item2
-</div>
-<div id="qty">
-<!-- this is a list -->
-
-    x 1
-    x 3
-</div>
-
-<div id="amount">
-<!-- this is a list -->
-    2500
-    10000
-</div>
-
-<div id="orderTotal">
-    125000
-</div>
-
-<div id="status">
-    pending
-</div>
+<table style="padding:10px;">
+    <tr>
+        <td>Order ID: #{{orderId}}</td>
+        <td></td>
+        <td>Status: {{orderStatus}}</td>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td><img src= {{item.product.srcUrl}} alt="picture"></td>
+        <td>{{item.product.name}}  &nbsp; x{{item.qty}}</td>
+        <td>{{item.product.price | currency:'PHP'}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Delivery Fee: </td>
+        <td>{{deliveryFee | currency: 'PHP'}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Subtotal: </td>
+        <td>{{subtotal | currency: 'PHP'}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Order Total: </td>
+        <td>{{orderTotal | currency: 'PHP'}}</td>
+    </tr>
+</table>
+<button (click)="goBack()">Go Back</button>

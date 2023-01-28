@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartItem } from 'src/app/modules/cart/models/cart-item';
 import { Order } from '../../models/order';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-order-details',
@@ -9,22 +11,33 @@ import { Order } from '../../models/order';
 })
 export class OrderDetailsComponent implements OnInit {
 
-  @Input () orders: Order[] | undefined
-
+  items?: CartItem[]
   orderId: any
+  deliveryFee: any
+  subtotal: any
+  orderTotal?: any
+  orderStatus?: any
+  userId = 1
 
-  constructor(private route:ActivatedRoute){}
-
-  items: Order[] | undefined
+  constructor(private route:ActivatedRoute,
+    private router: Router,
+    private orderService: OrderService){}
 
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get('orderId')
-    this.orderId = id
+    this.orderService.getOrders(this.userId).subscribe(order => {
+      let id = parseInt(this.route.snapshot.paramMap.get('orderId')!)
+      this.orderId = id
+      order.filter(order => order.id ===id).forEach(item => {
+        this.items = item.cart
+        this.orderTotal = item.total
+        this.orderStatus = item.status
+        this.subtotal = item.subtotal
+        this.deliveryFee = item.deliveryfee
+      })
+    })
+  }
 
-    this.items = this.orders?.filter(order =>  order.id === this.orderId)
-
-    console.log(this.items)
-    console.log(this.orders)
-
+  goBack(){
+    this.router.navigate(["orders"])
   }
 }
