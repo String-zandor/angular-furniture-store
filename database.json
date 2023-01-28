@@ -2,7 +2,6 @@
   "products": [
     {
       "id": 1,
-      "srcUrl": "assets/products/1.png",
       "name": "Comfy Bed",
       "category": "Beds",
       "color": "Vintage White",
@@ -13,7 +12,8 @@
         "weight": "10kg"
       },
       "price": 12000,
-      "postingDate": "\"2023-01-26T13:38:12.790Z\""
+      "postingDate": "2023-01-28T15:24:41.683Z",
+      "srcUrl": []
     },
     {
       "id": 2,
@@ -60,21 +60,38 @@
         "weight": "8kg"
       },
       "price": 17000,
-      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      "postingDate": "2023-01-28T15:20:51.331Z",
+      "srcUrl": []
     },
     {
       "id": 6,
-      "name": "",
-      "category": "",
-      "color": "",
+      "name": "Vintage Davenport",
+      "category": "Sofas",
+      "color": "Brown",
+      "description": {
+        "desc": "Long brown leather sofa",
+        "dimensions": "6ft x 3ft",
+        "material": "Leather",
+        "weight": "8kg"
+      },
+      "price": 20000,
+      "postingDate": "2023-01-28T14:59:17.783Z",
+      "srcUrl": []
+    },
+    {
+      "id": 7,
+      "name": "Water Bed",
+      "category": "Beds",
+      "color": "Teal",
       "description": {
         "desc": "",
         "dimensions": "",
-        "material": "",
-        "weight": ""
+        "material": "Rubber",
+        "weight": "2kg"
       },
-      "price": 0,
-      "postingDate": "\"2023-01-27T06:33:22.600Z\""
+      "price": 3000,
+      "postingDate": "2023-01-28T15:13:59.887Z",
+      "srcUrl": []
     }
   ],
   "cart": [],
