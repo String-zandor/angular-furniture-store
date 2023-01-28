@@ -1,44 +1,95 @@
+mat-divider{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
 
-.product-board .filter{
-  background-color: rgb(34, 66, 66);
+// -------------IMAGE DISPLAY-------------- 
+.home-img{
+    
+  margin-top: 100px;
   display: flex;
-  justify-content: left;
-  max-width: 100%;
-}
-
-.product-board .search-status{
-  display: absolute;
-  bottom: 0;
-}
-
-
-app-sort{
-  max-width: 100%;
-}
-
-app-product-item{
-  position: relative;
+  justify-content: center;
   
-  display: inline-block;
-  padding: 20px;
-  background-color: rgb(124, 124, 124);
   
 }
-
 img{
-    height: auto;
-    max-width: 100%;
-    margin-top: 100px;
+height: auto;
+max-width: 100%;
 }
 
+// -------------DASHBOARD COMPONENT---------------- 
+.flex-box{
+  
+  display: flex;
+  justify-content: center;
+}
 
+// -------------FILTER TAB----------------
+
+.product-board{
+  display: flex;
+  justify-content: center;
+  
+}
+.product-board .filter{
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  
+  
+  
+}
 h2{
   padding: 10px;
   position: relative;
   top: 15px;
   background-color:transparent;
-  color: rgba(255, 255, 255);
+  color: rgba(255, 255, 255, 0.5);
 }  
+
+
+
+
+
+// -------------SEARCH RESULT STATUS--------------- 
+.product-board .search-status{
+  display: absolute;
+  bottom: 0;
+}
+.search-status h1{
+  padding: 10px;
+}
+
+
+// -------------SORT TAB--------------- 
+app-sort{
+  max-width: 100%;
+}
+
+// -------------PRODUCT DISPLAY-------------- 
+
+.product-tile{
+  display: flex;
+  justify-content: space-between;
+  
+  
+  
+  
+}
+app-product-item{
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  
+  // background-color: rgb(124, 124, 124);
+  
+}
+
+
+
+
+
+
 
 
 
@@ -48,7 +99,8 @@ h2{
 
 
 @media only screen and (max-width: 480px) {
-  img {
+  .home-img{
     width: 100%;
+    
   }
 }
