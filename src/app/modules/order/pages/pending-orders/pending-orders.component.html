@@ -10,7 +10,8 @@
 
 <body>
 
-    <table cellspacing="10">
+    <div >
+    <table cellspacing="10" >
         <tr>
             <th>Order ID</th>
             <th>Order Date</th>
@@ -18,13 +19,15 @@
             <th>Order Total</th>
             <th>Action</th>
         </tr>
-        <tr >
-            <td id="orderId"></td>
-            <td id="dateOrdered"></td>
-            <td id="status"></td>
-            <td id="total"></td>
-            <td id="view"></td>
+        <tr  *ngFor="let order of orders">
+            <td>#{{order.id}}</td>
+            <td>{{order.orderDate}}</td>
+            <td>{{order.status}}</td>
+            <td>{{order.total | currency:'PHP'}}</td>
+            <td><button (click)="onClick(order.id!)"> view details</button></td>
         </tr>
     </table>
+</div>
+
 </body>
 </html>
