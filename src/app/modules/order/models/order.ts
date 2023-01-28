@@ -8,5 +8,10 @@ export interface Order {
     deliveryfee: number,
     total : number,
     orderDate: string,
+    shipping: { 
+        name: string,
+        phone: string,
+        address: string
+     },
     cart: CartItem[]
 }

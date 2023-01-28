@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from '../../models/user';
 import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,22 +14,23 @@ import { AuthService } from '../../services/auth.service';
 export class ProfileComponent implements OnInit, OnDestroy {
 
   profileForm: FormGroup = this.fb.group({
+    id: [0],
     username: ['', Validators.required],
     firstName: ['', Validators.required],
-    middleName: [''],
     lastName: ['', Validators.required],
     email: ['', Validators.pattern(/^[^\s@]+@[^\s@%]+\.[^\s@]+$/)],
-    phone: ['', Validators.required],
-    birthDate: [''],
-    address: [''],
-    interests: this.fb.array([''])
+    phone: [''],
+    birthDate: [new Date()],
+    address: ['']
   });
 
   sub?: Subscription;
+  user?: User;
 
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
+    private userSvc: UserService,
     private router: Router,
     private route: ActivatedRoute) {
 
@@ -37,33 +39,41 @@ export class ProfileComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.sub = this.auth.user$.subscribe(user => {
       if (user) {
-        this.showProfile(user);
+        this.user = user;
+        this.showProfile(this.user);
       }
     });
     this.profileForm.disable();
   }
 
-  showProfile(user: User) {
+  showProfile(user: User): void {
     this.profileForm.patchValue(user);
-    this.interests.clear();
-    for (const interest of user.interests) {
-      this.interests.push(this.fb.control(interest));
+    const date = this.user?.birthDate.slice(0,10);
+    this.birthDate.setValue(date);
+  }
+
+  editProfile(): void {
+    this.profileForm.enable();
+    this.username.disable();
+  }
+
+  saveChanges(): void {
+    if (this.user) {
+      this.user.firstName = this.firstName.value;
+      this.user.lastName = this.lastName.value;
+      this.user.email = this.email.value;
+      this.user.phone = this.phone.value;
+      this.user.birthDate = new Date(this.birthDate.value).toJSON();
+      this.user.address = this.address.value;
+      this.userSvc.update(this.user).subscribe(() => this.profileForm.disable());
     }
   }
 
-  editProfile() {
-    this.profileForm.enable();
-  }
-
-  /**
-   * TODO: implement this method
-   */
-  saveChanges() {
-    this.profileForm.disable();
-  }
-
-  get interests(): FormArray {
-    return this.profileForm.get('interests') as FormArray;
+  cancel(): void {
+    if (this.user) {
+      this.showProfile(this.user);
+      this.profileForm.disable();
+    }
   }
 
   logout(): void {
@@ -71,12 +81,32 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.router.navigate(['login'], { relativeTo: this.route });
   }
 
-  deleteInterest(i: number): void {
-    this.interests.removeAt(i);
+  get username(): FormControl {
+    return this.profileForm.get('username') as FormControl;
   }
 
-  addInterest(): void {
-    this.interests.push(this.fb.control(''));
+  get firstName(): FormControl {
+    return this.profileForm.get('firstName') as FormControl;
+  }
+
+  get lastName(): FormControl {
+    return this.profileForm.get('lastName') as FormControl;
+  }
+
+  get email(): FormControl {
+    return this.profileForm.get('email') as FormControl;
+  }
+
+  get phone(): FormControl {
+    return this.profileForm.get('phone') as FormControl;
+  }
+
+  get birthDate(): FormControl {
+    return this.profileForm.get('birthDate') as FormControl;
+  }
+
+  get address(): FormControl {
+    return this.profileForm.get('address') as FormControl;
   }
 
   ngOnDestroy(): void {
