@@ -9,7 +9,7 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
 @NgModule({
   declarations: [
     PendingOrdersComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
   ],
   imports: [
     CommonModule,
