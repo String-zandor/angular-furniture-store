@@ -89,13 +89,18 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
   saveToOrderDataBase() {
     let order: Order = {
-      user:1,
+      user: 1,
       status: 'pending',
       subtotal: this.subtotal,
       deliveryfee: this.deliveryfee,
       total: this.totalAmmountToPay,
       orderDate: this.date.toJSON(),
       cart: this.cartItems,
+      shipping: {
+        name: '',
+        phone: '',
+        address: ''
+      }
     };
     let sub: Subscription = this.orderService.create(order).subscribe();
     this.subscriptions.push(sub);

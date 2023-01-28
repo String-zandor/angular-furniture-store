@@ -81,19 +81,14 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Seven",
-      "middleName": "Seven",
-      "lastName": "Seven",
-      "phone": "09777777777",
-      "address": "Earth",
-      "email": "mrseven@77global.biz",
-      "birthDate": "2077-07-07",
-      "interests": [
-        "Java",
-        "Angular"
-      ],
       "username": "seven",
-      "password": "seven"
+      "password": "seven",
+      "firstName": "Seven",
+      "lastName": "Seven",
+      "email": "mrseven@77global.biz",
+      "phone": "09777777777",
+      "birthDate": "2027-07-07T00:00:00.000Z",
+      "address": "Earth"
     }
   ],
   "orders": [
