@@ -1,6 +1,6 @@
 export interface Product {
     id: number,
-    srcUrl: string,
+    srcUrl: string[],
     name: string,
     category: string,
     color: string,
