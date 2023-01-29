@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { of, Subscription, switchMap } from 'rxjs';
 import { User } from '../../models/user';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
@@ -37,18 +37,26 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.sub = this.auth.user$.subscribe(user => {
+    this.getCurrentUser();
+    this.profileForm.disable();
+  }
+
+  getCurrentUser(): void {
+    this.sub = this.auth.user$.pipe(
+      switchMap(user => {
+        return (user) ? of(user) : this.auth.admin$
+      })
+    ).subscribe(user => {
       if (user) {
         this.user = user;
         this.showProfile(this.user);
       }
     });
-    this.profileForm.disable();
   }
 
   showProfile(user: User): void {
     this.profileForm.patchValue(user);
-    const date = this.user?.birthDate.slice(0,10);
+    const date = this.user?.birthDate.slice(0, 10);
     this.birthDate.setValue(date);
   }
 

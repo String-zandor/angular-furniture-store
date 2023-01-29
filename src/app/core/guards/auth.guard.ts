@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/modules/user/services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserAuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
 
   constructor(private auth: AuthService, private router: Router) { }
 
@@ -20,7 +20,7 @@ export class UserAuthGuard implements CanActivate {
         } else {
           return this.auth.isLoggedAsAdmin$.pipe(
             map(isLoggedAsAdmin => {
-              return (isLoggedAsAdmin) ? this.router.parseUrl('/admin') : this.router.parseUrl('/profile/login')
+              return (isLoggedAsAdmin) ? true : this.router.parseUrl('profile/login');
             })
           )
         }

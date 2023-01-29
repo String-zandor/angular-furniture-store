@@ -81,14 +81,59 @@
   "users": [
     {
       "id": 1,
+      "key": 1,
       "username": "seven",
-      "password": "seven",
       "firstName": "Seven",
       "lastName": "Seven",
       "email": "mrseven@77global.biz",
       "phone": "09777777777",
       "birthDate": "2027-07-07T00:00:00.000Z",
       "address": "Earth"
+    },
+    {
+      "id": 2,
+      "key": 2,
+      "username": "johnnyfav",
+      "firstName": "Johnny",
+      "lastName": "Favorite",
+      "email": "angelheart@gmail.com",
+      "phone": "09666666666",
+      "birthDate": "1943-12-25T00:00:00.000Z",
+      "address": "Earth"
+    },
+    {
+      "id": 3,
+      "key": 3,
+      "username": "harryangel",
+      "firstName": "Harry",
+      "lastName": "Angel",
+      "email": "angelheart@gmail.com",
+      "phone": "09666666666",
+      "birthDate": "1943-12-25T00:00:00.000Z",
+      "address": "Earth"
+    }
+  ],
+  "auth": [
+    {
+      "id": 1,
+      "username": "seven",
+      "password": "seven",
+      "active": true,
+      "role": "USER"
+    },
+    {
+      "id": 2,
+      "username": "johnnyfav",
+      "password": "1234",
+      "active": true,
+      "role": "ADMIN"
+    },
+    {
+      "id": 3,
+      "username": "harryangel",
+      "password": "1234",
+      "active": true,
+      "role": "USER"
     }
   ],
   "orders": [
