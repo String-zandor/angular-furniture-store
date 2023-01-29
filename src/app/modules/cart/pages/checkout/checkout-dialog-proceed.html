@@ -1,0 +1,10 @@
+<div class="dialog">
+    <h1 mat-dialog-title>Order Confirmation</h1>
+    <div mat-dialog-content>
+      Would you like to proceed with your Order?
+    </div>
+    <div mat-dialog-actions class="action-buttons">
+      <button mat-button mat-dialog-close (click)="onNoClick()">No</button>
+      <button mat-button mat-dialog-close cdkFocusInitial (click)="onYesClick()">Yes</button>
+    </div>
+</div>
