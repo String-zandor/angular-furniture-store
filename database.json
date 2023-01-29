@@ -93,7 +93,25 @@
         "Angular"
       ],
       "username": "seven",
-      "password": "seven"
+      "password": "seven",
+      "active": true
+    },
+    {
+      "id": 2,
+      "firstName": "Eight",
+      "middleName": "Eight",
+      "lastName": "Eight",
+      "phone": "09888888888",
+      "address": "Earth",
+      "email": "mreight@88global.biz",
+      "birthDate": "2088-08-08",
+      "interests": [
+        "Java",
+        "Angular"
+      ],
+      "username": "eight",
+      "password": "eight",
+      "active": true
     }
   ],
   "orders": [

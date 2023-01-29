@@ -1,0 +1,20 @@
+<table cellspacing="10">
+    <tr>
+        <th>User Id</th>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact Number</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let user of userLists">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.active}}</td>
+        <td><button *ngIf="user.active" value="deactivate">deactivate</button></td>
+    </tr>
+</table>
