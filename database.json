@@ -169,7 +169,18 @@
       "phone": "09666666666",
       "birthDate": "1943-12-25T00:00:00.000Z",
       "address": "Earth"
-    }
+    },
+    {
+      "id": 4,
+      "key": 4,
+      "firstName": "Eight",
+      "lastName": "Eight",
+      "phone": "09888888888",
+      "address": "Earth",
+      "email": "mreight@88global.biz",
+      "birthDate": "2088-08-08",
+      "username": "eight"
+    },
   ],
   "auth": [
     {
@@ -177,7 +188,14 @@
       "username": "seven",
       "password": "seven",
       "active": true,
-      "role": "USER"
+      "role": "ADMIN"
+    },
+    {
+      "id": 4,
+      "username": "eight",
+      "password": "eight",
+      "active": true,
+      "role": "ADMIN"
     },
     {
       "id": 2,
