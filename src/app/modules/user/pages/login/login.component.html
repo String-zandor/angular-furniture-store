@@ -26,8 +26,12 @@
         </div>
 
         <br>
-        <button type="submit" [disabled]="loginForm.invalid && (loginForm.dirty || loginForm.touched)" >Log-in</button>
-        <button type="button">Register</button>
+        <button type="submit" [disabled]="loginForm.invalid && (loginForm.dirty || loginForm.touched)" >
+            Log-in
+        </button>
+        <button type="button" *ngIf="!loginAsAdmin">
+            Register
+        </button>
         <br>
         <a href="">Forgot password?</a>
         <div *ngIf="!loginAsAdmin">

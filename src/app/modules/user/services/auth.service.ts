@@ -1,58 +1,99 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, map, Observable, of } from 'rxjs';
-import { User } from '../models/user';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, map, Observable, of, switchMap, tap } from 'rxjs';
+import { User, UserCred } from '../models/user';
 import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService implements OnDestroy {
+export class AuthService {
 
-  private subject = new BehaviorSubject<User | null>(null);
-  user$ = this.subject.asObservable();
+  serverUrl: string = 'http://localhost:3000';
+
+  private userSubject = new BehaviorSubject<User | null>(null);
+  user$ = this.userSubject.asObservable();
   isLoggedIn$: Observable<boolean> = of(false);
 
-  constructor(private userService: UserService) {
+  private adminSubject = new BehaviorSubject<User | null>(null);
+  admin$ = this.adminSubject.asObservable();
+  isLoggedAsAdmin$: Observable<boolean> = of(false);
+
+  constructor(private userSvc: UserService, private http: HttpClient) {
     this.isLoggedIn$ = this.user$.pipe(
       map(user => !!user)
     );
 
+    this.isLoggedAsAdmin$ = this.admin$.pipe(
+      map(admin => !!admin)
+    );
+    
+    this.getCurrentUser();
+    this.getCurrentAdmin();
+
+  }
+
+  getCurrentUser(): void {
     const userStr: string | null = localStorage.getItem('CURRENT_USER');
     if (userStr) {
-      this.subject.next(JSON.parse(userStr));
+      this.userSubject.next(JSON.parse(userStr));
     }
   }
 
-  login(username: string, password: string): Observable<User | null> {
-    return this.userService.getUsers().pipe(
-      map(users => users.find(user => user.username === username && user.password === password))
-    ).pipe(
-      map(user => {
-        if (user) {
-          this.subject.next(user);
-          localStorage.setItem('CURRENT_USER', JSON.stringify(user));
-          return user;
-        } else {
-          return null;
-        }
+  getCurrentAdmin(): void {
+    const adminStr: string | null = localStorage.getItem('CURRENT_ADMIN');
+    if (adminStr) {
+      this.adminSubject.next(JSON.parse(adminStr));
+    }
+  }
+
+  login(data: {username: string, password: string}): Observable<User | null> {
+    return this.authenticate(data).pipe(
+      map(cred => (cred?.role === 'USER') ? cred : null),
+      switchMap(cred => {
+        if (cred?.id) {
+          return this.userSvc.getUser(cred.id).pipe(
+            tap(user => {
+              this.userSubject.next(user);
+              localStorage.setItem('CURRENT_USER', JSON.stringify(user));
+            })
+          );
+        } else { return of(null); }
       })
     );
   }
 
-  /**
-   * TODO: implement admin function
-   */
-  loginAsAdmin(username: string, password: string): Observable<User | null> {
-    // TODO: get admin user
-    return of(null);
+  authenticate(data: {username: string, password: string}): Observable<UserCred | null> {
+    return this.http.get<UserCred[]>(`${this.serverUrl}/auth`).pipe(
+      map(creds => creds
+        .find(user => (user.username === data.username) && (user.password === data.password) && user.active)
+        ),
+      map(cred => (cred) ? cred : null),
+    );
   }
   
-  logout() {
-    localStorage.removeItem('CURRENT_USER');
-    this.subject.next(null);
+  loginAsAdmin(data: {username: string, password: string}): Observable<User | null> {
+    return this.authenticate(data).pipe(
+      map(cred => (cred?.role === 'ADMIN') ? cred : null),
+      switchMap(cred => {
+        if (cred?.id) {
+          return this.userSvc.getUser(cred.id).pipe(
+            tap(user => {
+              this.adminSubject.next(user);
+              localStorage.setItem('CURRENT_ADMIN', JSON.stringify(user));
+            })
+          );
+        } else {
+          return of(null);
+        }
+      })
+    );
   }
-
-  ngOnDestroy(): void {
-    this.logout();
+  
+  logout(): void {
+    localStorage.removeItem('CURRENT_USER');
+    localStorage.removeItem('CURRENT_ADMIN');
+    this.userSubject.next(null);
+    this.adminSubject.next(null);
   }
 }

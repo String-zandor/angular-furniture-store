@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserAuthGuard } from './core/guards/user-auth.guard';
-import { AdminProductComponent } from './modules/product/pages/admin-product/admin-product.component';
 import { SearchResultComponent } from './modules/product/pages/search-result/search-result.component';
 
 const routes: Routes = [
@@ -21,6 +20,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [UserAuthGuard]
+  providers: [ ]
 })
 export class AppRoutingModule { }
