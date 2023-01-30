@@ -1,35 +1,36 @@
-
-        <div class = "product-container" > 
-            <div class = "row">
-                <ng-container *ngIf="product"> 
-                    <div class = "col">
-                    <div class = "img-container">
-                        <!-- <img src= {{url}} *ngFor="let url of product.srcUrl" alt="picture"> -->
-                        <img src= {{product.srcUrl}} alt="picture">
-                    </div>
-                    <ul class = "content">
-                        <li>{{product.name}}</li>
-                        <mat-divider></mat-divider>
-                        <li>₱{{product.price}}</li>
-                        <mat-divider></mat-divider>
-                        <li> {{product.description.desc}}</li>
-                        <mat-divider></mat-divider>
-                    </ul>
-                    <div class = "add-quantity">
-                    
-                        <div class = "add-quantity-btn">
-                          <button class = "min" type="button" id="min" [disabled]="quantity === 1" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
-                          <input type="text" [value]="quantity">
-                          <button class = "max" type="button" id="max" (click)="addQuantity()"><i class="ri-add-line"></i></button>
-                        </div>
-
-                        <button class = "add-to-cart" type="button" id="add" [disabled]="quantity === 0"  (click)="addToCart()">Add to Cart</button>
-                    </div>
+<div class="product-container">
+    <div class="row">
+        <ng-container *ngIf="product">
+            <div class="col">
+                <div class="img-container">
+                    <!-- <img src= {{url}} *ngFor="let url of product.srcUrl" alt="picture"> -->
+                    <img src={{product.srcUrl}} alt="picture">
                 </div>
-                </ng-container>
-            </div>  
-        </div>
-    
-    <!-- </mat-grid-tile>
-</mat-grid-list> -->
+                <ul class="content">
+                    <li>{{product.name}}</li>
+                    <mat-divider></mat-divider>
+                    <li>₱{{product.price}}</li>
+                    <mat-divider></mat-divider>
+                    <li> {{product.description.desc}}</li>
+                    <mat-divider></mat-divider>
+                </ul>
+                <div class="add-quantity">
 
+                    <div class="add-quantity-btn">
+                        <button class="min" type="button" id="min" [disabled]="quantity === 1"
+                            (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
+                        <input type="text" [value]="quantity">
+                        <button class="max" type="button" id="max" (click)="addQuantity()"><i
+                                class="ri-add-line"></i></button>
+                    </div>
+
+                    <button class="add-to-cart" type="button" id="add" [disabled]="quantity === 0"
+                        (click)="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<!-- </mat-grid-tile>
+</mat-grid-list> -->
