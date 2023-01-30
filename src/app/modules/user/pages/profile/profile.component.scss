@@ -1,0 +1,153 @@
+// --MY ACCOUNT
+form .account-details{
+    
+    display: flex;
+    justify-content: space-between;
+}
+form .btn{
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+}
+
+.my-account{
+    display: block;
+    position: relative;
+    margin-top: 100px;
+    // background-color: rgb(54, 65, 57);
+    // height: 1000px;
+    max-width: 100%;
+    padding-bottom: 100px;
+    
+}
+
+.my-account .my-account-container{
+    position: relative;
+    text-align: center;
+    margin: 30px;
+    
+    padding: 30px;
+    // padding: 100px 20px 20px 0px;
+    // background-color: rgb(180, 171, 161);
+    border-bottom: 2px solid rgb(54, 65, 57);
+    border-top: 2px solid rgb(54, 65, 57);
+    max-width: 100%;
+
+}
+.my-account-container h3{
+    text-align: center;
+    position: relative;
+    font-size: 50px;
+    padding: 30px;
+    
+}
+
+.my-account-container button{
+    background-color: transparent;
+    border: none;
+    
+    font-size: 15px;
+    color: white;
+    
+
+}
+
+.my-account-container span:hover{
+    cursor: pointer;
+    color: grey;
+}
+
+.ri-logout-box-r-line{
+    margin-right: 20px;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 0;
+    
+    
+}
+
+.my-account-container span{
+   text-decoration: underline;
+}
+
+// --FORM
+
+form{
+    margin: 30px;
+    // background-color: rgb(54, 54, 54);
+    width: 50%;
+    height: 100%;
+    overflow: visible;
+
+    padding-bottom: 50px;
+}
+
+// PERSONAL INFO
+
+td{
+    padding-right: 8px;
+}
+
+.name{
+    // background-color: rgb(57, 57, 57);
+    max-width: 50px;
+    // padding: 10px;
+    
+}
+
+mat-form-field{
+    width: 200px !important;
+}   
+
+mat-form-field mat-label     {
+    font-size: 15px;
+    
+    
+  }
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0 !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0 !important;
+    height: 35px;
+    border: none;
+    
+
+}
+
+.ri-phone-fill{
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+// --INTEREST
+
+.interest button{
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+    color: white;
+    
+    
+    
+}
+.ri-close-circle-line{
+    font-size: 30px;
+    display: inline-block;
+    color: white;
+    padding-top: 5px;
+    
+}
+
+//-- SAVE CHANGES
+
+.save-changes button{
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+    color: white;
+
+}
+
+

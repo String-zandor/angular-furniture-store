@@ -16,7 +16,7 @@
 
 /* FOOTER BACKGROUND PROPERTIES */
 .footer-distributed{
-    background-color: rgb(166, 190, 172, 0.5);
+    background-color: rgba(166, 190, 172, 0.502);
     box-sizing: border-box;
     widows: 100%;
     /* text-align: left; */
@@ -136,11 +136,15 @@
     line-height: 35px;
     margin-right: 3px;
     margin-bottom: 5px;
+    text-decoration: none;
 }
 
 .footer-distributed .footer-icons a:hover{
     background-color: rgb(166, 190, 172);
+    
 }
+
+
 
 .footer-left .footer-links a:hover{
     color:rgb(166, 190, 172)

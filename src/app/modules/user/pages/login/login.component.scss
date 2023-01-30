@@ -1,0 +1,128 @@
+img{
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    opacity: 0.5;
+    z-index: -1;
+    
+}
+
+.log-in{
+    
+    padding-top: 100px;
+    
+    // background-color: grey;
+}
+form{
+    // background:rgb(91, 104, 95);
+    // #1c1c1c;
+    background-color: #1c1c1c; ;
+    width:30rem;
+    padding:2rem;
+    
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    display: block;
+    justify-content: center;
+    
+    margin-top: 30px;
+    
+}
+
+.sign-form form{
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form h3{
+    font-size: 2.5rem;
+    
+    text-align: center;
+}
+form h1{
+    font-size: 1rem;
+    
+    text-align: center;
+}
+
+form mat-form-field{
+    
+    width: 100% !important;
+    
+}
+form .btn{
+    text-align: center;
+    font-size: large;
+    width:100%;
+    margin: 0.1rem 0;
+    padding: 10px;
+    background-color: rgb(91, 104, 95);
+    border: none;
+    color: white;
+    
+}
+
+form .btn:hover{
+    background-color:rgb(56, 65, 59);
+    cursor: pointer;
+}
+
+
+.forgot-pwd{
+    
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px
+}
+
+.forgot-pwd a{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    text-decoration: underline;
+    color: white;
+    
+}
+
+.forgot-pwd h1{
+    position: absolute;
+    bottom: 0;
+    left:0;
+}
+
+.forgot-pwd button{
+    position: absolute;
+    bottom:0;
+    right:0;
+    
+    background-color: transparent;
+    color: white;
+    border:none;
+    text-decoration: underline;
+    margin-top: 30px;
+    
+    
+}
+.forgot-pwd button:hover{
+    cursor: pointer;
+}
+
+form a{
+    color: white;
+    
+}
+
+form .login-as h1{
+    font-style: italic;
+    margin: 0;
+}
+
+form .login-as{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+

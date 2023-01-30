@@ -1,9 +1,5 @@
-
-
-
 header{
-    /* position: fixed; */
-    position: relative;
+    position: fixed;
     width: 100%;
     top: 0;
     right: 0;
@@ -14,22 +10,16 @@ header{
     background: transparent;
     padding: 10px 10%;
     transition: all .50s ease;
-    
-    /* margin: 100px */
+    background-color:#1c1c1c ;
     
 }
 
 .search-bar{
-    // max-width: 100%;
     width: 500px;
-    ;
+    
 }
 
-// -- HEADER ICON
 
-// .main a:hover{
-//     color: #a6beac;
-// }
 
 .main :hover{
     color: #a6beac;
@@ -39,14 +29,18 @@ header{
 .main{
     display:flex;
     align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 120px
 }
 
 .main a{
-    margin-right: 10px;
-    margin-left: 10px;
+    color: white;
+    
     font-size: 1.1rem;
     font-weight: 500;
     transition: all .50s ease;
+    text-decoration: none;
     
 }
 

@@ -16,6 +16,13 @@ import { PriceItemComponent } from './components/filter-sub/price-item/price-ite
 // ADDITIONAL MODULE
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatMenuModule} from '@angular/material/menu';
+
+
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+import {MatRadioModule} from '@angular/material/radio';
 
 import { SearchResultComponent } from './pages/search-result/search-result.component';
 import { AdminProductItemComponent } from './components/admin-product-item/admin-product-item.component';
@@ -49,7 +56,7 @@ import { AdminUserListComponent } from './pages/admin-user-list/admin-user-list.
     ProductRoutingModule,
     SharedModule, 
     ReactiveFormsModule,
-    MatListModule, MatGridListModule
+    MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule
   ],
   exports:[]
 })

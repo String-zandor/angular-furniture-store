@@ -50,6 +50,7 @@
     },
     {
       "id": 5,
+      "srcUrl": "assets/products/1.png",
       "name": "Chintzy Chaise Lounge",
       "category": "Chairs",
       "color": "Pink",

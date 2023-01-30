@@ -1,5 +1,10 @@
-<div>
-    <input id="range" type="checkbox" [formControl]="priceItem" />
+
+    <!-- <input id="range" type="checkbox" [formControl]="priceItem" />
     <label for="range">{{range.min | currency: 'PHP': 'symbol' : '1.0-0' }}{{(range.max) ? ' - ' : ' and above'}}{{
-        range.max| currency: 'PHP' : 'symbol' : '1.0-0'}}</label>
-</div>
+        range.max| currency: 'PHP' : 'symbol' : '1.0-0'}}</label> -->
+
+
+    <mat-checkbox [formControl]="priceItem" (click)="$event.stopPropagation()"/>{{range.min | currency: 'PHP': 'symbol' : '1.0-0' }}{{(range.max) ? ' - ' : ' and above'}}{{
+        range.max| currency: 'PHP' : 'symbol' : '1.0-0'}}
+
+       

@@ -1,158 +1,43 @@
-//-- filter by category --
+.filter .expansion-panel{
+    padding: 10px;
+    max-width: 100% ;
+   
+}
 
 
 .filter{
     
-    position: relative;
-    width: 100%;
-    margin-top: 10px;
-    
+    width: 500px;
+    background-color: transparent;
     display: flex;
     
-    justify-content: left;
-    background: transparent;
-    padding: 0;
-    transition: all .50s ease;
+}
+.btn{
     
-    /* margin: 100px */
+    margin: 20px;
+    background-color: transparent;
+    // border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+
     
 }
 
-button{
+
+.clear{
     text-decoration: underline;
     background: transparent;
     color: aliceblue;
     border: none;
     cursor: pointer;
-    position: absolute;
+    position: static;
     top: 15px;
     right: 30px;
     margin: 10px;
 }
-
-.filter-by-category{
-   
-    display: fixed;
-    margin: 10px;
-}
-
-.filter-by-category p{
-    color:aliceblue;
-    position: relative;
-    display: inline-block;
-    padding:  10px 15px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 16px;
-    background-color: rgb(45, 45, 45);
-    
-}
-
-
-
-.filter-by-category p:hover{
-    background-color: rgb(166, 191, 172, 0.5);
-    cursor: pointer;
-    
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content-ctg {
-    display: none;
-    position: relative;
-    // position: absolute;
-    background-color: transparent;
-    
-    z-index: 1;
-    border: 0.5rem;
-    border-color: aliceblue;
-    
-    
-
-}
-
-.dropdown-content-ctg:hover{
-    background-color: transparent;
-    color: aliceblue;
-    border: none;
-    // margin-left: 10px;
-}
-
- /* Show the dropdown menu on hover */
-.filter-by-category:hover .dropdown-content-ctg {
-    display: block;
-} 
-
-.dropdown-content-ctg:hover{
-    background-color: rgb(83, 96, 86);
-    max-width: 200%
-
-    
-}
-
-
-
-
-//  -- filter by price --
-
-
-.filter-by-price{
-    position: relative;
-    margin: 10px
-}
-.filter-by-price p{
-    color:aliceblue;
-    position: relative;
-    // display: inline-block;
-    padding:  10px 15px;
-    // text-decoration: none;
-    text-align: center;
-    font-size: 16px;
-    background-color: rgb(45, 45, 45);
-    
-}
-
-.filter-by-price p:hover{
-    background-color: rgb(166, 191, 172, 0.5);
-    cursor: pointer;
-    
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: relative;
-    // position: absolute;
-    background-color: transparent;
-    
-    z-index: 1;
-    border: 0.5rem;
-    border-color: aliceblue;
-    
-    
-
-}
-
-.dropdown-content:hover{
-    background-color: transparent;
-    color: aliceblue;
-    border: none;
-    // margin-left: 10px;
-}
-
- /* Show the dropdown menu on hover */
-.filter-by-price:hover .dropdown-content {
-    display: block;
-} 
-
-.dropdown-content:hover{
-    background-color: rgb(83, 96, 86);
-    max-width: 200%
-
-    
-}
-
-// clear all button
-
 
 

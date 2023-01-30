@@ -1,39 +1,101 @@
+mat-divider{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+// -------------IMAGE DISPLAY-------------- 
+// .home-img{
+    
+//   margin-top: 100px;
+//   display: flex;
+//   justify-content: center;
+  
+  
+// }
+img{
+height: auto;
+max-width: 100%;
+}
+
+.carouselExampleIndicators{
+  margin-top: 80px;
+}
+
+// -------------DASHBOARD COMPONENT---------------- 
+.flex-box{
+  
+  display: flex;
+  justify-content: center;
+}
+
+// -------------FILTER TAB----------------
+
+.product-board{
+  display: flex;
+  justify-content: center;
+  
+}
+.product-board .filter{
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  
+  
+  
+}
+h2{
+  padding: 10px;
+  position: relative;
+  top: 15px;
+  background-color:transparent;
+  color: rgba(255, 255, 255, 0.5);
+}  
+
+
+
+
+
+// -------------SEARCH RESULT STATUS--------------- 
+.product-board .search-status{
+  display: absolute;
+  bottom: 0;
+}
+.search-status h1{
+  padding: 10px;
+}
+
+
+// -------------SORT TAB--------------- 
+app-sort{
+  max-width: 100%;
+}
+
+// -------------PRODUCT DISPLAY-------------- 
+
+.product-tile{
+  display: flex;
+  justify-content: space-between;
+  
+  
+  
+  
+}
 app-product-item{
   position: relative;
   display: inline-block;
-  padding: 20px;
-  background-color: rgb(124, 124, 124);
+  padding: 10px;
+  
+  // background-color: rgb(124, 124, 124);
   
 }
 
-img{
-    height: auto;
-    max-width: 100%;
-    margin-top: 30px;
-}
 
 
-h2{
-  margin: 10px;
-  padding: 10px;
-  color: rgb(166, 191, 172, 0.5);
-}  
 
-.filter{
-  display: flex;
-  justify-content: left;
-  max-width: 100%;
-  background-color: transparent;
-}
 
-.filter .category-price{
-  max-width: 100%;
-  width: 1000px
-}
 
-.filter .sort-by{
-  margin: 10px;
-}
+
+
 
 
 
@@ -41,7 +103,8 @@ h2{
 
 
 @media only screen and (max-width: 480px) {
-  img {
+  .home-img{
     width: 100%;
+    
   }
 }

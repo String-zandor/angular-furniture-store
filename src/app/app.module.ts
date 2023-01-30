@@ -10,9 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { MatDialogModule } from '@angular/material/dialog';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
