@@ -140,21 +140,6 @@
       "qty": 1,
       "userId": 1,
       "id": 4
-    },
-    {
-      "product": {
-        "id": 3,
-        "srcUrl": "assets/products/4.png",
-        "name": "Glass Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Best"
-        },
-        "price": 23000,
-        "postingDate": "2015-07-01 12:00AM"
-      },
-      "qty": 1,
-      "id": 5
     }
   ],
   "users": [
