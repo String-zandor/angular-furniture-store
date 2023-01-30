@@ -128,7 +128,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.userContact = this.shippingForm.value.contact? this.shippingForm.value.contact: ''
     this.userAddress = this.shippingForm.value.address? this.shippingForm.value.address: ''
     this.customClass = 'removeDesign'
-    this.editInfo = false
+  // this.editInfo = false1
     // this.isDirtyForm = false
   }
   openDialog(): void {
