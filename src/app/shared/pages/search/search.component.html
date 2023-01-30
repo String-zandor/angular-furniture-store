@@ -1,18 +1,5 @@
 <div class = "search-bar">
-    <input type="text" placeholder="What are you looking for?" [formControl]="searchInput">
-    <button type="button" (click)="searchProduct()" ><i class="ri-search-line"></i></button>
+    <input type="text" placeholder="What are you looking for?" (keydown.enter)="onSearch()" [formControl]="searchInput">
+    <button type="button" id="search" (click)="onSearch()" ><i class="ri-search-line"></i></button>
     <div>
-        <div *ngFor="let product of result" result="result">
-            <br>
-            id: {{product.id}} <br>
-            srcUrl:  {{product.srcUrl}} <br>
-            name:  {{product.name}} <br>
-            category:  {{product.category}} <br>
-            color:  {{product.color}} <br>
-            description:  {{product.description}} <br>
-            postingDate:  {{product.postingDate}} <br>
-            price:  {{product.price}} <br>
-            <br>
-        </div>
-    </div>
 </div>

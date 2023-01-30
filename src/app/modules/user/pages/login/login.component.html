@@ -1,64 +1,65 @@
 <div class="log-in">
-    <img src = "assets\img\img-4.png">
-    <div class = "sign-form">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <h3>Log in</h3>
-        <h1>If you have an account with us, please log in.</h1>
-        
-        <mat-form-field appearance="outline" hideRequiredMarker="">
-            <mat-label>Username</mat-label>
-            <input class = "box" id="username" type="text" formControlName="username" matInput>
-            
-        </mat-form-field>
+    <img src="assets\img\img-4.png">
+    <div class="sign-form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h3>Log in</h3>
+            <h1>If you have an account with us, please log in.</h1>
 
-        <!-- displays whenever username is invalid (no input) -->
-        <div *ngIf="username.invalid && (username.dirty || username.touched)">
-            <div *ngIf="username.errors?.['required']">
-                Username is required.
+            <mat-form-field appearance="outline" hideRequiredMarker="">
+                <mat-label>Username</mat-label>
+                <input class="box" id="username" type="text" formControlName="username" matInput>
+
+            </mat-form-field>
+
+            <!-- displays whenever username is invalid (no input) -->
+            <div *ngIf="username.invalid && (username.dirty || username.touched)">
+                <div *ngIf="username.errors?.['required']">
+                    Username is required.
+                </div>
             </div>
-        </div>
 
-        <mat-form-field appearance="outline" hideRequiredMarker="">
-            <mat-label>Password</mat-label>
-            <input class = "box" id="password" type="password" formControlName="password" matInput>
-            
-        </mat-form-field>
+            <mat-form-field appearance="outline" hideRequiredMarker="">
+                <mat-label>Password</mat-label>
+                <input class="box" id="password" type="password" formControlName="password" matInput>
 
-        <!-- displays whenever password is invalid (no input) -->
-        <div *ngIf="password.invalid && (password.dirty || password.touched)">
-            <div *ngIf="password.errors?.['required']">
-                Password is required.
+            </mat-form-field>
+
+            <!-- displays whenever password is invalid (no input) -->
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div *ngIf="password.errors?.['required']">
+                    Password is required.
+                </div>
             </div>
-        </div>
 
-        <div *ngIf="unsuccessful">
-            The username and password combination is incorrect.
-        </div>
+            <div *ngIf="unsuccessful">
+                The username and password combination is incorrect.
+            </div>
 
-        <button class = "btn" type="submit" [disabled]="loginForm.invalid && (loginForm.dirty || loginForm.touched)" >SIGN IN</button>
-        
-        
-        
-        <div class = "forgot-pwd">
-            <a href="">Forgot your password?</a><br>
-            
-            <button class = "btn-account" type= "button">Create an account</button>      
-        </div>
-        
-        <mat-divider></mat-divider>
-        
-        <div class = "login-as">
-            <div *ngIf="!loginAsAdmin">
-                <h1>You are logging in as user</h1>
-                <a routerLink="admin"><i class="ri-user-2-fill"></i>Log-in as administrator</a>
+            <button class="btn" type="submit"
+                [disabled]="loginForm.invalid && (loginForm.dirty || loginForm.touched)">SIGN IN</button>
+
+            <div class="forgot-pwd">
+                <a href="">Forgot your password?</a>
+
+                <button class="btn-account" type="button" *ngIf="!loginAsAdmin">
+                    Create an account
+                </button>
             </div>
-            <div *ngIf="loginAsAdmin">
-                <h1>You are logging in as administrator</h1>
-                <a routerLink="../"><i class="ri-user-5-fill"></i>Log-in as user</a>
+
+            <mat-divider></mat-divider>
+
+            <div class="login-as">
+                <div *ngIf="!loginAsAdmin">
+                    <h1>You are logging in as user</h1>
+                    <a routerLink="admin"><i class="ri-user-2-fill"></i>Log-in as administrator</a>
+                </div>
+                <div *ngIf="loginAsAdmin">
+                    <h1>You are logging in as administrator</h1>
+                    <a routerLink="../"><i class="ri-user-5-fill"></i>Log-in as user</a>
+                </div>
             </div>
-        </div>
-        
-        
-    </form>
-</div>
+
+
+        </form>
+    </div>
 </div>

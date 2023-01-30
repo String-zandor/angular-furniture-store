@@ -1,5 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
@@ -11,26 +12,29 @@ import { ProductService } from '../../services/product.service';
 })
 export class AdminProductFormComponent implements OnInit {
   
+  photosCtrl: FormControl = new FormControl();
   productForm: FormGroup = this.fb.group({
     id: [0],
-    name: [''],
-    category: [''],
-    color: [''],
+    name: ['', Validators.required],
+    category: ['', Validators.required],
+    color: ['', Validators.required],
     description: this.fb.group({
       desc: [''],
       dimensions: [''],
       material: [''],
       weight: ['']
     }),
-    price: [0]
+    price: [0, Validators.min(1)]
   });
 
   selectedProd?: Product;
+  photosUrl: string[] = [];
 
   constructor(
     private fb: FormBuilder, 
     private route: ActivatedRoute,
     private router: Router,
+    private location: Location,
     private productService: ProductService) { 
 
   }
@@ -51,31 +55,69 @@ export class AdminProductFormComponent implements OnInit {
     this.productForm.patchValue(product);
   }
 
-  onSubmit(): void {
+  onFilesSelect(event: any): void {
+    const photos: FileList = event.target.files;
+
+    if (photos.length < 1) {
+      this.photosUrl = [];
+      return;
+    } 
+
+    // for implementation with Firebase Cloud
+    for (let i = 0; i < photos.length; i++) {
+      this.photosUrl.push(photos[i].name);
+    }
+  }
+
+  cancel(): void {
+    this.location.back();
+  }
+
+  resetPhotos(): void {
+    this.photosCtrl.reset();
+    this.photosUrl = [];
+  }
+
+  updateProduct(): Product {
     const product: Product = this.productForm.value;
-    product.postingDate = JSON.stringify(new Date());
-    console.log(product);
+    product.postingDate = new Date().toJSON();
+    product.srcUrl = this.photosUrl;
+    product.postingDate = new Date().toJSON();
+    return product;
+  }
+
+  onSubmit(): void {
+    const product: Product = this.updateProduct();
 
     if (this.selectedProd) {
       this.productService.editProduct(product).subscribe(product => {
         if (product) {
-          // TEST
-          console.log('successful edited product');
           this.router.navigate(['/admin/products']);
         }
       });
     } else {
       this.productService.addProduct(product).subscribe(product => {
         if (product) {
-          // TEST
-          console.log('successful add product');
           this.router.navigate(['/admin/products']);
         }
       });
     }
-
   }
   
+  get name(): FormControl {
+    return this.productForm.get('name') as FormControl;
+  }
 
+  get category(): FormControl {
+    return this.productForm.get('category') as FormControl;
+  }
+
+  get color(): FormControl {
+    return this.productForm.get('color') as FormControl;
+  }
+
+  get price(): FormControl {
+    return this.productForm.get('price') as FormControl;
+  }
 
 }

@@ -16,11 +16,11 @@
                         <mat-divider></mat-divider>
                     </ul>
                     <div class = "add-quantity">
-
+                    
                         <div class = "add-quantity-btn">
-                        <button class = "min" type="button" id="min" [disabled]="quantity === 1" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
-                        <input type="text" [value]="quantity">
-                        <button class = "max" type="button" id="max" (click)="addQuantity()"><i class="ri-add-line"></i></button>
+                          <button class = "min" type="button" id="min" [disabled]="quantity === 1" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
+                          <input type="text" [value]="quantity">
+                          <button class = "max" type="button" id="max" (click)="addQuantity()"><i class="ri-add-line"></i></button>
                         </div>
 
                         <button class = "add-to-cart" type="button" id="add" [disabled]="quantity === 0"  (click)="addToCart()">Add to Cart</button>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 import { CartService } from 'src/app/modules/cart/services/cart.service';
+import { Product } from 'src/app/modules/product/models/product';
+import { ProductService } from 'src/app/modules/product/services/product.service';
+import { AuthService } from 'src/app/modules/user/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,14 +13,18 @@ import { CartService } from 'src/app/modules/cart/services/cart.service';
 export class HeaderComponent implements OnInit {
 
   cartTotal$?: Observable<number>;
+  allProducts?: Product[]
 
-  constructor(private cartService: CartService) { }
+  constructor(
+    private cartSvc: CartService,
+    private productSvc: ProductService,
+    private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.cartService.getCartItems().subscribe();
-    this.cartTotal$ = this.cartService.getNoOfItems();
+    this.cartTotal$ = this.auth.user$.pipe(
+      tap(() => this.cartSvc.getCartItems().subscribe()),
+      switchMap(() => this.cartSvc.getNoOfItems())
+    )
+    this.productSvc.getProducts().subscribe((product => this.allProducts = product))
   }
-
-  
-
 }

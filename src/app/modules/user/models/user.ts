@@ -1,16 +1,19 @@
-import { CartItem } from "../../cart/models/cart-item";
-
 export interface User {
     id?: number,
+    key: number,
     firstName: string,
-    middleName: string,
     lastName: string,
     phone: string,
     address: string,
     email: string,
     birthDate: string,
-    interests: string[],
+    username: string,
+}
+
+export interface UserCred {
+    id?: number,
     username: string,
     password: string,
-    admin: boolean
+    active: boolean,
+    role: 'USER' | 'ADMIN'
 }
