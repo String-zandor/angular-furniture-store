@@ -68,6 +68,17 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.check.checkout(false);
   }
 
+  canExit(): boolean {
+    if(!this.editInfo){
+      return true
+    }
+    if(confirm("Do you want to close this page without saving the details?")){
+      return true;
+    }else{
+      return false
+    }
+  }
+
   editShippingForm(){
     this.customClass = 'toggleRemoveDesign'
     this.editInfo = true
