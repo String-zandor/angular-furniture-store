@@ -82,53 +82,6 @@
   "cart": [
     {
       "product": {
-        "id": 4,
-        "name": "Baroque Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Baroque"
-        },
-        "price": 17500,
-        "postingDate": "2019-01-01 12:00AM"
-      },
-      "qty": 1,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "id": 6,
-      "name": "Vintage Davenport",
-      "category": "Sofas",
-      "color": "Brown",
-      "description": {
-        "desc": "Long brown leather sofa",
-        "dimensions": "6ft x 3ft",
-        "material": "Leather",
-        "weight": "8kg"
-      },
-      "price": 20000,
-      "postingDate": "2023-01-28T14:59:17.783Z",
-      "srcUrl": []
-    },
-    {
-      "id": 7,
-      "name": "Water Bed",
-      "category": "Beds",
-      "color": "Teal",
-      "description": {
-        "desc": "",
-        "dimensions": "",
-        "material": "Rubber",
-        "weight": "2kg"
-      },
-      "price": 3000,
-      "postingDate": "2023-01-28T15:13:59.887Z",
-      "srcUrl": []
-    }
-  ],
-  "cart": [
-    {
-      "product": {
         "id": 5,
         "name": "Chintzy Chaise Lounge",
         "category": "Chairs",
@@ -166,6 +119,22 @@
       "qty": 3,
       "userId": 3,
       "id": 2
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": "assets/products/3.png",
+        "name": "Utility Chair",
+        "category": "Chairs",
+        "description": {
+          "desc": "Better"
+        },
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 3
     }
   ],
   "users": [

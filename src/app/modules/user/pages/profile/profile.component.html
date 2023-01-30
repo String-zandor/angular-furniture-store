@@ -31,28 +31,31 @@
 
         </mat-form-field>
 
-        <br>
+        
 
         <table class="name" cellspacing="0">
-            <td><mat-form-field appearance="outline" hideRequiredMarker="">
+            <td><mat-form-field appearance="outline">
                     <mat-label>First Name</mat-label>
                     <input id="firstName" type="text" formControlName="firstName" matInput>
                 </mat-form-field>
-                <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                    <div *ngIf="firstName.errors?.['required']">
+                <div class = mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <mat-error *ngIf="firstName.errors?.['required']">
                         First name is required.
-                    </div>
+                    </mat-error>
                 </div>
             </td>
-            <td><mat-form-field appearance="outline" hideRequiredMarker="">
+            <td><mat-form-field appearance="outline" >
                     <mat-label>Last Name</mat-label>
                     <input id="lastName" type="text" formControlName="lastName" matInput>
+                    
                 </mat-form-field>
-                <mat-error *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
-                    <div *ngIf="lastName.errors?.['required']">
+                <div class = "mat-error" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" >
+                    <mat-error *ngIf="lastName.errors?.['required']">
                         Last name is required.
-                    </div>
-                </mat-error>
+                    </mat-error>
+                </div>
+        
+                
             </td>
         </table>
 

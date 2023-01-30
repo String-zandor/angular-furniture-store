@@ -98,23 +98,34 @@ td{
 
 mat-form-field{
     width: 200px !important;
+    margin: 0 !important;
+    padding: 0!important;
+   
 }   
 
 mat-form-field mat-label     {
     font-size: 15px;
-    
-    
   }
+
+
+
+
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
     padding: 0 !important;
 }
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
     padding: 0 !important;
-    height: 35px;
+    
     border: none;
     
 
 }
+
+.mat-error{
+    margin-top: -20px;
+    font-size: 10px;
+}
+
 
 .ri-phone-fill{
     margin-left: 10px;
