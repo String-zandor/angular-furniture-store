@@ -36,7 +36,6 @@
     <mat-menu class="sample" #price = "matMenu" xPosition="after" yPosition="below" >
         <div *ngFor="let range of PR">
             <app-price-item class = "price-range" [range]="range" (onChanges)="onChanges($event)"></app-price-item>
-           
         </div>
     </mat-menu>
 

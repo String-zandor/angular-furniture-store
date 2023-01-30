@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/cart.service';
+import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
   selector: 'app-cart-list',
@@ -17,6 +18,7 @@ export class CartListComponent implements OnInit, OnDestroy {
 
   constructor(
     private cartService: CartService,
+    private check: CheckoutService,
     private router: Router,
     private route: ActivatedRoute) {
 
@@ -61,6 +63,7 @@ export class CartListComponent implements OnInit, OnDestroy {
    * TODO: update CartService to monitor this so that this is the only access to checkout
    */
   goToCheckout(): void {
+    this.check.checkout(true);
     this.router.navigate(['checkout'], { relativeTo: this.route });
   }
 

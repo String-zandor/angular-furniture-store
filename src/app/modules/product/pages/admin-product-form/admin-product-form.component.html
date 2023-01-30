@@ -1,49 +1,61 @@
+<div>
+    <form [formGroup]="productForm">
+        <label for="name">Name:</label>
+        <input id="name" type="text" formControlName="name" /> <br>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors?.['required']">
+                Product name is required.
+            </div>
+        </div>
 
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-    <label for="name">Name:</label>
-    <input id="name" type="text" formControlName="name"/> <br>
+        <label for="category">Category:</label>
+        <input id="category" type="text" formControlName="category" /> <br>
+        <div *ngIf="category.invalid && (category.dirty || category.touched)">
+            <div *ngIf="category.errors?.['required']">
+                Product category is required.
+            </div>
+        </div>
 
-    <label for="category">Category:</label>
-    <input id="category" type="text" formControlName="category"/> <br>
+        <label for="color">Color:</label>
+        <input id="color" type="text" formControlName="color" /> <br>
+        <div *ngIf="color.invalid && (color.dirty || color.touched)">
+            <div *ngIf="color.errors?.['required']">
+                Product color is required.
+            </div>
+        </div>
 
-    <label for="color">Color:</label>
-    <input id="color" type="text" formControlName="color"/> <br>
+        <label for="description">Details:</label>
+        <div formGroupName="description">
+            <label for="desc">Description:</label>
+            <input id="desc" type="text" formControlName="desc" /> <br>
 
-    <label for="description">Details:</label>
-    <div formGroupName="description">
-        <label for="desc">Description:</label>
-        <input id="desc" type="text" formControlName="desc"/> <br>
+            <label for="dimensions">Dimensions:</label>
+            <input id="dimensions" type="text" formControlName="dimensions" /> <br>
 
-        <label for="dimensions">Dimensions:</label>
-        <input id="dimensions" type="text" formControlName="dimensions"/> <br>
+            <label for="material">Material:</label>
+            <input id="material" type="text" formControlName="material" /> <br>
 
-        <label for="material">Material:</label>
-        <input id="material" type="text" formControlName="material"/> <br>
+            <label for="weight">Weight:</label>
+            <input id="weight" type="text" formControlName="weight" /> <br>
+        </div>
 
-        <label for="weight">Weight:</label>
-        <input id="weight" type="text" formControlName="weight"/> <br>
-    </div>
+        <label for="price">Price:</label>
+        <input id="price" type="number" formControlName="price" /> <br>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)">
+            <div *ngIf="price.errors?.['min']">
+                Product price should be greater than 0.
+            </div>
+        </div>
+        <br>
+    </form>
 
-    <label for="price">Price:</label>
-    <input id="price" type="number" formControlName="price"/> <br>
-    <br>
-    <button type="submit">Save</button>
-</form>
+    <input type="file" accept="images/*" multiple (change)="onFilesSelect($event)" [formControl]="photosCtrl"/>
+    <button type="button" (click)="resetPhotos()">Clear</button> 
+    <br><br>
 
-<!-- 
-
-    id: number,
-      srcUrl: string,
-      name: string,
-      category: string,
-      color: string,
-      description: {
-          desc: string,
-          dimensions: string,
-          material: string,
-          weight: string,
-      },
-      postingDate: string,
-      price: number
-
- -->
+    <button type="button" (click)="onSubmit()" 
+        [disabled]="productForm.untouched ||(productForm.invalid && (productForm.dirty || productForm.touched))" >
+        Save
+    </button>
+    <button type="button" (click)="cancel()" >Cancel</button>
+</div>

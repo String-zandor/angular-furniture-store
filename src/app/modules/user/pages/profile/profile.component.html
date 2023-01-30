@@ -4,6 +4,11 @@
         <button type ="button" (click)="logout()"><i class="ri-logout-box-r-line"></i><span>Log-out</span></button>
         
     </div>
+<br>
+    <div>
+        <a routerLink="orders">Orders</a>
+    </div>
+<br>
     <form [formGroup]="profileForm" >
         
         <div class = "account-details">
@@ -20,12 +25,10 @@
         <mat-divider></mat-divider>
         <br>
         
-        
-        
         <mat-form-field appearance="outline" hideRequiredMarker="">
             <mat-label>Username</mat-label>
             <input id="username" type="text" formControlName="username" matInput>
-            
+     
         </mat-form-field>
         
         <br>
@@ -34,23 +37,12 @@
             <td><mat-form-field appearance="outline" hideRequiredMarker="" >
                 <mat-label>First Name</mat-label>
                 <input id="firstName"  type="text" formControlName="firstName" matInput>
-                
-            </mat-form-field></td>
-            <td><mat-form-field appearance="outline" hideRequiredMarker="">
-                <mat-label>Middle Name</mat-label>
-                <input id="middleName" type="text" formControlName="middleName" matInput>
-            </mat-form-field></td>
 
             <td><mat-form-field appearance="outline" hideRequiredMarker="">
                 <mat-label>Last Name</mat-label>
-                
                 <input id="lastName" type="text" formControlName="lastName" matInput>
-                
             </mat-form-field></td>
-            
-
         </table>
-
         
         <table class = "phone-bday" cellspacing = "0"> 
             <td><mat-form-field appearance="outline" hideRequiredMarker="">
@@ -67,7 +59,19 @@
         </table>
         
 
-    
+        
+        <!-- ERROR PROMPTS -->
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+            <div *ngIf="firstName.errors?.['required']">
+                First name is required.
+            </div>
+        </div>
+
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+            <div *ngIf="firstName.errors?.['required']">
+                Last name is required.
+            </div>
+        </div>
 
         <h3>E-mail address</h3>
         <mat-divider></mat-divider>
@@ -78,6 +82,12 @@
             <input id="email" type="text" formControlName="email" matInput>
         </mat-form-field>   
         
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.['pattern']">
+                Enter a valid email address.
+            </div>
+        </div>
+        
         <h3>Shipping Address</h3>
         <mat-divider></mat-divider>
         <br>
@@ -87,37 +97,11 @@
             <textarea id="address" type="text" formControlName="address" matInput></textarea>
         </mat-form-field> 
         
-
-        <h3>Interest</h3>
-        
-
-        <div class = "interest" formArrayName="interests" >
-            <div *ngFor="let _ of interests.controls; index as i">
-
-                <mat-form-field appearance="outline" hideRequiredMarker="">       
-                    <input id="interest-{{i}}" type="text" [formControlName]="i" matInput>
-                </mat-form-field> 
-
-                <!-- <input id="interest-{{i}}" type="text" [formControlName]="i" /> -->
-
-                <span *ngIf="profileForm.enabled">
-                    <button type="button-del" (click)="deleteInterest(i)" ><i class="ri-close-circle-line"></i></button>
-                </span>
-
-            </div>
-
-            <div *ngIf="profileForm.enabled">
-                <button  mat-raised-button color= "accent"  (click)="addInterest()">Add</button>
-            </div>
-
-        </div>
-        <br>
-
         <div class = "save-changes" *ngIf="profileForm.enabled">
             
             <button type="button" (click)="saveChanges()" mat-raised-button color="primary">Save</button>
+            <button type="button" (click)="cancel()" mat-raised-button color="warn" >Cancel</button>
         </div>
-
        
     </form>
     

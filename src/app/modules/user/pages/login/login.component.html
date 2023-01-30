@@ -37,13 +37,18 @@
 
         <button class = "btn" type="submit" [disabled]="loginForm.invalid && (loginForm.dirty || loginForm.touched)" >SIGN IN</button>
         
-        
-        
         <div class = "forgot-pwd">
-            <a href="">Forgot your password?</a><br>
+            <a href="">Forgot your password?</a>
             
-            <button class = "btn-account" type= "button">Create an account</button>      
+            <button class = "btn-account" type="button" *ngIf="!loginAsAdmin">
+            Create an account
+             </button>
+         </div>
+         
+        <div *ngIf="!loginAsAdmin">
+            <a routerLink="admin">Log-in as administrator</a>
         </div>
+       
         
         <mat-divider></mat-divider>
         
