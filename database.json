@@ -97,43 +97,23 @@
   "cart": [
     {
       "product": {
-        "id": 7,
-        "name": "Water Bed",
-        "category": "Beds",
-        "color": "Teal",
+        "id": 5,
+        "name": "Chintzy Chaise Lounge",
+        "category": "Chairs",
+        "color": "Pink",
         "description": {
-          "desc": "",
-          "dimensions": "",
-          "material": "Rubber",
-          "weight": "2kg"
-        },
-        "price": 3000,
-        "postingDate": "2023-01-28T15:13:59.887Z",
-        "srcUrl": []
-      },
-      "qty": 2,
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "product": {
-        "id": 1,
-        "name": "Comfy Bed",
-        "category": "Beds",
-        "color": "Vintage White",
-        "description": {
-          "desc": "Good",
+          "desc": "Floral",
           "dimensions": "6ft x 6ft",
-          "material": "memory foam",
-          "weight": "10kg"
+          "material": "Cotton",
+          "weight": "8kg"
         },
-        "price": 12000,
-        "postingDate": "2023-01-28T15:24:41.683Z",
+        "price": 17000,
+        "postingDate": "2023-01-28T15:20:51.331Z",
         "srcUrl": []
       },
-      "qty": "1",
+      "qty": 1,
       "userId": 1,
-      "id": 7
+      "id": 1
     }
   ],
   "users": [
@@ -141,7 +121,7 @@
       "id": 1,
       "key": 1,
       "username": "seven",
-      "firstName": "Seven",
+      "firstName": "seven",
       "lastName": "Seven",
       "email": "mrseven@77global.biz",
       "phone": "09777777777",
@@ -372,6 +352,130 @@
         "address": "Tera Ertu"
       },
       "id": 2
+    },
+    {
+      "user": 1,
+      "status": "pending",
+      "subtotal": 18000,
+      "deliveryfee": 100,
+      "total": 18100,
+      "orderDate": "2023-01-30T02:40:29.701Z",
+      "cart": [
+        {
+          "product": {
+            "id": 7,
+            "name": "Water Bed",
+            "category": "Beds",
+            "color": "Teal",
+            "description": {
+              "desc": "",
+              "dimensions": "",
+              "material": "Rubber",
+              "weight": "2kg"
+            },
+            "price": 3000,
+            "postingDate": "2023-01-28T15:13:59.887Z",
+            "srcUrl": []
+          },
+          "qty": 2,
+          "userId": 1,
+          "id": 6
+        },
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "color": "Vintage White",
+            "description": {
+              "desc": "Good",
+              "dimensions": "6ft x 6ft",
+              "material": "memory foam",
+              "weight": "10kg"
+            },
+            "price": 12000,
+            "postingDate": "2023-01-28T15:24:41.683Z",
+            "srcUrl": []
+          },
+          "qty": "1",
+          "userId": 1,
+          "id": 7
+        }
+      ],
+      "shipping": {
+        "name": "Seven Seven",
+        "phone": "09777777777",
+        "address": "Earth"
+      },
+      "id": 3
+    },
+    {
+      "user": 1,
+      "status": "pending",
+      "subtotal": 17500,
+      "deliveryfee": 100,
+      "total": 17600,
+      "orderDate": "2023-01-30T05:48:02.344Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": "assets/products/1.png",
+            "name": "Baroque Table",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 1
+        }
+      ],
+      "shipping": {
+        "name": "Seven Seven",
+        "phone": "09777777777",
+        "address": "Earth"
+      },
+      "id": 4
+    },
+    {
+      "user": 1,
+      "status": "pending",
+      "subtotal": 17000,
+      "deliveryfee": 100,
+      "total": 17100,
+      "orderDate": "2023-01-30T05:48:41.465Z",
+      "cart": [
+        {
+          "product": {
+            "id": 5,
+            "name": "Chintzy Chaise Lounge",
+            "category": "Chairs",
+            "color": "Pink",
+            "description": {
+              "desc": "Floral",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 17000,
+            "postingDate": "2023-01-28T15:20:51.331Z",
+            "srcUrl": []
+          },
+          "qty": 1,
+          "userId": 1,
+          "id": 1
+        }
+      ],
+      "shipping": {
+        "name": "Seven Seven",
+        "phone": "09777777777",
+        "address": "Earth"
+      },
+      "id": 5
     }
   ]
 }

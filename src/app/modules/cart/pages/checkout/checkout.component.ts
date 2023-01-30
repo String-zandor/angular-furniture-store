@@ -1,13 +1,13 @@
-import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription} from 'rxjs';
+import { map, Subscription} from 'rxjs';
 import { Order } from 'src/app/modules/order/models/order';
 import { OrderService } from 'src/app/modules/order/services/order.service';
 import { AuthService } from 'src/app/modules/user/services/auth.service';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/cart.service';
 import { CheckoutService } from '../../services/checkout.service';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-checkout',
@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   })
   customClass:string ='removeDesign'
 
-  
+  isChangedValueForm:boolean = false
 
   ngOnInit(): void {
     this.loadCartItems();
@@ -54,9 +54,24 @@ export class CheckoutComponent implements OnInit, OnDestroy {
       this.userAddress = user?.address
 
       this.shippingForm.patchValue({
-        name: this.userFullName,
-        contact: this.userContact,
-        address: this.userAddress
+        name: user?.firstName+' '+user?.lastName,
+        contact: user?.phone,
+        address: user?.address
+      })
+
+      this.shippingForm.valueChanges.pipe(
+        map((value)=>{return value})
+      ).subscribe((value)=>{
+        let name:boolean = this.userFullName === value.name
+        let contact:boolean = this.userContact === value.contact
+        let address:boolean = this.userAddress === value.address
+        if(name && contact && address){
+          this.isChangedValueForm = false
+        }else{
+          this.isChangedValueForm = true
+        }
+        console.log(name, contact, address)
+        console.log(this.userFullName, ' ',value.name)
       })
       
     })
@@ -68,15 +83,37 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.check.checkout(false);
   }
 
-  canExit(): boolean {
-    if(!this.editInfo){
+  @HostListener ('window:beforeunload', ['$event']) 
+  public beforeUnloadHandler(event:any){
+    console.log('is dirty form',this.isChangedValueForm)
+    if(this.isChangedValueForm){
+      event.returnValue = this.isChangedValueForm
+    }
+  }
+
+  async canExit(): Promise<boolean>{
+    let canExit:boolean = false
+      if(!this.editInfo){
       return true
     }
-    if(confirm("Do you want to close this page without saving the details?")){
-      return true;
-    }else{
-      return false
+    
+    const result = await this.openDialogWhenExitingWithougChanges()
+    if(result){
+      // this.isDirtyForm = false
+      return result as boolean
     }
+    return canExit
+  }
+
+  openDialogWhenExitingWithougChanges(){
+    return new Promise(resolve => {
+      let dialogRef = this.dialog.open(DialogCanDeactivate, {
+        width: '250px'
+      });
+      dialogRef.afterClosed().subscribe(result =>{
+        resolve(result);
+      })
+    })
   }
 
   editShippingForm(){
@@ -92,6 +129,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.userAddress = this.shippingForm.value.address? this.shippingForm.value.address: ''
     this.customClass = 'removeDesign'
     this.editInfo = false
+    // this.isDirtyForm = false
   }
   openDialog(): void {
     if(!this.editInfo){
@@ -109,6 +147,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         width: '250px'
       });
       const sub = dialogRef.componentInstance.onAdd.subscribe(() => {
+        // this.isDirtyForm = false
         this.proceedCheckout()
       });
       
@@ -223,5 +262,29 @@ export class DialogProceedCheckoutWithoutSaving{
     console.log("Yes")
     this.dialogRef.close();
     this.onAdd.emit();
+  }
+}
+
+export interface DialogData {
+  exit: boolean;
+}
+/**
+ * Dialogbox for canDeactivate
+ */
+@Component({
+  selector: 'proceed-dialog',
+  templateUrl: './checkout-can-deactivate.html',
+  styleUrls: ['./checkout-can-deactivate.scss'],
+})
+
+export class DialogCanDeactivate{
+  constructor(public dialogRef: MatDialogRef<DialogCanDeactivate>){}
+  onYesClick(): void {
+    console.log("Yes")
+    this.dialogRef.close(true);
+  }
+  onNoClick(): void{
+    console.log("no")
+    this.dialogRef.close(false);
   }
 }

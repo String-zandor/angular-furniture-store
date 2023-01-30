@@ -1,7 +1,7 @@
 <p><strong>CHECKOUT - PAGE</strong></p>
 <br>
 <strong>Shipping Details</strong>
-<form [formGroup]="shippingForm" (ngSubmit)="onSubmitShippingForm()">
+<form id="shippingFormStatus" [formGroup]="shippingForm" (ngSubmit)="onSubmitShippingForm()">
     <label *ngIf="editInfo" for="name">Name: </label>
     <input [ngClass]="customClass" type="text" formControlName="name" [readonly]="!editInfo">
     <span *ngIf="shippingForm.get('name')?.errors" class="error-message">Name field is required.</span>

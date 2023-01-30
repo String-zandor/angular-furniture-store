@@ -23,7 +23,10 @@ export class CheckoutGuard implements CanActivate, CanDeactivate<CheckoutCompone
   }
 
   canDeactivate(component: CheckoutComponent, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    return component.canExit();
+    if(component.shippingForm.dirty){
+      return component.canExit();
+    }
+    return true
   }
   
 }
