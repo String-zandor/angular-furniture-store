@@ -61,7 +61,39 @@
         "weight": "8kg"
       },
       "price": 17000,
-      "postingDate": "2023-01-28T15:20:51.331Z"
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 6,
+      "srcUrl": "assets/products/1.png",
+      "name": "Chintzy Chaise Lounge",
+      "category": "Chairs",
+      "color": "Pink",
+      "description": {
+        "desc": "Floral",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 17000,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    }
+  ],
+  "cart": [
+    {
+      "product": {
+        "id": 4,
+        "name": "Baroque Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Baroque"
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 1,
+      "id": 1
     },
     {
       "id": 6,
