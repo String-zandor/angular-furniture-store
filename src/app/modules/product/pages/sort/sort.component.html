@@ -1,16 +1,27 @@
 
 
- 
-  <button class ="btn" mat-button [matMenuTriggerFor]="sortBy">Sort By<i class="ri-arrow-drop-down-fill"></i></button>
+<!-- <button class ="btn" mat-button [matMenuTriggerFor]="sortBy">Sort By<i class="ri-arrow-drop-down-fill"></i></button>
   <mat-menu #sortBy = "matMenu" xPosition="after" yPosition="below" >
-    <button mat-menu-item (click)="sortByDateNewToOld()"><input type ="radio" name="sortInputs" [checked]="true" (click)="sortByDateNewToOld()">Date, New to Old </button>
+    
+    <button mat-menu-item (click)="sortByDateNewToOld()" ><input type ="radio" name="sortInputs" [checked]="true" (click)="sortByDateNewToOld()">Date, New to Old </button>
     <button mat-menu-item (click)="sortByDateOldToNew()"><input type ="radio" name="sortInputs" (click)="sortByDateOldToNew()">Date, Old to New </button>
     <button mat-menu-item (click)="sortByNameAscending()"><input type ="radio" name="sortInputs" (click)="sortByNameAscending()">Name, A-Z</button>
     <button mat-menu-item (click)="sortByNameDescending()"><input type ="radio" name="sortInputs" (click)="sortByNameDescending()">Name, Z-A</button>
     <button mat-menu-item (click)="sortByPriceLowest()"><input type ="radio" name="sortInputs" (click)="sortByPriceLowest()">Price, Low to High</button>
     <button mat-menu-item (click)="sortByPriceHighest()"><input type ="radio" name="sortInputs" (click)="sortByPriceHighest()">Price, High to Low</button>
-  </mat-menu>
+  </mat-menu> -->
 
+  <button class ="btn" mat-button [matMenuTriggerFor]="sortBy">Sort By<i class="ri-arrow-drop-down-fill"></i></button>
+  <mat-menu #sortBy = "matMenu" xPosition="after" yPosition="below" >
+    
+    
+    <button mat-menu-item (click)="sortByDateNewToOld()" ><mat-radio-button (click)="sortByDateNewToOld()" [checked]="true" />Date, New to Old </button>
+    <button mat-menu-item (click)="sortByDateOldToNew()"><mat-radio-button (click)="sortByDateOldToNew()"/>Date, Old to New </button>
+    <button mat-menu-item (click)="sortByNameAscending()"><mat-radio-button (click)="sortByNameAscending()"/>Name, A-Z</button>
+    <button mat-menu-item (click)="sortByNameDescending()"><mat-radio-button (click)="sortByNameDescending()"/>Name, Z-A</button>
+    <button mat-menu-item (click)="sortByPriceLowest()"><mat-radio-button (click)="sortByPriceLowest()"/>Price, Low to High</button>
+    <button mat-menu-item (click)="sortByPriceHighest()"><mat-radio-button (click)="sortByPriceHighest()"/>Price, High to Low</button>
+  </mat-menu>
 
 
 

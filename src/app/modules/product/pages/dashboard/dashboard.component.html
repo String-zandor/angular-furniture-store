@@ -1,6 +1,41 @@
-    <div class="home-img"><img src="assets\img\img-1.png"></div>
+TML
+
+<div class = carouselExampleIndicators>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets\img\img-1.png" class="d-block w-100" width = 100% height = 500px alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets\img\img-5.png" class="d-block w-100" width = 100% height = 500px alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets\img\img-6.png" class="d-block w-100" width = 100% height = 500px alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+    
+    <!-- <div class="home-img"><img src="assets\img\img-1.png"></div> -->
 
     <mat-divider></mat-divider>
+
+    
+
+    
     <div class = "product-board">
         <div class = "filter">
         <!-- SORT BY-->
@@ -10,31 +45,34 @@
             <app-filter (filter)="filter($event)" [allProducts$]="allProducts$"></app-filter>
                             
         </div>
-        </div>
-
-        <mat-divider></mat-divider>
-    <div class = "product-container">    
-    <div class = "flex-box">       
-        <div class = "search-status">
-            <div *ngIf="true">
-                <h1></h1>
-            </div>
-
-            <div *ngIf="false">
-                <h1>There are no products to display.</h1>
-            </div>
-        </div>
-
-        
-
-        <div class = "product-tile">
-            <ng-container *ngFor="let product of productsDisplay$ | async">
-                <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
-            </ng-container>
-        </div>
-
-
     </div>
-</div>   
+    
+
+    <mat-divider></mat-divider>
+   
+    
+    <div class = "product-container">    
+        <div class = "flex-box">       
+            <div class = "search-status">
+                <div *ngIf="true">
+                    <h1></h1>
+                </div>
+
+                <div *ngIf="false">
+                    <h1>There are no products to display.</h1>
+                </div>
+            </div>
+
+            <div class = "product-tile">
+                <ng-container *ngFor="let product of productsDisplay$ | async">
+                    <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
+                </ng-container>
+            </div>
+             
+        </div>
+    </div>
+    
+
+
 
 

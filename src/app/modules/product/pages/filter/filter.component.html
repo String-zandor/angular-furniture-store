@@ -5,13 +5,31 @@
     <!-- ADD stop.propagation  to stop menu from closing -->
     
     <button class = "btn" mat-button [matMenuTriggerFor]="category">Category<i class="ri-arrow-drop-down-fill"></i></button>
-    <mat-menu #category = "matMenu" xPosition="after" yPosition="below" >
+    <mat-menu #category = "matMenu" xPosition="before" yPosition="below" >
         <div *ngFor="let category of categories$ | async">
             <app-category-item [category]="category" (onChanges)="onChanges($event)" ></app-category-item>
         </div>
 
     </mat-menu>
 
+    <!-- <div class = "expansion-panel">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Category
+              </mat-panel-title>
+              
+            </mat-expansion-panel-header>
+            <div *ngFor="let category of categories$ | async">
+                <app-category-item [category]="category" (onChanges)="onChanges($event)" ></app-category-item>
+            </div>
+          </mat-expansion-panel>
+    
+
+
+    </div> -->
+
+   
     <!-- PRICE FILTER -->
 
     <button class = "btn" mat-button [matMenuTriggerFor]="price">Price<i class="ri-arrow-drop-down-fill"></i></button>
@@ -21,6 +39,25 @@
            
         </div>
     </mat-menu>
+
+    <!-- <div class = "expansion-panel">
+        <mat-card-content>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Price
+              </mat-panel-title>          
+            </mat-expansion-panel-header>
+            <div *ngFor="let range of PR">
+                <app-price-item class = "price-range" [range]="range" (onChanges)="onChanges($event)"  ></app-price-item>  
+            </div>
+        </mat-expansion-panel>
+        </mat-card-content>
+    
+
+
+    </div> -->
+
     <br><button class ="clear" (click)="clearAll()" >Clear all</button>
 
     

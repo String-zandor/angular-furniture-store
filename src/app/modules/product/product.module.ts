@@ -19,6 +19,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatMenuModule} from '@angular/material/menu';
 
 
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+import {MatRadioModule} from '@angular/material/radio';
+
 import { SearchResultComponent } from './pages/search-result/search-result.component';
 import { AdminProductItemComponent } from './components/admin-product-item/admin-product-item.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
@@ -49,7 +54,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ProductRoutingModule,
     SharedModule, 
     ReactiveFormsModule,
-    MatListModule, MatGridListModule,MatMenuModule
+    MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule
   ],
   exports:[]
 })

@@ -4,17 +4,21 @@ mat-divider{
 }
 
 // -------------IMAGE DISPLAY-------------- 
-.home-img{
+// .home-img{
     
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
+//   margin-top: 100px;
+//   display: flex;
+//   justify-content: center;
   
   
-}
+// }
 img{
 height: auto;
 max-width: 100%;
+}
+
+.carouselExampleIndicators{
+  margin-top: 80px;
 }
 
 // -------------DASHBOARD COMPONENT---------------- 
