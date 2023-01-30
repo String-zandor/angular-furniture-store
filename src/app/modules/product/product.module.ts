@@ -25,7 +25,7 @@ import { AdminProductComponent } from './components/admin-product/admin-product.
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminProductFormComponent } from './pages/admin-product-form/admin-product-form.component'
 import { SharedModule } from 'src/app/shared/shared.module';
-import { AdminUserListComponent } from './pages/admin-user-list/admin-user-list.component';
+import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user-list.component';
 
 @NgModule({
   declarations: [

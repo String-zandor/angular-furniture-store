@@ -17,7 +17,9 @@
     },
     {
       "id": 2,
-      "srcUrl": "assets/products/3.png",
+      "srcUrl": [
+        "assets/products/3.png"
+      ],
       "name": "Utility Chair",
       "category": "Chairs",
       "description": {
@@ -28,7 +30,9 @@
     },
     {
       "id": 3,
-      "srcUrl": "assets/products/4.png",
+      "srcUrl": [
+        "assets/products/4.png"
+      ],
       "name": "Glass Table",
       "category": "Tables",
       "description": {
@@ -39,7 +43,9 @@
     },
     {
       "id": 4,
-      "srcUrl": "assets/products/1.png",
+      "srcUrl": [
+        "assets/products/1.png"
+      ],
       "name": "Baroque Table",
       "category": "Tables",
       "description": {
@@ -60,8 +66,11 @@
         "weight": "8kg"
       },
       "price": 17000,
-      "postingDate": "2023-01-28T15:20:51.331Z",
-      "srcUrl": []
+      "postingDate": "2023-01-30T13:32:29.985Z",
+      "srcUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2F%5Bobject%20File%5D?alt=media&token=c11d35b4-d3e7-470a-a472-1a916c049bd9",
+        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2F%5Bobject%20File%5D?alt=media&token=c342a250-7714-456d-86f2-c62d7628be87"
+      ]
     },
     {
       "id": 6,
@@ -180,7 +189,7 @@
       "email": "mreight@88global.biz",
       "birthDate": "2088-08-08",
       "username": "eight"
-    },
+    }
   ],
   "auth": [
     {

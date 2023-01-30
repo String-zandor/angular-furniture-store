@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "grey-space": {
+      "hosting": {
+        "angular-furniture-store": [
+          "grey-space"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "grey-space"
+  }
+}

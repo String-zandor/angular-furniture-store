@@ -5,7 +5,7 @@ import { AdminProductListComponent } from './pages/admin-product-list/admin-prod
 import { AdminComponent } from './pages/admin/admin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
-import { AdminUserListComponent } from './pages/admin-user-list/admin-user-list.component';
+import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user-list.component';
 import { AdminAuthGuard } from 'src/app/core/guards/admin-auth.guard';
 
 const routes: Routes = [

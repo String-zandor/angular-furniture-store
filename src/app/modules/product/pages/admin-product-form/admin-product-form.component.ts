@@ -1,7 +1,9 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { concatMap, flatMap, map, Observable, of, Subscription, switchMap, tap } from 'rxjs';
+import { ImageService } from 'src/app/core/services/image.service';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -10,8 +12,8 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './admin-product-form.component.html',
   styleUrls: ['./admin-product-form.component.scss']
 })
-export class AdminProductFormComponent implements OnInit {
-  
+export class AdminProductFormComponent implements OnInit, OnDestroy {
+
   photosCtrl: FormControl = new FormControl();
   productForm: FormGroup = this.fb.group({
     id: [0],
@@ -28,21 +30,24 @@ export class AdminProductFormComponent implements OnInit {
   });
 
   selectedProd?: Product;
+  photos?: FileList;
   photosUrl: string[] = [];
+  subscriptions: Subscription[] = [];
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
-    private productService: ProductService) { 
+    private productSvc: ProductService,
+    private imgSvc: ImageService) {
 
   }
-  
+
   ngOnInit(): void {
     const selectedId: number = Number(this.route.snapshot.paramMap.get('id'));
     if (selectedId) {
-      this.productService.getProduct(selectedId).subscribe(product => {
+      this.productSvc.getProduct(selectedId).subscribe(product => {
         if (product) {
           this.selectedProd = product;
           this.updateForm(product);
@@ -56,16 +61,20 @@ export class AdminProductFormComponent implements OnInit {
   }
 
   onFilesSelect(event: any): void {
-    const photos: FileList = event.target.files;
+    const photos = event.target.files;
 
     if (photos.length < 1) {
       this.photosUrl = [];
-      return;
-    } 
+    }
 
-    // for implementation with Firebase Cloud
     for (let i = 0; i < photos.length; i++) {
-      this.photosUrl.push(photos[i].name);
+      const fileRef: string = `images/${photos[i]}`;
+      this.imgSvc.uploadPhoto(fileRef, photos[i]).then(() => {
+        this.subscriptions.push(
+          this.imgSvc.getPhotoURL(fileRef).subscribe(url => this.photosUrl.push(url))
+        );
+      });
+
     }
   }
 
@@ -82,28 +91,26 @@ export class AdminProductFormComponent implements OnInit {
     const product: Product = this.productForm.value;
     product.postingDate = new Date().toJSON();
     product.srcUrl = this.photosUrl;
-    product.postingDate = new Date().toJSON();
     return product;
   }
 
   onSubmit(): void {
     const product: Product = this.updateProduct();
-
     if (this.selectedProd) {
-      this.productService.editProduct(product).subscribe(product => {
+      this.productSvc.editProduct(product).subscribe(product => {
         if (product) {
           this.router.navigate(['/admin/products']);
         }
       });
     } else {
-      this.productService.addProduct(product).subscribe(product => {
+      this.productSvc.addProduct(product).subscribe(product => {
         if (product) {
           this.router.navigate(['/admin/products']);
         }
       });
     }
   }
-  
+
   get name(): FormControl {
     return this.productForm.get('name') as FormControl;
   }
@@ -118,6 +125,12 @@ export class AdminProductFormComponent implements OnInit {
 
   get price(): FormControl {
     return this.productForm.get('price') as FormControl;
+  }
+
+  ngOnDestroy(): void {
+    for (const sub of this.subscriptions) {
+      sub.unsubscribe();
+    }
   }
 
 }
