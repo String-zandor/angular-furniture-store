@@ -14,7 +14,8 @@ const routes: Routes = [
     canActivate: [UserAuthGuard],
     loadChildren: () => import('./modules/cart/cart.module').then(m => m.CartModule)
   },
-  { path: '', loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) }
+  { path: '', loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

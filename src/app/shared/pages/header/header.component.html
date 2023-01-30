@@ -1,7 +1,13 @@
 <!-- <p>Header Works!</p> -->
 
 <header>
-<a routerLink="/home"><img src ="assets\img\grey-space-logo.png"></a>
+<div *ngIf="true">
+    <a routerLink="/home"><img src ="assets\img\grey-space-logo.png"></a>
+</div>
+<div *ngIf="false">
+    <a routerLink="/admin"><img src ="assets\img\grey-space-logo.png"></a>
+</div>
+
     <div class = "search-bar">
         <app-search [autoComplete]="allProducts"></app-search>
     </div>

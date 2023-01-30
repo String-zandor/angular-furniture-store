@@ -8,22 +8,24 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { OrderModule } from "../order/order.module";
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    ProfileComponent,
-    ForgotPasswordComponent,
-    ResetPasswordComponent
-  ],
-  imports: [
-    CommonModule,
-    UserRoutingModule,
-    ReactiveFormsModule,
-    MatInputModule, MatButtonModule, MatDividerModule
-  ]
+    declarations: [
+        LoginComponent,
+        ProfileComponent,
+        ForgotPasswordComponent,
+        ResetPasswordComponent
+    ],
+    imports: [
+        CommonModule,
+        UserRoutingModule,
+        ReactiveFormsModule,
+        MatInputModule, MatButtonModule, MatDividerModule,
+        OrderModule
+    ]
 })
 export class UserModule { }
