@@ -39,7 +39,7 @@ TML
     <div class = "product-board">
         <div class = "filter">
         <!-- SORT BY-->
-            <h2>Filter:</h2>
+            
             <app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
             <!-- CATEGORY AND PRICE -->
             <app-filter (filter)="filter($event)" [allProducts$]="allProducts$"></app-filter>
