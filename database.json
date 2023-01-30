@@ -17,7 +17,9 @@
     },
     {
       "id": 2,
-      "srcUrl": "assets/products/3.png",
+      "srcUrl": [
+        "assets/products/3.png"
+      ],
       "name": "Utility Chair",
       "category": "Chairs",
       "description": {
@@ -28,7 +30,9 @@
     },
     {
       "id": 3,
-      "srcUrl": "assets/products/4.png",
+      "srcUrl": [
+        "assets/products/4.png"
+      ],
       "name": "Glass Table",
       "category": "Tables",
       "description": {
@@ -39,7 +43,9 @@
     },
     {
       "id": 4,
-      "srcUrl": "assets/products/1.png",
+      "srcUrl": [
+        "assets/products/1.png"
+      ],
       "name": "Baroque Table",
       "category": "Tables",
       "description": {

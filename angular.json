@@ -99,6 +99,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-furniture-store:build:production",
+            "firebaseProject": "grey-space",
+            "firebaseHostingSite": "grey-space"
+          }
         }
       }
     }
