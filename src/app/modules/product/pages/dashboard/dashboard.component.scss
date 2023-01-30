@@ -74,39 +74,18 @@ app-sort{
 
 .product-tile{
   display: flex;
-  justify-content: space-between;
-  
+  justify-content: center;
   flex-wrap: wrap;
   position: relative;
-  
-  
-  
-  
 }
+
 app-product-item{
   position: relative;
   display: inline-block;
-  
   padding: 10px;
-  
-  
-  
-  
   // background-color: rgb(124, 124, 124);
   
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media only screen and (max-width: 480px) {

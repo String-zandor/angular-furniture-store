@@ -146,6 +146,26 @@
       "qty": 1,
       "userId": 1,
       "id": 1
+    },
+    {
+      "product": {
+        "id": 7,
+        "name": "Water Bed",
+        "category": "Beds",
+        "color": "Teal",
+        "description": {
+          "desc": "",
+          "dimensions": "",
+          "material": "Rubber",
+          "weight": "2kg"
+        },
+        "price": 3000,
+        "postingDate": "2023-01-28T15:13:59.887Z",
+        "srcUrl": []
+      },
+      "qty": 3,
+      "userId": 3,
+      "id": 2
     }
   ],
   "users": [

@@ -16,6 +16,7 @@ export class ProductItemComponent {
 
   //addandminus
   quantity: number = 1;
+  
 
   addQuantity() {
     this.quantity += 1;

@@ -15,6 +15,10 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
     CommonModule,
     OrderRoutingModule,
     
+  ],
+  exports: [
+    PendingOrdersComponent,
+    OrderDetailsComponent
   ]
 })
 export class OrderModule { }
