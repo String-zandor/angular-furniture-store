@@ -50,7 +50,7 @@
     },
     {
       "id": 5,
-      "srcUrl": "assets/products/1.png",
+      "srcUrl": [],
       "name": "Chintzy Chaise Lounge",
       "category": "Chairs",
       "color": "Pink",
@@ -61,8 +61,7 @@
         "weight": "8kg"
       },
       "price": 17000,
-      "postingDate": "2023-01-28T15:20:51.331Z",
-      "srcUrl": []
+      "postingDate": "2023-01-28T15:20:51.331Z"
     },
     {
       "id": 6,
@@ -477,6 +476,78 @@
         "address": "Earth"
       },
       "id": 5
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 3000,
+      "deliveryfee": 100,
+      "total": 3100,
+      "orderDate": "2023-01-30T07:08:06.212Z",
+      "cart": [
+        {
+          "product": {
+            "id": 7,
+            "name": "Water Bed",
+            "category": "Beds",
+            "color": "Teal",
+            "description": {
+              "desc": "",
+              "dimensions": "",
+              "material": "Rubber",
+              "weight": "2kg"
+            },
+            "price": 3000,
+            "postingDate": "2023-01-28T15:13:59.887Z",
+            "srcUrl": []
+          },
+          "qty": "1",
+          "userId": 3,
+          "id": 2
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 6
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 60000,
+      "deliveryfee": 100,
+      "total": 60100,
+      "orderDate": "2023-01-30T07:10:16.918Z",
+      "cart": [
+        {
+          "product": {
+            "id": 6,
+            "name": "Vintage Davenport",
+            "category": "Sofas",
+            "color": "Brown",
+            "description": {
+              "desc": "Long brown leather sofa",
+              "dimensions": "6ft x 3ft",
+              "material": "Leather",
+              "weight": "8kg"
+            },
+            "price": 20000,
+            "postingDate": "2023-01-28T14:59:17.783Z",
+            "srcUrl": []
+          },
+          "qty": 3,
+          "userId": 3,
+          "id": 2
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 7
     }
   ]
 }
