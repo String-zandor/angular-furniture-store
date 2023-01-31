@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
   cartTotal$?: Observable<number>;
   allProducts?: Product[]
+  isLoggedAsAdmin$?: Observable<boolean>;
 
   constructor(
     private cartSvc: CartService,
@@ -25,6 +26,7 @@ export class HeaderComponent implements OnInit {
       tap(() => this.cartSvc.getCartItems().subscribe()),
       switchMap(() => this.cartSvc.getNoOfItems())
     )
-    this.productSvc.getProducts().subscribe((product => this.allProducts = product))
+    this.productSvc.allProducts$.subscribe(products => this.allProducts = products);
+    this.isLoggedAsAdmin$ = this.auth.isLoggedAsAdmin$;
   }
 }
