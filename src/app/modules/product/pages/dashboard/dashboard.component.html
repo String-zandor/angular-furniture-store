@@ -28,49 +28,10 @@ TML
   </button>
 </div>
 </div>
-    
-    <!-- <div class="home-img"><img src="assets\img\img-1.png"></div> -->
 
-    <mat-divider></mat-divider>
+<mat-divider></mat-divider>
 
-    
-
-    
-    <div class = "product-board">
-        <div class = "filter">
-        <!-- SORT BY-->
-            
-            <app-sort [productsToSort$]="productsToSort$" (sort)="sort($event)"></app-sort>
-            <!-- CATEGORY AND PRICE -->
-            <app-filter (filter)="filter($event)" [allProducts$]="allProducts$"></app-filter>
-                            
-        </div>
-    </div>
-    
-
-    <mat-divider></mat-divider>
-   
-    
-    <div class = "product-container">    
-        <div class = "flex-box">       
-            <div class = "search-status">
-                <div *ngIf="true">
-                    <h1></h1>
-                </div>
-
-                <div *ngIf="false">
-                    <h1>There are no products to display.</h1>
-                </div>
-            </div>
-
-            <div class = "product-tile">
-                <ng-container *ngFor="let product of productsDisplay$ | async">
-                    <app-product-item [product]="product" (onSelection)="addToCart($event)"></app-product-item>
-                </ng-container>
-            </div>
-             
-        </div>
-    </div>
+<app-product-list [products$]="allProducts$" ></app-product-list>
     
 
 
