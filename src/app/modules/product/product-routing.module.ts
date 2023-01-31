@@ -7,6 +7,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user-list.component';
 import { AdminAuthGuard } from 'src/app/core/guards/admin-auth.guard';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
   { 
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ]
   },
+  { path: 'products/:id', component: ProductDetailComponent },
   { path: 'home', component: DashboardComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

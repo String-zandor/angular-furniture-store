@@ -1,0 +1,23 @@
+<div *ngIf="product">
+    <img src="{{url}}" *ngFor="let url of product.srcUrl" alt="product">
+    <ul>
+        <li>Name: {{product.name}}</li>
+        <li>Category: {{product.category}}</li>
+        <li>Color: {{product.color}}</li>
+        <li>Description: {{product.description.desc}}</li>
+        <li>Material: {{product.description.material}}</li>
+        <li>Dimensions: {{product.description.dimensions}}</li>
+        <li>Weight: {{product.description.weight}}</li>
+        <li>Price: {{product.price | currency: 'PHP' : 'symbol' : '1.0-2'}}</li>
+    </ul>
+    <br>
+    <button type="button" (click)="decrement()" [disabled]="currentVal <= 1">-</button>
+    <input type="number" [formControl]="qtyCtrl" />
+    <button type="button" (click)="increment()">+</button>
+
+    <br>
+    <button type="button" (click)="addToCart()" [disabled]="currentVal < 1">Add To Cart</button>
+
+    <br>
+    <button type="button" (click)="goBack()" [disabled]="currentVal < 1">Go Back</button>
+</div>

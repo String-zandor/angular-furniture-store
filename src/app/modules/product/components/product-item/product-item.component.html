@@ -7,7 +7,7 @@
                     <img src={{product.srcUrl}} alt="picture">
                 </div>
                 <ul class="content">
-                    <li>{{product.name}}</li>
+                    <li><a routerLink="/products/{{product.id}}">{{product.name}}</a></li>
                     <mat-divider></mat-divider>
                     <li>₱{{product.price}}</li>
                     <mat-divider></mat-divider>

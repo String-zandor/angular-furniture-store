@@ -33,6 +33,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { AdminProductFormComponent } from './pages/admin-product-form/admin-product-form.component'
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user-list.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user
     AdminProductComponent,
     AdminComponent,
     AdminProductFormComponent,
-    AdminUserListComponent
+    AdminUserListComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,

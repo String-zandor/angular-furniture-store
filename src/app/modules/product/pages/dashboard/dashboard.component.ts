@@ -1,13 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, switchMap, tap } from 'rxjs';
 import { CartService } from 'src/app/modules/cart/services/cart.service';
 import { User } from 'src/app/modules/user/models/user';
 import { AuthService } from 'src/app/modules/user/services/auth.service';
 import { CartItem } from '../../../cart/models/cart-item';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
-import { AdminProductComponent } from '../admin-product/admin-product.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,7 +28,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   
   constructor(
     private productService: ProductService, 
-    private cartService: CartService,
+    private cartSvc: CartService,
     private auth: AuthService,
     private router: Router) {
 
@@ -38,7 +37,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getLoggedUser();
     this.getProducts();
-    this.cartService.getCartItems().subscribe();
+    this.cartSvc.getCartItems().subscribe();
   }
 
   getLoggedUser() {
@@ -65,15 +64,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   addToCart(cartItem: CartItem): void {
     if (this.user) {
-      this.cartService.getCartItemOfProduct(cartItem.product.id).subscribe((item) => {
-        if (item) {
-          item.qty += cartItem.qty;
-          this.cartService.update(item).subscribe();
-        } else {
-          this.cartService.create(cartItem).subscribe();
-        }
-        this.cartService.getCartItems().subscribe();
-      });
+      this.cartSvc.getCartItemOfProduct(cartItem.product.id).pipe(
+        switchMap(item => {
+          if (item) {
+            item.qty += cartItem.qty;
+            return this.cartSvc.update(item);
+          } else {
+            return this.cartSvc.create(cartItem);
+          }
+        }),
+      ).subscribe(() => this.cartSvc.getCartItems().subscribe());
     } else {
       this.router.navigate(['/profile/login']);
     }
