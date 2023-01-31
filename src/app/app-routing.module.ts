@@ -5,6 +5,7 @@ import { SearchResultComponent } from './modules/product/pages/search-result/sea
 
 const routes: Routes = [
   { path: 'search/:term', component: SearchResultComponent },
+  { path: 'search', component: SearchResultComponent },
   {
     path: 'orders', loadChildren: () => import('./modules/order/order.module').then(m => m.OrderModule)
   },

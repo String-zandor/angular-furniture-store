@@ -108,27 +108,9 @@
         "price": 17500,
         "postingDate": "2019-01-01 12:00AM"
       },
-      "qty": 2,
-      "userId": 3,
-      "id": 2
-    },
-    {
-      "product": {
-        "id": 2,
-        "srcUrl": [
-          "assets/products/3.png"
-        ],
-        "name": "Utility Chair",
-        "category": "Chairs",
-        "description": {
-          "desc": "Better"
-        },
-        "price": 1000,
-        "postingDate": "2015-08-01 01:00PM"
-      },
       "qty": 1,
       "userId": 3,
-      "id": 3
+      "id": 2
     },
     {
       "product": {
@@ -143,6 +125,24 @@
         },
         "price": 23000,
         "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": [
+          "assets/products/3.png"
+        ],
+        "name": "Utility Chair",
+        "category": "Chairs",
+        "description": {
+          "desc": "Better"
+        },
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
       },
       "qty": 1,
       "userId": 3,

@@ -1,9 +1,7 @@
 
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { ProductService } from 'src/app/modules/product/services/product.service';
 import { Product } from '../../../modules/product/models/product';
 
 @Component({
@@ -16,16 +14,21 @@ export class SearchComponent {
   @Input() autoComplete: Product[] | undefined
   allProducts?: string
 
-  searchInput = new FormControl('');
+  searchInput = new FormControl('', Validators.required);
   result: Product[] | undefined
 
   constructor(private router: Router) {}
 
+  isControlDisabled() {
+    return !this.searchInput.value;
+  }
 
   onSearch(){    
   //will use to implement auto complete
-  //console.log(this.autoComplete)
-
-    this.router.navigate([`search/${this.searchInput.value}`]);
+  console.log(this.autoComplete)
+    if(!this.searchInput.value){
+      return;
+    }
+    this.router.navigate([`search/${this.searchInput.value?.trim().toLowerCase()}`]);
   }
 }
