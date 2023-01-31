@@ -1,37 +1,22 @@
-<div class = "filter" *ngIf="allProducts">
+<div class = "filter" *ngIf="products">
 
-    
+    <!-- ROOM FILTER -->
+    <button class = "btn" mat-button [matMenuTriggerFor]="room">Room<i class="ri-arrow-drop-down-fill"></i></button>
+    <mat-menu #room = "matMenu" xPosition="before" yPosition="below" >
+        <div *ngFor="let room of rooms$ | async">
+            <app-room-item [room]="room" (onChanges)="onChanges($event)" ></app-room-item>
+        </div>
+    </mat-menu>
+
     <!-- CATEGORY FILTER -->
-    <!-- ADD stop.propagation  to stop menu from closing -->
-    
     <button class = "btn" mat-button [matMenuTriggerFor]="category">Category<i class="ri-arrow-drop-down-fill"></i></button>
     <mat-menu #category = "matMenu" xPosition="before" yPosition="below" >
         <div *ngFor="let category of categories$ | async">
             <app-category-item [category]="category" (onChanges)="onChanges($event)" ></app-category-item>
         </div>
-
     </mat-menu>
 
-    <!-- <div class = "expansion-panel">
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Category
-              </mat-panel-title>
-              
-            </mat-expansion-panel-header>
-            <div *ngFor="let category of categories$ | async">
-                <app-category-item [category]="category" (onChanges)="onChanges($event)" ></app-category-item>
-            </div>
-          </mat-expansion-panel>
-    
-
-
-    </div> -->
-
-   
     <!-- PRICE FILTER -->
-
     <button class = "btn" mat-button [matMenuTriggerFor]="price">Price<i class="ri-arrow-drop-down-fill"></i></button>
     <mat-menu class="sample" #price = "matMenu" xPosition="after" yPosition="below" >
         <div *ngFor="let range of PR">
@@ -39,27 +24,7 @@
         </div>
     </mat-menu>
 
-    <!-- <div class = "expansion-panel">
-        <mat-card-content>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Price
-              </mat-panel-title>          
-            </mat-expansion-panel-header>
-            <div *ngFor="let range of PR">
-                <app-price-item class = "price-range" [range]="range" (onChanges)="onChanges($event)"  ></app-price-item>  
-            </div>
-        </mat-expansion-panel>
-        </mat-card-content>
-    
-
-
-    </div> -->
-
     <br><button class ="clear" (click)="clearAll()" >Clear all</button>
-
-    
     
 </div>
 

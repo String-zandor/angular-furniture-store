@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { CartItem } from '../../../cart/models/cart-item';
 import { Product } from '../../models/product';
 
@@ -8,36 +9,45 @@ import { Product } from '../../models/product';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.scss']
 })
-export class ProductItemComponent {
+export class ProductItemComponent implements OnInit, OnDestroy {
+  
   @Input() product?: Product;
   @Output() onSelection = new EventEmitter<CartItem>();
+  subscriptions: Subscription[] = [];
 
-  qtyControl = new FormControl
+  qtyCtrl = new FormControl(1);
+  currentVal: number = 1;
 
-  //addandminus
-  quantity: number = 1;
+  ngOnInit(): void {
+    const sub = this.qtyCtrl.valueChanges.subscribe(value => {
+      const val: number = Number(value);
+      this.currentVal = val;
+    });
+  }
   
-
   addQuantity() {
-    this.quantity += 1;
+    if (this.currentVal < 1) {
+      this.currentVal = 0;
+    } 
+    this.qtyCtrl.setValue(this.currentVal + 1);
   }
 
   subractQuantity() {
-    if (this.quantity != 0)
-      this.quantity--;
+    if (this.currentVal > 1) {
+      this.qtyCtrl.setValue(this.currentVal - 1);
+    }
   }
 
-  //addToCart
   addToCart() {
     if (this.product) {
-      const cartItem: CartItem = {
-        product: this.product,
-        qty: this.quantity
-      }
+      const cartItem: CartItem = { product: this.product, qty: this.currentVal };
       this.onSelection.emit(cartItem)
     }
+  }
 
-
-
+  ngOnDestroy(): void {
+    for (const sub of this.subscriptions) {
+      sub.unsubscribe();
+    }
   }
 }
