@@ -10,6 +10,10 @@ import { CheckoutItemComponent } from './components/checkout-item/checkout-item.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     CartListComponent,
@@ -21,7 +25,7 @@ import {MatDividerModule} from '@angular/material/divider';
   imports: [
     CommonModule,
     CartRoutingModule,
-    ReactiveFormsModule,MatDividerModule
+    ReactiveFormsModule,MatDividerModule, MatStepperModule, MatFormFieldModule, MatButtonModule
   ],
   exports:[
     // CartModule

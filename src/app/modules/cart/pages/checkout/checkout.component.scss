@@ -1,3 +1,67 @@
+
+.checkout-container{
+    border: solid;
+    margin: 100px 20px 0 20px;
+}
+
+.checkout-container h1 {
+	padding: 20px 0;
+	text-align: center;
+	text-transform: uppercase;
+    background-color: rgb(77, 91, 72);
+}
+
+
+
+.checkout-body{
+    display: flex;
+}
+
+mat-stepper{
+    flex: 50%
+}
+
+
+
+.form{
+    border: solid;
+    display: block;
+    max-width: 50%;
+    padding: 10px
+    
+}
+.form .ri-pencil-line{
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+}
+
+.form input{
+    background-color: transparent;
+    border: none;
+    
+    
+}
+.form .name input{
+    font-size: 30px;
+    
+}
+
+
+
+
+.items{
+    border: solid;
+}
+
+
+.order-details{
+    border: solid;
+    flex:40%
+}
+
+
 .removeDesign{
     background: transparent;
     border: 0;
@@ -8,6 +72,6 @@
 .error-message{
     color: red;
 }
-.toggleRemoveDesign{
+// .toggleRemoveDesign{
 
-}
+// }

@@ -1,34 +1,77 @@
-<p><strong>CHECKOUT - PAGE</strong></p>
-<br>
-<strong>Shipping Details</strong>
-<form id="shippingFormStatus" [formGroup]="shippingForm" (ngSubmit)="onSubmitShippingForm()">
-    <label *ngIf="editInfo" for="name">Name: </label>
-    <input [ngClass]="customClass" type="text" formControlName="name" [readonly]="!editInfo">
-    <span *ngIf="shippingForm.get('name')?.errors" class="error-message">Name field is required.</span>
-    <br>
-    <label *ngIf="editInfo" for="contact">Contact: </label>
-    <input [ngClass]="customClass" type="text" formControlName="contact" [readonly]="!editInfo">
-    <span *ngIf="shippingForm.get('contact')?.errors" class="error-message">Contact field is required.</span>
-    <br>
-    <label *ngIf="editInfo" for="address">Address: </label>
-    <input [ngClass]="customClass" type="text" formControlName="address" [readonly]="!editInfo">
-    <span *ngIf="shippingForm.get('address')?.errors" class="error-message">Address field is required.</span>
-    <br>
-    <button *ngIf="editInfo" type="submit" [disabled]="!shippingForm.valid">Save</button> 
-</form>
-<button (click)="editShippingForm()">Change</button>
+<div class = "checkout-container">
 
-<br>
-<br>
-<p><strong>ITEMS</strong></p>
-<div *ngFor="let item of cartItems">
-    <app-checkout-item [cartItem]="item"></app-checkout-item>
+<h1>CHECKOUT</h1>
+
+<div class = "checkout-body">
+<mat-stepper orientation="vertical">
+    <mat-step>
+      <ng-template matStepLabel>Shipping Details</ng-template>
+      <ng-template matStepContent>
+
+        <div class = "form">
+            <button (click)="editShippingForm()" class="ri-pencil-line"></button>
+            <form id="shippingFormStatus" [formGroup]="shippingForm" (ngSubmit)="onSubmitShippingForm()">
+              
+                <div class = "name">
+                <label *ngIf="editInfo" for="name"></label>
+                <input [ngClass]="customClass" type="text" formControlName="name" [readonly]="!editInfo">
+                <span *ngIf="shippingForm.get('name')?.errors" class="error-message">Name field is required.</span>
+                </div>
+
+                <mat-divider></mat-divider>
+
+                <label *ngIf="editInfo" for="contact"></label>
+                <input [ngClass]="customClass" type="text" formControlName="contact" [readonly]="!editInfo">
+                <span *ngIf="shippingForm.get('contact')?.errors" class="error-message">Contact field is required.</span>
+                
+                <div class = "shipping-address">
+                <label *ngIf="editInfo" for="address"></label>
+                <input [ngClass]="customClass" type="text" formControlName="address" [readonly]="!editInfo">
+                <span *ngIf="shippingForm.get('address')?.errors" class="error-message">Address field is required.</span>
+                </div>
+
+                <button *ngIf="editInfo" type="submit" [disabled]="!shippingForm.valid">Save</button> 
+            </form>
+            
+        </div>
+
+
+        
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Order Summary</ng-template>
+      <ng-template matStepContent>
+
+        <div class = "items">
+            <p><strong>ITEMS</strong></p>
+            <div *ngFor="let item of cartItems">
+                <app-checkout-item [cartItem]="item"></app-checkout-item>
+            </div>
+        </div>
+
+
+        
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Payment Details</ng-template>
+
+      <h2>CASH</h2>
+
+
+      
+    </mat-step>
+  </mat-stepper>
+
+  <div class = "order-details">
+    <p><strong>Order Details</strong></p>
+    <div>Subtotal: {{subtotal| currency:'PHP'}}</div>
+    <div>Delivery Fee: {{deliveryfee| currency:'PHP'}}</div>
+    <div> <strong>Total: {{totalAmmountToPay| currency:'PHP'}}</strong> </div>
+    <br>
+    <button mat-raised-button (click) = "openDialog()">Place Order</button>
+    </div>
 </div>
-<br>
-<p><strong>Order Summary</strong></p>
-<div>Subtotal: {{subtotal| currency:'PHP'}}</div>
-<div>Delivery Fee: {{deliveryfee| currency:'PHP'}}</div>
-<div> <strong>Total: {{totalAmmountToPay| currency:'PHP'}}</strong> </div>
-<br>
-<button mat-raised-button (click) = "openDialog()">Place Order</button>
-
+    
+</div>

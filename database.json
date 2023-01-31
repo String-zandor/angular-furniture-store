@@ -156,67 +156,6 @@
       "qty": 2,
       "userId": 3,
       "id": 3
-    },
-    {
-      "product": {
-        "id": 2,
-        "srcUrl": [
-          "assets/products/TABLES/2.1.png",
-          "assets/products/TABLES/2.png"
-        ],
-        "name": "Nested Coffee Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Better"
-        },
-        "price": 1000,
-        "postingDate": "2015-08-01 01:00PM"
-      },
-      "qty": 2,
-      "userId": 3,
-      "id": 4
-    },
-    {
-      "product": {
-        "id": 3,
-        "srcUrl": [
-          "assets/products/TABLES/3.1.png",
-          "assets/products/TABLES/3.png"
-        ],
-        "name": "Black Metal Accent Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Best"
-        },
-        "price": 23000,
-        "postingDate": "2015-07-01 12:00AM"
-      },
-      "qty": 1,
-      "userId": 3,
-      "id": 5
-    },
-    {
-      "product": {
-        "id": 5,
-        "srcUrl": [
-          "assets/products/TABLES/5.1.png",
-          "assets/products/TABLES/5.png"
-        ],
-        "name": "Metallic End Table",
-        "category": "Tables",
-        "color": "Pink",
-        "description": {
-          "desc": "Floral",
-          "dimensions": "6ft x 6ft",
-          "material": "Cotton",
-          "weight": "8kg"
-        },
-        "price": 17000,
-        "postingDate": "\"2023-01-26T13:43:57.019Z\""
-      },
-      "qty": 1,
-      "userId": 3,
-      "id": 6
     }
   ],
   "users": [
