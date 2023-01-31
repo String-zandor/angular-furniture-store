@@ -13,7 +13,7 @@ import { Product } from '../../models/product';
 export class FilterComponent implements OnInit, OnDestroy {
 
   // PROPERTIES FOR ALL
-  @Input() allProducts$?: Observable<Product[]>;
+  @Input() products$?: Observable<Product[]>;
   @Output() filter = new EventEmitter<Product[]>();
   allProducts: Product[] = [];
   subscriptions: Subscription[] = [];
@@ -32,15 +32,15 @@ export class FilterComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getCategories();
-    if (this.allProducts$) {
-      const sub = this.allProducts$?.subscribe(list => this.allProducts = list);
+    if (this.products$) {
+      const sub = this.products$?.subscribe(list => this.allProducts = list);
       this.subscriptions.push(sub);
     }
   }
 
   getCategories() {
-    if (this.allProducts$) {
-      this.categories$ = this.allProducts$.pipe(
+    if (this.products$) {
+      this.categories$ = this.products$.pipe(
         map(products => products.map(product => product.category))
       ).pipe(
         map(category => new Set(category))
