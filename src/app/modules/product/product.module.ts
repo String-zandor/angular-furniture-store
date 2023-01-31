@@ -35,6 +35,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user-list.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
+import { RoomItemComponent } from './components/filter-sub/room-item/room-item.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
     AdminProductFormComponent,
     AdminUserListComponent,
     ProductDetailComponent,
-    ProductListComponent
+    ProductListComponent,
+    RoomItemComponent
   ],
   imports: [
     CommonModule,

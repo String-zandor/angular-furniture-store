@@ -4,6 +4,7 @@
       "id": 1,
       "name": "Comfy Bed",
       "category": "Beds",
+      "room": "Bedroom",
       "color": "Vintage White",
       "description": {
         "desc": "Good",
@@ -22,6 +23,7 @@
       ],
       "name": "Utility Chair",
       "category": "Chairs",
+      "room": "Kitchen",
       "description": {
         "desc": "Better"
       },
@@ -35,6 +37,7 @@
       ],
       "name": "Glass Table",
       "category": "Tables",
+      "room": "Living Room",
       "description": {
         "desc": "Best"
       },
@@ -47,6 +50,7 @@
         "assets/products/1.png"
       ],
       "name": "Baroque Table",
+      "room": "Dining Room",
       "category": "Tables",
       "description": {
         "desc": "Baroque"
@@ -58,6 +62,7 @@
       "id": 5,
       "name": "Chintzy Chaise Lounge",
       "category": "Chairs",
+      "room": "Living Room",
       "color": "Pink",
       "description": {
         "desc": "Floral",
@@ -93,83 +98,6 @@
       "qty": 1,
       "userId": 1,
       "id": 1
-    },
-    {
-      "product": {
-        "id": 4,
-        "srcUrl": [
-          "assets/products/1.png"
-        ],
-        "name": "Baroque Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Baroque"
-        },
-        "price": 17500,
-        "postingDate": "2019-01-01 12:00AM"
-      },
-      "qty": 2,
-      "userId": 3,
-      "id": 2
-    },
-    {
-      "product": {
-        "id": 2,
-        "srcUrl": [
-          "assets/products/3.png"
-        ],
-        "name": "Utility Chair",
-        "category": "Chairs",
-        "description": {
-          "desc": "Better"
-        },
-        "price": 1000,
-        "postingDate": "2015-08-01 01:00PM"
-      },
-      "qty": 1,
-      "userId": 3,
-      "id": 3
-    },
-    {
-      "product": {
-        "id": 3,
-        "srcUrl": [
-          "assets/products/4.png"
-        ],
-        "name": "Glass Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Best"
-        },
-        "price": 23000,
-        "postingDate": "2015-07-01 12:00AM"
-      },
-      "qty": 1,
-      "userId": 3,
-      "id": 4
-    },
-    {
-      "product": {
-        "id": 5,
-        "name": "Chintzy Chaise Lounge",
-        "category": "Chairs",
-        "color": "Pink",
-        "description": {
-          "desc": "Floral",
-          "dimensions": "6ft x 6ft",
-          "material": "Cotton",
-          "weight": "8kg"
-        },
-        "price": 17000,
-        "postingDate": "2023-01-30T14:20:45.566Z",
-        "srcUrl": [
-          "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-2.png?alt=media&token=c9fb44c2-6d9f-4157-9741-5fb122b91f9a",
-          "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-1.png?alt=media&token=7c5406a4-9a17-44da-a3e2-a45eb2e005f7"
-        ]
-      },
-      "qty": 1,
-      "userId": 3,
-      "id": 5
     }
   ],
   "users": [

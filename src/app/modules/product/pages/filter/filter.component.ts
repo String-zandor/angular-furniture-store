@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, QueryList, V
 import { map, Observable, of, Subscription } from 'rxjs';
 import { CategoryItemComponent } from '../../components/filter-sub/category-item/category-item.component';
 import { PriceItemComponent } from '../../components/filter-sub/price-item/price-item.component';
+import { RoomItemComponent } from '../../components/filter-sub/room-item/room-item.component';
 import { PriceRange, PRICE_RANGES } from '../../models/price-range';
 import { Product } from '../../models/product';
 
@@ -15,8 +16,14 @@ export class FilterComponent implements OnInit, OnDestroy {
   // PROPERTIES FOR ALL
   @Input() products$?: Observable<Product[]>;
   @Output() filter = new EventEmitter<Product[]>();
-  allProducts: Product[] = [];
+  products: Product[] = [];
   subscriptions: Subscription[] = [];
+
+  // PROPERTIES FOR ROOM
+  rooms$: Observable<Set<string>> = of(new Set<string>());
+  activeRoom: string[] = [];
+  @ViewChildren(RoomItemComponent)
+  roomItems?: QueryList<CategoryItemComponent>;
 
   // PROPERTIES FOR CATEGORY
   categories$: Observable<Set<string>> = of(new Set<string>());
@@ -32,24 +39,41 @@ export class FilterComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getCategories();
+    this.getRooms();
     if (this.products$) {
-      const sub = this.products$?.subscribe(list => this.allProducts = list);
+      const sub = this.products$?.subscribe(list => this.products = list);
       this.subscriptions.push(sub);
+    }
+  }
+
+  getRooms() {
+    if (this.products$) {
+      this.rooms$ = this.products$.pipe(
+        map(products => products.map(product => product.room)),
+        map(rooms => new Set(rooms))
+      );
     }
   }
 
   getCategories() {
     if (this.products$) {
       this.categories$ = this.products$.pipe(
-        map(products => products.map(product => product.category))
-      ).pipe(
-        map(category => new Set(category))
+        map(products => products.map(product => product.category)),
+        map(categories => new Set(categories))
       );
     }
   }
 
-  onChanges(data: { category?: string, range?: PriceRange, show: boolean }): void {
-    let filteredList: Product[] = this.allProducts;
+  onChanges(data: { room?: string, category?: string, range?: PriceRange, show: boolean }): void {
+    let filteredList: Product[] = this.products;
+    if (data.room) {
+      this.onRoomChanges(data.room, data.show);
+    }
+
+    if (this.activeRoom.length > 0) {
+      filteredList = this.filterByRoom(filteredList);
+    }
+    
     if (data.category) {
       this.onCategChanges(data.category, data.show);
     }
@@ -70,9 +94,23 @@ export class FilterComponent implements OnInit, OnDestroy {
     this.filter.emit(filteredList);
   }
 
-  /**
-   * METHODS FOR CATEGORY FILTER
-   */
+  onRoomChanges(room: string, show: boolean) {
+    if (show) {
+      this.activeRoom.push(room);
+    } else {
+      this.activeRoom = this.activeRoom.filter(r => r !== room);
+    }
+  }
+
+  filterByRoom(products: Product[]): Product[] {
+    let filtered: Product[] = [];
+    for (const room of this.activeRoom) {
+      let list = products.filter(product => product.room === room);
+      filtered = filtered.concat(list);
+    }
+    return filtered;
+  }
+
   onCategChanges(category: string, show: boolean) {
     if (show) {
       this.activeCateg.push(category);
@@ -90,9 +128,6 @@ export class FilterComponent implements OnInit, OnDestroy {
     return filtered;
   }
 
-  /**
-   * METHODS FOR PRICE FILTER
-   */
   onPriceChanges(range: PriceRange, show: boolean): void {
     if (show) {
       this.activePR.push(range);
@@ -101,7 +136,7 @@ export class FilterComponent implements OnInit, OnDestroy {
     }
 
     //test only
-    console.log('filteredByPrice', this.filterByPrice(this.allProducts));
+    console.log('filteredByPrice', this.filterByPrice(this.products));
   }
 
   filterByPrice(products: Product[]): Product[] {

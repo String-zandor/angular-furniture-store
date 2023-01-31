@@ -3,6 +3,7 @@ export interface Product {
     srcUrl: string[],
     name: string,
     category: string,
+    room: string,
     color: string,
     description: {
         desc: string,

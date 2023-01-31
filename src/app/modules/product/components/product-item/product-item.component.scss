@@ -56,3 +56,10 @@ img{
 .product-container .row ul{
     padding: 0
 }
+
+// hide built-in increment for input type number
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
