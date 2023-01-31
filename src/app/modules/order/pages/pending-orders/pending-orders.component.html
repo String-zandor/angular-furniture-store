@@ -8,26 +8,20 @@
     <title>Orders</title>
 </head>
 
-<body>
-
-    <div >
-    <table cellspacing="10" >
-        <tr>
-            <th>Order ID</th>
-            <th>Order Date</th>
-            <th>Order Status</th>
-            <th>Order Total</th>
-            <th>Action</th>
-        </tr>
-        <tr  *ngFor="let order of orders">
-            <td>#{{order.id}}</td>
-            <td>{{order.orderDate}}</td>
-            <td>{{order.status}}</td>
-            <td>{{order.total | currency:'PHP'}}</td>
-            <td><button (click)="onClick(order.id!)"> view details</button></td>
-        </tr>
-    </table>
-</div>
-
-</body>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let order of orders">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Order Status: {{order.status}}
+            </mat-panel-title>
+            <mat-panel-description>
+                Order Date: {{order.orderDate | date:'MM/dd/yyyy'}}
+            </mat-panel-description>
+            <mat-panel-description>
+                Order ID: #{{order.id}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-order-details [orderNo]="order.id" [orders]="orders"></app-order-details>
+    </mat-expansion-panel>
+</mat-accordion>
 </html>
