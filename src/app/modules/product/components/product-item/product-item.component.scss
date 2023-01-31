@@ -1,16 +1,48 @@
+.product-container{
+    position: relative;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    
+    // background-color: rgb(154,157,152);
+    background-color: transparent;
+    border: solid rgb(154,157,152);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+//----------- IMAGE -------
 img{
     height: 200px;
     width: 200px;
     
+    
 }
 
-.product-container{
-    padding: 10px;
-    color: rgb(255, 255, 255);
-    // background-color: rgb(93, 93, 93,0.5);
-    background-color: rgb(154,157,152);
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// ----------- IMAGES WILL BE ON TOP OF EACHOTHER -------
+.img-container{
+    display: grid;
+    place-items: center;
+    grid-template-areas: "img-div";
+    
+
 }
+
+// ----------- IMAGE TRANSITION AND ON TOP OF EACH OTHER -------
+img{
+    grid-area: img-div;
+    transition: all 0.8s ease-in-out;
+}
+
+img:hover{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.content span{
+    font-size: 20px;
+}
+
+
+// ----------- ADD QUANTITY BUTTON-------
 
 .add-quantity .add-to-cart{
     background-color: rgb(60, 68, 63);
@@ -32,17 +64,18 @@ img{
     background: transparent;
     border: none;
     width: 90px;
-    color: rgb(33, 37, 34);
+    color: rgb(255, 255, 255);
     
     
 }
 
 .add-quantity-btn button{
     width: 50px;
+    margin: 5px 0px 5px 0px;
 }
 
 .add-quantity-btn .min{
-    background-color: #1c1c1c;
+    background-color: rgb(154,157,152);;
     color: white;
     border: none;
 }

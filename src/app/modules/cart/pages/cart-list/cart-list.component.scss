@@ -1,14 +1,76 @@
-.wrapper {
+.wrapper{
 	max-width: 100%;
 	position: relative;
     margin: 100px 25px 0px 25px;
+	
+	
 }
+.cart-list{
+	
+	display: flex;
+	justify-content: space-between;
+	
+	
+}
+
+.shop{
+	
+	flex:60%
+	
+}
+
 .wrapper h1 {
 	padding: 20px 0;
 	text-align: center;
 	text-transform: uppercase;
     background-color: rgb(77, 91, 72);
 }
+
+.right-bar {
+	width: 100%;
+	flex: 40%;
+	padding: 20px;
+	height: 100%;
+	border-radius: 5px;
+	background: rgb(74, 73, 73);
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.right-bar hr {
+	margin-bottom: 25px;
+}
+.right-bar p {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+.right-bar div{
+	display: flex;
+	justify-content: center;
+}
+.right-bar  button{
+	background-color: #6f8174;
+	border: none;
+	color: #fff;
+	text-decoration: none;
+	
+	align-items: center;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 900;
+	width: 300px;
+
+	
+}
+.right-bar i {
+	margin-right: 15px;
+}
+.right-bar a:hover {
+	background-color: #3972a7;
+}
+
+
 
 // #6f8174
 // rgb(77, 91, 72)

@@ -1,17 +1,40 @@
 
 <div class = "wrapper">
-    <div *ngIf="cartList.length > 0">
-        <h1>Your cart</h1>
-        <div *ngFor="let cartItem of cartList">
-            <app-cart-item [cartItem]="cartItem" (onAction)="onAction($event)" ></app-cart-item>
-        </div>
+    
+        <div *ngIf="cartList.length > 0">
+            <h1>Your cart</h1>
+            <div class = "cart-list">
 
-        <div>
-            <h3>Order Summary</h3>
-            <p>Subtotal: {{subTotal}}</p>
-            <button (click)="goToCheckout()" [disabled]="subTotal === 0">Go to checkout</button>
+                <div class = "shop">
+                <div *ngFor="let cartItem of cartList">
+                    <app-cart-item [cartItem]="cartItem" (onAction)="onAction($event)" ></app-cart-item>
+                </div>
+                </div>
+
+                <div class = "right-bar">
+                    <h3>Order Summary</h3>
+                    <p><span>Subtotal</span> <span>{{subTotal}}</span></p>
+                    <hr>
+                    <p><span>Discount</span> <span>₱0</span></p>
+                    <hr>
+                    <p><span>Total</span> <span>{{subTotal}}</span></p>
+                    <div><button (click)="goToCheckout()" [disabled]="subTotal === 0">Checkout</button></div>
+                    
+                </div>
+                <!-- <div class="right-bar">
+                    <p><span>Subtotal</span> <span>₱520,000</span></p>
+                    <hr>
+                    <p><span>Discount</span> <span>₱0</span></p>
+                    <hr>
+                    <p><span>Shipping</span> <span>₱1500</span></p>
+                    <hr>
+                    <p><span>Total</span> <span>₱521,500</span></p><a href="#"><i class="fa fa-shopping-cart"></i>Checkout</a>
+                </div> -->
+
+
+
+            </div>
         </div>
-    </div>
 
     <div *ngIf="cartList.length < 1">
         <h1>Your cart is empty</h1>

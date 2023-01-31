@@ -2,8 +2,12 @@
   "products": [
     {
       "id": 1,
-      "name": "Comfy Bed",
-      "category": "Beds",
+      "srcUrl": [
+        "assets/products/TABLES/1.1.png",
+        "assets/products/TABLES/1.png"
+      ],
+      "name": "Glass Oval Cocktail Table",
+      "category": "Tables",
       "color": "Vintage White",
       "description": {
         "desc": "Good",
@@ -12,14 +16,16 @@
         "weight": "10kg"
       },
       "price": 12000,
-      "postingDate": "2023-01-28T15:24:41.683Z",
-      "srcUrl": []
+      "postingDate": "2023-01-28T15:24:41.683Z"
     },
     {
       "id": 2,
-      "srcUrl": "assets/products/3.png",
-      "name": "Utility Chair",
-      "category": "Chairs",
+      "srcUrl": [
+        "assets/products/TABLES/2.1.png",
+        "assets/products/TABLES/2.png"
+      ],
+      "name": "Nested Coffee Table",
+      "category": "Tables",
       "description": {
         "desc": "Better"
       },
@@ -28,8 +34,11 @@
     },
     {
       "id": 3,
-      "srcUrl": "assets/products/4.png",
-      "name": "Glass Table",
+      "srcUrl": [
+        "assets/products/TABLES/3.1.png",
+        "assets/products/TABLES/3.png"
+      ],
+      "name": "Black Metal Accent Table",
       "category": "Tables",
       "description": {
         "desc": "Best"
@@ -39,8 +48,11 @@
     },
     {
       "id": 4,
-      "srcUrl": "assets/products/1.png",
-      "name": "Baroque Table",
+      "srcUrl": [
+        "assets/products/TABLES/4.1.png",
+        "assets/products/TABLES/4.png"
+      ],
+      "name": "Brass Finish Coffee Table",
       "category": "Tables",
       "description": {
         "desc": "Baroque"
@@ -50,9 +62,12 @@
     },
     {
       "id": 5,
-      "srcUrl": [],
-      "name": "Chintzy Chaise Lounge",
-      "category": "Chairs",
+      "srcUrl": [
+        "assets/products/TABLES/5.1.png",
+        "assets/products/TABLES/5.png"
+      ],
+      "name": "Metallic End Table",
+      "category": "Tables",
       "color": "Pink",
       "description": {
         "desc": "Floral",
@@ -99,6 +114,109 @@
       "qty": 1,
       "userId": 1,
       "id": 1
+    },
+    {
+      "product": {
+        "id": 1,
+        "srcUrl": [
+          "assets/products/TABLES/1.1.png",
+          "assets/products/TABLES/1.png"
+        ],
+        "name": "Glass Oval Cocktail Table",
+        "category": "Tables",
+        "color": "Vintage White",
+        "description": {
+          "desc": "Good",
+          "dimensions": "6ft x 6ft",
+          "material": "memory foam",
+          "weight": "10kg"
+        },
+        "price": 12000,
+        "postingDate": "2023-01-28T15:24:41.683Z"
+      },
+      "qty": 3,
+      "userId": 3,
+      "id": 2
+    },
+    {
+      "product": {
+        "id": 4,
+        "srcUrl": [
+          "assets/products/TABLES/4.1.png",
+          "assets/products/TABLES/4.png"
+        ],
+        "name": "Brass Finish Coffee Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Baroque"
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": [
+          "assets/products/TABLES/2.1.png",
+          "assets/products/TABLES/2.png"
+        ],
+        "name": "Nested Coffee Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Better"
+        },
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "product": {
+        "id": 3,
+        "srcUrl": [
+          "assets/products/TABLES/3.1.png",
+          "assets/products/TABLES/3.png"
+        ],
+        "name": "Black Metal Accent Table",
+        "category": "Tables",
+        "description": {
+          "desc": "Best"
+        },
+        "price": 23000,
+        "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "product": {
+        "id": 5,
+        "srcUrl": [
+          "assets/products/TABLES/5.1.png",
+          "assets/products/TABLES/5.png"
+        ],
+        "name": "Metallic End Table",
+        "category": "Tables",
+        "color": "Pink",
+        "description": {
+          "desc": "Floral",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 17000,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 6
     }
   ],
   "users": [
