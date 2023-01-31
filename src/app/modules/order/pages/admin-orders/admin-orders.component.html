@@ -1,0 +1,18 @@
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let order of orders">
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              Order Status: {{order.status}}
+          </mat-panel-title>
+          <mat-panel-description>
+              Order Date: {{order.orderDate}}
+          </mat-panel-description>
+          <mat-panel-description>
+              Order ID: #{{order.id}}
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-order-details [orderNo]="order.id" [orders]="orders"></app-order-details>
+  </mat-expansion-panel>
+</mat-accordion>
+  
