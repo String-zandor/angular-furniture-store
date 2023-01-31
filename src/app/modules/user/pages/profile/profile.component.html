@@ -1,21 +1,17 @@
 <div class="my-account">
+
     <div class="my-account-container">
         <h3>My Account</h3>
         <button type="button" (click)="logout()"><i class="ri-logout-box-r-line"></i><span>Log-out</span></button>
 
     </div>
-    <br>
-    <div>
-        <a routerLink="orders">Orders</a>
-    </div>
-    <br>
-    <form [formGroup]="profileForm">
+    
 
+    
+    <div class = "my-account-body">
+    <form [formGroup]="profileForm">
         <div class="account-details">
             <h2>Account details</h2>
-
-
-
             <div *ngIf="profileForm.disabled">
                 <button class="btn" type="button" (click)="editProfile()"><i class="ri-pencil-line"></i></button>
             </div>
@@ -30,9 +26,6 @@
             <input id="username" type="text" formControlName="username" matInput>
 
         </mat-form-field>
-
-        
-
         <table class="name" cellspacing="0">
             <td><mat-form-field appearance="outline">
                     <mat-label>First Name</mat-label>
@@ -55,7 +48,6 @@
                     </mat-error>
                 </div>
         
-                
             </td>
         </table>
 
@@ -75,12 +67,7 @@
                 </mat-form-field></td>
         </table>
 
-
-
         <!-- ERROR PROMPTS -->
-
-
-
 
         <h3>E-mail address</h3>
         <mat-divider></mat-divider>
@@ -113,7 +100,14 @@
         </div>
 
     </form>
-</div>
-<div>
-    <app-pending-orders></app-pending-orders>
+
+    <div class = "order-history">
+        <h2><a routerLink="orders">Order History</a></h2>
+        <app-pending-orders></app-pending-orders>
+    </div>
+    </div>
+    
+    
+
+
 </div>

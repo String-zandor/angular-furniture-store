@@ -1,20 +1,20 @@
 
-<div class = "cart-list">
-<div *ngIf="cartList.length > 0">
-    <h1>Your cart</h1>
-    <div *ngFor="let cartItem of cartList">
-        <app-cart-item [cartItem]="cartItem" (onAction)="onAction($event)" ></app-cart-item>
+<div class = "wrapper">
+    <div *ngIf="cartList.length > 0">
+        <h1>Your cart</h1>
+        <div *ngFor="let cartItem of cartList">
+            <app-cart-item [cartItem]="cartItem" (onAction)="onAction($event)" ></app-cart-item>
+        </div>
+
+        <div>
+            <h3>Order Summary</h3>
+            <p>Subtotal: {{subTotal}}</p>
+            <button (click)="goToCheckout()" [disabled]="subTotal === 0">Go to checkout</button>
+        </div>
     </div>
 
-    <div>
-        <h3>Order Summary</h3>
-        <p>Subtotal: {{subTotal}}</p>
-        <button (click)="goToCheckout()" [disabled]="subTotal === 0">Go to checkout</button>
+    <div *ngIf="cartList.length < 1">
+        <h1>Your cart is empty</h1>
+        <button type="button" (click)="goToHome()">Continue shopping</button>
     </div>
-</div>
-
-<div *ngIf="cartList.length < 1">
-    <h1>Your cart is empty</h1>
-    <button type="button" (click)="goToHome()">Continue shopping</button>
-</div>
 </div>

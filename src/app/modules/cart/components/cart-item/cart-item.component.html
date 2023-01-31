@@ -1,15 +1,16 @@
-<div *ngIf="cartItem">
-    <ul>
-        <li>Name: {{cartItem.product.name}}</li>
-        <li>Price: {{cartItem.product.price}}</li>
-        <li>Qty: {{cartItem.qty}}</li>
+
+<div class="box" *ngIf="cartItem" >
+    <img src="assets\products\1.png">
+    <div class="content">
+        <h3>{{cartItem.product.name}}</h3>
+        <mat-divider></mat-divider>
+        <h4>₱{{cartItem.product.price}}</h4>
         
-
-        <button type="button" id="min" [disabled]="quantity.value === 1" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
-        <input type="text" [formControl]="quantity">
-        <button type="button" id="max" (click)="addQuantity()"><i class="fa fa-plus">+</i></button><br><br>
-        <button type="button" id="delete" (click) = "executeAction('REMOVE')">Remove</button>
-
-
-    </ul>
+        <p class="unit"><button type="button" id="min" [disabled]="quantity.value === 1" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
+            <input type="text" [formControl]="quantity"><button type="button" id="max" (click)="addQuantity()"><i class="fa fa-plus">+</i></button></p>
+        
+        <p class="btn-area"><button type="button" id="delete" (click) = "executeAction('REMOVE')"><i class="ri-delete-bin-6-line"></i>Remove</button></p>
+        
+    </div>
 </div>
+

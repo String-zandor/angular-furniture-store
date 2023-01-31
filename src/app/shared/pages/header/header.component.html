@@ -1,20 +1,29 @@
-<!-- <p>Header Works!</p> -->
+
 
 <header>
-<div *ngIf="true">
-    <a routerLink="/home"><img src ="assets\img\grey-space-logo.png"></a>
-</div>
-<div *ngIf="false">
-    <a routerLink="/admin"><img src ="assets\img\grey-space-logo.png"></a>
-</div>
+    <div class = "ri-menu-line" id = "menu-icon"></div> 
+    <div *ngIf="true">
+        <a routerLink="/home"><img src ="assets\img\grey-space-logo.png"></a>
+    </div>
+    <div *ngIf="false">
+        <a routerLink="/admin"><img src ="assets\img\grey-space-logo.png"></a>
+    </div>
 
     <div class = "search-bar">
         <app-search [autoComplete]="allProducts"></app-search>
     </div>
+
+
     <div class = "main">
         <div id = "search-button"><i class="ri-search-line"></i></div>
-        <a routerLink="/profile"><i class="ri-user-line"></i></a>
-        <a routerLink="/cart"><i matBadge="{{cartTotal$ | async}}" matBadgeColor="warn" class="ri-shopping-cart-line"></i></a>
-        <div class = "ri-menu-line" id = "menu-icon"></div>
+        <a class = "profile" routerLink="/profile"><i class="ri-user-line"></i></a>
+        <a  routerLink="/cart"><i matBadge="{{cartTotal$ | async}}" matBadgeColor="warn" class="ri-shopping-cart-line"></i></a>
     </div>
+    
 </header>
+
+
+
+
+
+

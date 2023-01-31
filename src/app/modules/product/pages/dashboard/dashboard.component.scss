@@ -1,3 +1,10 @@
+
+html {
+  scroll-behavior: smooth;
+}
+// .container{
+//   overflow-x: hidden;
+// }
 mat-divider{
   margin-top: 20px;
   margin-bottom: 5px;
@@ -15,6 +22,7 @@ mat-divider{
 img{
 height: auto;
 max-width: 100%;
+  
 }
 
 .carouselExampleIndicators{
@@ -33,6 +41,8 @@ max-width: 100%;
 .product-board{
   display: flex;
   justify-content: center;
+  
+  overflow-x: hidden;
   
 }
 .product-board .filter{

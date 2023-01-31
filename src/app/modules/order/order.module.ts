@@ -6,6 +6,8 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
 
 
 
+
+
 @NgModule({
   declarations: [
     PendingOrdersComponent,
@@ -13,7 +15,7 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
   ],
   imports: [
     CommonModule,
-    OrderRoutingModule,
+    OrderRoutingModule
     
   ],
   exports: [
