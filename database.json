@@ -56,7 +56,6 @@
     },
     {
       "id": 5,
-      "srcUrl": [],
       "name": "Chintzy Chaise Lounge",
       "category": "Chairs",
       "color": "Pink",
@@ -67,69 +66,11 @@
         "weight": "8kg"
       },
       "price": 17000,
-      "postingDate": "\"2023-01-26T13:43:57.019Z\""
-    },
-    {
-      "id": 6,
-      "srcUrl": "assets/products/1.png",
-      "name": "Chintzy Chaise Lounge",
-      "category": "Chairs",
-      "color": "Pink",
-      "description": {
-        "desc": "Floral",
-        "dimensions": "6ft x 6ft",
-        "material": "Cotton",
-        "weight": "8kg"
-      },
-      "price": 17000,
-      "postingDate": "\"2023-01-26T13:43:57.019Z\""
-    }
-  ],
-  "cart": [
-    {
-      "product": {
-        "id": 4,
-        "name": "Baroque Table",
-        "category": "Tables",
-        "description": {
-          "desc": "Baroque"
-        },
-        "price": 17500,
-        "postingDate": "2019-01-01 12:00AM"
-      },
-      "qty": 1,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "id": 6,
-      "name": "Vintage Davenport",
-      "category": "Sofas",
-      "color": "Brown",
-      "description": {
-        "desc": "Long brown leather sofa",
-        "dimensions": "6ft x 3ft",
-        "material": "Leather",
-        "weight": "8kg"
-      },
-      "price": 20000,
-      "postingDate": "2023-01-28T14:59:17.783Z",
-      "srcUrl": []
-    },
-    {
-      "id": 7,
-      "name": "Water Bed",
-      "category": "Beds",
-      "color": "Teal",
-      "description": {
-        "desc": "",
-        "dimensions": "",
-        "material": "Rubber",
-        "weight": "2kg"
-      },
-      "price": 3000,
-      "postingDate": "2023-01-28T15:13:59.887Z",
-      "srcUrl": []
+      "postingDate": "2023-01-30T14:20:45.566Z",
+      "srcUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-2.png?alt=media&token=c9fb44c2-6d9f-4157-9741-5fb122b91f9a",
+        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-1.png?alt=media&token=7c5406a4-9a17-44da-a3e2-a45eb2e005f7"
+      ]
     }
   ],
   "cart": [

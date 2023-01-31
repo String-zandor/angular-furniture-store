@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { CartService } from '../../cart/services/cart.service';
 import { Product } from '../models/product';
 
@@ -11,10 +11,15 @@ export class ProductService {
 
   serverUrl: string = 'http://localhost:3000';
 
-  constructor(private http: HttpClient, private cartService: CartService) { }
+  private subject = new BehaviorSubject<Product[]>([]);
+  allProducts$: Observable<Product[]> = this.subject.asObservable();
+
+  constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.serverUrl}/products`);
+    return this.http.get<Product[]>(`${this.serverUrl}/products`).pipe(
+      tap(allProducts => this.subject.next(allProducts))
+    );
   }
 
   getProduct(id: number): Observable<Product> {

@@ -68,7 +68,7 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
     }
 
     for (let i = 0; i < photos.length; i++) {
-      const fileRef: string = `images/${photos[i]}`;
+      const fileRef: string = `images/${photos[i].name}`;
       this.imgSvc.uploadPhoto(fileRef, photos[i]).then(() => {
         this.subscriptions.push(
           this.imgSvc.getPhotoURL(fileRef).subscribe(url => this.photosUrl.push(url))

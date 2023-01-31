@@ -9,5 +9,12 @@ import { Product } from '../../models/product';
 export class AdminProductComponent {
   @Input() product?: Product;
   @Output() onAction = new EventEmitter();
+
+  executeAction(action: string): void {
+    if (this.product) {
+      const data: { id: number, action: string } = { id: this.product.id, action: action };
+      this.onAction.emit(data);
+    }
+  }
    
 }
