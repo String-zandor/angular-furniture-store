@@ -6,6 +6,7 @@ import { User } from '../../models/user';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -74,8 +75,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
       this.user.birthDate = new Date(this.birthDate.value).toJSON();
       this.user.address = this.address.value;
       this.userSvc.update(this.user).subscribe(() => this.profileForm.disable());
-    }
+
+      // this.promptComponent.openSnackBar('Changes saved!', 'Undo', 3000);
   }
+}
 
   cancel(): void {
     if (this.user) {
@@ -120,4 +123,5 @@ export class ProfileComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }
+
 }

@@ -9,23 +9,27 @@ import { SearchComponent } from './pages/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+//New import added
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
     declarations: [
         HeaderComponent,
         FooterComponent,
-        SearchComponent
+        SearchComponent,
+        PagenotfoundComponent
     ],
     exports: [
         HeaderComponent,
-        FooterComponent,
-    ],
+        FooterComponent    ],
     imports: [
         CommonModule,
         MatBadgeModule,
         ReactiveFormsModule,
-        RouterModule
+        RouterModule,
+        MatIconModule
     ]
 })
 export class SharedModule { }

@@ -1,0 +1,19 @@
+.pagenotfound {
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.gohome {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 120px;
+    border-radius: 30px;
+    height: 30px;
+}

@@ -26,11 +26,10 @@
         </div>
 
         <br>
-        <button type="submit" [disabled]="loginForm.invalid && (loginForm.dirty || loginForm.touched)" >
+        <button type="submit" [disabled]="loginForm.invalid && (loginForm.dirty || loginForm.touched)">
             Log-in
         </button>
-        <button type="button" *ngIf="!loginAsAdmin">
-            Register
+        <button type="button" *ngIf="!loginAsAdmin" routerLink="/register">Register
         </button>
         <br>
         <a href="">Forgot password?</a>
@@ -42,3 +41,8 @@
         </div>
     </form>
 </div>
+
+<!-- <app-prompt [message]="'This is a success message'" type="success"></app-prompt> -->
+<!-- <app-prompt></app-prompt> -->
+
+

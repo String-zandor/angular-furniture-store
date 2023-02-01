@@ -134,6 +134,66 @@
       "qty": "1",
       "userId": 1,
       "id": 7
+    },
+    {
+      "product": {
+        "id": 6,
+        "name": "Vintage Davenport",
+        "category": "Sofas",
+        "color": "Brown",
+        "description": {
+          "desc": "Long brown leather sofa",
+          "dimensions": "6ft x 3ft",
+          "material": "Leather",
+          "weight": "8kg"
+        },
+        "price": 20000,
+        "postingDate": "2023-01-28T14:59:17.783Z",
+        "srcUrl": []
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 15
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Comfy Bed",
+        "category": "Beds",
+        "color": "Vintage White",
+        "description": {
+          "desc": "Good",
+          "dimensions": "6ft x 6ft",
+          "material": "memory foam",
+          "weight": "10kg"
+        },
+        "price": 12000,
+        "postingDate": "2023-01-28T15:24:41.683Z",
+        "srcUrl": []
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 16
+    },
+    {
+      "product": {
+        "id": 5,
+        "name": "Chintzy Chaise Lounge",
+        "category": "Chairs",
+        "color": "Pink",
+        "description": {
+          "desc": "Floral",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 17000,
+        "postingDate": "2023-01-28T15:20:51.331Z",
+        "srcUrl": []
+      },
+      "qty": 9,
+      "userId": 3,
+      "id": 17
     }
   ],
   "users": [
@@ -180,7 +240,7 @@
       "email": "mreight@88global.biz",
       "birthDate": "2088-08-08",
       "username": "eight"
-    },
+    }
   ],
   "auth": [
     {

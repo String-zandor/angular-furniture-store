@@ -9,6 +9,7 @@ import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 import { AdminProductComponent } from '../admin-product/admin-product.component';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -39,7 +40,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.getLoggedUser();
     this.getProducts();
     this.cartService.getCartItems().subscribe();
+
   }
+  
 
   getLoggedUser() {
     this.subscriptions.push(

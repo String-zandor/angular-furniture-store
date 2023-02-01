@@ -3,13 +3,15 @@
         <li>Name: {{cartItem.product.name}}</li>
         <li>Price: {{cartItem.product.price}}</li>
         <li>Qty: {{cartItem.qty}}</li>
-        
 
-        <button type="button" id="min" [disabled]="quantity.value === 1" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
-        <input type="text" [formControl]="quantity">
+        <button type="button" id="min" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
+        <input [formControl]="quantity" type = "number" min="1" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
         <button type="button" id="max" (click)="addQuantity()"><i class="fa fa-plus">+</i></button><br><br>
         <button type="button" id="delete" (click) = "executeAction('REMOVE')">Remove</button>
-
+        
+        <!--Import the prompt alert first<button (click)="showPrompt()">Show Prompt </button>
+        <app-prompt-alert [message]="promptMessage" *ngIf="showAlert"></app-prompt-alert> -->  
+        
 
     </ul>
 </div>
