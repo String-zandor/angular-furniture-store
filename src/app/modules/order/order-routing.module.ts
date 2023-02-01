@@ -6,8 +6,6 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
 import { AdminOrdersComponent } from './pages/admin-orders/admin-orders.component';
 
 const routes: Routes = [
-
-  {path: 'admin/orders', component: AdminOrdersComponent},
   {path: ':orderId', component:PendingOrdersComponent}, 
   { path: '', component: PendingOrdersComponent },
 ];
