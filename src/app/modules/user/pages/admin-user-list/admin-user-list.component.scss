@@ -1,0 +1,16 @@
+.admin-user-container{
+    margin-top: 100px;
+    
+    padding: 30px;
+
+}
+button{
+    border: none;
+    text-decoration: underline;
+    color: white;
+    background-color: transparent;
+}
+
+button:hover{
+   color: var(--bgcolor-light)
+}

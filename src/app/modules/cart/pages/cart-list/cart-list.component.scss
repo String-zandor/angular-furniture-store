@@ -1,3 +1,31 @@
+.empty-cart{
+	
+	display: flex;
+	justify-content: center;
+}
+
+.empty-message{
+	
+	display: block;
+	text-align: center;
+	justify-content: center;
+	margin-top: 50px
+}
+.empty-cart button{
+	border: none;
+	color: white;
+	width: 250x;
+	background-color: var(--bgcolor-dark);
+	padding: 10px 30px 10px 30px;
+	
+	font-size: 15px;
+}
+.empty-cart button:hover{
+	
+	background-color: var(--bgcolor-light);
+	
+}
+
 .wrapper{
 	max-width: 100%;
 	position: relative;
@@ -21,8 +49,9 @@
 
 .wrapper h1 {
 	padding: 20px 0;
+	font-size: 40px;
 	text-align: center;
-	text-transform: uppercase;
+	
     background-color: var(--bgcolor-light);
 }
 
@@ -36,6 +65,7 @@
 	border-radius: 5px;
 	background: transparent;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	
 }
 .right-bar hr {
 	margin-bottom: 25px;

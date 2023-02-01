@@ -1,14 +1,24 @@
 <div>
     <div class="box" *ngIf="cartItem">
+
+        <div class = "image">
+            <button type="button" id="delete" (click)="executeAction('REMOVE')" class="ri-delete-bin-6-line">
+            </button>
         <img src="{{cartItem.product.srcUrl[1]}}">
+
+        
+        </div>
+        
         <div class="content">
             <h3>{{cartItem.product.name}}</h3>
             <mat-divider></mat-divider>
             <h4>{{cartItem.product.price | currency: 'PHP' : 'symbol': '1.2-2'}}</h4>
     
-            <p class="unit"><button type="button" id="min" [disabled]="currentVal <= 1" (click)="subractQuantity()"><i
+            <p class="unit">
+                <button class="min" type="button" id="min" [disabled]="currentVal <= 1" (click)="subractQuantity()"><i
                         class="fa fa-minus">-</i></button>
-                <input type="text" [formControl]="qtyCtrl"><button type="button" id="max" (click)="addQuantity()"><i
+                <input type="text" [formControl]="qtyCtrl">
+                <button class="max" type="button" id="max" (click)="addQuantity()"><i
                         class="fa fa-plus">+</i></button>
             </p>
     
@@ -16,5 +26,6 @@
                         class="ri-delete-bin-6-line"></i>Remove</button></p>
     
         </div>
+
     </div>
 </div>

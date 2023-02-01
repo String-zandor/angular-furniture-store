@@ -1,0 +1,26 @@
+.product-item{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+h3{
+   
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+li{
+    margin: 5px 0px 5px 10px;
+}

@@ -1,16 +1,21 @@
-<!-- SORT -->
-<app-sort (sort)="sort($event)" [productsToSort$]="productsToSort$"></app-sort>
+<div class = "admin-filter">
+    <!-- SORT -->
+    <app-sort (sort)="sort($event)" [productsToSort$]="productsToSort$"></app-sort>
 
-<!-- FILTER -->
-<app-filter (filter)="filter($event)" [products$]="allProducts$"></app-filter>
+    <!-- FILTER -->
+    <app-filter (filter)="filter($event)" [products$]="allProducts$"></app-filter>
 
-<br>
+    <br>
+</div>
 <!-- ADD PRODUCT -->
 <div>
     <button type="button" (click)="addProduct()">+ New Product</button>
 </div>
 
+
 <!-- PRODUCT LIST -->
+<div class = "product-tile">
 <div *ngFor="let product of productsDisplay$ | async">
     <app-admin-product [product]="product" (onAction)="onAction($event)"></app-admin-product>
+</div>
 </div>
