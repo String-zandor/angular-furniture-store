@@ -18,12 +18,6 @@ export class ProductItemComponent {
   @Output() onSelection = new EventEmitter<CartItem>();
   subscriptions: Subscription[] = [];
 
-  constructor(
-    private snackBar: MatSnackBar
-    ) { 
-
-  }
-
   quantity = new FormControl(1)
   //addandminus
   //quantity: number = 1;
@@ -50,20 +44,13 @@ export class ProductItemComponent {
 
   }
 
-  //addToCart
-  durationInSeconds = 1;
   addToCart() {
     if (this.product) {
       const cartItem: CartItem = {
         product: this.product,
         qty: Number(this.quantity.value),
       }
-      this.onSelection.emit(cartItem)
-      //for snackbar
-      this.snackBar.open('Added to cart successfully.', '', {
-      duration: 500
-    });
-
+      this.onSelection.emit(cartItem);
     }
   }
 

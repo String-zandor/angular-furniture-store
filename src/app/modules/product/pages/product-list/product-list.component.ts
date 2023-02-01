@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, Subscription, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subscription, switchMap } from 'rxjs';
 import { CartItem } from 'src/app/modules/cart/models/cart-item';
 import { CartService } from 'src/app/modules/cart/services/cart.service';
 import { User } from 'src/app/modules/user/models/user';
@@ -19,14 +20,15 @@ export class ProductListComponent {
   @Input() products$?: Observable<Product[]>;
   productsDisplay$?: Observable<Product[]>;
   productsToSort$?: Observable<Product[]>;
-  
+
   subscriptions: Subscription[] = [];
   user: User | null = null;
-  
-  constructor( 
+
+  constructor(
     private cartSvc: CartService,
     private auth: AuthService,
     private displaySvc: DisplayService,
+    private snackBar: MatSnackBar,
     private router: Router) {
 
   }
@@ -72,7 +74,14 @@ export class ProductListComponent {
             return this.cartSvc.create(cartItem);
           }
         }),
-      ).subscribe(() => this.cartSvc.getCartItems().subscribe());
+        switchMap(item => {
+          return (item) ? this.cartSvc.getCartItems() : of(null);
+        })
+      ).subscribe(items => {
+        if (items) {
+          this.snackBar.open('Added to cart successfully', '', { duration: 1000 });
+        }
+      })
     } else {
       this.router.navigate(['/profile/login']);
     }

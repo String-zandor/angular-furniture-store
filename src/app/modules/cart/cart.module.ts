@@ -1,21 +1,20 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { CartRoutingModule } from './cart-routing.module';
-import { CartListComponent } from './pages/cart-list/cart-list.component';
-import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CheckoutComponent, DialogProceedCheckout } from './pages/checkout/checkout.component';
+import { CartRoutingModule } from './cart-routing.module';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { CheckoutItemComponent } from './components/checkout-item/checkout-item.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CartListComponent } from './pages/cart-list/cart-list.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
-import {MatDividerModule} from '@angular/material/divider';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatButtonModule} from '@angular/material/button';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatStepperModule } from '@angular/material/stepper';
 
-import { PromptModule } from 'src/app/shared/prompt/prompt.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,17 +26,15 @@ import { PromptModule } from 'src/app/shared/prompt/prompt.module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     CartRoutingModule,
     ReactiveFormsModule,
     MatDividerModule, 
     MatStepperModule, 
     MatFormFieldModule, 
     MatButtonModule,
-    MatRadioModule, 
-    PromptModule
+    MatRadioModule
   ],
-  exports:[
-    // CartModule
-  ],
+  exports:[],
 })
 export class CartModule { }

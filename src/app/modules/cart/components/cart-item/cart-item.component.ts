@@ -14,8 +14,6 @@ export class CartItemComponent implements OnInit, OnDestroy {
   @Input() cartItem!: CartItem;
   @Output() onAction = new EventEmitter();
 
-  constructor(private snackBar: MatSnackBar){}
-
   qtyCtrl = new FormControl(1);
   currentVal: number = 1;
   subscriptions: Subscription[] = [];
@@ -35,16 +33,9 @@ export class CartItemComponent implements OnInit, OnDestroy {
         this.currentVal >= 1) {
         this.executeAction('UPDATE')
       }
-
     })
     this.qtyCtrl.setValue(this.cartItem.qty);
-
-     //for snackbar
-     this.snackBar.open('Item deleted.', '', {
-      duration: 500
-    });
     this.subscriptions.push(sub);
-   
   }
 
   addQuantity() {

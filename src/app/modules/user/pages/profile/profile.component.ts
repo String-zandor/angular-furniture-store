@@ -104,12 +104,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
       this.user.phone = this.phone.value;
       this.user.birthDate = new Date(this.birthDate.value).toJSON();
       this.user.address = this.address.value;
-      this.userSvc.update(this.user).subscribe(() => this.profileForm.disable());
-
-      this.snackBar.open('Changes saved.', '', {
-        duration: 500
-      });  }
-}
+      this.userSvc.update(this.user).subscribe(user => {
+        if (user) {
+          this.profileForm.disable();
+          this.snackBar.open('Changes saved.', '', { duration: 1000 });
+        }
+      })
+    }
+  }
 
   cancel(): void {
     if (this.user) {
@@ -121,12 +123,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
   logout(): void {
     this.auth.logout();
     this.router.navigate(['login'], { relativeTo: this.route });
-
-    this.snackBar.open('You are logged out.', '', {
-      duration: 500
-    });  
+    this.snackBar.open('You are logged out.', '', { duration: 1000 });
   }
-  
 
   get username(): FormControl {
     return this.profileForm.get('username') as FormControl;

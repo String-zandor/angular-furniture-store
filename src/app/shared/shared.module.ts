@@ -16,8 +16,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-// import { PromptComponent } from './prompt/prompt.component';
-
+import { PromptComponent } from './prompt/prompt.component';
 
 @NgModule({
     declarations: [
@@ -25,11 +24,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         FooterComponent,
         SearchComponent,
         PagenotfoundComponent,
-        ConfirmDialogComponent
+        ConfirmDialogComponent,
+        PromptComponent
     ],
     exports: [
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        PromptComponent
     ],
     imports: [
         CommonModule,

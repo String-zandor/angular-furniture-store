@@ -15,8 +15,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup = this.fb.group({
     username: ['', Validators.required],
-    password: ['', Validators.required],
-    remember: [false]
+    password: ['', Validators.required]
   });
 
   loginAsAdmin?: boolean;
@@ -40,17 +39,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   checkLoginStatus(): void {
-
     this.auth.isLoggedIn$.pipe(
-      //test
-      tap(bool => console.log('is logged as user? ', bool)),
       switchMap(isLoggedAsUser => {
         if (isLoggedAsUser) {
           return of(this.router.parseUrl('/home'));
         } else {
           return this.auth.isLoggedAsAdmin$.pipe(
-            //test
-            tap(bool => console.log('is logged as admin? ', bool)),
             map(isLoggedAsAdmin => {
               return (isLoggedAsAdmin) ? this.router.parseUrl('/admin') : null;
             })
@@ -59,25 +53,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       })
     ).subscribe(url => {
       if (url) { 
-        console.log(this.router.serializeUrl(url));
         this.router.navigateByUrl(url); 
       }
     });
-    
-      // this.auth.isLoggedIn$.subscribe(isLoggedIn => {
-      //   if (isLoggedIn) {
-      //     this.router.navigate(['home']);
-      //   }
-      // })
-    
-
-    
-      // this.auth.isLoggedAsAdmin$.subscribe(isLoggedIn => {
-      //   if (isLoggedIn) {
-      //     this.router.navigate(['admin']);
-      //   }
-      // })
-    
   }
 
   onSubmit(): void {
@@ -87,16 +65,13 @@ export class LoginComponent implements OnInit, OnDestroy {
       remember: this.loginForm.get('remember')?.value
     }
 
-    //for snackbar
-      this.snackBar.open('You are logged in.', '', {
-        duration: 500
-      });
-
     if (this.loginAsAdmin) {
       this.auth.loginAsAdmin(data).subscribe((admin) => {
         if (!admin) {
           this.unsuccessful = true;
           this.loginForm.reset();
+        } else {
+          this.snackBar.open('You are logged in.', '', { duration: 1000 });
         }
       });
     } else {
@@ -104,6 +79,8 @@ export class LoginComponent implements OnInit, OnDestroy {
         if (!user) {
           this.unsuccessful = true;
           this.loginForm.reset();
+        } else {
+          this.snackBar.open('You are logged in.', '', { duration: 1000 });
         }
       });
     }

@@ -5,19 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from './shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModule } from './core/core.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatMenuModule } from '@angular/material/menu';
-
-import { PromptModule } from './shared/prompt/prompt.module';
 
 @NgModule({
   declarations: [
@@ -35,8 +33,7 @@ import { PromptModule } from './shared/prompt/prompt.module';
     AngularFireStorageModule,
     MatAutocompleteModule,
     ScrollingModule,
-    MatMenuModule,
-    PromptModule
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],
