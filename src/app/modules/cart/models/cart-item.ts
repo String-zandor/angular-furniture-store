@@ -4,5 +4,6 @@ export interface CartItem {
     id?: number,
     userId?: number, 
     product: Product,
-    qty: number
+    qty: number,
+    checkout?: boolean
 }

@@ -20,9 +20,9 @@ export class ProductItemComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const sub = this.qtyCtrl.valueChanges.subscribe(value => {
-      const val: number = Number(value);
-      this.currentVal = val;
+      this.currentVal = Number(value);
     });
+    this.subscriptions.push(sub);
   }
   
   addQuantity() {

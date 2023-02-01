@@ -1,6 +1,6 @@
 import { Component, EventEmitter, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { map, Subscription} from 'rxjs';
+import { concatMap, from, map, Observable, of, Subscription, switchMap} from 'rxjs';
 import { Order } from 'src/app/modules/order/models/order';
 import { OrderService } from 'src/app/modules/order/services/order.service';
 import { AuthService } from 'src/app/modules/user/services/auth.service';
@@ -176,24 +176,29 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   proceedCheckout() {
     if (this.cartItems.length > 0) {
       this.saveToOrderDataBase();
-      for (let i = 0; i < this.cartItems.length; i++) {
-        const item = this.cartItems[i];
-        if (i === this.cartItems.length - 1) {
-          this.cartService.delete(item.id as number).subscribe(() => {
-            this.cartService.getCartItems().subscribe(() => this.redirectToHome());
-          });
-        } else {
-          this.deleteCartItem(item.id as number);
-        }
-      }
+      let cart$ = from(this.cartItems);
+      cart$.pipe(
+        concatMap(item => {
+          item.checkout = true;
+          return (item.id) ? this.cartService.update(item) : of(null)
+        }),
+        switchMap(() => this.cartService.getCartItems())
+      ).subscribe(() => this.redirectToHome())
+
+      // this.saveToOrderDataBase();
+      // for (let i = 0; i < this.cartItems.length; i++) {
+      //   const item = this.cartItems[i];
+      //   if (i === this.cartItems.length - 1) {
+      //     this.cartService.delete(item.id as number).subscribe(() => {
+      //       this.cartService.getCartItems().subscribe(() => this.redirectToHome());
+      //     });
+      //   } else {
+      //     this.deleteCartItem(item.id as number);
+      //   }
+      // }
     }
   }
 
-  deleteCartItem(id: number) {
-    console.log('inside deleteCartItem')
-    let sub: Subscription = this.cartService.delete(id).subscribe();
-    this.subscriptions.push(sub);
-  }
   saveToOrderDataBase() {
     let order: Order = {
       user: this.userId ? this.userId : 0,

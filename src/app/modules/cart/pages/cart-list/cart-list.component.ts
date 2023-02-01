@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { concatMap, Subscription, switchMap, tap } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/cart.service';
 import { CheckoutService } from '../../services/checkout.service';
@@ -25,14 +25,12 @@ export class CartListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.cartService.cartList$.subscribe(cart => this.cartList = cart);
-    const sub = this.cartService.getSubTotal().subscribe(subTotal => this.subTotal = subTotal);
-    this.subscriptions.push(sub);
-    this.updateCartDisplay();
-  }
-
-  updateCartDisplay(): void {
+    const sub1 = this.cartService.cartList$.subscribe(cart => this.cartList = cart);
+    const sub2 = this.cartService.getSubTotal().subscribe(subTotal => this.subTotal = subTotal);
     this.cartService.getCartItems().subscribe();
+
+    this.subscriptions.push(sub1);
+    this.subscriptions.push(sub2);
   }
 
   onAction(data: { cartItem: CartItem, action: string }): void {
@@ -51,11 +49,9 @@ export class CartListComponent implements OnInit, OnDestroy {
 
   removeFromCart(cartItem: CartItem): void {
     if (cartItem.id) {
-      this.cartService.delete(cartItem.id).subscribe(cartItem => {
-        if (cartItem) {
-          this.updateCartDisplay();
-        }
-      });
+      this.cartService.delete(cartItem.id).pipe(
+        switchMap(() => this.cartService.getCartItems())
+      ).subscribe();
     }
   }
 

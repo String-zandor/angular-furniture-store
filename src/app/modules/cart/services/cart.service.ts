@@ -39,7 +39,7 @@ export class CartService implements OnDestroy {
 
   getCartItems(): Observable<CartItem[]> {
     return this.http.get<CartItem[]>(`${this.serverUrl}/cart`).pipe(
-      map(cart => cart.filter(cartItem => cartItem.userId === this.user?.id)),
+      map(cart => cart.filter(cartItem => (cartItem.userId === this.user?.id) && (!cartItem.checkout))),
       tap(cartItems => this.subject.next(cartItems)),
     );
   }
