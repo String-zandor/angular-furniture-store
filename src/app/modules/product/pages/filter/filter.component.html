@@ -2,7 +2,7 @@
 
     <!-- ROOM FILTER -->
     <button class = "btn" mat-button [matMenuTriggerFor]="room">Room<i class="ri-arrow-drop-down-fill"></i></button>
-    <mat-menu #room = "matMenu" xPosition="before" yPosition="below" >
+    <mat-menu #room = "matMenu" xPosition="after" yPosition="below" >
         <div *ngFor="let room of rooms$ | async">
             <app-room-item [room]="room" (onChanges)="onChanges($event)" ></app-room-item>
         </div>

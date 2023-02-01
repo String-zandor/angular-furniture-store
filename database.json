@@ -8,7 +8,7 @@
       ],
       "name": "Glass Oval Cocktail Table",
       "category": "Tables",
-      "room": "Living Room",
+      "room": "Living",
       "color": "Vintage White",
       "description": {
         "desc": "Good",
@@ -27,7 +27,7 @@
       ],
       "name": "Nested Coffee Table",
       "category": "Tables",
-      "room": "Living Room",
+      "room": "Living",
       "description": {
         "desc": "Better"
       },
@@ -42,7 +42,7 @@
       ],
       "name": "Black Metal Accent Table",
       "category": "Tables",
-      "room": "Living Room",
+      "room": "Living",
       "description": {
         "desc": "Best"
       },
@@ -56,7 +56,7 @@
         "assets/products/TABLES/4.png"
       ],
       "name": "Brass Finish Coffee Table",
-      "room": "Living Room",
+      "room": "Living",
       "category": "Tables",
       "description": {
         "desc": "Baroque"
@@ -71,7 +71,7 @@
         "assets/products/TABLES/5.png"
       ],
       "name": "Blackened Side Table",
-      "room": "Living Room",
+      "room": "Living",
       "category": "Tables",
       "color": "Black",
       "description": {
@@ -91,7 +91,7 @@
       ],
       "name": "Glass Dining Table",
       "category": "Tables",
-      "room": "Dining Room",
+      "room": "Dining",
       "color": "Black",
       "description": {
         "desc": "Modern",
@@ -110,7 +110,7 @@
       ],
       "name": "Mild Steel Dining Table",
       "category": "Tables",
-      "room": "Dining Room",
+      "room": "Dining",
       "color": "Black",
       "description": {
         "desc": "Modern",
@@ -128,7 +128,7 @@
         "assets/products/TABLES/8.png"
       ],
       "name": "Solid Wood Nighstand",
-      "room": "Bedroom",
+      "room": "Bedspace",
       "category": "Tables",
       "color": "Black",
       "description": {
@@ -147,7 +147,7 @@
         "assets/products/TABLES/9.png"
       ],
       "name": "Simple End Table",
-      "room": "Bedroom",
+      "room": "Bedspace",
       "category": "Tables",
       "color": "Black",
       "description": {
@@ -166,7 +166,7 @@
         "assets/products/CHAIRS/1.png"
       ],
       "name": "Simple Chair",
-      "room": "Living Room",
+      "room": "Living",
       "category": "Chairs",
       "color": "Black",
       "description": {
@@ -185,7 +185,7 @@
         "assets/products/CHAIRS/2.png"
       ],
       "name": "Elegant Chair",
-      "room": "Living Room",
+      "room": "Living",
       "category": "Chairs",
       "color": "Yellow",
       "description": {
@@ -205,7 +205,7 @@
       ],
       "name": "Wingback Hostess Chair",
       "category": "Chairs",
-      "room": "Living Room",
+      "room": "Living",
       "color": "Black",
       "description": {
         "desc": "Modern",
@@ -223,7 +223,7 @@
         "assets/products/CHAIRS/4.png"
       ],
       "name": "Summer Corn Chair",
-      "room": "Living Room",
+      "room": "Living",
       "category": "Chairs",
       "color": "Yellow",
       "description": {
@@ -242,7 +242,7 @@
         "assets/products/CHAIRS/5.png"
       ],
       "name": "Avery Sleeper Sofa",
-      "room": "Living Room",
+      "room": "Living",
       "category": "Chairs",
       "color": "White",
       "description": {
@@ -261,7 +261,7 @@
         "assets/products/CHAIRS/6.png"
       ],
       "name": "Mid Century Sofa",
-      "room": "Living Room",
+      "room": "Living",
       "category": "Chairs",
       "color": "Black",
       "description": {
@@ -281,6 +281,7 @@
       ],
       "name": "Flootie Carmine Sofa",
       "category": "Chairs",
+      "room": "Living",
       "color": "Grey",
       "description": {
         "desc": "Modern",
@@ -298,6 +299,7 @@
         "assets/products/BEDS/1.png"
       ],
       "name": "European Iron Bed",
+      "room":"Bedspace",
       "category": "Beds",
       "color": "Black",
       "description": {
@@ -316,6 +318,7 @@
         "assets/products/BEDS/2.png"
       ],
       "name": "Vintage Style Bed",
+      "room":"Bedspace",
       "category": "Beds",
       "color": "Black",
       "description": {
@@ -334,6 +337,7 @@
         "assets/products/BEDS/3.png"
       ],
       "name": "Wingback Velvet Bed",
+      "room":"Bedspace",
       "category": "Beds",
       "color": "Black",
       "description": {
@@ -360,7 +364,7 @@
         ],
         "name": "Nested Coffee Table",
         "category": "Tables",
-        "room": "Living Room",
+        "room": "Living",
         "description": {
           "desc": "Better"
         },
@@ -380,7 +384,7 @@
           "assets/products/TABLES/4.png"
         ],
         "name": "Brass Finish Coffee Table",
-        "room": "Living Room",
+        "room": "Living",
         "category": "Tables",
         "description": {
           "desc": "Baroque"
@@ -1140,7 +1144,7 @@
             ],
             "name": "Glass Table",
             "category": "Tables",
-            "room": "Living Room",
+            "room": "Living",
             "description": {
               "desc": "Best"
             },
@@ -1158,7 +1162,7 @@
               "assets/products/1.png"
             ],
             "name": "Baroque Table",
-            "room": "Dining Room",
+            "room": "Dining",
             "category": "Tables",
             "description": {
               "desc": "Baroque"
@@ -1212,7 +1216,7 @@
               "assets/products/1.png"
             ],
             "name": "Baroque Table",
-            "room": "Dining Room",
+            "room": "Dining",
             "category": "Tables",
             "description": {
               "desc": "Baroque"
@@ -1248,7 +1252,7 @@
             ],
             "name": "Glass Table",
             "category": "Tables",
-            "room": "Living Room",
+            "room": "Living",
             "description": {
               "desc": "Best"
             },
@@ -1264,7 +1268,7 @@
             "id": 5,
             "name": "Chintzy Chaise Lounge",
             "category": "Chairs",
-            "room": "Living Room",
+            "room": "Living",
             "color": "Pink",
             "description": {
               "desc": "Floral",
@@ -1288,7 +1292,7 @@
             "id": 1,
             "name": "Comfy Bed",
             "category": "Beds",
-            "room": "Bedroom",
+            "room": "Bedspace",
             "color": "Vintage White",
             "description": {
               "desc": "Good",
@@ -1311,7 +1315,7 @@
               "assets/products/1.png"
             ],
             "name": "Baroque Table",
-            "room": "Dining Room",
+            "room": "Dining",
             "category": "Tables",
             "description": {
               "desc": "Baroque"
@@ -1366,7 +1370,7 @@
             ],
             "name": "Glass Table",
             "category": "Tables",
-            "room": "Living Room",
+            "room": "Living",
             "description": {
               "desc": "Best"
             },
@@ -1384,7 +1388,7 @@
               "assets/products/1.png"
             ],
             "name": "Baroque Table",
-            "room": "Dining Room",
+            "room": "Dining",
             "category": "Tables",
             "description": {
               "desc": "Baroque"
@@ -1417,7 +1421,7 @@
             "id": 1,
             "name": "Comfy Bed",
             "category": "Beds",
-            "room": "Bedroom",
+            "room": "Bedspace",
             "color": "Vintage White",
             "description": {
               "desc": "Good",
@@ -1460,7 +1464,7 @@
             ],
             "name": "Glass Table",
             "category": "Tables",
-            "room": "Living Room",
+            "room": "Living",
             "description": {
               "desc": "Best"
             },
@@ -1478,7 +1482,7 @@
               "assets/products/1.png"
             ],
             "name": "Baroque Table",
-            "room": "Dining Room",
+            "room": "Dining",
             "category": "Tables",
             "description": {
               "desc": "Baroque"
@@ -1495,7 +1499,7 @@
             "id": 5,
             "name": "Chintzy Chaise Lounge",
             "category": "Chairs",
-            "room": "Living Room",
+            "room": "Living",
             "color": "Pink",
             "description": {
               "desc": "Floral",
@@ -1535,7 +1539,7 @@
             "id": 1,
             "name": "Comfy Bed",
             "category": "Beds",
-            "room": "Bedroom",
+            "room": "Bedspace",
             "color": "Vintage White",
             "description": {
               "desc": "Good",
@@ -1578,7 +1582,7 @@
             ],
             "name": "Glass Table",
             "category": "Tables",
-            "room": "Living Room",
+            "room": "Living",
             "description": {
               "desc": "Best"
             },
@@ -1596,7 +1600,7 @@
               "assets/products/1.png"
             ],
             "name": "Baroque Table",
-            "room": "Dining Room",
+            "room": "Dining",
             "category": "Tables",
             "description": {
               "desc": "Baroque"
@@ -1613,7 +1617,7 @@
             "id": 5,
             "name": "Chintzy Chaise Lounge",
             "category": "Chairs",
-            "room": "Living Room",
+            "room": "Living",
             "color": "Pink",
             "description": {
               "desc": "Floral",
@@ -1657,7 +1661,7 @@
             ],
             "name": "Nested Coffee Table",
             "category": "Tables",
-            "room": "Living Room",
+            "room": "Living",
             "description": {
               "desc": "Better"
             },
@@ -1676,7 +1680,7 @@
               "assets/products/TABLES/4.png"
             ],
             "name": "Brass Finish Coffee Table",
-            "room": "Living Room",
+            "room": "Living",
             "category": "Tables",
             "description": {
               "desc": "Baroque"
@@ -1712,7 +1716,7 @@
               "assets/products/TABLES/4.png"
             ],
             "name": "Brass Finish Coffee Table",
-            "room": "Living Room",
+            "room": "Living",
             "category": "Tables",
             "description": {
               "desc": "Baroque"
