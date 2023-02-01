@@ -19,7 +19,11 @@ export class ProductItemComponent {
   @Output() onSelection = new EventEmitter<CartItem>();
   subscriptions: Subscription[] = [];
 
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(
+    // private _snackBar: MatSnackBar
+    ) { 
+
+  }
 
   quantity = new FormControl(1)
   //addandminus
@@ -56,9 +60,9 @@ export class ProductItemComponent {
         qty: Number(this.quantity.value),
       }
       this.onSelection.emit(cartItem)
-      this._snackBar.openFromComponent(PromptComponent, {
-        duration: this.durationInSeconds * 1000,
-      });
+      // this._snackBar.openFromComponent(PromptComponent, {
+      //   duration: this.durationInSeconds * 1000,
+      // });
     }
   }
 

@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private cartSvc: CartService,
-    private productSvc: ProductService,
     private auth: AuthService) { }
 
   ngOnInit(): void {
@@ -28,7 +27,6 @@ export class HeaderComponent implements OnInit {
       tap(() => this.cartSvc.getCartItems().subscribe()),
       switchMap(() => this.cartSvc.getNoOfItems())
     )
-    this.productSvc.allProducts$.subscribe(products => this.allProducts = products);
     this.isLoggedAsAdmin$ = this.auth.isLoggedAsAdmin$;
   }
 }
