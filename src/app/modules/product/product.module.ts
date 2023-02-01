@@ -41,6 +41,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { PromptModule } from 'src/app/shared/prompt/prompt.module';
+
 
 @NgModule({
   declarations: [
@@ -64,12 +66,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule,
-    SharedModule, 
+    ProductRoutingModule, 
     ReactiveFormsModule,
     MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule, MatAutocompleteModule,
     MatTableModule, MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    PromptModule
     
   ],
   exports:[]

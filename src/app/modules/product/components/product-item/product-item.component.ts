@@ -6,7 +6,6 @@ import { Product } from '../../models/product';
 
 //new import from dialogs
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PromptComponent } from 'src/app/shared/prompt/prompt.component';
 
 @Component({
   selector: 'app-product-item',
@@ -20,7 +19,7 @@ export class ProductItemComponent {
   subscriptions: Subscription[] = [];
 
   constructor(
-    // private _snackBar: MatSnackBar
+    private snackBar: MatSnackBar
     ) { 
 
   }
@@ -60,9 +59,11 @@ export class ProductItemComponent {
         qty: Number(this.quantity.value),
       }
       this.onSelection.emit(cartItem)
-      // this._snackBar.openFromComponent(PromptComponent, {
-      //   duration: this.durationInSeconds * 1000,
-      // });
+      //for snackbar
+      this.snackBar.open('Added to cart successfully.', '', {
+      duration: 500
+    });
+
     }
   }
 

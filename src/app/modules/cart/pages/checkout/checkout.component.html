@@ -32,6 +32,9 @@
                 </div>
 
                 <button mat-button *ngIf="editInfo" type="submit" [disabled]="!shippingForm.valid">Save</button> 
+
+                <app-prompt [message]="'message'" type="success"></app-prompt>
+
             </form>
             
         </div>

@@ -13,6 +13,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { MatIconModule } from '@angular/material/icon';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+// import { PromptComponent } from './prompt/prompt.component';
+
 
 @NgModule({
     declarations: [
@@ -23,14 +26,15 @@ import { MatIconModule } from '@angular/material/icon';
     ],
     exports: [
         HeaderComponent,
-        FooterComponent    ],
+        FooterComponent  ],
     imports: [
         CommonModule,
         MatBadgeModule,
         ReactiveFormsModule,
         RouterModule, 
         MatSidenavModule,
-        MatIconModule
+        MatIconModule,
+        MatSnackBarModule
     ]
 })
 export class SharedModule { }

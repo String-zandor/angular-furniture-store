@@ -7,6 +7,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatHeaderRow, MatTableModule } from '@angular/material/table';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+// import { PromptModule } from 'src/app/shared/prompt/prompt.module';
 
 
 @NgModule({

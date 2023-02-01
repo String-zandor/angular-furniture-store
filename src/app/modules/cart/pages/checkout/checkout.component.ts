@@ -9,6 +9,7 @@ import { CartService } from '../../services/cart.service';
 import { CheckoutService } from '../../services/checkout.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -22,7 +23,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     private router: Router,
     private auth: AuthService,
     private check: CheckoutService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) { }
   userFullName?:string
   userContact?:string
@@ -70,10 +72,11 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         }else{
           this.isChangedValueForm = true
         }
+
         console.log(name, contact, address)
         console.log(this.userFullName, ' ',value.name)
+
       })
-      
     })
   }
   ngOnDestroy(): void {
@@ -216,7 +219,12 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     };
     let sub: Subscription = this.orderService.create(order).subscribe();
     this.subscriptions.push(sub);
+
+    this.snackBar.open('Order placed.', '', {
+      duration: 500
+    });
   }
+
 
   redirectToHome() { /**redirect to HOME FOR NOW */
     this.router.navigate(['home'])

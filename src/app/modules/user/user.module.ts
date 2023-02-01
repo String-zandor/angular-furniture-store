@@ -16,27 +16,30 @@ import { MatDividerModule } from '@angular/material/divider';
 import { OrderModule } from "../order/order.module";
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
-//for html
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { PromptModule } from 'src/app/shared/prompt/prompt.module';
+
+
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    ProfileComponent,
-    ForgotPasswordComponent,
-    ResetPasswordComponent,
-    ConfirmDialogComponent,
-    RegisterComponent],
-  imports: [
-    CommonModule,
-    UserRoutingModule,
-    ReactiveFormsModule,
-    MatInputModule, MatButtonModule, MatDividerModule,
-    OrderModule, MatDialogModule,
-    MatFormFieldModule,
-    MatIconModule
-  ]
+    declarations: [
+        LoginComponent,
+        ProfileComponent,
+        ForgotPasswordComponent,
+        ResetPasswordComponent,
+        ConfirmDialogComponent,
+        RegisterComponent
+    ],
+    imports: [
+        CommonModule,
+        UserRoutingModule,
+        ReactiveFormsModule,
+        MatInputModule, MatButtonModule, MatDividerModule,
+        OrderModule, MatDialogModule,
+        MatFormFieldModule,
+        MatIconModule,
+        PromptModule
+    ]
 })
 export class UserModule { }

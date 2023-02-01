@@ -6,6 +6,9 @@ import { User } from '../../models/user';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 
+//new import from dialogs
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-profile',
@@ -33,7 +36,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private auth: AuthService,
     private userSvc: UserService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar) {
 
   }
 
@@ -76,8 +80,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
       this.user.address = this.address.value;
       this.userSvc.update(this.user).subscribe(() => this.profileForm.disable());
 
-      // this.promptComponent.openSnackBar('Changes saved!', 'Undo', 3000);
-  }
+      this.snackBar.open('Changes saved.', '', {
+        duration: 500
+      });  }
 }
 
   cancel(): void {
@@ -90,7 +95,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
   logout(): void {
     this.auth.logout();
     this.router.navigate(['login'], { relativeTo: this.route });
+
+    this.snackBar.open('You are logged out.', '', {
+      duration: 500
+    });  
   }
+  
 
   get username(): FormControl {
     return this.profileForm.get('username') as FormControl;

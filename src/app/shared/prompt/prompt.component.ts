@@ -9,8 +9,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class PromptComponent {
 
-  // @Input() message?: string;
-  // @Input() type?: 'success' | 'error';
+  @Input() message?: string;
+  @Input() type?: 'success' | 'error';
 
   constructor(private snackBar: MatSnackBar) {}
 
