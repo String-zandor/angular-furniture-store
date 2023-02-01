@@ -17,7 +17,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { OrderModule } from "../order/order.module";
-import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { SharedModule } from "../../shared/shared.module";
 
 
@@ -29,7 +28,6 @@ import { SharedModule } from "../../shared/shared.module";
         ProfileComponent,
         ForgotPasswordComponent,
         ResetPasswordComponent,
-        ConfirmDialogComponent,
         RegisterComponent
     ],
     imports: [
