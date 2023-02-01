@@ -81,22 +81,21 @@
   "cart": [
     {
       "product": {
-        "id": 5,
-        "name": "Chintzy Chaise Lounge",
+        "id": 2,
+        "srcUrl": [
+          "assets/products/3.png"
+        ],
+        "name": "Utility Chair",
         "category": "Chairs",
-        "color": "Pink",
+        "room": "Kitchen",
         "description": {
-          "desc": "Floral",
-          "dimensions": "6ft x 6ft",
-          "material": "Cotton",
-          "weight": "8kg"
+          "desc": "Better"
         },
-        "price": 17000,
-        "postingDate": "2023-01-28T15:20:51.331Z",
-        "srcUrl": []
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
       },
-      "qty": 1,
-      "userId": 1,
+      "qty": 3,
+      "userId": 3,
       "id": 1
     }
   ],
@@ -104,13 +103,10 @@
     {
       "id": 1,
       "key": 1,
-      "username": "seven",
-      "firstName": "seven",
-      "lastName": "Seven",
-      "email": "mrseven@77global.biz",
-      "phone": "09777777777",
-      "birthDate": "2027-07-07T00:00:00.000Z",
-      "address": "Earth"
+      "username": "admin",
+      "firstName": "Juan",
+      "lastName": "Dela Cruz",
+      "email": "jdc@77global.biz"
     },
     {
       "id": 2,
@@ -133,31 +129,13 @@
       "phone": "09666666666",
       "birthDate": "1943-12-25T00:00:00.000Z",
       "address": "Earth"
-    },
-    {
-      "id": 4,
-      "key": 4,
-      "firstName": "Eight",
-      "lastName": "Eight",
-      "phone": "09888888888",
-      "address": "Earth",
-      "email": "mreight@88global.biz",
-      "birthDate": "2088-08-08",
-      "username": "eight"
     }
   ],
   "auth": [
     {
       "id": 1,
-      "username": "seven",
-      "password": "seven",
-      "active": true,
-      "role": "ADMIN"
-    },
-    {
-      "id": 4,
-      "username": "eight",
-      "password": "eight",
+      "username": "admin",
+      "password": "admin1234",
       "active": true,
       "role": "ADMIN"
     },
@@ -166,7 +144,7 @@
       "username": "johnnyfav",
       "password": "1234",
       "active": true,
-      "role": "ADMIN"
+      "role": "USER"
     },
     {
       "id": 3,
@@ -831,6 +809,541 @@
         "address": "Earth"
       },
       "id": 11
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 41500,
+      "deliveryfee": 100,
+      "total": 41600,
+      "orderDate": "2023-01-31T23:11:57.349Z",
+      "cart": [
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/3.png"
+            ],
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "room": "Kitchen",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": [
+              "assets/products/4.png"
+            ],
+            "name": "Glass Table",
+            "category": "Tables",
+            "room": "Living Room",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/1.png"
+            ],
+            "name": "Baroque Table",
+            "room": "Dining Room",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 4
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 12
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 37000,
+      "deliveryfee": 100,
+      "total": 37100,
+      "orderDate": "2023-01-31T23:36:04.722Z",
+      "cart": [
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/3.png"
+            ],
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "room": "Kitchen",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 2,
+          "userId": 3,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/1.png"
+            ],
+            "name": "Baroque Table",
+            "room": "Dining Room",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 2,
+          "userId": 3,
+          "id": 4
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 13
+    },
+    {
+      "user": 2,
+      "status": "pending",
+      "subtotal": 144500,
+      "deliveryfee": 100,
+      "total": 144600,
+      "orderDate": "2023-01-31T23:40:06.969Z",
+      "cart": [
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": [
+              "assets/products/4.png"
+            ],
+            "name": "Glass Table",
+            "category": "Tables",
+            "room": "Living Room",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 3,
+          "userId": 2,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 5,
+            "name": "Chintzy Chaise Lounge",
+            "category": "Chairs",
+            "room": "Living Room",
+            "color": "Pink",
+            "description": {
+              "desc": "Floral",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 17000,
+            "postingDate": "2023-01-30T14:20:45.566Z",
+            "srcUrl": [
+              "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-2.png?alt=media&token=c9fb44c2-6d9f-4157-9741-5fb122b91f9a",
+              "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-1.png?alt=media&token=7c5406a4-9a17-44da-a3e2-a45eb2e005f7"
+            ]
+          },
+          "qty": 2,
+          "userId": 2,
+          "id": 5
+        },
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "room": "Bedroom",
+            "color": "Vintage White",
+            "description": {
+              "desc": "Good",
+              "dimensions": "6ft x 6ft",
+              "material": "memory foam",
+              "weight": "10kg"
+            },
+            "price": 12000,
+            "postingDate": "2023-01-28T15:24:41.683Z",
+            "srcUrl": []
+          },
+          "qty": 2,
+          "userId": 2,
+          "id": 7
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/1.png"
+            ],
+            "name": "Baroque Table",
+            "room": "Dining Room",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 9
+        }
+      ],
+      "shipping": {
+        "name": "Johnny Favorite",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 14
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 42500,
+      "deliveryfee": 100,
+      "total": 42600,
+      "orderDate": "2023-01-31T23:42:01.453Z",
+      "cart": [
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/3.png"
+            ],
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "room": "Kitchen",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 2,
+          "userId": 3,
+          "id": 6
+        },
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": [
+              "assets/products/4.png"
+            ],
+            "name": "Glass Table",
+            "category": "Tables",
+            "room": "Living Room",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 8
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/1.png"
+            ],
+            "name": "Baroque Table",
+            "room": "Dining Room",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 10
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 15
+    },
+    {
+      "user": 2,
+      "status": "pending",
+      "subtotal": 70500,
+      "deliveryfee": 100,
+      "total": 70600,
+      "orderDate": "2023-01-31T23:50:05.304Z",
+      "cart": [
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "room": "Bedroom",
+            "color": "Vintage White",
+            "description": {
+              "desc": "Good",
+              "dimensions": "6ft x 6ft",
+              "material": "memory foam",
+              "weight": "10kg"
+            },
+            "price": 12000,
+            "postingDate": "2023-01-28T15:24:41.683Z",
+            "srcUrl": []
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/3.png"
+            ],
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "room": "Kitchen",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 5
+        },
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": [
+              "assets/products/4.png"
+            ],
+            "name": "Glass Table",
+            "category": "Tables",
+            "room": "Living Room",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 7
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/1.png"
+            ],
+            "name": "Baroque Table",
+            "room": "Dining Room",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 10
+        },
+        {
+          "product": {
+            "id": 5,
+            "name": "Chintzy Chaise Lounge",
+            "category": "Chairs",
+            "room": "Living Room",
+            "color": "Pink",
+            "description": {
+              "desc": "Floral",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 17000,
+            "postingDate": "2023-01-30T14:20:45.566Z",
+            "srcUrl": [
+              "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-2.png?alt=media&token=c9fb44c2-6d9f-4157-9741-5fb122b91f9a",
+              "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-1.png?alt=media&token=7c5406a4-9a17-44da-a3e2-a45eb2e005f7"
+            ]
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 11
+        }
+      ],
+      "shipping": {
+        "name": "Johnny Favorite",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 16
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 70500,
+      "deliveryfee": 100,
+      "total": 70600,
+      "orderDate": "2023-01-31T23:50:28.766Z",
+      "cart": [
+        {
+          "product": {
+            "id": 1,
+            "name": "Comfy Bed",
+            "category": "Beds",
+            "room": "Bedroom",
+            "color": "Vintage White",
+            "description": {
+              "desc": "Good",
+              "dimensions": "6ft x 6ft",
+              "material": "memory foam",
+              "weight": "10kg"
+            },
+            "price": 12000,
+            "postingDate": "2023-01-28T15:24:41.683Z",
+            "srcUrl": []
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/3.png"
+            ],
+            "name": "Utility Chair",
+            "category": "Chairs",
+            "room": "Kitchen",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 4
+        },
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": [
+              "assets/products/4.png"
+            ],
+            "name": "Glass Table",
+            "category": "Tables",
+            "room": "Living Room",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 6
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/1.png"
+            ],
+            "name": "Baroque Table",
+            "room": "Dining Room",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 8
+        },
+        {
+          "product": {
+            "id": 5,
+            "name": "Chintzy Chaise Lounge",
+            "category": "Chairs",
+            "room": "Living Room",
+            "color": "Pink",
+            "description": {
+              "desc": "Floral",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 17000,
+            "postingDate": "2023-01-30T14:20:45.566Z",
+            "srcUrl": [
+              "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-2.png?alt=media&token=c9fb44c2-6d9f-4157-9741-5fb122b91f9a",
+              "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-1.png?alt=media&token=7c5406a4-9a17-44da-a3e2-a45eb2e005f7"
+            ]
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 9
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 17
     }
   ]
 }

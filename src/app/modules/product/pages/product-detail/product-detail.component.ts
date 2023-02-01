@@ -39,8 +39,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       this.productSvc.getProduct(id).subscribe(product => this.product = product);
 
       const sub1 = this.qtyCtrl.valueChanges.subscribe(value => {
-        const val: number = Number(value);
-        this.currentVal = val;
+        this.currentVal = Number(value);
       });
 
       const sub2 = this.auth.user$.subscribe(user => this.user = (user) ? user : null);
