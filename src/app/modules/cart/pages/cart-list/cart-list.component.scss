@@ -23,8 +23,10 @@
 	padding: 20px 0;
 	text-align: center;
 	text-transform: uppercase;
-    background-color: rgb(77, 91, 72);
+    background-color: var(--bgcolor-light);
 }
+
+
 
 .right-bar {
 	width: 100%;
@@ -32,7 +34,7 @@
 	padding: 20px;
 	height: 100%;
 	border-radius: 5px;
-	background: rgb(74, 73, 73);
+	background: transparent;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .right-bar hr {
@@ -49,7 +51,7 @@
 	justify-content: center;
 }
 .right-bar  button{
-	background-color: #6f8174;
+	background-color: var(--bgcolor-dark);
 	border: none;
 	color: #fff;
 	text-decoration: none;
@@ -59,18 +61,31 @@
 	height: 40px;
 	line-height: 40px;
 	font-weight: 900;
-	width: 300px;
+	width: 100%;
 
 	
 }
 .right-bar i {
 	margin-right: 15px;
 }
-.right-bar a:hover {
-	background-color: #3972a7;
+.right-bar button:hover {
+	background-color: var(--bgcolor-light)
 }
 
 
 
-// #6f8174
-// rgb(77, 91, 72)
+@media screen and (max-width: 900px) {
+	.cart-list {
+		flex-direction: column;
+	}
+	.right-bar {
+		margin-left: 0;
+		margin-bottom: 20px;
+		border: solid var(--bgcolor-light);
+	}
+}
+@media screen and (max-width: 1250px) {
+	.wrapper {
+		max-width: 95%;
+	}
+}

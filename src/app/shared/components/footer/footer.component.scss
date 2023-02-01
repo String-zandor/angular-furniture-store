@@ -16,11 +16,11 @@
 
 /* FOOTER BACKGROUND PROPERTIES */
 .footer-distributed{
-    // background-color: rgba(166, 190, 172, 0.502);
-    background-color: #303630fe;
+    
+    background-color: var(--bgcolor-dark);
     box-sizing: border-box;
     widows: 100%;
-    /* text-align: left; */
+    
     font: bold 16px sans-serif;
     padding: 50px 50px 60px 50px;
     margin-top: 80px

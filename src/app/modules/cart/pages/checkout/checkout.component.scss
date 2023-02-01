@@ -1,33 +1,37 @@
-
 .checkout-container{
-    border: solid;
+   
     margin: 100px 20px 0 20px;
+    overflow-x: hidden;
 }
 
 .checkout-container h1 {
 	padding: 20px 0;
 	text-align: center;
 	text-transform: uppercase;
-    background-color: rgb(77, 91, 72);
+    background-color: var(--bgcolor-light);
 }
-
 
 
 .checkout-body{
-    display: flex;
+    display: flex; 
 }
+
+//-------------------- FORM ----------------------
 
 mat-stepper{
-    flex: 50%
+    background-color: transparent !important; 
 }
-
 
 
 .form{
-    border: solid;
-    display: block;
+    
+    display: inline-block;
     max-width: 50%;
-    padding: 10px
+    padding: 10px;
+    color: white;
+    margin: 10px;
+    box-shadow: rgba(100, 100, 100, 0.1) 2px 2px 2px 2px;
+    border: solid var(--bgcolor-dark);
     
 }
 .form .ri-pencil-line{
@@ -40,38 +44,101 @@ mat-stepper{
 .form input{
     background-color: transparent;
     border: none;
+    outline: none;
     
     
 }
+.form input:focus{
+     color: var(--bgcolor-light);
+    
+  }
 .form .name input{
     font-size: 30px;
+    color: var(--bgcolor-light);
+    
+}
+.form button{
+    margin-top: 10px;
     
 }
 
 
-
-
-.items{
-    border: solid;
-}
-
-
-.order-details{
-    border: solid;
-    flex:40%
-}
+//-------------------- PAYMENT OPTION ----------------------
 
 
 .removeDesign{
     background: transparent;
-    border: 0;
+    border: none;
     outline: none;
-    color: white;
+    color: white
 }
 
 .error-message{
-    color: red;
+    color: rgb(240, 105, 105);
 }
-// .toggleRemoveDesign{
 
-// }
+
+//-------------------------- ORDER DETAILS ---------------------------
+
+.right-bar {
+    
+	width: 100%;
+    
+	flex: 10%;
+    margin-left: 50px;
+	padding: 20px;
+	height: 100%;
+	border-radius: 5px;
+    background-color: transparent;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.right-bar hr {
+	margin-bottom: 25px;
+}
+.right-bar p {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+.right-bar div{
+	display: flex;
+	justify-content: center;
+}
+.right-bar  button{
+	background-color: var(--bgcolor-dark);
+	border: none;
+	color: #fff;
+	text-decoration: none;
+	
+	align-items: center;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 900;
+	width: 100%;
+
+	
+}
+.right-bar button:hover {
+	background-color: rgb(101, 119, 94);
+}
+
+// MEDIA QUERIES
+
+@media only screen and (max-width: 700px) {
+    .checkout-body{
+        display: flex ;
+        flex-direction: column;
+        justify-content: left;
+
+    }
+    mat-stepper{
+        margin-left: 0;
+    }
+    .right-bar{
+        border: solid var(--bgcolor-light);
+        margin-top: 20px;
+        margin-left: 0;
+    }
+  }

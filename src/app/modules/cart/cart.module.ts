@@ -13,6 +13,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     CartRoutingModule,
     ReactiveFormsModule,MatDividerModule, MatStepperModule, MatFormFieldModule, MatButtonModule
+    ,MatRadioModule
   ],
   exports:[
     // CartModule

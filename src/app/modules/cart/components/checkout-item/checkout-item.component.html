@@ -1,5 +1,9 @@
-<div>
-    <strong>Name:</strong>{{cartItem?.product?.name}}
-    <strong>Price:</strong> {{cartItem?.product?.price | currency:'PHP'}}
-    <strong>Qty:</strong> {{cartItem?.qty}}
-</div>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>{{cartItem?.product?.name}}</td>
+      <td>{{cartItem?.product?.price | currency:'PHP'}}</td>
+      <td>{{cartItem?.qty}}</td>
+    </tr>
+    <tbody>
+</table>        

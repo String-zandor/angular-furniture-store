@@ -9,7 +9,7 @@ mat-divider{
 	margin-bottom: 20px;
 	transition: all .6s ease;
 	border-style: solid;
-    border-color: #6f8174;
+    border-color: var(--bgcolor-light)
    
 }
 
@@ -47,13 +47,13 @@ mat-divider{
 	bottom: 20px;
 	right: 20px;
 	padding: 10px 25px;
-	background-color: #6f8174;
+	background-color: var(--bgcolor-dark);
 	color: white;
 	cursor: pointer;
 	border-radius: 5px;
 }
 .btn-area:hover {
-	background-color: #9ab3a1;
+	background-color: var(--bgcolor-light);
 	color: #fff;
 	font-weight: 600;
 }
@@ -75,4 +75,40 @@ p{
 }
 .btn-area i {
 	margin-right: 5px;
+}
+
+@media screen and (max-width: 700px) {
+	.content h3 {
+		margin-bottom: 1px;
+	}
+	.content h4 {
+		margin-bottom: 1px;
+	}
+	.btn2 {
+		display: none;
+	}
+	.box {
+		height: 150px;
+		width: 100%;
+	}
+	.box img {
+		height: 150px;
+		width: 200px;
+	}
+    .content .btn-area{
+        
+        right: 10px;
+        bottom: 10px;
+        height: 40px;
+        width: 0.5px;
+    }
+	.button-area span{
+		color: transparent;
+	}
+    .btn-area .ri-delete-bin-6-line{
+        position: absolute;
+        text-align: center;
+        left: 20px;
+        
+    }
 }
