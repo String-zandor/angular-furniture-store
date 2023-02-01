@@ -7,7 +7,8 @@
 .checkout-container h1 {
 	padding: 20px 0;
 	text-align: center;
-	text-transform: uppercase;
+	
+    font-size: 40px;
     background-color: var(--bgcolor-light);
 }
 
@@ -26,7 +27,7 @@ mat-stepper{
 .form{
     
     display: inline-block;
-    max-width: 50%;
+    max-width:100%;
     padding: 10px;
     color: white;
     margin: 10px;

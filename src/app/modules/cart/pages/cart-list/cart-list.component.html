@@ -2,7 +2,7 @@
 <div class = "wrapper">
     
         <div *ngIf="cartList.length > 0">
-            <h1>Your cart</h1>
+            <h1>Shopping Cart</h1>
             <div class = "cart-list">
 
                 <div class = "shop">
@@ -27,10 +27,14 @@
         </div>
 
     <div *ngIf="cartList.length < 1">
-        <h1>Your cart is empty</h1>
-        <button type="button" (click)="goToHome()">Continue shopping</button>
+        <h1>Shopping Cart</h1>
+        <div class = "empty-message">
+        <h2>Your shopping cart is empty now</h2>
+        <p>You can change that! Pick something from the store</p>
+        </div>
+        <div class = "empty-cart" ><button type="button" (click)="goToHome()">continue shopping</button></div>
     </div>
     
 </div>
-<app-checkout></app-checkout>
+
 
