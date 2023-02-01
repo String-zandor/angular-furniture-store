@@ -39,6 +39,8 @@ import { SearchResultComponent } from './pages/search-result/search-result.compo
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -73,7 +75,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatRadioModule, 
     MatAutocompleteModule,
     MatTableModule, 
-    MatDialogModule,
+    MatDialogModule, MatExpansionModule, MatButtonModule,
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule
