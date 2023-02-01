@@ -7,6 +7,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 // import { PromptModule } from 'src/app/shared/prompt/prompt.module';
 
 
@@ -21,7 +23,9 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     OrderRoutingModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule
     
   ],
   exports: [

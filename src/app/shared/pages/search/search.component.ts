@@ -25,5 +25,7 @@ export class SearchComponent {
       return;
     }
     this.router.navigate([`search/${this.searchInput.value?.trim().toLowerCase()}`]);
+    this.searchInput.reset();
   }
+
 }

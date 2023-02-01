@@ -3,10 +3,10 @@
   <mat-expansion-panel *ngFor="let order of orders">
       <mat-expansion-panel-header>
           <mat-panel-title>
-              Order Status: {{order.status}}
+              Order Status: {{order.status}}<br>
           </mat-panel-title>
           <mat-panel-description>
-              Order Date: {{order.orderDate}}
+              Order Date: {{order.orderDate | date: 'medium'}}
           </mat-panel-description>
           <mat-panel-description>
               Order ID: #{{order.id}}

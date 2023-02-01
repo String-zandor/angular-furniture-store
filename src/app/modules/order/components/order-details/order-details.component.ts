@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { CartItem } from 'src/app/modules/cart/models/cart-item';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 import { Order } from '../../models/order';
 import { OrderService } from '../../services/order.service';
 
@@ -19,7 +21,8 @@ export class OrderDetailsComponent implements OnInit {
   subtotal: any
   orderTotal?: any
   orderStatus?: any
-  userId = 3
+  deliveryInfo: any
+
 
   @Input() orderNo: any
   @Input() orders?: Order[]
@@ -28,7 +31,8 @@ export class OrderDetailsComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
     private router: Router,
-    private orderService: OrderService){}
+    private orderService: OrderService,
+    public dialog: MatDialog){}
 
   ngOnInit(): void {
     // this.orderService.getOrders(this.userId).subscribe(order => {
@@ -51,7 +55,18 @@ export class OrderDetailsComponent implements OnInit {
         this.orderStatus = item.status
         this.subtotal = item.subtotal
         this.deliveryFee = item.deliveryfee
+        this.deliveryInfo = item.shipping
       })
     })
+  }
+  viewDeliveryInfo(name: string, phone: string, address: string){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      title: 'Shipping Details',
+      content: `Name:  ${name} \n Phone: ${phone} <br/> Address: ${address}`,
+      confirm: 'Close',
+      cancel: ''
+    }
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig)
   }
 }
