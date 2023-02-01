@@ -299,7 +299,7 @@
         "assets/products/BEDS/1.png"
       ],
       "name": "European Iron Bed",
-      "room":"Bedspace",
+      "room": "Bedspace",
       "category": "Beds",
       "color": "Black",
       "description": {
@@ -318,7 +318,7 @@
         "assets/products/BEDS/2.png"
       ],
       "name": "Vintage Style Bed",
-      "room":"Bedspace",
+      "room": "Bedspace",
       "category": "Beds",
       "color": "Black",
       "description": {
@@ -337,7 +337,7 @@
         "assets/products/BEDS/3.png"
       ],
       "name": "Wingback Velvet Bed",
-      "room":"Bedspace",
+      "room": "Bedspace",
       "category": "Beds",
       "color": "Black",
       "description": {
@@ -349,10 +349,6 @@
       "price": 158000,
       "postingDate": "\"2023-01-26T13:43:57.019Z\""
     }
-
-
-
-    
   ],
   "cart": [
     {
@@ -416,7 +412,8 @@
       "email": "angelheart@gmail.com",
       "phone": "09666666666",
       "birthDate": "1943-12-25T00:00:00.000Z",
-      "address": "Earth"
+      "address": "Earth",
+      "active": false
     },
     {
       "id": 3,

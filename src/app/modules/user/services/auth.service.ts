@@ -96,4 +96,16 @@ export class AuthService {
     this.userSubject.next(null);
     this.adminSubject.next(null);
   }
+
+
+  //updates status to active or inactive
+  isActive(postId: number, data: any): Observable<any> {
+    const url = `${this.serverUrl}/auth/${postId}`;
+    return this.http.patch(url, data);
+  }
+
+  //get All user including admin
+  getAllUsers(): Observable<UserCred[]> {
+    return this.http.get<UserCred[]>(`${this.serverUrl}/auth`);
+  }
 }
