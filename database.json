@@ -409,7 +409,7 @@
       "username": "johnnyfav",
       "firstName": "Johnny",
       "lastName": "Favorite",
-      "email": "angelheart@gmail.com",
+      "email": "angelheartsteele@gmail.com",
       "phone": "09666666666",
       "birthDate": "1943-12-25T00:00:00.000Z",
       "address": "Earth"
@@ -417,10 +417,10 @@
     {
       "id": 3,
       "key": 3,
-      "username": "harryangel",
-      "firstName": "Harry",
-      "lastName": "Angel",
-      "email": "angelheart@gmail.com",
+      "username": "john",
+      "firstName": "John",
+      "lastName": "Lazy",
+      "email": "vapepis795@ekcsoft.com",
       "phone": "09666666666",
       "birthDate": null,
       "address": "Earth, Philippines"
@@ -443,7 +443,7 @@
     },
     {
       "id": 3,
-      "username": "harryangel",
+      "username": "john",
       "password": "1234",
       "active": true,
       "role": "USER"
@@ -1731,6 +1731,16 @@
         "address": "Earth"
       },
       "id": 19
+    }
+  ],
+  "otp": [
+    {
+      "id": 1,
+      "otp": "347833"
+    },
+    {
+      "id": 3,
+      "otp": "4863610"
     }
   ]
 }

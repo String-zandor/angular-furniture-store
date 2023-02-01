@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, of, switchMap, tap } from 'rxjs';
+import { OneTimePassword } from '../models/one-time-password';
 import { User, UserCred } from '../models/user';
 import { UserService } from './user.service';
 
@@ -90,6 +91,16 @@ export class AuthService {
     );
   }
   
+  verifyEmail(email: string):Observable<User|undefined>{
+    return this.userSvc.getUsers().pipe(
+      map(users=>users.find(u => u.email === email))
+    )
+  }
+
+  verifyOtp(user:User):Observable<OneTimePassword|undefined>{
+    return this.http.get<OneTimePassword>(`${this.serverUrl}/otp/${user.id}`)
+  }
+
   logout(): void {
     localStorage.removeItem('CURRENT_USER');
     localStorage.removeItem('CURRENT_ADMIN');

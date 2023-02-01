@@ -16,7 +16,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatMenuModule } from '@angular/material/menu';
-
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -35,7 +35,8 @@ import { MatMenuModule } from '@angular/material/menu';
     AngularFireStorageModule,
     MatAutocompleteModule,
     ScrollingModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

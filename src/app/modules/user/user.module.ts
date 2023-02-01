@@ -20,7 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 //for html
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -36,7 +36,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule, MatButtonModule, MatDividerModule,
     OrderModule, MatDialogModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ]
 })
 export class UserModule { }
