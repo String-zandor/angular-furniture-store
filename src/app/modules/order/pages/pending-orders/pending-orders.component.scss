@@ -1,0 +1,110 @@
+
+
+button{
+    font-size: 10px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+}
+
+button:hover{
+    color: rgb(179, 209, 179)
+}
+
+main{
+    overflow: hidden;
+}
+
+
+.table__body {
+    width: 100%;
+    max-height: calc(89% - 1.6rem);
+    background-color: transparent;
+
+    margin: .4rem auto;
+    
+    border-radius: .5rem;
+
+    overflow: auto;
+    overflow: overlay;
+
+    font-size: 12px;
+}
+
+.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+thead tr th:hover{
+    color: rgb(179, 209, 179)
+}
+
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #303630fe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+
+
+
+
+tbody tr{
+    background-color: transparent;
+    border: #303630fe; 
+    border-style: solid;
+    
+}
+
+tbody tr:hover {
+    background-color: hsla(0, 0%, 100%, 0.2) !important;
+}
+
+.status {
+    padding: .4rem 0;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+
+
+@media (max-width: 1000px) {
+    td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
+}
+
+
+thead th:hover span.icon-arrow{
+    border: 1.4px solid #6c00bd;
+}
+
+thead th:hover {
+    color: #6c00bd;
+}

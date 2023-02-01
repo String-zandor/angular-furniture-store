@@ -13,6 +13,10 @@ header{
     background-color:#1c1c1c ;
     
 }
+.body{
+    display: none;
+    position: fixed;
+}
 
 .search-bar{
     width: 500px;
@@ -29,9 +33,9 @@ header{
 .main{
     display:flex;
     align-items: center;
-    justify-content: space-between;
     color: white;
-    width: 120px
+    width: 120px;
+    gap: 20px;
 }
 
 .main a{
@@ -51,6 +55,7 @@ header{
 
 .ri-shopping-cart-line{
     color: white;
+    display: inline-block;
 }
 
 #menu-icon{
@@ -64,10 +69,14 @@ header{
     display: none;
 }
 
+.ri-menu-line{
+    display: none;
+}
 
-//-- SEARCH BAR 
-
-
+.example-container{
+    display: none;
+    // position: absolute;
+}
 
 
 /* media queries  */
@@ -75,37 +84,71 @@ header{
 /* MAIN DISPLAY WILL BE SIDE NAV INCLUDES FILTER*/
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     header{
       float: none; 
       max-width: 100%;   
-      display: inline-block;
+      display: flex;
+      justify-content: space-between;
+      
+    //   padding: 5px 5%;
+      
+      
+      padding-top: 10px;
+      background-color: #1c1c1c;
      
     }
     img{
-        /* display: inline-block; */
+        
         max-width: 100%;
-        // align-items: left;
+        height: 50px;
+        width: 200px;
+        object-fit: scale-down;
+        margin: 50px;
+        margin-bottom: 0;
+        margin-top: 0;
+        
+        
+
     }
     
-    
-    .main{
+    .main .profile{
         display: none;
     }
+    #search-button{
+        display: inline-block;
+        
+    }
+    
+    .main{
+       
+        display: flex;
+        justify-content: right;
+        gap: 10px;
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+        
+    }
 
-   
 
     .search-bar{
         display: none;
     }
 
-    .main #search-button{
+    .ri-menu-line{
         display: inline-block;
+        position: absolute;
+        left: 10px;
+        
+        
+
     }
 
     
+      
 
-    
+  
     
 }
 

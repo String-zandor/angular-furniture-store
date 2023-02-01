@@ -2,14 +2,17 @@
     <div class="row">
         <ng-container *ngIf="product">
             <div class="col">
+
                 <div class="img-container">
-                    <!-- <img src= {{url}} *ngFor="let url of product.srcUrl" alt="picture"> -->
-                    <img src={{product.srcUrl}} alt="picture">
+                    <!-- <img src = {{url}} *ngFor="let url of product.srcUrl" alt="picture"> -->
+                    <img src={{url}} *ngFor="let url of product.srcUrl" alt="picture">
                 </div>
+
                 <ul class="content">
-                    <li><a routerLink="/products/{{product.id}}">{{product.name}}</a></li>
+
+                    <li><span>₱{{product.price}}</span></li>
                     <mat-divider></mat-divider>
-                    <li>{{product.price | currency: 'PHP' : 'symbol' : '1.2-2'}}</li>
+                    <li>{{product.name}}</li>
                     <mat-divider></mat-divider>
                     <li> {{product.description.desc}}</li>
                     <mat-divider></mat-divider>
@@ -17,19 +20,40 @@
                 <div class="add-quantity">
 
                     <div class="add-quantity-btn">
-                        <button class="min" type="button" id="min" [disabled]="currentVal <= 1"
+                        <button class="min" type="button" id="min" [disabled]="quantity === 1"
                             (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
-                        <input type="number" [formControl]="qtyCtrl">
+                        <input type="text" [value]="quantity">
                         <button class="max" type="button" id="max" (click)="addQuantity()"><i
                                 class="ri-add-line"></i></button>
                     </div>
 
-                    <button class="add-to-cart" type="button" id="add" [disabled]="currentVal < 1"
+                    <button class="add-to-cart" type="button" id="add" [disabled]="quantity === 0"
                         (click)="addToCart()">Add to Cart</button>
                 </div>
             </div>
-        </ng-container>
-    </div>
+            <ul class="content">
+                <li><a routerLink="/products/{{product.id}}">{{product.name}}</a></li>
+                <mat-divider></mat-divider>
+                <li>{{product.price | currency: 'PHP' : 'symbol' : '1.2-2'}}</li>
+                <mat-divider></mat-divider>
+                <li> {{product.description.desc}}</li>
+                <mat-divider></mat-divider>
+            </ul>
+            <div class="add-quantity">
+
+                <div class="add-quantity-btn">
+                    <button class="min" type="button" id="min" [disabled]="currentVal <= 1"
+                        (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
+                    <input type="number" [formControl]="qtyCtrl">
+                    <button class="max" type="button" id="max" (click)="addQuantity()"><i
+                            class="ri-add-line"></i></button>
+                </div>
+
+                <button class="add-to-cart" type="button" id="add" [disabled]="currentVal < 1" (click)="addToCart()">Add
+                    to Cart</button>
+            </div>
+    </ng-container>
+</div>
 </div>
 
 <!-- </mat-grid-tile>

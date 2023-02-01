@@ -1,3 +1,9 @@
+
+//---------------------- MY COLOR PALLETE
+:root{
+    --bgcolor-light: rgb(99, 117, 92);
+    --bgcolor-dark: #303630fe;
+}
 *{
     padding: 0;
     margin: 0;
@@ -8,12 +14,14 @@
 }
 
 body{
-    // min-height: 100vh;
+    min-height: 100vh;
     
     background: #1c1c1c;
     color: white;
+    
    
 }
+
 
 
 html, body { height: 100%; }

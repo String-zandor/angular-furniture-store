@@ -12,6 +12,8 @@ import { AuthService } from 'src/app/modules/user/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  showFiller = false;
+
   cartTotal$?: Observable<number>;
   allProducts?: Product[]
   isLoggedAsAdmin$?: Observable<boolean>;

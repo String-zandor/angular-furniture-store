@@ -9,6 +9,7 @@ import { SearchComponent } from './pages/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { RouterModule } from '@angular/router';
         CommonModule,
         MatBadgeModule,
         ReactiveFormsModule,
-        RouterModule
+        RouterModule, MatSidenavModule
     ]
 })
 export class SharedModule { }

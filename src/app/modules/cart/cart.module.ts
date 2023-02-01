@@ -9,6 +9,12 @@ import { CheckoutComponent, DialogProceedCheckout } from './pages/checkout/check
 import { CheckoutItemComponent } from './components/checkout-item/checkout-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   declarations: [
     CartListComponent,
@@ -20,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     CommonModule,
     CartRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,MatDividerModule, MatStepperModule, MatFormFieldModule, MatButtonModule
+    ,MatRadioModule
   ],
   exports:[
     // CartModule

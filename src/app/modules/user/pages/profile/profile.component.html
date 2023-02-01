@@ -1,21 +1,17 @@
 <div class="my-account">
+
     <div class="my-account-container">
         <h3>My Account</h3>
         <button type="button" (click)="logout()"><i class="ri-logout-box-r-line"></i><span>Log-out</span></button>
 
     </div>
-    <br>
-    <div>
-        <a routerLink="orders">Orders</a>
-    </div>
-    <br>
-    <form [formGroup]="profileForm">
+    
 
+    
+    <div class = "my-account-body">
+    <form [formGroup]="profileForm">
         <div class="account-details">
             <h2>Account details</h2>
-
-
-
             <div *ngIf="profileForm.disabled">
                 <button class="btn" type="button" (click)="editProfile()"><i class="ri-pencil-line"></i></button>
             </div>
@@ -30,29 +26,28 @@
             <input id="username" type="text" formControlName="username" matInput>
 
         </mat-form-field>
-
-        <br>
-
         <table class="name" cellspacing="0">
-            <td><mat-form-field appearance="outline" hideRequiredMarker="">
+            <td><mat-form-field appearance="outline">
                     <mat-label>First Name</mat-label>
                     <input id="firstName" type="text" formControlName="firstName" matInput>
                 </mat-form-field>
-                <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                    <div *ngIf="firstName.errors?.['required']">
+                <div class = mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <mat-error *ngIf="firstName.errors?.['required']">
                         First name is required.
-                    </div>
+                    </mat-error>
                 </div>
             </td>
-            <td><mat-form-field appearance="outline" hideRequiredMarker="">
+            <td><mat-form-field appearance="outline" >
                     <mat-label>Last Name</mat-label>
                     <input id="lastName" type="text" formControlName="lastName" matInput>
+                    
                 </mat-form-field>
-                <mat-error *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
-                    <div *ngIf="lastName.errors?.['required']">
+                <div class = "mat-error" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" >
+                    <mat-error *ngIf="lastName.errors?.['required']">
                         Last name is required.
-                    </div>
-                </mat-error>
+                    </mat-error>
+                </div>
+        
             </td>
         </table>
 
@@ -72,12 +67,7 @@
                 </mat-form-field></td>
         </table>
 
-
-
         <!-- ERROR PROMPTS -->
-
-
-
 
         <h3>E-mail address</h3>
         <mat-divider></mat-divider>
@@ -110,7 +100,14 @@
         </div>
 
     </form>
-</div>
-<div>
-    <app-pending-orders></app-pending-orders>
+
+    <div class = "order-history">
+        <h2><a routerLink="orders">Order History</a></h2>
+        <app-pending-orders></app-pending-orders>
+    </div>
+    </div>
+    
+    
+
+
 </div>

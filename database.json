@@ -2,9 +2,13 @@
   "products": [
     {
       "id": 1,
-      "name": "Comfy Bed",
-      "category": "Beds",
-      "room": "Bedroom",
+      "srcUrl": [
+        "assets/products/TABLES/1.1.png",
+        "assets/products/TABLES/1.png"
+      ],
+      "name": "Glass Oval Cocktail Table",
+      "category": "Tables",
+      "room": "Living Room",
       "color": "Vintage White",
       "description": {
         "desc": "Good",
@@ -13,17 +17,17 @@
         "weight": "10kg"
       },
       "price": 12000,
-      "postingDate": "2023-01-28T15:24:41.683Z",
-      "srcUrl": []
+      "postingDate": "2023-01-28T15:24:41.683Z"
     },
     {
       "id": 2,
       "srcUrl": [
-        "assets/products/3.png"
+        "assets/products/TABLES/2.1.png",
+        "assets/products/TABLES/2.png"
       ],
-      "name": "Utility Chair",
-      "category": "Chairs",
-      "room": "Kitchen",
+      "name": "Nested Coffee Table",
+      "category": "Tables",
+      "room": "Living Room",
       "description": {
         "desc": "Better"
       },
@@ -33,9 +37,10 @@
     {
       "id": 3,
       "srcUrl": [
-        "assets/products/4.png"
+        "assets/products/TABLES/3.1.png",
+        "assets/products/TABLES/3.png"
       ],
-      "name": "Glass Table",
+      "name": "Black Metal Accent Table",
       "category": "Tables",
       "room": "Living Room",
       "description": {
@@ -47,10 +52,11 @@
     {
       "id": 4,
       "srcUrl": [
-        "assets/products/1.png"
+        "assets/products/TABLES/4.1.png",
+        "assets/products/TABLES/4.png"
       ],
-      "name": "Baroque Table",
-      "room": "Dining Room",
+      "name": "Brass Finish Coffee Table",
+      "room": "Living Room",
       "category": "Tables",
       "description": {
         "desc": "Baroque"
@@ -60,9 +66,9 @@
     },
     {
       "id": 5,
+      "srcUrl": [],
       "name": "Chintzy Chaise Lounge",
       "category": "Chairs",
-      "room": "Living Room",
       "color": "Pink",
       "description": {
         "desc": "Floral",
@@ -71,34 +77,25 @@
         "weight": "8kg"
       },
       "price": 17000,
-      "postingDate": "2023-01-30T14:20:45.566Z",
-      "srcUrl": [
-        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-2.png?alt=media&token=c9fb44c2-6d9f-4157-9741-5fb122b91f9a",
-        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fchintzy-1.png?alt=media&token=7c5406a4-9a17-44da-a3e2-a45eb2e005f7"
-      ]
-    }
-  ],
-  "cart": [
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
     {
-      "product": {
-        "id": 2,
-        "srcUrl": [
-          "assets/products/3.png"
-        ],
-        "name": "Utility Chair",
-        "category": "Chairs",
-        "room": "Kitchen",
-        "description": {
-          "desc": "Better"
-        },
-        "price": 1000,
-        "postingDate": "2015-08-01 01:00PM"
+      "id": 6,
+      "srcUrl": "assets/products/1.png",
+      "name": "Chintzy Chaise Lounge",
+      "category": "Chairs",
+      "color": "Pink",
+      "description": {
+        "desc": "Floral",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
       },
-      "qty": 3,
-      "userId": 3,
-      "id": 1
+      "price": 17000,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
     }
   ],
+  "cart": [],
   "users": [
     {
       "id": 1,

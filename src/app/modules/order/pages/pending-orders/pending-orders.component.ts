@@ -11,7 +11,7 @@ import { OrderService } from '../../services/order.service';
   styleUrls: ['./pending-orders.component.scss']
 })
 export class PendingOrdersComponent implements OnInit {
-
+ 
   orders: Order[] = [];
   orderID?: number
 
