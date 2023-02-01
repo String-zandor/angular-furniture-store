@@ -537,8 +537,7 @@
       "email": "angelheart@gmail.com",
       "phone": "09666666666",
       "birthDate": "1943-12-25T00:00:00.000Z",
-      "address": "Earth",
-      "active": false
+      "address": "Earth"
     },
     {
       "id": 3,

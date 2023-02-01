@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, combineLatest, distinctUntilChanged, map, merge, mergeMap, Observable, of, switchMap } from 'rxjs';
 import { User, UserCred } from 'src/app/modules/user/models/user';
 import { UserService } from 'src/app/modules/user/services/user.service';
@@ -22,7 +23,8 @@ export class AdminUserListComponent implements OnInit {
 
   constructor(private userService: UserService,
     private auth: AuthService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.auth.getAllUsers().pipe(
@@ -50,7 +52,9 @@ export class AdminUserListComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig)
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        this.auth.isActive(id, { active: true }).subscribe(res => console.log(res));
+        this.auth.isActive(id, { active: true }).subscribe();
+        this.snackBar.open('User activated sucessfilly!','',{duration: 2000})
+
       }
     })
   }
@@ -66,7 +70,8 @@ export class AdminUserListComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig)
     dialogRef.afterClosed().subscribe(result => {
       if(result){
-        this.auth.isActive(id, { active: false }).subscribe(res => console.log(res));
+        this.auth.isActive(id, { active: false }).subscribe();
+        this.snackBar.open('User deactivated sucessfilly!','',{duration: 2000})
       }
     })
   }
