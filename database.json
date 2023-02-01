@@ -31,7 +31,7 @@
       "description": {
         "desc": "Better"
       },
-      "price": 1000,
+      "price": 10500,
       "postingDate": "2015-08-01 01:00PM"
     },
     {
@@ -66,37 +66,289 @@
     },
     {
       "id": 5,
-      "srcUrl": [],
-      "name": "Chintzy Chaise Lounge",
-      "category": "Chairs",
-      "color": "Pink",
+      "srcUrl": [
+        "assets/products/TABLES/5.1.png",
+        "assets/products/TABLES/5.png"
+      ],
+      "name": "Blackened Side Table",
+      "room": "Living Room",
+      "category": "Tables",
+      "color": "Black",
       "description": {
-        "desc": "Floral",
+        "desc": "Modern",
         "dimensions": "6ft x 6ft",
         "material": "Cotton",
         "weight": "8kg"
       },
-      "price": 17000,
+      "price": 15500,
       "postingDate": "\"2023-01-26T13:43:57.019Z\""
     },
     {
       "id": 6,
-      "name": "Sample Product",
-      "category": "Sample Category",
-      "color": "Teal",
-      "description": {
-        "desc": "",
-        "dimensions": "",
-        "material": "",
-        "weight": ""
-      },
-      "price": 45,
-      "postingDate": "2023-02-01T06:28:51.127Z",
       "srcUrl": [
-        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fmango-shake.jpg?alt=media&token=ef9b8cb9-6375-463d-b1c1-25547589a29d",
-        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Forangecrate.jpg?alt=media&token=f35aa7dc-f2c9-4eff-a668-fc930bb7ac5d"
-      ]
+        "assets/products/TABLES/6.1.png",
+        "assets/products/TABLES/6.png"
+      ],
+      "name": "Glass Dining Table",
+      "category": "Tables",
+      "room": "Dining Room",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Glass",
+        "weight": "8kg"
+      },
+      "price": 25500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 7,
+      "srcUrl": [
+        "assets/products/TABLES/7.1.png",
+        "assets/products/TABLES/7.png"
+      ],
+      "name": "Mild Steel Dining Table",
+      "category": "Tables",
+      "room": "Dining Room",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 20500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 8,
+      "srcUrl": [
+        "assets/products/TABLES/8.1.png",
+        "assets/products/TABLES/8.png"
+      ],
+      "name": "Solid Wood Nighstand",
+      "room": "Bedroom",
+      "category": "Tables",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 35500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 9,
+      "srcUrl": [
+        "assets/products/TABLES/9.1.png",
+        "assets/products/TABLES/9.png"
+      ],
+      "name": "Simple End Table",
+      "room": "Bedroom",
+      "category": "Tables",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 23500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 10,
+      "srcUrl": [
+        "assets/products/CHAIRS/1.1.png",
+        "assets/products/CHAIRS/1.png"
+      ],
+      "name": "Simple Chair",
+      "room": "Living Room",
+      "category": "Chairs",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 67500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 11,
+      "srcUrl": [
+        "assets/products/CHAIRS/2.1.png",
+        "assets/products/CHAIRS/2.png"
+      ],
+      "name": "Elegant Chair",
+      "room": "Living Room",
+      "category": "Chairs",
+      "color": "Yellow",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 55000,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 12,
+      "srcUrl": [
+        "assets/products/CHAIRS/3.1.png",
+        "assets/products/CHAIRS/3.png"
+      ],
+      "name": "Wingback Hostess Chair",
+      "category": "Chairs",
+      "room": "Living Room",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 102500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 13,
+      "srcUrl": [
+        "assets/products/CHAIRS/4.1.png",
+        "assets/products/CHAIRS/4.png"
+      ],
+      "name": "Summer Corn Chair",
+      "room": "Living Room",
+      "category": "Chairs",
+      "color": "Yellow",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 80500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 14,
+      "srcUrl": [
+        "assets/products/CHAIRS/5.1.png",
+        "assets/products/CHAIRS/5.png"
+      ],
+      "name": "Avery Sleeper Sofa",
+      "room": "Living Room",
+      "category": "Chairs",
+      "color": "White",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 64500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 15,
+      "srcUrl": [
+        "assets/products/CHAIRS/6.1.png",
+        "assets/products/CHAIRS/6.png"
+      ],
+      "name": "Mid Century Sofa",
+      "room": "Living Room",
+      "category": "Chairs",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 86500,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 16,
+      "srcUrl": [
+        "assets/products/CHAIRS/7.1.png",
+        "assets/products/CHAIRS/7.png"
+      ],
+      "name": "Flootie Carmine Sofa",
+      "category": "Chairs",
+      "color": "Grey",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 56000,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 17,
+      "srcUrl": [
+        "assets/products/BEDS/1.1.png",
+        "assets/products/BEDS/1.png"
+      ],
+      "name": "European Iron Bed",
+      "category": "Beds",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 110600,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 18,
+      "srcUrl": [
+        "assets/products/BEDS/2.1.png",
+        "assets/products/BEDS/2.png"
+      ],
+      "name": "Vintage Style Bed",
+      "category": "Beds",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 133600,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 19,
+      "srcUrl": [
+        "assets/products/BEDS/3.1.png",
+        "assets/products/BEDS/3.png"
+      ],
+      "name": "Wingback Velvet Bed",
+      "category": "Beds",
+      "color": "Black",
+      "description": {
+        "desc": "Modern",
+        "dimensions": "6ft x 6ft",
+        "material": "Cotton",
+        "weight": "8kg"
+      },
+      "price": 158000,
+      "postingDate": "\"2023-01-26T13:43:57.019Z\""
     }
+
+
+
+    
   ],
   "cart": [
     {
