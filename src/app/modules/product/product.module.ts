@@ -40,6 +40,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -69,8 +71,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule, MatAutocompleteModule,
     MatTableModule, MatDialogModule,
-    MatSnackBarModule
-    
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports:[]
 })
