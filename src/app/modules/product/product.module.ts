@@ -36,6 +36,9 @@ import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { RoomItemComponent } from './components/filter-sub/room-item/room-item.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -62,7 +65,9 @@ import { RoomItemComponent } from './components/filter-sub/room-item/room-item.c
     ProductRoutingModule,
     SharedModule, 
     ReactiveFormsModule,
-    MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule
+    MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule,
+    MatTableModule, MatDialogModule
+    
   ],
   exports:[]
 })

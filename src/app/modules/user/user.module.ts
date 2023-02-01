@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,20 +13,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { OrderModule } from "../order/order.module";
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     declarations: [
         LoginComponent,
         ProfileComponent,
         ForgotPasswordComponent,
-        ResetPasswordComponent
-    ],
+        ResetPasswordComponent,
+        ConfirmDialogComponent,    ],
     imports: [
         CommonModule,
         UserRoutingModule,
         ReactiveFormsModule,
         MatInputModule, MatButtonModule, MatDividerModule,
-        OrderModule
+        OrderModule, MatDialogModule
     ]
 })
 export class UserModule { }

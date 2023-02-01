@@ -6,7 +6,7 @@ import { AdminOrdersComponent } from './pages/admin-orders/admin-orders.componen
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatHeaderRow, MatTableModule } from '@angular/material/table';
-import { OrderDetailsComponent } from './pages/order-details/order-details.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 
 @NgModule({
