@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of, Subscription, switchMap } from 'rxjs';
+import { DialogData } from 'src/app/shared/models/dialog-data';
+import { DialogService } from 'src/app/shared/services/dialog.service';
 import { User } from '../../models/user';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
@@ -32,6 +34,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private auth: AuthService,
     private userSvc: UserService,
+    private dialogSvc: DialogService,
     private router: Router,
     private route: ActivatedRoute) {
 
@@ -66,6 +69,20 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.username.disable();
   }
 
+  confirm(): void {
+    const data: DialogData = {
+      title: 'Confirm',
+      content: 'Would you like to save your changes?',
+      confirm: 'Confirm',
+      cancel: 'Cancel'
+    }
+    this.dialogSvc.confirm(data).subscribe(confirmed => {
+      if (confirmed) {
+        this.saveChanges();
+      }
+    });
+  }
+
   saveChanges(): void {
     if (this.user) {
       this.user.firstName = this.firstName.value;
@@ -77,8 +94,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
       this.userSvc.update(this.user).subscribe(() => this.profileForm.disable());
 
       // this.promptComponent.openSnackBar('Changes saved!', 'Undo', 3000);
+    }
   }
-}
 
   cancel(): void {
     if (this.user) {

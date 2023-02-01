@@ -95,7 +95,7 @@
 
         <div class="save-changes" *ngIf="profileForm.enabled">
 
-            <button type="button" (click)="saveChanges()" mat-raised-button color="primary">Save</button>
+            <button type="button" (click)="confirm()" mat-raised-button color="primary">Save</button>
             <button type="button" (click)="cancel()" mat-raised-button color="warn">Cancel</button>
         </div>
 
@@ -106,8 +106,5 @@
         <app-pending-orders></app-pending-orders>
     </div>
     </div>
-    
-    
-
 
 </div>
