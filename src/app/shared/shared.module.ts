@@ -1,17 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './pages/header/header.component';
 
-import { MatBadgeModule } from '@angular/material/badge';
-import { SearchComponent } from './pages/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatBadgeModule } from '@angular/material/badge';
 import { RouterModule } from '@angular/router';
+import { SearchComponent } from './pages/search/search.component';
 
-import {MatSidenavModule} from '@angular/material/sidenav';
-import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -19,18 +21,21 @@ import { MatIconModule } from '@angular/material/icon';
         HeaderComponent,
         FooterComponent,
         SearchComponent,
-        PagenotfoundComponent
+        PagenotfoundComponent,
+        ConfirmDialogComponent
     ],
     exports: [
         HeaderComponent,
-        FooterComponent    ],
+        FooterComponent
+    ],
     imports: [
         CommonModule,
         MatBadgeModule,
         ReactiveFormsModule,
-        RouterModule, 
+        RouterModule,
         MatSidenavModule,
-        MatIconModule
+        MatIconModule,
+        MatDialogModule
     ]
 })
 export class SharedModule { }

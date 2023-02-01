@@ -2,8 +2,10 @@ import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { concatMap, flatMap, map, Observable, of, Subscription, switchMap, tap } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { ImageService } from 'src/app/core/services/image.service';
+import { DialogData } from 'src/app/shared/models/dialog-data';
+import { DialogService } from 'src/app/shared/services/dialog.service';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -40,7 +42,8 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
     private router: Router,
     private location: Location,
     private productSvc: ProductService,
-    private imgSvc: ImageService) {
+    private imgSvc: ImageService,
+    public dialogSvc: DialogService) {
 
   }
 
@@ -79,7 +82,21 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
   }
 
   cancel(): void {
-    this.location.back();
+    const data: DialogData = {
+      title: 'Confirm',
+      content: 'Are you sure you want to exit the page without saving your changes?',
+      confirm: 'Confirm',
+      cancel: 'Cancel'
+    }
+    if (this.productForm.dirty) {
+      this.dialogSvc.confirm(data).subscribe(confirmed => {
+        if (confirmed) {
+          this.location.back();
+        }
+      })
+    } else {
+      this.location.back();
+    }
   }
 
   resetPhotos(): void {
@@ -95,6 +112,22 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
+    const data: DialogData = {
+      title: 'Confirm',
+      content: (this.selectedProd) 
+        ? 'Would you like to save the changes to this product?'
+        : 'Would you like to add this product?',
+      confirm: 'Confirm',
+      cancel: 'Cancel'
+    };
+    this.dialogSvc.confirm(data).subscribe(confirmed => {
+      if (confirmed){
+        this.saveProduct();
+      }
+    });
+  }
+
+  saveProduct(): void {
     const product: Product = this.updateProduct();
     if (this.selectedProd) {
       this.productSvc.editProduct(product).subscribe(product => {
