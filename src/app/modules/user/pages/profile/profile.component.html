@@ -31,7 +31,7 @@
                         <mat-label>First Name</mat-label>
                         <input id="firstName" type="text" formControlName="firstName" matInput>
                     </mat-form-field>
-                    <div class=mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div class = "mat-error" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
                         <mat-error *ngIf="firstName.errors?.['required']">
                             First name is required.
                         </mat-error>
