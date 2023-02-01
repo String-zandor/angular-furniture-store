@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PendingOrdersComponent } from './pages/pending-orders/pending-orders.component';
-import { OrderDetailsComponent } from './pages/order-details/order-details.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { AdminOrdersComponent } from './pages/admin-orders/admin-orders.component';
 
 const routes: Routes = [

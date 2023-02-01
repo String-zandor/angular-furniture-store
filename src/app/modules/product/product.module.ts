@@ -37,6 +37,9 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { RoomItemComponent } from './components/filter-sub/room-item/room-item.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ProductRoutingModule,
     SharedModule, 
     ReactiveFormsModule,
-    MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule, MatAutocompleteModule
+    MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule, MatAutocompleteModule,
+    MatTableModule, MatDialogModule
+    
   ],
   exports:[]
 })
