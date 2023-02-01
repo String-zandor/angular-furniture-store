@@ -60,8 +60,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   showProfile(user: User): void {
     this.profileForm.patchValue(user);
-    const date = this.user?.birthDate.slice(0, 10);
-    this.birthDate.setValue(date);
+
+    if (user.birthDate) {
+      const date = this.user?.birthDate.slice(0, 10);
+      this.birthDate.setValue(date);
+    }
   }
 
   editProfile(): void {
