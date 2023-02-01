@@ -1,25 +1,20 @@
-<div class="box" *ngIf="cartItem">
-    <img src="{{cartItem.product.srcUrl[1]}}">
-    <div class="content">
-        <h3>{{cartItem.product.name}}</h3>
-        <mat-divider></mat-divider>
-        <h4>₱{{cartItem.product.price}}</h4>
-
-        <p class="unit"><button type="button" id="min" [disabled]="quantity.value === 1" (click)="subractQuantity()"><i
-                    class="fa fa-minus">-</i></button>
-            <input type="text" [formControl]="quantity"><button type="button" id="max" (click)="addQuantity()"><i
-                    class="fa fa-plus">+</i></button>
-        </p>
-
-        <p class="btn-area"><button type="button" id="delete" (click)="executeAction('REMOVE')"><i
-                    class="ri-delete-bin-6-line"></i>Remove</button></p>
-
+<div>
+    <div class="box" *ngIf="cartItem">
+        <img src="{{cartItem.product.srcUrl[1]}}">
+        <div class="content">
+            <h3>{{cartItem.product.name}}</h3>
+            <mat-divider></mat-divider>
+            <h4>{{cartItem.product.price | currency: 'PHP' : 'symbol': '1.2-2'}}</h4>
+    
+            <p class="unit"><button type="button" id="min" [disabled]="quantity.value === 1" (click)="subractQuantity()"><i
+                        class="fa fa-minus">-</i></button>
+                <input type="text" [formControl]="quantity"><button type="button" id="max" (click)="addQuantity()"><i
+                        class="fa fa-plus">+</i></button>
+            </p>
+    
+            <p class="btn-area"><button type="button" id="delete" (click)="executeAction('REMOVE')"><i
+                        class="ri-delete-bin-6-line"></i>Remove</button></p>
+    
+        </div>
     </div>
-</div>
-<button type="button" id="min" [disabled]="currentVal <= 1" (click)="subractQuantity()"><i
-        class="fa fa-minus">-</i></button>
-<input type="number" [formControl]="qtyCtrl">
-<button type="button" id="max" (click)="addQuantity()"><i class="fa fa-plus">+</i></button><br><br>
-<button type="button" id="delete" (click)="executeAction('REMOVE')">Remove</button>
-</ul>
 </div>

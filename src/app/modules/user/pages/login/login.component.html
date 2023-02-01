@@ -41,7 +41,7 @@
             <div class="forgot-pwd">
                 <a href="">Forgot your password?</a>
 
-                <button class="btn-account" type="button" *ngIf="!loginAsAdmin">
+                <button class="btn-account" type="button" *ngIf="!loginAsAdmin" routerLink="/register">
                     Create an account
                 </button>
             </div>
@@ -58,7 +58,6 @@
                     <a routerLink="../"><i class="ri-user-5-fill"></i>Log-in as user</a>
                 </div>
             </div>
-
 
         </form>
     </div>

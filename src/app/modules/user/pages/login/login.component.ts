@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, of, Subscription, switchMap, tap } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -82,6 +83,11 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: this.loginForm.get('password')?.value,
       remember: this.loginForm.get('remember')?.value
     }
+
+    //for snackbar
+      // this.snackBar.open('Message', 'Undo', {
+      //   duration: 3000
+      // });
 
     if (this.loginAsAdmin) {
       this.auth.loginAsAdmin(data).subscribe((admin) => {

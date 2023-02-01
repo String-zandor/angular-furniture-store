@@ -1,7 +1,36 @@
-<div class="product-container">
-    <div class="row">
-        <ng-container *ngIf="product">
-            <div class="col">
+<!-- <mat-grid-list cols = "2" rowHeight = "500px" *ngIf="product">
+    <mat-grid-tile> -->
+     
+        <div class = "product-container" > 
+            <div class = "row">
+                <ng-container *ngIf="product"> 
+                    <div class = "col">
+                    <div class = "img-container">
+                        <img src= {{product.srcUrl}} alt="picture">
+                        <div class = "icons">
+                            <a href="#" class="ri-shopping-cart-line"></a>
+                            <a href="#" class="ri-heart-line"></a>
+                            <a href="#" class="ri-eye-line"></a>
+                        </div>             
+                    </div>
+                    <ul class = "content">
+                        <li>Name: {{product.name}}</li>
+                        <li>Category: {{product.category}}</li>
+                        <li>Price: {{product.price}}</li>
+                    </ul>
+                    <div class = "add-quantity">
+                        <button type="button" id="min" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
+                        <input [formControl]="quantity" type = "number" min="1" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+                        <button type="button" id="max" (click)="addQuantity()"><i class="fa fa-plus">+</i></button><br><br>
+                        <button type="button" id="add" (click)="addToCart()" [disabled]="quantity.value === 0">Add to Cart</button>
+                    </div>
+                </div>
+                </ng-container>
+            </div>  
+        </div>
+    
+    <!-- </mat-grid-tile>
+</mat-grid-list> -->
 
                 <div class="img-container">
                     <!-- <img src = {{url}} *ngFor="let url of product.srcUrl" alt="picture"> -->

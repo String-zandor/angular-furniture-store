@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

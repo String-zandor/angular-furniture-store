@@ -21,13 +21,13 @@ import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, 
-    SharedModule, 
+    HttpClientModule,
+    SharedModule,
     BrowserAnimationsModule,
     CoreModule,
     MatDialogModule,
@@ -38,6 +38,6 @@ import { MatMenuModule } from '@angular/material/menu';
     MatMenuModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

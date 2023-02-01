@@ -10,23 +10,27 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
     declarations: [
         HeaderComponent,
         FooterComponent,
-        SearchComponent
+        SearchComponent,
+        PagenotfoundComponent
     ],
     exports: [
         HeaderComponent,
-        FooterComponent,
-    ],
+        FooterComponent    ],
     imports: [
         CommonModule,
         MatBadgeModule,
         ReactiveFormsModule,
-        RouterModule, MatSidenavModule
+        RouterModule, 
+        MatSidenavModule,
+        MatIconModule
     ]
 })
 export class SharedModule { }
