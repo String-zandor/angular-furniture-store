@@ -29,6 +29,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   sub?: Subscription;
   user?: User;
+  isAdmin: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -48,7 +49,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
   getCurrentUser(): void {
     this.sub = this.auth.user$.pipe(
       switchMap(user => {
-        return (user) ? of(user) : this.auth.admin$
+        if (user) {
+          return of(user);
+        } else {
+          this.isAdmin = true;
+          return this.auth.admin$;
+        }
       })
     ).subscribe(user => {
       if (user) {

@@ -1,11 +1,8 @@
-<header>
+<!-- USER HEADER -->
+<header *ngIf="!(isLoggedAsAdmin$ | async)">
     <div class = "ri-menu-line" id = "menu-icon"></div> 
-    <div *ngIf="!(isLoggedAsAdmin$ | async)">
+    
         <a routerLink="/home"><img src ="assets\img\grey-space-logo.png"></a>
-    </div>
-    <div *ngIf="(isLoggedAsAdmin$ | async)">
-        <a routerLink="/admin"><img src ="assets\img\grey-space-logo.png"></a>
-    </div>
 
     <div class = "search-bar">
         <app-search></app-search>
@@ -15,6 +12,25 @@
         <div id = "search-button"><i class="ri-search-line"></i></div>
         <a class = "profile" routerLink="/profile"><i class="ri-user-line"></i></a>
         <a  routerLink="/cart"><i matBadge="{{cartTotal$ | async}}" matBadgeColor="warn" class="ri-shopping-cart-line"></i></a>
+    </div>
+    
+</header>
+
+<!-- ADMIN HEADER -->
+<header *ngIf="(isLoggedAsAdmin$ | async)">
+    <div class = "ri-menu-line" id = "menu-icon"></div> 
+        <a routerLink="/admin"><img src ="assets\img\grey-space-logo.png"></a>
+
+        <!-- COMMAND BAR -->
+        <div>
+            <button routerLink="/admin/dashboard">Dashboard</button>
+            <button routerLink="/admin/products">Manage Products</button>
+            <button routerLink="/admin/orders">Manage Orders</button>
+            <button routerLink="/admin/users">Manage Users</button>
+        </div>
+
+    <div class = "main">
+        <a class = "profile" routerLink="/profile"><i class="ri-user-line"></i></a>
     </div>
     
 </header>

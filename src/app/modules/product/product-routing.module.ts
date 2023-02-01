@@ -8,6 +8,7 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user-list.component';
 import { AdminAuthGuard } from 'src/app/core/guards/admin-auth.guard';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { AdminOrdersComponent } from '../order/pages/admin-orders/admin-orders.component';
 
 const routes: Routes = [
   { 
@@ -15,11 +16,12 @@ const routes: Routes = [
     canActivate: [AdminAuthGuard],
     component: AdminComponent,
     children: [
-      { path: 'users', component: AdminUserListComponent},
-      { path: 'dashboard', component: AdminDashboardComponent },
       { path: 'products/edit/:id', component: AdminProductFormComponent },
       { path: 'products/new', component: AdminProductFormComponent },
       { path: 'products', component: AdminProductListComponent },
+      { path: 'users', component: AdminUserListComponent},
+      { path: 'dashboard', component: AdminDashboardComponent },
+      { path: 'orders', component: AdminOrdersComponent},
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ]
   },
