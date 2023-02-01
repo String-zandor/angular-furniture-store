@@ -1,15 +1,12 @@
-.filter .expansion-panel{
-    padding: 10px;
-    max-width: 100% ;
-   
-}
-
 
 .filter{
     
-    width: 500px;
+    width: 100%;
     background-color: transparent;
     display: flex;
+    justify-content: space-around;
+    
+    
     
 }
 .btn{
@@ -39,5 +36,6 @@
     right: 30px;
     margin: 10px;
 }
+
 
 
