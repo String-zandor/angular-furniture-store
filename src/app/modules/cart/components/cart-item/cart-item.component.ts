@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { debounceTime, Subscription, tap } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 
@@ -13,7 +14,9 @@ export class CartItemComponent implements OnInit, OnDestroy {
   @Input() cartItem!: CartItem;
   @Output() onAction = new EventEmitter();
 
-  qtyCtrl: FormControl = new FormControl(1);
+  constructor(private snackBar: MatSnackBar){}
+
+  qtyCtrl = new FormControl(1);
   currentVal: number = 1;
   subscriptions: Subscription[] = [];
   previousVal: number = 1;
@@ -32,9 +35,16 @@ export class CartItemComponent implements OnInit, OnDestroy {
         this.currentVal >= 1) {
         this.executeAction('UPDATE')
       }
+
     })
     this.qtyCtrl.setValue(this.cartItem.qty);
+
+     //for snackbar
+     this.snackBar.open('Item deleted.', '', {
+      duration: 500
+    });
     this.subscriptions.push(sub);
+   
   }
 
   addQuantity() {

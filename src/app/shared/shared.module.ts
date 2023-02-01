@@ -15,6 +15,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+// import { PromptComponent } from './prompt/prompt.component';
+
 
 @NgModule({
     declarations: [
@@ -35,7 +38,8 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
         RouterModule,
         MatSidenavModule,
         MatIconModule,
-        MatDialogModule
+        MatDialogModule,
+        MatSnackBarModule
     ]
 })
 export class SharedModule { }

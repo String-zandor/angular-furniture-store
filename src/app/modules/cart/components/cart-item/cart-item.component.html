@@ -20,11 +20,14 @@
                 <input type="text" [formControl]="qtyCtrl">
                 <button class="max" type="button" id="max" (click)="addQuantity()"><i
                         class="fa fa-plus">+</i></button>
+
             </p>
-    
+      
             <p class="btn-area"><button type="button" id="delete" (click)="executeAction('REMOVE')"><i
                         class="ri-delete-bin-6-line"></i>Remove</button></p>
     
+              <app-prompt [message]="'message'" type="success"></app-prompt>
+
         </div>
 
     </div>

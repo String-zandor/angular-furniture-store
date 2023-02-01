@@ -17,7 +17,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatMenuModule } from '@angular/material/menu';
 
-
+import { PromptModule } from './shared/prompt/prompt.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { MatMenuModule } from '@angular/material/menu';
     AngularFireStorageModule,
     MatAutocompleteModule,
     ScrollingModule,
-    MatMenuModule
+    MatMenuModule,
+    PromptModule
   ],
   providers: [],
   bootstrap: [AppComponent],

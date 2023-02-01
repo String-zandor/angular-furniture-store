@@ -32,6 +32,9 @@
                     <button class="add-to-cart" type="button" id="add" [disabled]="quantity.value === 0"
                         (click)="addToCart()">Add to
                         Cart</button>
+                       
+                        <app-prompt [message]="'message'" type="success"></app-prompt>
+
                 </div>
             </div>
         </ng-container>

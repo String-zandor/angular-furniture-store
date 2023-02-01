@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
@@ -26,7 +27,10 @@ export class RegisterComponent implements OnInit{
     address: ['']
   })
 
-  constructor(private fb: FormBuilder, private userSvc: UserService, private router: Router){}
+  constructor(private fb: FormBuilder,
+              private userSvc: UserService,
+              private router: Router,
+              private snackBar: MatSnackBar ){}
  
   ngOnInit(): void {
     
@@ -55,7 +59,9 @@ export class RegisterComponent implements OnInit{
       this.user.address = this.address.value;
       this.userSvc.registerUser(this.registerForm.value).subscribe({
         next: (val: any) => {
-          alert('Registered')
+          this.snackBar.open('Account registered.', '', {
+            duration: 3000
+          });  
         }
       })
     }

@@ -15,6 +15,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 
+import { PromptModule } from 'src/app/shared/prompt/prompt.module';
+
 @NgModule({
   declarations: [
     CartListComponent,
@@ -26,8 +28,13 @@ import {MatRadioModule} from '@angular/material/radio';
   imports: [
     CommonModule,
     CartRoutingModule,
-    ReactiveFormsModule,MatDividerModule, MatStepperModule, MatFormFieldModule, MatButtonModule
-    ,MatRadioModule
+    ReactiveFormsModule,
+    MatDividerModule, 
+    MatStepperModule, 
+    MatFormFieldModule, 
+    MatButtonModule,
+    MatRadioModule, 
+    PromptModule
   ],
   exports:[
     // CartModule

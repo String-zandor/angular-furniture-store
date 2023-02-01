@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, of, Subscription, switchMap, tap } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -26,9 +27,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private auth: AuthService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar) {
 
   }
+
 
   ngOnInit(): void {
     const admin: string | null = this.route.snapshot.paramMap.get('id');
@@ -85,9 +88,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     //for snackbar
-      // this.snackBar.open('Message', 'Undo', {
-      //   duration: 3000
-      // });
+      this.snackBar.open('You are logged in.', '', {
+        duration: 500
+      });
 
     if (this.loginAsAdmin) {
       this.auth.loginAsAdmin(data).subscribe((admin) => {
