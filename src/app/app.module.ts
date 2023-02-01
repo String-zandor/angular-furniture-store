@@ -13,6 +13,11 @@ import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatMenuModule } from '@angular/material/menu';
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +32,10 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     CoreModule,
     MatDialogModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatAutocompleteModule,
+    ScrollingModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

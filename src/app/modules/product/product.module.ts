@@ -36,6 +36,7 @@ import { AdminUserListComponent } from '../user/pages/admin-user-list/admin-user
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { RoomItemComponent } from './components/filter-sub/room-item/room-item.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { RoomItemComponent } from './components/filter-sub/room-item/room-item.c
     ProductRoutingModule,
     SharedModule, 
     ReactiveFormsModule,
-    MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule
+    MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule, MatAutocompleteModule
   ],
   exports:[]
 })

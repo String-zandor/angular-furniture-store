@@ -78,21 +78,6 @@
       },
       "price": 17000,
       "postingDate": "\"2023-01-26T13:43:57.019Z\""
-    },
-    {
-      "id": 6,
-      "srcUrl": "assets/products/1.png",
-      "name": "Chintzy Chaise Lounge",
-      "category": "Chairs",
-      "color": "Pink",
-      "description": {
-        "desc": "Floral",
-        "dimensions": "6ft x 6ft",
-        "material": "Cotton",
-        "weight": "8kg"
-      },
-      "price": 17000,
-      "postingDate": "\"2023-01-26T13:43:57.019Z\""
     }
   ],
   "cart": [],
