@@ -1,36 +1,10 @@
 <!-- <mat-grid-list cols = "2" rowHeight = "500px" *ngIf="product">
     <mat-grid-tile> -->
-     
-        <div class = "product-container" > 
-            <div class = "row">
-                <ng-container *ngIf="product"> 
-                    <div class = "col">
-                    <div class = "img-container">
-                        <img src= {{product.srcUrl}} alt="picture">
-                        <div class = "icons">
-                            <a href="#" class="ri-shopping-cart-line"></a>
-                            <a href="#" class="ri-heart-line"></a>
-                            <a href="#" class="ri-eye-line"></a>
-                        </div>             
-                    </div>
-                    <ul class = "content">
-                        <li>Name: {{product.name}}</li>
-                        <li>Category: {{product.category}}</li>
-                        <li>Price: {{product.price}}</li>
-                    </ul>
-                    <div class = "add-quantity">
-                        <button type="button" id="min" (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
-                        <input [formControl]="quantity" type = "number" min="1" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
-                        <button type="button" id="max" (click)="addQuantity()"><i class="fa fa-plus">+</i></button><br><br>
-                        <button type="button" id="add" (click)="addToCart()" [disabled]="quantity.value === 0">Add to Cart</button>
-                    </div>
-                </div>
-                </ng-container>
-            </div>  
-        </div>
-    
-    <!-- </mat-grid-tile>
-</mat-grid-list> -->
+
+<div class="product-container">
+    <div class="row">
+        <ng-container *ngIf="product">
+            <div class="col">
 
                 <div class="img-container">
                     <!-- <img src = {{url}} *ngFor="let url of product.srcUrl" alt="picture"> -->
@@ -39,7 +13,7 @@
 
                 <ul class="content">
 
-                    <li><span>₱{{product.price}}</span></li>
+                    <li><span>{{product.price | currency: 'PHP' : 'symbol' : '1.2-2'}}</span></li>
                     <mat-divider></mat-divider>
                     <li>{{product.name}}</li>
                     <mat-divider></mat-divider>
@@ -49,40 +23,21 @@
                 <div class="add-quantity">
 
                     <div class="add-quantity-btn">
-                        <button class="min" type="button" id="min" [disabled]="quantity === 1"
-                            (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
-                        <input type="text" [value]="quantity">
+                        <button class="min" type="button" id="min" (click)="subractQuantity()"><i
+                                class="fa fa-minus">-</i></button>
+                        <input [formControl]="quantity" type="number" min="1"
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                         <button class="max" type="button" id="max" (click)="addQuantity()"><i
                                 class="ri-add-line"></i></button>
                     </div>
 
-                    <button class="add-to-cart" type="button" id="add" [disabled]="quantity === 0"
-                        (click)="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" type="button" id="add" [disabled]="quantity.value === 0"
+                        (click)="addToCart()">Add to
+                        Cart</button>
                 </div>
             </div>
-            <ul class="content">
-                <li><a routerLink="/products/{{product.id}}">{{product.name}}</a></li>
-                <mat-divider></mat-divider>
-                <li>{{product.price | currency: 'PHP' : 'symbol' : '1.2-2'}}</li>
-                <mat-divider></mat-divider>
-                <li> {{product.description.desc}}</li>
-                <mat-divider></mat-divider>
-            </ul>
-            <div class="add-quantity">
-
-                <div class="add-quantity-btn">
-                    <button class="min" type="button" id="min" [disabled]="currentVal <= 1"
-                        (click)="subractQuantity()"><i class="fa fa-minus">-</i></button>
-                    <input type="number" [formControl]="qtyCtrl">
-                    <button class="max" type="button" id="max" (click)="addQuantity()"><i
-                            class="ri-add-line"></i></button>
-                </div>
-
-                <button class="add-to-cart" type="button" id="add" [disabled]="currentVal < 1" (click)="addToCart()">Add
-                    to Cart</button>
-            </div>
-    </ng-container>
-</div>
+        </ng-container>
+    </div>
 </div>
 
 <!-- </mat-grid-tile>

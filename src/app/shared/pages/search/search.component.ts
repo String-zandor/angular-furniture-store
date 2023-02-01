@@ -11,9 +11,6 @@ import { Product } from '../../../modules/product/models/product';
 })
 export class SearchComponent {
  
-  @Input() autoComplete: Product[] | undefined
-  allProducts?: string
-
   searchInput = new FormControl('', Validators.required);
   result: Product[] | undefined
 
@@ -24,8 +21,6 @@ export class SearchComponent {
   }
 
   onSearch(){    
-  //will use to implement auto complete
-  console.log(this.autoComplete)
     if(!this.searchInput.value){
       return;
     }

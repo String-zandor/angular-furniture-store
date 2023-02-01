@@ -38,7 +38,8 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { RoomItemComponent } from './components/filter-sub/room-item/room-item.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
-import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { MatDialogModule, MatDialog } from '@angular/material/dialog';
     SharedModule, 
     ReactiveFormsModule,
     MatListModule, MatGridListModule,MatMenuModule, MatCheckboxModule, MatRadioModule, MatAutocompleteModule,
-    MatTableModule, MatDialogModule
+    MatTableModule, MatDialogModule,
+    MatSnackBarModule
     
   ],
   exports:[]

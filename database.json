@@ -78,9 +78,70 @@
       },
       "price": 17000,
       "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 6,
+      "name": "Sample Product",
+      "category": "Sample Category",
+      "color": "Teal",
+      "description": {
+        "desc": "",
+        "dimensions": "",
+        "material": "",
+        "weight": ""
+      },
+      "price": 45,
+      "postingDate": "2023-02-01T06:28:51.127Z",
+      "srcUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Fmango-shake.jpg?alt=media&token=ef9b8cb9-6375-463d-b1c1-25547589a29d",
+        "https://firebasestorage.googleapis.com/v0/b/grey-space.appspot.com/o/images%2Forangecrate.jpg?alt=media&token=f35aa7dc-f2c9-4eff-a668-fc930bb7ac5d"
+      ]
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": [
+          "assets/products/TABLES/2.1.png",
+          "assets/products/TABLES/2.png"
+        ],
+        "name": "Nested Coffee Table",
+        "category": "Tables",
+        "room": "Living Room",
+        "description": {
+          "desc": "Better"
+        },
+        "price": 1000,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 1,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 4,
+        "srcUrl": [
+          "assets/products/TABLES/4.1.png",
+          "assets/products/TABLES/4.png"
+        ],
+        "name": "Brass Finish Coffee Table",
+        "room": "Living Room",
+        "category": "Tables",
+        "description": {
+          "desc": "Baroque"
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 2,
+      "checkout": true
+    }
+  ],
   "users": [
     {
       "id": 1,
@@ -110,7 +171,7 @@
       "email": "angelheart@gmail.com",
       "phone": "09666666666",
       "birthDate": "1943-12-25T00:00:00.000Z",
-      "address": "Earth"
+      "address": ""
     }
   ],
   "auth": [
@@ -1326,6 +1387,98 @@
         "address": "Earth"
       },
       "id": 17
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 19500,
+      "deliveryfee": 100,
+      "total": 19600,
+      "orderDate": "2023-02-01T06:17:14.748Z",
+      "cart": [
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/TABLES/2.1.png",
+              "assets/products/TABLES/2.png"
+            ],
+            "name": "Nested Coffee Table",
+            "category": "Tables",
+            "room": "Living Room",
+            "description": {
+              "desc": "Better"
+            },
+            "price": 1000,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 2,
+          "userId": 3,
+          "id": 1
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/TABLES/4.1.png",
+              "assets/products/TABLES/4.png"
+            ],
+            "name": "Brass Finish Coffee Table",
+            "room": "Living Room",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 2
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 18
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 17500,
+      "deliveryfee": 100,
+      "total": 17600,
+      "orderDate": "2023-02-01T06:21:07.239Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/TABLES/4.1.png",
+              "assets/products/TABLES/4.png"
+            ],
+            "name": "Brass Finish Coffee Table",
+            "room": "Living Room",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 2
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 19
     }
   ]
 }

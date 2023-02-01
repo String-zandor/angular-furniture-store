@@ -27,7 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
     ProfileComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    ConfirmDialogComponent,],
+    ConfirmDialogComponent,
+    RegisterComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
