@@ -18,6 +18,7 @@
     max-width: 100%;
 
 }
+
 .my-account-container h3{
     text-align: center;
     position: relative;
@@ -44,14 +45,18 @@
     color: rgb(106, 132, 113);;
 }
 
+//ACCOUNT BODY
+
 .my-account-body{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     
-     
     
 }
 
+.mat-tab-group{
+    width: 1000px;
+}
 
 
 //-------------- FORM ------------------------
@@ -60,10 +65,11 @@
 
 form{
     margin: 0;
-    width: 40%;
+    width: 100%;
     height: 100%;
     overflow: visible;
     padding-bottom: 50px; 
+    width: 1000px;
 }
 
 form .account-details{
@@ -95,7 +101,7 @@ td{
 }
 
 mat-form-field{
-    width: 250px !important;
+    width: 300px !important;
 }   
 
 mat-form-field mat-label     {
@@ -153,6 +159,10 @@ mat-form-field mat-label     {
 
 //------order-history
 
+.order-history{
+    width: 1000px;
+    margin-bottom: 50px;
+}
 .order-history a{
     text-decoration: none;
     color: white;
@@ -161,6 +171,24 @@ mat-form-field mat-label     {
 app-pending-order{
     margin-top: -100px;
     position: relative;
+    max-width: 100%;
+    
 }
+
+@media only screen and (max-width: 700px) {
+    .order-history {
+      width: 350px;
+      overflow-x: hidden ;
+      
+    }
+
+    mat-form-field{
+        width: 150px !important;
+    }
+    
+    form{
+        padding: 10px;
+    }
+  }
 
 
