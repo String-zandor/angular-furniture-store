@@ -1,14 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, of, Subscription, switchMap } from 'rxjs';
+import { Observable, of, Subscription, switchMap } from 'rxjs';
 import { CartItem } from 'src/app/modules/cart/models/cart-item';
 import { CartService } from 'src/app/modules/cart/services/cart.service';
 import { User } from 'src/app/modules/user/models/user';
 import { AuthService } from 'src/app/modules/user/services/auth.service';
 import { Product } from '../../models/product';
 import { DisplayService } from '../../services/display.service';
-import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',

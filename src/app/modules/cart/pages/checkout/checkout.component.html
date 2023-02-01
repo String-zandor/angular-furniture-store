@@ -1,92 +1,77 @@
-<div class = "checkout-container">
+<div class="checkout-container">
 
-<h1>Checkout</h1>
+  <h1>Checkout</h1>
 
-<div class = "checkout-body">
+  <div class="checkout-body">
 
-<mat-stepper orientation="vertical">
-    <mat-step>
-      <ng-template matStepLabel>Shipping Details</ng-template>
-      <ng-template matStepContent>
+    <mat-stepper orientation="vertical">
+      <mat-step>
+        <ng-template matStepLabel>Shipping Details</ng-template>
+        <ng-template matStepContent>
 
-        <div class = "form">
-            <button (click)="editShippingForm()" class="ri-pencil-line"></button>
-            <form id="shippingFormStatus" [formGroup]="shippingForm" (ngSubmit)="onSubmitShippingForm()">
-              
-                <div class = "name">
-                <label *ngIf="editInfo" for="name"></label>
-                <input [ngClass]="customClass" type="text" formControlName="name" [readonly]="!editInfo">
-                <span *ngIf="shippingForm.get('name')?.errors" class="error-message">Name field is required.</span>
-                </div>
+          <div class="form">
+            <form id="shippingFormStatus" [formGroup]="shippingForm">
 
-                <mat-divider></mat-divider>
+              <div class="name">
+                <input type="text" formControlName="name" placeholder="Name">
+                <span *ngIf="name.invalid" class="error-message">Recipient name is required.</span>
+              </div>
 
-                <label *ngIf="editInfo" for="contact"></label>
-                <input [ngClass]="customClass" type="text" formControlName="contact" [readonly]="!editInfo">
-                <span *ngIf="shippingForm.get('contact')?.errors" class="error-message">Contact field is required.</span>
-                
-                <div class = "shipping-address">
-                <label *ngIf="editInfo" for="address"></label>
-                <input [ngClass]="customClass" type="text" formControlName="address" [readonly]="!editInfo">
-                <span *ngIf="shippingForm.get('address')?.errors" class="error-message">Address field is required.</span>
-                </div>
+              <mat-divider></mat-divider>
 
-                <button mat-button *ngIf="editInfo" type="submit" [disabled]="!shippingForm.valid">Save</button> 
+              <input type="text" formControlName="contact" placeholder="Contact number">
+              <span *ngIf="contact.invalid" class="error-message">Contact number is required.</span>
 
-                <app-prompt [message]="'message'" type="success"></app-prompt>
+              <div class="shipping-address">
+                <input type="text" formControlName="address" placeholder="Shipping Address">
+                <span *ngIf="address.invalid" class="error-message">Shipping address is required.</span>
+              </div>
+
+              <app-prompt [message]="'message'" type="success"></app-prompt>
 
             </form>
-            
-        </div>
+          </div>
 
+        </ng-template>
+      </mat-step>
 
-        
-      </ng-template>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Order Summary</ng-template>
-      <ng-template matStepContent>
-
-        <div class = "items">
+      <mat-step>
+        <ng-template matStepLabel>Order Summary</ng-template>
+        <ng-template matStepContent>
+          <div class="items">
             <div *ngFor="let item of cartItems">
-                <app-checkout-item [cartItem]="item"></app-checkout-item>
+              <app-checkout-item [cartItem]="item"></app-checkout-item>
             </div>
+          </div>
+        </ng-template>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Payment Method</ng-template>
+        <div class="payment-option">
+          <mat-radio-group aria-label="Select an option" [formControl]="payment">
+            <mat-radio-button value="cash">Cash on Delivery</mat-radio-button>
+            <mat-radio-button value="credit-debit"> Credit/Debit Card</mat-radio-button>
+            <mat-radio-button value="gcash"> Gcash</mat-radio-button>
+            <mat-radio-button value="paypal"> Paypal</mat-radio-button>
+          </mat-radio-group>
         </div>
 
-        
+      </mat-step>
+    </mat-stepper>
 
-        
-      </ng-template>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Payment Method</ng-template>
 
-      <div class = "payment-option">
-        <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="1">Cash on Delivery</mat-radio-button>
-            <mat-radio-button value="2"> Credit/Debit Card</mat-radio-button>
-            <mat-radio-button value="2"> Gcash</mat-radio-button>
-            <mat-radio-button value="2"> Paypal</mat-radio-button>
-        </mat-radio-group>
+    <div class="right-bar">
+
+      <p><span>Subtotal</span> <span>{{subtotal| currency:'PHP'}}</span></p>
+      <hr>
+      <p><span>Delivery Fee</span> <span>{{deliveryfee| currency:'PHP'}}</span></p>
+      <hr>
+      <p><span>Total</span> <span>{{totalAmountToPay | currency:'PHP'}}</span></p>
+      <div>
+        <button (click)="openDialog()" [disabled]="shippingForm.invalid || payment.invalid">Place Order</button>
       </div>
 
+    </div>
 
-      
-    </mat-step>
-  </mat-stepper>
-
-
-<div class = "right-bar">
-                    
-    <p><span>Subtotal</span> <span>{{subtotal| currency:'PHP'}}</span></p>
-    <hr>
-    <p><span>Delivery Fee</span> <span>{{deliveryfee| currency:'PHP'}}</span></p>
-    <hr>
-    <p><span>Total</span> <span>{{totalAmmountToPay| currency:'PHP'}}</span></p>
-    <div><button (click) = "openDialog()" >Place Order</button></div>
-    
-</div>
-    
-</div>
-
-
+  </div>

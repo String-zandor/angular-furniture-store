@@ -371,6 +371,152 @@
       "userId": 3,
       "id": 1,
       "checkout": true
+    },
+    {
+      "product": {
+        "id": 19,
+        "srcUrl": [
+          "assets/products/BEDS/3.1.png",
+          "assets/products/BEDS/3.png"
+        ],
+        "name": "Wingback Velvet Bed",
+        "room": "Bedspace",
+        "category": "Beds",
+        "color": "Black",
+        "description": {
+          "desc": "Modern",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 158000,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 2,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 4,
+        "srcUrl": [
+          "assets/products/TABLES/4.1.png",
+          "assets/products/TABLES/4.png"
+        ],
+        "name": "Brass Finish Coffee Table",
+        "room": "Living",
+        "category": "Tables",
+        "description": {
+          "desc": "Baroque"
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 3,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 7,
+        "srcUrl": [
+          "assets/products/TABLES/7.1.png",
+          "assets/products/TABLES/7.png"
+        ],
+        "name": "Mild Steel Dining Table",
+        "category": "Tables",
+        "room": "Dining",
+        "color": "Black",
+        "description": {
+          "desc": "Modern",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 20500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 4,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 7,
+        "srcUrl": [
+          "assets/products/TABLES/7.1.png",
+          "assets/products/TABLES/7.png"
+        ],
+        "name": "Mild Steel Dining Table",
+        "category": "Tables",
+        "room": "Dining",
+        "color": "Black",
+        "description": {
+          "desc": "Modern",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 20500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 5,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 8,
+        "srcUrl": [
+          "assets/products/TABLES/8.1.png",
+          "assets/products/TABLES/8.png"
+        ],
+        "name": "Solid Wood Nighstand",
+        "room": "Bedspace",
+        "category": "Tables",
+        "color": "Black",
+        "description": {
+          "desc": "Modern",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 35500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 6,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 18,
+        "srcUrl": [
+          "assets/products/BEDS/2.1.png",
+          "assets/products/BEDS/2.png"
+        ],
+        "name": "Vintage Style Bed",
+        "room": "Bedspace",
+        "category": "Beds",
+        "color": "Black",
+        "description": {
+          "desc": "Modern",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 133600,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 7,
+      "checkout": true
     }
   ],
   "users": [
@@ -401,9 +547,9 @@
       "firstName": "Harry",
       "lastName": "Angel",
       "email": "angelheart@gmail.com",
-      "phone": "09666666666",
+      "phone": "",
       "birthDate": "1970-01-01T00:00:00.000Z",
-      "address": "Earth"
+      "address": ""
     }
   ],
   "auth": [
@@ -1883,6 +2029,178 @@
         "address": "Earth, Philippines"
       },
       "id": 22
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 213500,
+      "deliveryfee": 100,
+      "total": 213600,
+      "orderDate": "2023-02-01T19:45:03.220Z",
+      "cart": [
+        {
+          "product": {
+            "id": 19,
+            "srcUrl": [
+              "assets/products/BEDS/3.1.png",
+              "assets/products/BEDS/3.png"
+            ],
+            "name": "Wingback Velvet Bed",
+            "room": "Bedspace",
+            "category": "Beds",
+            "color": "Black",
+            "description": {
+              "desc": "Modern",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 158000,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 2
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/TABLES/4.1.png",
+              "assets/products/TABLES/4.png"
+            ],
+            "name": "Brass Finish Coffee Table",
+            "room": "Living",
+            "category": "Tables",
+            "description": {
+              "desc": "Baroque"
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 2,
+          "userId": 3,
+          "id": 3
+        },
+        {
+          "product": {
+            "id": 7,
+            "srcUrl": [
+              "assets/products/TABLES/7.1.png",
+              "assets/products/TABLES/7.png"
+            ],
+            "name": "Mild Steel Dining Table",
+            "category": "Tables",
+            "room": "Dining",
+            "color": "Black",
+            "description": {
+              "desc": "Modern",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 20500,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 4
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 23
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 210100,
+      "deliveryfee": 100,
+      "total": 210200,
+      "orderDate": "2023-02-01T19:59:56.028Z",
+      "cart": [
+        {
+          "product": {
+            "id": 7,
+            "srcUrl": [
+              "assets/products/TABLES/7.1.png",
+              "assets/products/TABLES/7.png"
+            ],
+            "name": "Mild Steel Dining Table",
+            "category": "Tables",
+            "room": "Dining",
+            "color": "Black",
+            "description": {
+              "desc": "Modern",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 20500,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 2,
+          "userId": 3,
+          "id": 5
+        },
+        {
+          "product": {
+            "id": 8,
+            "srcUrl": [
+              "assets/products/TABLES/8.1.png",
+              "assets/products/TABLES/8.png"
+            ],
+            "name": "Solid Wood Nighstand",
+            "room": "Bedspace",
+            "category": "Tables",
+            "color": "Black",
+            "description": {
+              "desc": "Modern",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 35500,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 6
+        },
+        {
+          "product": {
+            "id": 18,
+            "srcUrl": [
+              "assets/products/BEDS/2.1.png",
+              "assets/products/BEDS/2.png"
+            ],
+            "name": "Vintage Style Bed",
+            "room": "Bedspace",
+            "category": "Beds",
+            "color": "Black",
+            "description": {
+              "desc": "Modern",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 133600,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 7
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 24
     }
   ]
 }
