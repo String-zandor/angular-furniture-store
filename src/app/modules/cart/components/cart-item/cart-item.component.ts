@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { debounceTime, Subscription, tap } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 
@@ -10,50 +10,50 @@ import { CartItem } from '../../models/cart-item';
 })
 export class CartItemComponent implements OnInit, OnDestroy {
 
-  @Input() cartItem?: CartItem;
+  @Input() cartItem!: CartItem;
   @Output() onAction = new EventEmitter();
 
-  qtyCtrl = new FormControl(1);
+  qtyCtrl: FormControl = new FormControl(1);
   currentVal: number = 1;
   subscriptions: Subscription[] = [];
+  previousVal: number = 1;
 
   ngOnInit(): void {
-    if (this.cartItem) {
-      this.qtyCtrl.setValue(this.cartItem.qty)
-    }
+    this.currentVal = this.cartItem.qty;
     const sub = this.qtyCtrl.valueChanges.pipe(
       tap(value => {
+        this.previousVal = this.currentVal;
         this.currentVal = Number(value);
-      console.log('inside tap', this.currentVal)
       }),
-      debounceTime(300)
+      debounceTime(400),
     ).subscribe(() => {
-      console.log('inside valueChanges', this.currentVal)
-      if (this.currentVal >= 1) {
+      if (this.currentVal != this.previousVal &&
+        this.currentVal && 
+        this.currentVal >= 1) {
         this.executeAction('UPDATE')
       }
     })
+    this.qtyCtrl.setValue(this.cartItem.qty);
     this.subscriptions.push(sub);
   }
 
   addQuantity() {
-    console.log('outside', this.currentVal)
-    if (this.currentVal < 1) {
-      console.log('inside', this.currentVal)
+    console.log('curretVal inside addQuantity',this.currentVal)
+    if (this.currentVal < 0 || Number.isNaN(this.currentVal)) {
       this.currentVal = 0;
-    } 
+    }
     this.qtyCtrl.setValue(this.currentVal + 1);
-    console.log('after', this.qtyCtrl.value)
   }
 
   subractQuantity() {
     if (this.currentVal > 1) {
       this.qtyCtrl.setValue(this.currentVal - 1);
     }
+    
   }
 
   executeAction(action: string) {
-    if (this.cartItem) {
+    if (this.cartItem && this.currentVal) {
       this.cartItem.qty = this.currentVal;
       const data: { cartItem: CartItem, action: string } = { cartItem: this.cartItem, action: action }
       this.onAction.emit(data);

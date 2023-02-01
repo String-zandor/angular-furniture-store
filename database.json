@@ -353,48 +353,6 @@
   "cart": [
     {
       "product": {
-        "id": 2,
-        "srcUrl": [
-          "assets/products/TABLES/2.1.png",
-          "assets/products/TABLES/2.png"
-        ],
-        "name": "Nested Coffee Table",
-        "category": "Tables",
-        "room": "Living",
-        "description": {
-          "desc": "Better"
-        },
-        "price": 1000,
-        "postingDate": "2015-08-01 01:00PM"
-      },
-      "qty": 2,
-      "userId": 3,
-      "id": 1,
-      "checkout": true
-    },
-    {
-      "product": {
-        "id": 4,
-        "srcUrl": [
-          "assets/products/TABLES/4.1.png",
-          "assets/products/TABLES/4.png"
-        ],
-        "name": "Brass Finish Coffee Table",
-        "room": "Living",
-        "category": "Tables",
-        "description": {
-          "desc": "Baroque"
-        },
-        "price": 17500,
-        "postingDate": "2019-01-01 12:00AM"
-      },
-      "qty": 1,
-      "userId": 3,
-      "id": 2,
-      "checkout": true
-    },
-    {
-      "product": {
         "id": 1,
         "srcUrl": [
           "assets/products/TABLES/1.1.png",
@@ -413,10 +371,9 @@
         "price": 12000,
         "postingDate": "2023-01-28T15:24:41.683Z"
       },
-      "qty": 2,
+      "qty": 1,
       "userId": 3,
-      "id": 3,
-      "checkout": true
+      "id": 1
     },
     {
       "product": {
@@ -436,8 +393,7 @@
       },
       "qty": 1,
       "userId": 3,
-      "id": 4,
-      "checkout": true
+      "id": 2
     },
     {
       "product": {
@@ -457,7 +413,7 @@
       },
       "qty": 1,
       "userId": 3,
-      "id": 5
+      "id": 3
     }
   ],
   "users": [

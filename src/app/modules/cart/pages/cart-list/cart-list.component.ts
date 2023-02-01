@@ -44,7 +44,9 @@ export class CartListComponent implements OnInit, OnDestroy {
   }
 
   updateCartItem(cartItem: CartItem) {
-    this.cartService.update(cartItem).subscribe();
+    this.cartService.update(cartItem).pipe(
+      switchMap(() => this.cartService.getCartItems())
+    ).subscribe();
   }
 
   removeFromCart(cartItem: CartItem): void {
@@ -55,9 +57,6 @@ export class CartListComponent implements OnInit, OnDestroy {
     }
   }
 
-  /**
-   * TODO: update CartService to monitor this so that this is the only access to checkout
-   */
   goToCheckout(): void {
     this.check.checkout(true);
     this.router.navigate(['checkout'], { relativeTo: this.route });
