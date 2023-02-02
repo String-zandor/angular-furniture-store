@@ -18,7 +18,7 @@ export class MailService {
   mailgun = new Mailgun(formData)
   mg = this.mailgun.client({
     username: 'api',
-    key: '9bca49cf01a4bd3bb5f8e4e1ec932014-75cd784d-38711068'
+    key: '41a6cac0704b4d36c4ae7618975397f2-75cd784d-08246ccb'
   })
 
   
@@ -36,8 +36,8 @@ export class MailService {
     let otp = this.getOneTimePassword()
     
     this.mg.messages
-    .create('sandbox540cde25557c4db2b6eaf76408c62f12.mailgun.org', {
-      from: "Grey Space <postmaster@sandbox540cde25557c4db2b6eaf76408c62f12.mailgun.org>",
+    .create('sandbox2934a2c85ebf413688f4f41cb32e413c.mailgun.org', {
+      from: "Grey Space <admin@GreySpace>",
       to: [email],
       subject: "Grey Space - Password Reset OTP",
       html: "<h1>Verification Code</h1><br>"+
