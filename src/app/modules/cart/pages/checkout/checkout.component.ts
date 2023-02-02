@@ -98,7 +98,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   async canExit(): Promise<boolean> {
-    if (this.shippingForm.untouched && !this.shippingForm.dirty) {
+    if (this.shippingForm.valid || (this.shippingForm.untouched && !this.shippingForm.dirty)) {
       return true;
     }
     const result = await this.confirmExitDiscardChanges()

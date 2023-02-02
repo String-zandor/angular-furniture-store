@@ -585,16 +585,189 @@
       "qty": 1,
       "userId": 3,
       "id": 10
+    },
+    {
+      "product": {
+        "id": 3,
+        "srcUrl": [
+          "assets/products/TABLES/3.1.png",
+          "assets/products/TABLES/3.png"
+        ],
+        "name": "Black Metal Accent Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Best"
+        },
+        "price": 23000,
+        "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 5,
+      "userId": 2,
+      "id": 12
+    },
+    {
+      "product": {
+        "id": 4,
+        "srcUrl": [
+          "assets/products/TABLES/4.1.png",
+          "assets/products/TABLES/4.png"
+        ],
+        "name": "Brass Finish Coffee Table",
+        "room": "Living",
+        "category": "Tables",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 6,
+      "userId": 2,
+      "id": 13
+    },
+    {
+      "product": {
+        "id": 5,
+        "srcUrl": [
+          "assets/products/TABLES/5.1.png",
+          "assets/products/TABLES/5.png"
+        ],
+        "name": "Blackened Side Table",
+        "room": "Living",
+        "category": "Tables",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 15500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 2,
+      "id": 14
+    },
+    {
+      "product": {
+        "id": 4,
+        "srcUrl": [
+          "assets/products/TABLES/4.1.png",
+          "assets/products/TABLES/4.png"
+        ],
+        "name": "Brass Finish Coffee Table",
+        "room": "Living",
+        "category": "Tables",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 2,
+      "userId": 6,
+      "id": 15,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 17,
+        "srcUrl": [
+          "assets/products/BEDS/1.1.png",
+          "assets/products/BEDS/1.png"
+        ],
+        "name": "European Iron Bed",
+        "room": "Bedspace",
+        "category": "Beds",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 110600,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 6,
+      "id": 16,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 4,
+        "srcUrl": [
+          "assets/products/TABLES/4.1.png",
+          "assets/products/TABLES/4.png"
+        ],
+        "name": "Brass Finish Coffee Table",
+        "room": "Living",
+        "category": "Tables",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 6,
+      "id": 17,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": [
+          "assets/products/TABLES/2.1.png",
+          "assets/products/TABLES/2.png"
+        ],
+        "name": "Nested Coffee Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 10500,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 1,
+      "userId": 6,
+      "id": 18,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 3,
+        "srcUrl": [
+          "assets/products/TABLES/3.1.png",
+          "assets/products/TABLES/3.png"
+        ],
+        "name": "Black Metal Accent Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Best"
+        },
+        "price": 23000,
+        "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 6,
+      "id": 19,
+      "checkout": true
     }
   ],
   "users": [
     {
       "id": 1,
       "key": 1,
-      "username": "admin",
+      "username": "administrator",
       "firstName": "Juan",
       "lastName": "Dela Cruz",
-      "email": "jdc@77global.biz"
+      "email": "jdc@gmail.com"
     },
     {
       "id": 2,
@@ -617,35 +790,13 @@
       "phone": "",
       "birthDate": "1970-01-01T00:00:00.000Z",
       "address": ""
-    },
-    {
-      "key": 4,
-      "username": "zajoc",
-      "firstName": "Zandor",
-      "lastName": "Ajoc",
-      "email": "zajoc@77global.biz",
-      "phone": "",
-      "birthDate": "",
-      "address": "",
-      "id": 4
-    },
-    {
-      "key": 5,
-      "username": "ninasimone",
-      "firstName": "Nina",
-      "lastName": "Simone",
-      "email": "ns@gmail.com",
-      "phone": "09123456789",
-      "birthDate": "1955-11-22T00:00:00.000Z",
-      "address": "Earth",
-      "id": 5
     }
   ],
   "auth": [
     {
       "id": 1,
-      "username": "admin",
-      "password": "admin1234",
+      "username": "administrator",
+      "password": "administrator@77",
       "active": true,
       "role": "ADMIN"
     },
@@ -660,22 +811,8 @@
       "id": 3,
       "username": "harryangel",
       "password": "1234",
-      "active": false,
+      "active": true,
       "role": "USER"
-    },
-    {
-      "username": "zajoc",
-      "password": "1234",
-      "active": true,
-      "role": "USER",
-      "id": 4
-    },
-    {
-      "username": "ninasimone",
-      "password": "1234",
-      "active": true,
-      "role": "USER",
-      "id": 5
     }
   ],
   "orders": [
@@ -2304,6 +2441,142 @@
         "address": "Earth"
       },
       "id": 24
+    },
+    {
+      "user": 6,
+      "status": "pending",
+      "subtotal": 145600,
+      "deliveryfee": 100,
+      "total": 145700,
+      "orderDate": "2023-02-02T02:24:05.148Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/TABLES/4.1.png",
+              "assets/products/TABLES/4.png"
+            ],
+            "name": "Brass Finish Coffee Table",
+            "room": "Living",
+            "category": "Tables",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 2,
+          "userId": 6,
+          "id": 15
+        },
+        {
+          "product": {
+            "id": 17,
+            "srcUrl": [
+              "assets/products/BEDS/1.1.png",
+              "assets/products/BEDS/1.png"
+            ],
+            "name": "European Iron Bed",
+            "room": "Bedspace",
+            "category": "Beds",
+            "color": "Black",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 110600,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 6,
+          "id": 16
+        }
+      ],
+      "shipping": {
+        "name": "Zandor Ajoc",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 25
+    },
+    {
+      "user": 6,
+      "status": "pending",
+      "subtotal": 51000,
+      "deliveryfee": 100,
+      "total": 51100,
+      "orderDate": "2023-02-02T02:26:47.329Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/TABLES/4.1.png",
+              "assets/products/TABLES/4.png"
+            ],
+            "name": "Brass Finish Coffee Table",
+            "room": "Living",
+            "category": "Tables",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 6,
+          "id": 17
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/TABLES/2.1.png",
+              "assets/products/TABLES/2.png"
+            ],
+            "name": "Nested Coffee Table",
+            "category": "Tables",
+            "room": "Living",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+            },
+            "price": 10500,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 6,
+          "id": 18
+        },
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": [
+              "assets/products/TABLES/3.1.png",
+              "assets/products/TABLES/3.png"
+            ],
+            "name": "Black Metal Accent Table",
+            "category": "Tables",
+            "room": "Living",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 6,
+          "id": 19
+        }
+      ],
+      "shipping": {
+        "name": "Zandor Ajoc",
+        "phone": "12312",
+        "address": "123123"
+      },
+      "id": 26
     }
   ]
 }
