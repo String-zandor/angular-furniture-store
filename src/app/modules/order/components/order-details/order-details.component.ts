@@ -35,16 +35,7 @@ export class OrderDetailsComponent implements OnInit {
     public dialog: MatDialog){}
 
   ngOnInit(): void {
-    // this.orderService.getOrders(this.userId).subscribe(order => {
-    //   order.filter(order => order.id === this.orderNo).forEach(item => {
-    //     this.dataSource = item.cart
-    //     this.orderTotal = item.total
-    //     this.orderStatus = item.status
-    //     this.subtotal = item.subtotal
-    //     this.deliveryFee = item.deliveryfee
-    //   })
-    // })
- this.displayOrders()
+    this.displayOrders()
   }
 
   displayOrders(){

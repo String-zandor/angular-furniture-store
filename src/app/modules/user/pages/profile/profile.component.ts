@@ -8,7 +8,6 @@ import { User } from '../../models/user';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 
-//new import from dialogs
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 

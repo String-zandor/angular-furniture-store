@@ -39,7 +39,6 @@ export class CartItemComponent implements OnInit, OnDestroy {
   }
 
   addQuantity() {
-    console.log('curretVal inside addQuantity',this.currentVal)
     if (this.currentVal < 0 || Number.isNaN(this.currentVal)) {
       this.currentVal = 0;
     }

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, of, Subscription, switchMap, tap } from 'rxjs';
+import { map, of, Subscription, switchMap } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 
 import { MatSnackBar } from '@angular/material/snack-bar';

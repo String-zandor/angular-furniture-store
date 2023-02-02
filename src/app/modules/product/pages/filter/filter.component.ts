@@ -90,7 +90,6 @@ export class FilterComponent implements OnInit, OnDestroy {
       filteredList = this.filterByPrice(filteredList);
     }
 
-    console.log('Inside OnChanges', filteredList);
     this.filter.emit(filteredList);
   }
 
@@ -135,8 +134,6 @@ export class FilterComponent implements OnInit, OnDestroy {
       this.activePR = this.activePR.filter(pr => pr.min !== range.min);
     }
 
-    //test only
-    console.log('filteredByPrice', this.filterByPrice(this.products));
   }
 
   filterByPrice(products: Product[]): Product[] {
@@ -152,7 +149,6 @@ export class FilterComponent implements OnInit, OnDestroy {
         return result;
       });
 
-      // add list filtered by specific price range to the overall filteredlist
       filtered = filtered.concat(list);
     }
     return filtered;

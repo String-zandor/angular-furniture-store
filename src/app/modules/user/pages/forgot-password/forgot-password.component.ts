@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { map, of, switchMap, tap } from 'rxjs';
-import { DialogData } from 'src/app/shared/models/dialog-data';
-import { DialogService } from 'src/app/shared/services/dialog.service';
+import { of, switchMap } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { MailService } from '../../services/mail.service';
 @Component({
@@ -18,9 +15,7 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private mailService: MailService,
     private authServ: AuthService, public dialog: MatDialog,
-    private router: Router,
-    private snackBar: MatSnackBar,
-    private dialogSvc: DialogService) {
+    private router: Router) {
 
   }
 

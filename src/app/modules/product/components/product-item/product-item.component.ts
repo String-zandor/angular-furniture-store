@@ -3,10 +3,6 @@ import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { CartItem } from '../../../cart/models/cart-item';
 import { Product } from '../../models/product';
-
-//new import from dialogs
-import { MatSnackBar } from '@angular/material/snack-bar';
-
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -19,8 +15,6 @@ export class ProductItemComponent {
   subscriptions: Subscription[] = [];
 
   quantity = new FormControl(1)
-  //addandminus
-  //quantity: number = 1;
 
   addQuantity() {
 

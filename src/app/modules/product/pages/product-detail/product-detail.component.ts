@@ -67,10 +67,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   addToCart(): void {
-    console.log('addToCart')
     if (this.product && this.user) {
       const cartItem: CartItem = { product: this.product, qty: this.currentVal };
-      console.log('inside if')
       this.cartSvc.getCartItemOfProduct(cartItem.product.id).pipe(
         switchMap(item => {
           if (item) {

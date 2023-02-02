@@ -57,10 +57,6 @@ export class ResetPasswordComponent implements OnInit {
     }
     return ''
   }
-
-  showPassword() {
-    console.log('showPassword')
-  }
   
   onSubmit() {
     this.auth.getUserCred(this.id).pipe(

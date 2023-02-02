@@ -9,7 +9,6 @@ import { MatTableModule } from '@angular/material/table';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-// import { PromptModule } from 'src/app/shared/prompt/prompt.module';
 
 
 @NgModule({

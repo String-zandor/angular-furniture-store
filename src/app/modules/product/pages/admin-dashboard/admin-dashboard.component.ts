@@ -1,11 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { from, groupBy, map, mergeMap, of, Subscription, switchMap, take, toArray } from 'rxjs';
-import { CartItem } from 'src/app/modules/cart/models/cart-item';
-import { Order } from 'src/app/modules/order/models/order';
 import { OrderService } from 'src/app/modules/order/services/order.service';
 import { OrderItem } from '../../models/order-item';
-import { Product } from '../../models/product';
-import { AdminOrderService } from '../../services/admin-order.service';
 
 @Component({
   selector: 'app-admin-dashboard',
