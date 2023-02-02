@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { distinct, from, map, Observable, Subscription, switchMap, toArray } from 'rxjs';
 import { ImageService } from 'src/app/core/services/image.service';
@@ -47,7 +48,8 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
     private location: Location,
     private productSvc: ProductService,
     private imgSvc: ImageService,
-    public dialogSvc: DialogService) {
+    public dialogSvc: DialogService,
+    private snackBar: MatSnackBar) {
 
   }
 
@@ -150,6 +152,7 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
     this.dialogSvc.confirm(data).subscribe(confirmed => {
       if (confirmed) {
         this.saveProduct();
+        
       }
     });
   }
@@ -160,12 +163,16 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
       this.productSvc.editProduct(product).subscribe(product => {
         if (product) {
           this.router.navigate(['/admin/products']);
+          this.snackBar.open('Product updated.', '', { duration: 1000,
+          });
         }
       });
     } else {
       this.productSvc.addProduct(product).subscribe(product => {
         if (product) {
           this.router.navigate(['/admin/products']);
+          this.snackBar.open('Product added.', '', { duration: 1000,
+          });
         }
       });
     }
