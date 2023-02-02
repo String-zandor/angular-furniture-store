@@ -100,47 +100,5 @@ export class MailService {
     })
   }
 
-  // doesOtpMatch:boolean = false
-//  async matchOtp(email:string, otp:string){
-//     let emailPresent = await this.getEmailPresentResult(email)
-//     let OtpMatch = await this.getOtpFromServer(this.userid, otp)
-//     return OtpMatch
-//   }
-  matchOtp(email:string, otp:string){
-    
-  }
-
-
-  // getOtpFromServer(email:string, otp:string){
-  //   this.http.get<OneTimePassword>(`${this.serverUrl}/otp/${id}`).subscribe(data =>{
-  //     if(data.otp == otp){
-  //     }
-  //   })
-  // }
-
-  // async otpChecker(email:string, otp:string) : Promise<boolean>{
-  //   let otpMatch:boolean = false
-  //   let emailPresent = await this.getEmailPresentResult(email)
-
-  //   const res = await this.getOtpFromServer(this.userid, otp)
-  //   if(res){
-  //     return res as boolean
-  //   }
-  //   return otpMatch
-  // }
-
-  // async canExit(): Promise<boolean>{
-  //   let canExit:boolean = false
-  //     if(!this.editInfo){
-  //     return true
-  //   }
-    
-  //   const result = await this.openDialogWhenExitingWithougChanges()
-  //   if(result){
-  //     // this.isDirtyForm = false
-  //     return result as boolean
-  //   }
-  //   return canExit
-  // }
   
 }
