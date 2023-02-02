@@ -11,6 +11,8 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/modules/user/models/user';
+import { DialogService } from 'src/app/shared/services/dialog.service';
+import { DialogData } from 'src/app/shared/models/dialog-data';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -25,15 +27,15 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   subtotal!: number;
   deliveryfee: number = 100;
   subscriptions: Subscription[] = [];
-  date = new Date();
   payment = new FormControl(null, Validators.required);
+  orderPlaced: boolean = false;
 
   shippingForm = this.fb.group({
     name: ['', Validators.required],
     contact: ['', Validators.required],
     address: ['', Validators.required]
   });
-  
+
 
   get name(): FormControl {
     return this.shippingForm.get('name') as FormControl;
@@ -47,10 +49,6 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     return this.shippingForm.get('address') as FormControl;
   }
 
-  customClass: string = 'removeDesign'
-
-  isChangedValueForm: boolean = false
-
   constructor(
     private fb: FormBuilder,
     private cartSvc: CartService,
@@ -58,7 +56,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     private router: Router,
     private auth: AuthService,
     private check: CheckoutService,
-    public dialog: MatDialog,
+    public dialogSvc: DialogService,
     private snackBar: MatSnackBar
   ) {
 
@@ -98,7 +96,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   async canExit(): Promise<boolean> {
-    if (this.shippingForm.valid || (this.shippingForm.untouched && !this.shippingForm.dirty)) {
+    if ((this.shippingForm.untouched && !this.shippingForm.dirty) ||
+      (this.orderPlaced)) {
       return true;
     }
     const result = await this.confirmExitDiscardChanges()
@@ -110,33 +109,28 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
   confirmExitDiscardChanges() {
     return new Promise(resolve => {
-      let dialogRef = this.dialog.open(DialogCanDeactivate, {
-        width: '250px'
-      });
-      dialogRef.afterClosed().subscribe(result => {
-        resolve(result);
-      })
+      const data: DialogData = {
+        title: 'Confirm',
+        content: 'Are you sure you want to exit this page? Changes will not be saved.',
+        confirm: 'Confirm',
+        cancel: 'Cancel'
+      }
+      this.dialogSvc.confirm(data).subscribe(confirmed => resolve(confirmed));
     })
   }
 
   openDialog(): void {
-    if (this.shippingForm.untouched && !this.shippingForm.dirty) {
-      let dialogRef = this.dialog.open(DialogProceedCheckout, {
-        width: '250px'
-      });
-      const sub = dialogRef.componentInstance.onAdd.subscribe(() => {
-        this.proceedCheckout();
-      });
-    } else {
-      let dialogRef = this.dialog.open(DialogProceedCheckoutWithoutSaving, {
-        width: '250px'
-      });
-      const sub = dialogRef.componentInstance.onAdd.subscribe(() => {
-        // this.isDirtyForm = false
-        this.proceedCheckout()
-      });
-
+    const data: DialogData = {
+      title: 'Confirm',
+      content: 'Would you like to proceed with your order?',
+      confirm: 'Confirm',
+      cancel: 'Cancel'
     }
+    this.dialogSvc.confirm(data).subscribe(confirmed => {
+      if (confirmed) {
+        this.proceedCheckout();
+      }
+    })
   }
 
   proceedCheckout() {
@@ -171,85 +165,15 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
     this.orderSvc.create(order).subscribe(order => {
       if (order) {
+        this.orderPlaced = true;
         this.snackBar.open('Order placed.', '', { duration: 1000 });
       }
     });
-    
+
   }
 
   redirectToHome() {
     this.router.navigate(['home'])
   }
 
-}
-
-/**
- * Dialogbox when proceeding to checkout
- */
-@Component({
-  selector: 'proceed-dialog',
-  templateUrl: './checkout-dialog-proceed.html',
-  styleUrls: ['./checkout-dialog-proceed.scss'],
-})
-
-export class DialogProceedCheckout {
-  constructor(public dialogRef: MatDialogRef<DialogProceedCheckout>) { }
-  onAdd = new EventEmitter();
-  onNoClick(): void {
-    console.log("no")
-    this.dialogRef.close();
-  }
-  onYesClick(): void {
-    console.log("Yes")
-    this.dialogRef.close();
-    this.onAdd.emit();
-  }
-}
-
-
-/**
- * Dialogbox when proceeding without saving the shipping details
- */
-@Component({
-  selector: 'proceed-dialog',
-  templateUrl: './checkout-dialog-without-saving-info.html',
-  styleUrls: ['./checkout-dialog-without-saving-info.scss'],
-})
-
-export class DialogProceedCheckoutWithoutSaving {
-  constructor(public dialogRef: MatDialogRef<DialogProceedCheckoutWithoutSaving>) { }
-  onAdd = new EventEmitter();
-  onNoClick(): void {
-    console.log("no")
-    this.dialogRef.close();
-  }
-  onYesClick(): void {
-    console.log("Yes")
-    this.dialogRef.close();
-    this.onAdd.emit();
-  }
-}
-
-export interface DialogData {
-  exit: boolean;
-}
-/**
- * Dialogbox for canDeactivate
- */
-@Component({
-  selector: 'proceed-dialog',
-  templateUrl: './checkout-can-deactivate.html',
-  styleUrls: ['./checkout-can-deactivate.scss'],
-})
-
-export class DialogCanDeactivate {
-  constructor(public dialogRef: MatDialogRef<DialogCanDeactivate>) { }
-  onYesClick(): void {
-    console.log("Yes")
-    this.dialogRef.close(true);
-  }
-  onNoClick(): void {
-    console.log("no")
-    this.dialogRef.close(false);
-  }
 }

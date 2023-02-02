@@ -1,9 +1,12 @@
+import { DIALOG_DATA } from '@angular/cdk/dialog';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, map, mergeMap, Observable, Subscription } from 'rxjs';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
+import { DialogData } from 'src/app/shared/models/dialog-data';
+import { DialogService } from 'src/app/shared/services/dialog.service';
 import { AuthService } from '../../services/auth.service';
 
 
@@ -23,7 +26,7 @@ export class AdminUserListComponent implements OnInit {
 
   constructor(private userService: UserService,
     private auth: AuthService,
-    public dialog: MatDialog,
+    private dialogSvc: DialogService,
     private snackBar: MatSnackBar) { }
 
 
@@ -34,15 +37,13 @@ export class AdminUserListComponent implements OnInit {
     
 
   activateUser(id: number) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = {
+    const data: DialogData = {
       title: 'Confirm',
       content: 'Are you sure you want to activate this user?',
       confirm: 'Yes',
       cancel: 'No'
     }
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig)
-    dialogRef.afterClosed().subscribe(result => {
+    this.dialogSvc.confirm(data).subscribe(result => {
       if(result){
         this.auth.isActive(id, { active: true }).subscribe();
         this.snackBar.open('User activated sucessfully!','',{duration: 2000})
@@ -52,15 +53,13 @@ export class AdminUserListComponent implements OnInit {
   }
 
   deactivateUser(id: number) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = {
+    const data: DialogData = {
       title: 'Confirm',
       content: 'Are you sure you want to deactivate this user?',
       confirm: 'Yes',
       cancel: 'No'
     }
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig)
-    dialogRef.afterClosed().subscribe(result => {
+    this.dialogSvc.confirm(data).subscribe(result => {
       if(result){
         this.auth.isActive(id, { active: false }).subscribe();
         this.snackBar.open('User deactivated sucessfully!','',{duration: 2000})

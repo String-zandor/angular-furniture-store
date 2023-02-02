@@ -6,8 +6,6 @@
 
     </div>
 
-
-
     <div class="my-account-body">
 
         <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
@@ -111,18 +109,14 @@
                 </form>
             </mat-tab>
             
-            <mat-tab label="Order History">
-                <div class="order-history" *ngIf="!isAdmin">
+            <mat-tab label="Order History" *ngIf="!isAdmin">
+                <div class="order-history">
                     <h2>Order History</h2>
                     <app-pending-orders></app-pending-orders>
                 </div>
             </mat-tab>
            
           </mat-tab-group>
-
-        
-
-        
 
     </div>
 

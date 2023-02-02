@@ -561,7 +561,8 @@
       },
       "qty": 5,
       "userId": 2,
-      "id": 12
+      "id": 12,
+      "checkout": true
     },
     {
       "product": {
@@ -581,7 +582,8 @@
       },
       "qty": 6,
       "userId": 2,
-      "id": 13
+      "id": 13,
+      "checkout": true
     },
     {
       "product": {
@@ -605,7 +607,8 @@
       },
       "qty": 1,
       "userId": 2,
-      "id": 14
+      "id": 14,
+      "checkout": true
     }
   ],
   "users": [
@@ -2425,6 +2428,86 @@
         "address": "123123"
       },
       "id": 26
+    },
+    {
+      "user": 2,
+      "status": "pending",
+      "subtotal": 235500,
+      "deliveryfee": 100,
+      "total": 235600,
+      "orderDate": "2023-02-02T08:02:07.568Z",
+      "cart": [
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": [
+              "assets/products/TABLES/3.1.png",
+              "assets/products/TABLES/3.png"
+            ],
+            "name": "Black Metal Accent Table",
+            "category": "Tables",
+            "room": "Living",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 5,
+          "userId": 2,
+          "id": 12
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/TABLES/4.1.png",
+              "assets/products/TABLES/4.png"
+            ],
+            "name": "Brass Finish Coffee Table",
+            "room": "Living",
+            "category": "Tables",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 6,
+          "userId": 2,
+          "id": 13
+        },
+        {
+          "product": {
+            "id": 5,
+            "srcUrl": [
+              "assets/products/TABLES/5.1.png",
+              "assets/products/TABLES/5.png"
+            ],
+            "name": "Blackened Side Table",
+            "room": "Living",
+            "category": "Tables",
+            "color": "Black",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 15500,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 14
+        }
+      ],
+      "shipping": {
+        "name": "Johnny Favorite",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 27
     }
   ]
 }
