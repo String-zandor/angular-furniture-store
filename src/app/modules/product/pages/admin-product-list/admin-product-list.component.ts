@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription, switchMap, tap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 import { Product } from '../../models/product';
 import { DisplayService } from '../../services/display.service';
 import { ProductService } from '../../services/product.service';
@@ -24,10 +24,12 @@ export class AdminProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.displaySvc.displayAllProducts().subscribe();
     this.productsDisplay$ = this.displaySvc.productsDisplay$;
     this.allProducts$ = this.productSvc.allProducts$;
     this.productsToSort$ = this.displaySvc.productsToSort$;
+    this.displaySvc.displayAllProducts().pipe(
+      tap(products => this.displaySvc.forSorting(products))
+    ).subscribe();
   }
 
   onAction(data: { id: number, action: string }): void {
