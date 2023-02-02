@@ -17,6 +17,7 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PromptComponent } from './prompt/prompt.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import { PromptComponent } from './prompt/prompt.component';
         MatSidenavModule,
         MatIconModule,
         MatDialogModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatButtonModule
     ]
 })
 export class SharedModule { }

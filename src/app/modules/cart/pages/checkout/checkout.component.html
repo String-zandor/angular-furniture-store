@@ -19,7 +19,7 @@
 
               <mat-divider></mat-divider>
 
-              <input type="text" formControlName="contact" placeholder="Contact number">
+              <input type="number" maxlength="11" formControlName="contact" placeholder="Contact number">
               <span *ngIf="contact.invalid" class="error-message">Contact number is required.</span>
 
               <div class="shipping-address">

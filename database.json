@@ -538,9 +538,10 @@
         "price": 20500,
         "postingDate": "\"2023-01-26T13:43:57.019Z\""
       },
-      "qty": 10,
+      "qty": 1,
       "userId": 3,
-      "id": 8
+      "id": 8,
+      "checkout": true
     },
     {
       "product": {
@@ -560,7 +561,8 @@
       },
       "qty": 3,
       "userId": 3,
-      "id": 9
+      "id": 9,
+      "checkout": true
     },
     {
       "product": {
@@ -584,7 +586,8 @@
       },
       "qty": 1,
       "userId": 3,
-      "id": 10
+      "id": 10,
+      "checkout": true
     },
     {
       "product": {
@@ -758,6 +761,97 @@
       "userId": 6,
       "id": 19,
       "checkout": true
+    },
+    {
+      "product": {
+        "id": 15,
+        "srcUrl": [
+          "assets/products/CHAIRS/6.1.png",
+          "assets/products/CHAIRS/6.png"
+        ],
+        "name": "Mid Century Sofa",
+        "room": "Living",
+        "category": "Chairs",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 86500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 20,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 13,
+        "srcUrl": [
+          "assets/products/CHAIRS/4.1.png",
+          "assets/products/CHAIRS/4.png"
+        ],
+        "name": "Summer Corn Chair",
+        "room": "Living",
+        "category": "Chairs",
+        "color": "Yellow",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 80500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 21,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 3,
+        "srcUrl": [
+          "assets/products/TABLES/3.1.png",
+          "assets/products/TABLES/3.png"
+        ],
+        "name": "Black Metal Accent Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Best"
+        },
+        "price": 23000,
+        "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 22,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": [
+          "assets/products/TABLES/2.1.png",
+          "assets/products/TABLES/2.png"
+        ],
+        "name": "Nested Coffee Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 10500,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 23
     }
   ],
   "users": [
@@ -2577,6 +2671,206 @@
         "address": "123123"
       },
       "id": 26
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 137500,
+      "deliveryfee": 100,
+      "total": 137600,
+      "orderDate": "2023-02-02T05:01:57.104Z",
+      "cart": [
+        {
+          "product": {
+            "id": 7,
+            "srcUrl": [
+              "assets/products/TABLES/7.1.png",
+              "assets/products/TABLES/7.png"
+            ],
+            "name": "Mild Steel Dining Table",
+            "category": "Tables",
+            "room": "Dining",
+            "color": "Black",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 20500,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 8
+        },
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/TABLES/4.1.png",
+              "assets/products/TABLES/4.png"
+            ],
+            "name": "Brass Finish Coffee Table",
+            "room": "Living",
+            "category": "Tables",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 3,
+          "userId": 3,
+          "id": 9
+        },
+        {
+          "product": {
+            "id": 14,
+            "srcUrl": [
+              "assets/products/CHAIRS/5.1.png",
+              "assets/products/CHAIRS/5.png"
+            ],
+            "name": "Avery Sleeper Sofa",
+            "room": "Living",
+            "category": "Chairs",
+            "color": "White",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 64500,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 10
+        }
+      ],
+      "shipping": {
+        "name": "Mark Christian Manzano",
+        "phone": 441242143124,
+        "address": 123214214124214130
+      },
+      "id": 27
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 173000,
+      "deliveryfee": 100,
+      "total": 173100,
+      "orderDate": "2023-02-02T05:03:41.278Z",
+      "cart": [
+        {
+          "product": {
+            "id": 15,
+            "srcUrl": [
+              "assets/products/CHAIRS/6.1.png",
+              "assets/products/CHAIRS/6.png"
+            ],
+            "name": "Mid Century Sofa",
+            "room": "Living",
+            "category": "Chairs",
+            "color": "Black",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 86500,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 2,
+          "userId": 3,
+          "id": 20
+        }
+      ],
+      "shipping": {
+        "name": "Mark Christian Manzano",
+        "phone": 9205007676,
+        "address": "China"
+      },
+      "id": 28
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 80500,
+      "deliveryfee": 100,
+      "total": 80600,
+      "orderDate": "2023-02-02T05:09:58.039Z",
+      "cart": [
+        {
+          "product": {
+            "id": 13,
+            "srcUrl": [
+              "assets/products/CHAIRS/4.1.png",
+              "assets/products/CHAIRS/4.png"
+            ],
+            "name": "Summer Corn Chair",
+            "room": "Living",
+            "category": "Chairs",
+            "color": "Yellow",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 80500,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 21
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": 312321,
+        "address": "wdfwe"
+      },
+      "id": 29
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 23000,
+      "deliveryfee": 100,
+      "total": 23100,
+      "orderDate": "2023-02-02T05:12:25.518Z",
+      "cart": [
+        {
+          "product": {
+            "id": 3,
+            "srcUrl": [
+              "assets/products/TABLES/3.1.png",
+              "assets/products/TABLES/3.png"
+            ],
+            "name": "Black Metal Accent Table",
+            "category": "Tables",
+            "room": "Living",
+            "description": {
+              "desc": "Best"
+            },
+            "price": 23000,
+            "postingDate": "2015-07-01 12:00AM"
+          },
+          "qty": 1,
+          "userId": 3,
+          "id": 22
+        }
+      ],
+      "shipping": {
+        "name": "Harry Angel",
+        "phone": 2432,
+        "address": "asd"
+      },
+      "id": 30
     }
   ]
 }

@@ -1,80 +1,84 @@
-.checkout-container{
-   
+.checkout-container {
+
     margin: 100px 20px 0 20px;
     overflow-x: hidden;
 }
 
 .checkout-container h1 {
-	padding: 20px 0;
-	text-align: center;
-	
+    padding: 20px 0;
+    text-align: center;
+
     font-size: 40px;
     background-color: var(--bgcolor-light);
 }
 
 
-.checkout-body{
-    display: flex; 
+.checkout-body {
+    display: flex;
 }
 
 //-------------------- FORM ----------------------
 
-mat-stepper{
-    background-color: transparent !important; 
+mat-stepper {
+    background-color: transparent !important;
 }
 
 
-.form{
-    
+.form {
+
     display: inline-block;
-    max-width:100%;
+    max-width: 100%;
     padding: 10px;
     color: white;
     margin: 10px;
     box-shadow: rgba(100, 100, 100, 0.1) 2px 2px 2px 2px;
     border: solid var(--bgcolor-dark);
-    
+
 }
-.form .ri-pencil-line{
+
+.form .ri-pencil-line {
     border: none;
     background-color: transparent;
     font-size: 20px;
     color: white;
 }
 
-.form input{
+.form input {
     background-color: transparent;
     border: none;
     outline: none;
-    
-    
+
+
 }
-.form input:focus{
-     color: var(--bgcolor-light);
-    
-  }
-.form .name input{
+
+.form input:focus {
+    color: var(--bgcolor-light);
+
+}
+
+.form .name input {
     font-size: 30px;
     color: var(--bgcolor-light);
-    
+
 }
-.form button{
+
+.form button {
     margin-top: 10px;
-    
+
 }
 
 
 //-------------------- PAYMENT OPTION ----------------------
 
 
-.removeDesign{
+.removeDesign {
     background: transparent;
     border: none;
     outline: none;
     color: white
 }
 
-.error-message{
+.error-message {
     color: rgb(240, 105, 105);
 }
 
@@ -82,64 +86,78 @@ mat-stepper{
 //-------------------------- ORDER DETAILS ---------------------------
 
 .right-bar {
-    
-	width: 100%;
-    
-	flex: 10%;
-    margin-left: 50px;
-	padding: 20px;
-	height: 100%;
-	border-radius: 5px;
-    background-color: transparent;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.right-bar hr {
-	margin-bottom: 25px;
-}
-.right-bar p {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 30px;
-	font-size: 20px;
-}
-.right-bar div{
-	display: flex;
-	justify-content: center;
-}
-.right-bar  button{
-	background-color: var(--bgcolor-dark);
-	border: none;
-	color: #fff;
-	text-decoration: none;
-	
-	align-items: center;
-	text-align: center;
-	height: 40px;
-	line-height: 40px;
-	font-weight: 900;
-	width: 100%;
 
-	
+    width: 100%;
+
+    flex: 10%;
+    margin-left: 50px;
+    padding: 20px;
+    height: 100%;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+.right-bar hr {
+    margin-bottom: 25px;
+}
+
+.right-bar p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.right-bar div {
+    display: flex;
+    justify-content: center;
+}
+
+.right-bar button {
+    background-color: var(--bgcolor-dark);
+    border: none;
+    color: #fff;
+    text-decoration: none;
+
+    align-items: center;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 900;
+    width: 100%;
+
+
+}
+
 .right-bar button:hover {
-	background-color: rgb(101, 119, 94);
+    background-color: rgb(101, 119, 94);
 }
 
 // MEDIA QUERIES
 
 @media only screen and (max-width: 700px) {
-    .checkout-body{
-        display: flex ;
+    .checkout-body {
+        display: flex;
         flex-direction: column;
         justify-content: left;
 
     }
-    mat-stepper{
+
+    mat-stepper {
         margin-left: 0;
     }
-    .right-bar{
+
+    .right-bar {
         border: solid var(--bgcolor-light);
         margin-top: 20px;
         margin-left: 0;
     }
-  }
+}
+
+//to hide up and down arrow on number input field
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

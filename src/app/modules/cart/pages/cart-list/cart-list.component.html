@@ -13,11 +13,11 @@
 
                 <div class = "right-bar">
                     
-                    <p><span>Subtotal</span> <span>{{subTotal}}</span></p>
+                    <p><span>Subtotal</span> <span>{{subTotal | currency: 'PHP'}}</span></p>
                     <hr>
                     <p><span>Discount</span> <span>₱0</span></p>
                     <hr>
-                    <p><span>Total</span> <span>{{subTotal}}</span></p>
+                    <p><span>Total</span> <span>{{subTotal | currency: 'PHP'}}</span></p>
                     <div><button (click)="goToCheckout()" [disabled]="subTotal === 0">Checkout</button></div>
                     
                 </div>
