@@ -1,78 +1,125 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <h3>Register</h3>
 
-    <div class="try">
-        <h5>Do you have an account?</h5><a routerLink="/profile/login">
-            <h5> Login</h5>
-        </a>
+<div class = "register-container">
+    <div class = "register-heading">
+        <h1>Create an account</h1>
+        <h3>Enter your information below to proceed. If you already have an account, 
+            please log in instead.</h3>
+    
     </div>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Username</mat-label>
-        <input class="box" id="username" type="text" formControlName="username" matInput />
+    <div class = "form">
+        
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+        
+        
+            <table class="name" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input class="box" id="username" type="text" formControlName="username" matInput />
+                            <!-- displays whenever username is invalid (no input) -->
+                        </mat-form-field>
+                        
+                        <div class = "mat-error" *ngIf="username.invalid && (username.dirty || username.touched)">
+                            <mat-error *ngIf="username.errors?.['required']">
+                                Username is required.
+                            </mat-error>
+                        </div>
+        
+                    </td>
+    
+                    <td>
+                        <mat-form-field appearance="outline" hideRequiredMarker="">
+                            <mat-label>Password</mat-label>
+                            <input class="box" id="password" type="password" formControlName="password" matInput />
+                        </mat-form-field>
+        
+                        <!-- displays whenever password is invalid (no input) -->
+                        <div class = "mat-error" *ngIf="password.invalid && (password.dirty || password.touched)">
+                            <mat-error *ngIf="password.errors?.['required']">
+                                Password is required.
+                            </mat-error >
+                        </div>
+        
+                   </td> 
+                </tr>
+    
+                <tr>
+                    <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                        <mat-label>First Name</mat-label>
+                        <input id="firstName" type="text" formControlName="firstName" matInput />
+                    </mat-form-field>
+                    <div class = "mat-error" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                        <mat-error *ngIf="firstName.errors?.['required']">
+                            First name is required.
+                        </mat-error>
+                    </div>
+                </td>
+                <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                        <mat-label>Last Name</mat-label>
+                        <input id="lastName" type="text" formControlName="lastName" matInput/>
+                    </mat-form-field>
+                    <div class = "mat-error" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                        <mat-error *ngIf="lastName.errors?.['required']">
+                            Last name is required.
+                        </mat-error>
+                    </div>
+                </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" hideRequiredMarker="">
+                            <mat-label>E-mail Address</mat-label>
+                            <input id="email" type="text" formControlName="email" matInput/>
+                        </mat-form-field>
+                
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <div *ngIf="email.errors?.['pattern']">
+                                Enter a valid email address.
+                            </div>
+                        </div>
+                    </td>
+    
+                    <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                        <mat-label>Phone Number <i class="ri-phone-fill"></i></mat-label>
+                        <input id="phone" type="text" formControlName="phone" matInput/>
+                    </mat-form-field>
+                    </td>
+    
+                </tr>
+                <tr>
+                    <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                        <mat-label>Birthdate</mat-label>
+                        <input id="birthDate" type="date" formControlName="birthDate" matInput />
+                    </mat-form-field></td>
+    
+                    <td><mat-form-field appearance="outline" hideRequiredMarker="">
+                        <mat-label>Address</mat-label>
+                        <textarea id="address" type="text" formControlName="address" matInput ></textarea>
+                    </mat-form-field></td>
+                </tr>
+    
+                </table>
+    
+                <div class = "btn">
+                    <button type="button" (click)="register()" >Create an account</button>
 
-    </mat-form-field>
-
-    <!-- displays whenever username is invalid (no input) -->
-    <div *ngIf="username.invalid && (username.dirty || username.touched)">
-        <div *ngIf="username.errors?.['required']">
-            Username is required.
-        </div>
-    </div>
-
-    <mat-form-field appearance="outline" hideRequiredMarker="">
-        <mat-label>Password</mat-label>
-        <input class="box" id="password" type="password" formControlName="password" matInput />
-
-    </mat-form-field>
-
-    <!-- displays whenever password is invalid (no input) -->
-    <div *ngIf="password.invalid && (password.dirty || password.touched)">
-        <div *ngIf="password.errors?.['required']">
-            Password is required.
-        </div>
-    </div>
-
-    <table class="name" cellspacing="0">
-        <td><mat-form-field appearance="outline" hideRequiredMarker="">
-                <mat-label>First Name</mat-label>
-                <input id="firstName" type="text" formControlName="firstName" matInput />
-            </mat-form-field>
-            <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                <div *ngIf="firstName.errors?.['required']">
-                    First name is required.
                 </div>
-            </div>
-        </td>
-        <td><mat-form-field appearance="outline" hideRequiredMarker="">
-                <mat-label>Last Name</mat-label>
-                <input id="lastName" type="text" formControlName="lastName" matInput />
-            </mat-form-field>
-            <mat-error *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
-                <div *ngIf="lastName.errors?.['required']">
-                    Last name is required.
+
+                <div class="log-in">
+                    <h4>Already have an account?</h4><a routerLink="/profile/login"><h5> Login</h5></a>
                 </div>
-            </mat-error>
-        </td>
-    </table>
+    
+        </form>
 
-    <table class="phone-bday" cellspacing="0">
 
-        <mat-form-field appearance="outline" hideRequiredMarker="">
-            <mat-label>E-mail Address</mat-label>
-            <input id="email" type="text" formControlName="email" matInput />
-        </mat-form-field>
-
-        <div *ngIf="email.invalid && (email.dirty || email.touched)">
-            <div *ngIf="email.errors?.['pattern']">
-                Enter a valid email address.
-            </div>
-        </div>
-
-    </table>
-
-    <div>
-        <button type="submit" mat-raised-button color="primary">Register</button>
+        
     </div>
+    
+    
 
-</form>
+</div>
+
+    

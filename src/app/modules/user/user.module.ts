@@ -21,6 +21,7 @@ import { SharedModule } from "../../shared/shared.module";
 
 
 
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,7 @@ import { SharedModule } from "../../shared/shared.module";
         OrderModule, MatDialogModule,
         MatFormFieldModule,
         MatIconModule,
-        SharedModule
+        SharedModule, MatTabsModule
     ]
 })
 export class UserModule { }
