@@ -46,7 +46,7 @@ export class AdminProductListComponent implements OnInit {
 
   edit(id: number) {
     this.router.navigate([`edit/${id}`], { relativeTo: this.route });
-    
+
 
   }
 
@@ -54,9 +54,13 @@ export class AdminProductListComponent implements OnInit {
     this.productSvc.deleteProduct(id).pipe(
       switchMap(() => this.displaySvc.displayAllProducts()),
       tap(products => this.displaySvc.updateDisplay(products))
-    ).subscribe();
-
-    this.snackBar.open('Product deleted.', '', { duration: 1000,
+    ).subscribe(products => {
+      if (products) {
+        this.snackBar.open('Product deleted.', '', {
+          duration: 1000, verticalPosition: 'top',
+          horizontalPosition: 'right'
+        });
+      }
     });
   }
 

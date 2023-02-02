@@ -166,7 +166,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     this.orderSvc.create(order).subscribe(order => {
       if (order) {
         this.orderPlaced = true;
-        this.snackBar.open('Order placed.', '', { duration: 1000 });
+        this.snackBar.open('Order placed.', '', { duration: 1000, verticalPosition: 'top',
+        horizontalPosition: 'right'});
       }
     });
 

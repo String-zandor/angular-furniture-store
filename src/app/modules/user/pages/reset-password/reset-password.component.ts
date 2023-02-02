@@ -1,7 +1,8 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserCred } from '../../models/user';
+import { map, switchMap } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 
 
@@ -11,8 +12,14 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private auth:AuthService, private router: Router){}
-  id!:number
+  constructor(
+    private route: ActivatedRoute,
+    private auth: AuthService,
+    private router: Router,
+    private snackBar: MatSnackBar) {
+
+  }
+  id!: number
   ngOnInit(): void {
     this.id = +this.route.snapshot.queryParams['id']
 
@@ -28,52 +35,50 @@ export class ResetPasswordComponent implements OnInit {
     });
   }
 
-
   resetPasswordForm = new FormGroup({
-    password: new FormControl('',[Validators.required, Validators.minLength(6)]),
-    confirmPassword: new FormControl('',[Validators.required] ),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    confirmPassword: new FormControl('', [Validators.required]),
   })
 
-
-  
-
-  getErrorMessagePass(){
-    if(this.resetPasswordForm.get('password')!.errors?.['required']){
+  getErrorMessagePass() {
+    if (this.resetPasswordForm.get('password')!.errors?.['required']) {
       return 'Cannot be empty'
-    }else if(this.resetPasswordForm.get('password')!.errors){
+    } else if (this.resetPasswordForm.get('password')!.errors) {
       return 'Password must be at least 6 characters long'
     }
     return ''
   }
 
-  getErrorMessageVerPass(){
-    if(this.resetPasswordForm.get('confirmPassword')!.errors?.['required']){
+  getErrorMessageVerPass() {
+    if (this.resetPasswordForm.get('confirmPassword')!.errors?.['required']) {
       return 'Cannot be empty'
-    }else if(this.resetPasswordForm.get('confirmPassword')!.errors?.['notMatched']){
+    } else if (this.resetPasswordForm.get('confirmPassword')!.errors?.['notMatched']) {
       return 'Password did not match'
     }
     return ''
   }
 
-  showPassword(){
+  showPassword() {
     console.log('showPassword')
   }
-  onSubmit(){
-    this.auth.getUserCred(this.id).subscribe(cred =>{
-      let userC:UserCred = {
-        id : cred.id,
-        username: cred.username,
-        password: this.resetPasswordForm.value.password as string,
-        active : cred.active,
-        role: cred.role
-      }
-
-      this.auth.updateUserCred(userC).subscribe()
-      alert('Password updated successfully')
+  
+  onSubmit() {
+    this.auth.getUserCred(this.id).pipe(
+      map(cred => {
+        cred.password = this.resetPasswordForm.value.password as string;
+        return cred;
+      }),
+      switchMap(cred => this.auth.updateUserCred(cred))
+    ).subscribe(() => {
+      this.snackBar.open('Password successfully changed.', '', {
+        duration: 1000, verticalPosition: 'top',
+        horizontalPosition: 'right'
+      });
+      this.auth.afterResetPass();
       this.router.navigate(['profile/login'])
     }
-      
+
     )
   }
-  
+
 }

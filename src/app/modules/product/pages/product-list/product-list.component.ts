@@ -81,7 +81,6 @@ export class ProductListComponent {
           this.snackBar.open('Added to cart successfully', '', { duration: 1000, 
             verticalPosition: 'top',
             horizontalPosition: 'right' }
-          
           );
         }
       })

@@ -3,7 +3,7 @@
 <div class = "admin-container">
     <strong><h1>TOP SELLING ITEMS</h1></strong>
     <div class = "admin-body">
-        <div *ngFor="let item of orderItemsTop5">
+        <div *ngFor="let item of topFive">
             <app-admin-product-item [productItem]="item"></app-admin-product-item>
         </div>
     </div>

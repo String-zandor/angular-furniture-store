@@ -52,8 +52,8 @@ export class LoginComponent implements OnInit, OnDestroy {
         }
       })
     ).subscribe(url => {
-      if (url) { 
-        this.router.navigateByUrl(url); 
+      if (url) {
+        this.router.navigateByUrl(url);
       }
     });
   }
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.unsuccessful = true;
           this.loginForm.reset();
         } else {
-          this.snackBar.open('You are logged in.', '', { duration: 1000 });
+          this.notifyUser();
         }
       });
     } else {
@@ -80,10 +80,17 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.unsuccessful = true;
           this.loginForm.reset();
         } else {
-          this.snackBar.open('You are logged in.', '', { duration: 1000 });
+          this.notifyUser();
         }
       });
     }
+  }
+
+  notifyUser(): void {
+    this.snackBar.open('You are logged in.', '', {
+      duration: 1000, verticalPosition: 'top',
+      horizontalPosition: 'right'
+    });
   }
 
   get username(): FormControl {

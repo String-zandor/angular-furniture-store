@@ -1,8 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription, switchMap, tap } from 'rxjs';
+import { of, Subscription, switchMap } from 'rxjs';
 import { CartItem } from 'src/app/modules/cart/models/cart-item';
 import { CartService } from 'src/app/modules/cart/services/cart.service';
 import { User } from 'src/app/modules/user/models/user';
@@ -29,6 +30,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     private productSvc: ProductService,
     private cartSvc: CartService,
     private auth: AuthService,
+    private snackBar: MatSnackBar,
     private location: Location) {
 
   }
@@ -54,7 +56,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   increment(): void {
     if (this.currentVal < 1) {
       this.currentVal = 0;
-    } 
+    }
     this.qtyCtrl.setValue(this.currentVal + 1);
   }
 
@@ -65,9 +67,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   addToCart(): void {
+    console.log('addToCart')
     if (this.product && this.user) {
-      const cartItem: CartItem = { product: this.product, qty: this.currentVal};
-
+      const cartItem: CartItem = { product: this.product, qty: this.currentVal };
+      console.log('inside if')
       this.cartSvc.getCartItemOfProduct(cartItem.product.id).pipe(
         switchMap(item => {
           if (item) {
@@ -77,7 +80,16 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
             return this.cartSvc.create(cartItem);
           }
         }),
-      ).subscribe(() => this.cartSvc.getCartItems().subscribe());
+        switchMap(item => (item) ? this.cartSvc.getCartItems() : of(null))
+      ).subscribe(items => {
+        if (items) {
+          this.snackBar.open('Added to cart sucessfully.', '', {
+            duration: 1000, verticalPosition: 'top',
+            horizontalPosition: 'right'
+          });
+        }
+      });
+
     } else {
       this.router.navigate(['/profile/login']);
     }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ResetPwdGuard } from './core/guards/reset-pwd.guard';
 import { UserAuthGuard } from './core/guards/user-auth.guard';
 import { SearchResultComponent } from './modules/product/pages/search-result/search-result.component';
 import { ForgotPasswordComponent } from './modules/user/pages/forgot-password/forgot-password.component';
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'reset-password', canActivate: [ResetPwdGuard], component: ResetPasswordComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

@@ -109,7 +109,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
           const key = (this.isAdmin) ? 'CURRENT_ADMIN' : 'CURRENT_USER';
           localStorage.setItem(key, JSON.stringify(user));
           this.profileForm.disable();
-          this.snackBar.open('Changes saved.', '', { duration: 1000 });
+          this.snackBar.open('Changes saved.', '', {
+            duration: 1000, verticalPosition: 'top',
+            horizontalPosition: 'right'
+          });
         }
       })
     }

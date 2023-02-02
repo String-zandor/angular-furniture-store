@@ -20,6 +20,9 @@ export class AuthService {
   admin$ = this.adminSubject.asObservable();
   isLoggedAsAdmin$: Observable<boolean> = of(false);
 
+  private resetSubject = new BehaviorSubject<boolean>(false);
+  reset$: Observable<boolean> = this.resetSubject.asObservable();
+
   constructor(private userSvc: UserService, private http: HttpClient) {
     this.isLoggedIn$ = this.user$.pipe(
       map(user => !!user)
@@ -98,6 +101,7 @@ export class AuthService {
   }
 
   verifyOtp(user:User):Observable<OneTimePassword|undefined>{
+    this.resetSubject.next(true);
     return this.http.get<OneTimePassword>(`${this.serverUrl}/otp/${user.id}`)
   }
 
@@ -127,4 +131,9 @@ export class AuthService {
   getUserCred(key: number): Observable<UserCred> {
     return this.http.get<UserCred>(`${this.serverUrl}/auth/${key}`);
   }
+
+  afterResetPass(): void {
+    this.resetSubject.next(false);
+  }
+
 }

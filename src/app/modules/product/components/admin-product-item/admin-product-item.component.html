@@ -1,11 +1,13 @@
 
 <div class = "product-item">
-    <h3><span>{{productItem!.productQty}}</span >Orders</h3>
-    <img src = "assets\products\BEDS\1.png">
+    <h3><span>{{productItem!.totalBuys}}</span >Orders</h3>
+        <div class="img-container">
+
+            <img src="{{url}}" *ngFor="let url of productItem?.product?.srcUrl" />
+        </div>
     
-    <li>Product ID: <span>{{productItem!.productId}}</span></li>
+    <li>Product ID: <span>{{productItem!.product?.id}}</span></li>
     <mat-divider></mat-divider>
-    <li>{{productItem!.productName}}</li>
-   
+    <li>{{productItem!.product?.name}}</li>
     
 </div>

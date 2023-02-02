@@ -515,7 +515,7 @@
         "price": 17500,
         "postingDate": "2019-01-01 12:00AM"
       },
-      "qty": 1,
+      "qty": 9,
       "userId": 3,
       "id": 9
     },
@@ -697,6 +697,27 @@
       "userId": 2,
       "id": 18,
       "checkout": true
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": [
+          "assets/products/TABLES/2.1.png",
+          "assets/products/TABLES/2.png"
+        ],
+        "name": "Nested Coffee Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 10500,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 1,
+      "userId": 2,
+      "id": 19,
+      "checkout": true
     }
   ],
   "users": [
@@ -714,7 +735,7 @@
       "username": "johnnyfav",
       "firstName": "Johnny",
       "lastName": "Favorite",
-      "email": "angelheart@gmail.com",
+      "email": "ginike5939@brandoza.com",
       "phone": "09666666666",
       "birthDate": "1943-12-25T00:00:00.000Z",
       "address": "Earth"
@@ -742,7 +763,7 @@
     {
       "id": 2,
       "username": "johnnyfav",
-      "password": "1234",
+      "password": "123456",
       "active": true,
       "role": "USER"
     },
@@ -752,6 +773,12 @@
       "password": "1234",
       "active": true,
       "role": "USER"
+    }
+  ],
+  "otp": [
+    {
+      "id": 2,
+      "otp": "9481027"
     }
   ],
   "orders": [
@@ -870,6 +897,42 @@
         "address": "Earth"
       },
       "id": 2
+    },
+    {
+      "user": 2,
+      "status": "pending",
+      "subtotal": 10500,
+      "deliveryfee": 100,
+      "total": 10600,
+      "orderDate": "2023-02-02T09:31:51.453Z",
+      "cart": [
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/TABLES/2.1.png",
+              "assets/products/TABLES/2.png"
+            ],
+            "name": "Nested Coffee Table",
+            "category": "Tables",
+            "room": "Living",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+            },
+            "price": 10500,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 19
+        }
+      ],
+      "shipping": {
+        "name": "Johnny Favorite",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 3
     }
   ]
 }

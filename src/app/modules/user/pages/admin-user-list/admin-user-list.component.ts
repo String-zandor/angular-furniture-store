@@ -43,7 +43,9 @@ export class AdminUserListComponent implements OnInit {
     this.dialogSvc.confirm(data).subscribe(result => {
       if(result){
         this.auth.isActive(id, { active: true }).subscribe();
-        this.snackBar.open('User activated sucessfully!','',{duration: 2000})
+        this.snackBar.open('User activated sucessfully!','',{duration: 2000 , 
+          verticalPosition: 'top',
+          horizontalPosition: 'right'})
         this.customerList()
       }
     })
@@ -59,7 +61,9 @@ export class AdminUserListComponent implements OnInit {
     this.dialogSvc.confirm(data).subscribe(result => {
       if(result){
         this.auth.isActive(id, { active: false }).subscribe();
-        this.snackBar.open('User deactivated sucessfully!','',{duration: 2000})
+        this.snackBar.open('User deactivated sucessfully!','',{duration: 2000, 
+          verticalPosition: 'top',
+          horizontalPosition: 'right'})
         this.customerList()
       }
     })

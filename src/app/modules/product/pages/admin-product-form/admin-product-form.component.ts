@@ -152,7 +152,7 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
     this.dialogSvc.confirm(data).subscribe(confirmed => {
       if (confirmed) {
         this.saveProduct();
-        
+
       }
     });
   }
@@ -163,7 +163,9 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
       this.productSvc.editProduct(product).subscribe(product => {
         if (product) {
           this.router.navigate(['/admin/products']);
-          this.snackBar.open('Product updated.', '', { duration: 1000,
+          this.snackBar.open('Product updated.', '', {
+            duration: 1000, verticalPosition: 'top',
+            horizontalPosition: 'right'
           });
         }
       });
@@ -171,7 +173,10 @@ export class AdminProductFormComponent implements OnInit, OnDestroy {
       this.productSvc.addProduct(product).subscribe(product => {
         if (product) {
           this.router.navigate(['/admin/products']);
-          this.snackBar.open('Product added.', '', { duration: 1000,
+          this.snackBar.open('Product added.', '', {
+            duration: 1000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right'
           });
         }
       });

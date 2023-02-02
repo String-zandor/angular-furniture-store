@@ -1,6 +1,6 @@
+import { Product } from "./product";
+
 export interface OrderItem {
-    id?: number
-    productId:number
-    productName:string
-    productQty:number
+    product?: Product,
+    totalBuys: number
 }
