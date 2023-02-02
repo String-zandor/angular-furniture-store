@@ -58,7 +58,8 @@ export class CartListComponent implements OnInit, OnDestroy {
       ).subscribe(items => {
         if (items) {
           if (items) {
-            this.snackBar.open('Item removed from cart', '', { duration: 1000 });
+            this.snackBar.open('Item removed from cart', '', { duration: 1000,
+               });
           }
         }
       });

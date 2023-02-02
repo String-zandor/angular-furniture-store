@@ -27,7 +27,7 @@
                 <span *ngIf="address.invalid" class="error-message">Shipping address is required.</span>
               </div>
 
-              <app-prompt [message]="'message'" type="success"></app-prompt>
+              <!-- <app-prompt [message]="'message'" type="success"></app-prompt> -->
 
             </form>
           </div>
@@ -71,6 +71,9 @@
       <div>
         <button (click)="openDialog()" [disabled]="shippingForm.invalid || payment.invalid">Place Order</button>
       </div>
+
+      <app-prompt [message]="'message'" type="success"></app-prompt>
+
 
     </div>
 

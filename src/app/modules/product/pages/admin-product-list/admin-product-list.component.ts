@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription, switchMap, tap } from 'rxjs';
 import { Product } from '../../models/product';
@@ -19,7 +20,8 @@ export class AdminProductListComponent implements OnInit {
     private productSvc: ProductService,
     private displaySvc: DisplayService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar) {
 
   }
 
@@ -42,6 +44,8 @@ export class AdminProductListComponent implements OnInit {
 
   edit(id: number) {
     this.router.navigate([`edit/${id}`], { relativeTo: this.route });
+    
+
   }
 
   deleteProduct(id: number) {
@@ -49,6 +53,9 @@ export class AdminProductListComponent implements OnInit {
       switchMap(() => this.displaySvc.displayAllProducts()),
       tap(products => this.displaySvc.updateDisplay(products))
     ).subscribe();
+
+    this.snackBar.open('Product deleted.', '', { duration: 1000,
+    });
   }
 
   addProduct() {

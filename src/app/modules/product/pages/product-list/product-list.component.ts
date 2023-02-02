@@ -78,7 +78,11 @@ export class ProductListComponent {
         })
       ).subscribe(items => {
         if (items) {
-          this.snackBar.open('Added to cart successfully', '', { duration: 1000 });
+          this.snackBar.open('Added to cart successfully', '', { duration: 1000, 
+            verticalPosition: 'top',
+            horizontalPosition: 'right' }
+          
+          );
         }
       })
     } else {

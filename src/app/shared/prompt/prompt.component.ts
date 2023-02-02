@@ -17,6 +17,8 @@ export class PromptComponent {
   openSnackBar(message: string, action: string, duration: number) {
     this.snackBar.open(message, action, {
       duration: duration,
+      
+      panelClass: ['mat-snack-bar-container']
     });
   }
 }

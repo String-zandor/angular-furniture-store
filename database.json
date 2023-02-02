@@ -1,116 +1,25 @@
 {
   "products": [
     {
-      "id": 1,
-      "srcUrl": [
-        "assets/products/TABLES/1.1.png",
-        "assets/products/TABLES/1.png"
-      ],
-      "name": "Glass Oval Cocktail Table",
-      "category": "Tables",
-      "room": "Living",
-      "color": "Vintage White",
-      "description": {
-        "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
-        "dimensions": "6ft x 6ft",
-        "material": "memory foam",
-        "weight": "10kg"
-      },
-      "price": 12000,
-      "postingDate": "2023-01-28T15:24:41.683Z"
-    },
-    {
-      "id": 2,
-      "srcUrl": [
-        "assets/products/TABLES/2.1.png",
-        "assets/products/TABLES/2.png"
-      ],
-      "name": "Nested Coffee Table",
-      "category": "Tables",
-      "room": "Living",
-      "description": {
-        "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
-      },
-      "price": 10500,
-      "postingDate": "2015-08-01 01:00PM"
-    },
-    {
-      "id": 3,
-      "srcUrl": [
-        "assets/products/TABLES/3.1.png",
-        "assets/products/TABLES/3.png"
-      ],
-      "name": "Black Metal Accent Table",
-      "category": "Tables",
-      "room": "Living",
-      "description": {
-        "desc": "Best"
-      },
-      "price": 23000,
-      "postingDate": "2015-07-01 12:00AM"
-    },
-    {
-      "id": 4,
-      "srcUrl": [
-        "assets/products/TABLES/4.1.png",
-        "assets/products/TABLES/4.png"
-      ],
-      "name": "Brass Finish Coffee Table",
-      "room": "Living",
-      "category": "Tables",
-      "description": {
-        "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
-      },
-      "price": 17500,
-      "postingDate": "2019-01-01 12:00AM"
-    },
-    {
-      "id": 5,
-      "srcUrl": [
-        "assets/products/TABLES/5.1.png",
-        "assets/products/TABLES/5.png"
-      ],
-      "name": "Blackened Side Table",
-      "room": "Living",
-      "category": "Tables",
-      "color": "Black",
-      "description": {
-        "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
-        "dimensions": "6ft x 6ft",
-        "material": "Cotton",
-        "weight": "8kg"
-      },
-      "price": 15500,
-      "postingDate": "\"2023-01-26T13:43:57.019Z\""
-    },
-    {
       "id": 6,
-      "srcUrl": [
-        "assets/products/TABLES/6.1.png",
-        "assets/products/TABLES/6.png"
-      ],
       "name": "Glass Dining Table",
-      "category": "Tables",
       "room": "Dining",
+      "category": "Tables",
       "color": "Black",
       "description": {
         "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
-        "dimensions": "6ft x 6ft",
+        "dimensions": "6ft x 7ft",
         "material": "Glass",
         "weight": "8kg"
       },
       "price": 25500,
-      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      "postingDate": "2023-02-02T08:23:35.723Z"
     },
     {
       "id": 7,
-      "srcUrl": [
-        "assets/products/TABLES/7.1.png",
-        "assets/products/TABLES/7.png"
-      ],
       "name": "Mild Steel Dining Table",
-      "category": "Tables",
       "room": "Dining",
+      "category": "Tables",
       "color": "Black",
       "description": {
         "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
@@ -118,8 +27,8 @@
         "material": "Cotton",
         "weight": "8kg"
       },
-      "price": 20500,
-      "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      "price": 22500,
+      "postingDate": "2023-02-02T08:23:50.018Z"
     },
     {
       "id": 8,
@@ -348,6 +257,51 @@
       },
       "price": 158000,
       "postingDate": "\"2023-01-26T13:43:57.019Z\""
+    },
+    {
+      "id": 20,
+      "name": "Baroque Chairs",
+      "room": "Dining",
+      "category": "Dining",
+      "color": "White",
+      "description": {
+        "desc": "Good",
+        "dimensions": "12x12x12x12",
+        "material": "Wood",
+        "weight": "15kg"
+      },
+      "price": 10000,
+      "postingDate": "2023-02-02T08:11:45.321Z"
+    },
+    {
+      "id": 21,
+      "name": "Baroque Table",
+      "room": "Living",
+      "category": "Dining",
+      "color": "White",
+      "description": {
+        "desc": "Good",
+        "dimensions": "12x12x12x13",
+        "material": "Memory foam",
+        "weight": "10kg"
+      },
+      "price": 10000,
+      "postingDate": "2023-02-02T08:15:55.000Z"
+    },
+    {
+      "id": 22,
+      "name": "Harvey Angel",
+      "room": "Dining",
+      "category": "Bedspace",
+      "color": "White",
+      "description": {
+        "desc": "Good",
+        "dimensions": "12x12",
+        "material": "Wood",
+        "weight": "12kg"
+      },
+      "price": 12000,
+      "postingDate": "2023-02-02T08:24:21.438Z"
     }
   ],
   "cart": [
@@ -520,30 +474,6 @@
     },
     {
       "product": {
-        "id": 7,
-        "srcUrl": [
-          "assets/products/TABLES/7.1.png",
-          "assets/products/TABLES/7.png"
-        ],
-        "name": "Mild Steel Dining Table",
-        "category": "Tables",
-        "room": "Dining",
-        "color": "Black",
-        "description": {
-          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
-          "dimensions": "6ft x 6ft",
-          "material": "Cotton",
-          "weight": "8kg"
-        },
-        "price": 20500,
-        "postingDate": "\"2023-01-26T13:43:57.019Z\""
-      },
-      "qty": 10,
-      "userId": 3,
-      "id": 8
-    },
-    {
-      "product": {
         "id": 4,
         "srcUrl": [
           "assets/products/TABLES/4.1.png",
@@ -558,7 +488,7 @@
         "price": 17500,
         "postingDate": "2019-01-01 12:00AM"
       },
-      "qty": 3,
+      "qty": 14,
       "userId": 3,
       "id": 9
     },
@@ -652,91 +582,27 @@
     },
     {
       "product": {
-        "id": 4,
+        "id": 1,
         "srcUrl": [
-          "assets/products/TABLES/4.1.png",
-          "assets/products/TABLES/4.png"
+          "assets/products/TABLES/1.1.png",
+          "assets/products/TABLES/1.png"
         ],
-        "name": "Brass Finish Coffee Table",
-        "room": "Living",
+        "name": "Glass Oval Cocktail Table",
         "category": "Tables",
-        "description": {
-          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
-        },
-        "price": 17500,
-        "postingDate": "2019-01-01 12:00AM"
-      },
-      "qty": 2,
-      "userId": 6,
-      "id": 15,
-      "checkout": true
-    },
-    {
-      "product": {
-        "id": 17,
-        "srcUrl": [
-          "assets/products/BEDS/1.1.png",
-          "assets/products/BEDS/1.png"
-        ],
-        "name": "European Iron Bed",
-        "room": "Bedspace",
-        "category": "Beds",
-        "color": "Black",
+        "room": "Living",
+        "color": "Vintage White",
         "description": {
           "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
           "dimensions": "6ft x 6ft",
-          "material": "Cotton",
-          "weight": "8kg"
+          "material": "memory foam",
+          "weight": "10kg"
         },
-        "price": 110600,
-        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+        "price": 12000,
+        "postingDate": "2023-01-28T15:24:41.683Z"
       },
-      "qty": 1,
-      "userId": 6,
-      "id": 16,
-      "checkout": true
-    },
-    {
-      "product": {
-        "id": 4,
-        "srcUrl": [
-          "assets/products/TABLES/4.1.png",
-          "assets/products/TABLES/4.png"
-        ],
-        "name": "Brass Finish Coffee Table",
-        "room": "Living",
-        "category": "Tables",
-        "description": {
-          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
-        },
-        "price": 17500,
-        "postingDate": "2019-01-01 12:00AM"
-      },
-      "qty": 1,
-      "userId": 6,
-      "id": 17,
-      "checkout": true
-    },
-    {
-      "product": {
-        "id": 2,
-        "srcUrl": [
-          "assets/products/TABLES/2.1.png",
-          "assets/products/TABLES/2.png"
-        ],
-        "name": "Nested Coffee Table",
-        "category": "Tables",
-        "room": "Living",
-        "description": {
-          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
-        },
-        "price": 10500,
-        "postingDate": "2015-08-01 01:00PM"
-      },
-      "qty": 1,
-      "userId": 6,
-      "id": 18,
-      "checkout": true
+      "qty": 3,
+      "userId": 3,
+      "id": 20
     },
     {
       "product": {
@@ -754,10 +620,221 @@
         "price": 23000,
         "postingDate": "2015-07-01 12:00AM"
       },
+      "qty": 3,
+      "userId": 3,
+      "id": 22
+    },
+    {
+      "product": {
+        "id": 6,
+        "srcUrl": [
+          "assets/products/TABLES/6.1.png",
+          "assets/products/TABLES/6.png"
+        ],
+        "name": "Glass Dining Table",
+        "category": "Tables",
+        "room": "Dining",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Glass",
+          "weight": "8kg"
+        },
+        "price": 25500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 23
+    },
+    {
+      "product": {
+        "id": 5,
+        "srcUrl": [
+          "assets/products/TABLES/5.1.png",
+          "assets/products/TABLES/5.png"
+        ],
+        "name": "Blackened Side Table",
+        "room": "Living",
+        "category": "Tables",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 15500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
       "qty": 1,
-      "userId": 6,
-      "id": 19,
-      "checkout": true
+      "userId": 3,
+      "id": 24
+    },
+    {
+      "product": {
+        "id": 8,
+        "srcUrl": [
+          "assets/products/TABLES/8.1.png",
+          "assets/products/TABLES/8.png"
+        ],
+        "name": "Solid Wood Nighstand",
+        "room": "Bedspace",
+        "category": "Tables",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 35500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 25
+    },
+    {
+      "product": {
+        "id": 9,
+        "srcUrl": [
+          "assets/products/TABLES/9.1.png",
+          "assets/products/TABLES/9.png"
+        ],
+        "name": "Simple End Table",
+        "room": "Bedspace",
+        "category": "Tables",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 23500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 26
+    },
+    {
+      "product": {
+        "id": 10,
+        "srcUrl": [
+          "assets/products/CHAIRS/1.1.png",
+          "assets/products/CHAIRS/1.png"
+        ],
+        "name": "Simple Chair",
+        "room": "Living",
+        "category": "Chairs",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 67500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 3,
+      "userId": 3,
+      "id": 27
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": [
+          "assets/products/TABLES/2.1.png",
+          "assets/products/TABLES/2.png"
+        ],
+        "name": "Nested Coffee Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 10500,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 3,
+      "userId": 3,
+      "id": 28
+    },
+    {
+      "product": {
+        "id": 7,
+        "srcUrl": [
+          "assets/products/TABLES/7.1.png",
+          "assets/products/TABLES/7.png"
+        ],
+        "name": "Mild Steel Dining Table",
+        "category": "Tables",
+        "room": "Dining",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 20500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 1,
+      "userId": 3,
+      "id": 29
+    },
+    {
+      "product": {
+        "id": 11,
+        "srcUrl": [
+          "assets/products/CHAIRS/2.1.png",
+          "assets/products/CHAIRS/2.png"
+        ],
+        "name": "Elegant Chair",
+        "room": "Living",
+        "category": "Chairs",
+        "color": "Yellow",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 55000,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 6,
+      "userId": 3,
+      "id": 30
+    },
+    {
+      "product": {
+        "id": 12,
+        "srcUrl": [
+          "assets/products/CHAIRS/3.1.png",
+          "assets/products/CHAIRS/3.png"
+        ],
+        "name": "Wingback Hostess Chair",
+        "category": "Chairs",
+        "room": "Living",
+        "color": "Black",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 102500,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 2,
+      "userId": 3,
+      "id": 31
     }
   ],
   "users": [
@@ -765,9 +842,12 @@
       "id": 1,
       "key": 1,
       "username": "administrator",
-      "firstName": "Juan",
-      "lastName": "Dela Cruz",
-      "email": "jdc@gmail.com"
+      "firstName": "Joan",
+      "lastName": "Pascual",
+      "email": "spascual@77global.biz",
+      "phone": "09275913796",
+      "birthDate": "2021-02-13T00:00:00.000Z",
+      "address": "The Orient Square Building, F. Ortigas Jr. Road, Ortigas Center, Pasig City, Metro Manila"
     },
     {
       "id": 2,
@@ -788,7 +868,7 @@
       "lastName": "Angel",
       "email": "angelheart@gmail.com",
       "phone": "",
-      "birthDate": "1970-01-01T00:00:00.000Z",
+      "birthDate": "1980-01-01T00:00:00.000Z",
       "address": ""
     }
   ],
@@ -804,7 +884,7 @@
       "id": 2,
       "username": "johnnyfav",
       "password": "1234",
-      "active": true,
+      "active": false,
       "role": "USER"
     },
     {
