@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { User } from '../models/user';
+import { Observable, of, switchMap } from 'rxjs';
+import { User, UserCred } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +28,17 @@ export class UserService {
     return this.http.put<User>(`${this.serverUrl}/users/${user.id}`, user);
   }
 
-  //New method
-  registerUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.serverUrl}/users`, user);
+  registerUser(user: User, userCred: UserCred): Observable<User | null> {
+    return this.http.post<UserCred>(`${this.serverUrl}/auth`, userCred).pipe(
+      switchMap(cred => {
+        if (cred.id) {
+          user.key = cred.id;
+          return this.http.post<User>(`${this.serverUrl}/users`, user)
+        } else {
+          return of(null);
+        }
+      })
+    );
   }
 
   

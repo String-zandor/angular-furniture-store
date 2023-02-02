@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../../models/user';
+import { Router } from '@angular/router';
+import { switchMap } from 'rxjs';
+import { User, UserCred } from '../../models/user';
+import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 
 
@@ -11,9 +13,8 @@ import { UserService } from '../../services/user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent implements OnInit {
 
-  hide=true;
   user?: User;
 
   registerForm: FormGroup = this.fb.group({
@@ -22,55 +23,54 @@ export class RegisterComponent implements OnInit{
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
     email: ['', Validators.pattern(/^[^\s@]+@[^\s@%]+\.[^\s@]+$/)],
-    phone: [''],
-    birthDate: [new Date()],
-    address: ['']
-  })
+  });
 
   constructor(private fb: FormBuilder,
-              private userSvc: UserService,
-              private router: Router,
-              private snackBar: MatSnackBar ){}
- 
+    private userSvc: UserService,
+    private auth: AuthService,
+    private router: Router,
+    private snackBar: MatSnackBar) { }
+
   ngOnInit(): void {
-    
+
   }
 
   onSubmit(): void {
-    const data = {
-      username: this.registerForm.get('username')?.value,
-      password: this.registerForm.get('password')?.value,
-      firstName: this.registerForm.get('firstName')?.value,
-      lastName: this.registerForm.get('lastName')?.value,
-      email: this.registerForm.get('email')?.value,
-      phone: this.registerForm.get('phone')?.value,
-      birthDate: this.registerForm.get('birthDate')?.value,
-      address: this.registerForm.get('address')?.value
+    
+    const userCred: UserCred = {
+      username: this.username.value,
+      password: this.password.value,
+      active: true,
+      role: 'USER'
+    };
+    
+    const user: User = {
+      key: 0,
+      username: this.username.value,
+      firstName: this.firstName.value,
+      lastName: this.lastName.value,
+      email: this.email.value,
+      phone: '',
+      birthDate: '',
+      address: ''
     }
-  }
 
-  register(): void {
-    if (this.user) {
-      this.user.firstName = this.firstName.value;
-      this.user.lastName = this.lastName.value;
-      this.user.email = this.email.value;
-      this.user.phone = this.phone.value;
-      this.user.birthDate = new Date(this.birthDate.value).toJSON();
-      this.user.address = this.address.value;
-      this.userSvc.registerUser(this.registerForm.value).subscribe({
-        next: (val: any) => {
-          this.snackBar.open('Account registered.', '', {
-            duration: 3000
-          });  
+    this.userSvc.registerUser(user, userCred).pipe(
+      switchMap(() => {
+        const data: { username: string, password: string } = {
+          username: userCred.username,
+          password: userCred.password
         }
+        return this.auth.login(data);
       })
-    }
+    ).subscribe(user => {
+      if (user) {
+        this.snackBar.open(`Welcome to Grey Space, ${user.firstName}!`, '', { duration: 3500 });
+        this.router.navigate(['/home']);
+      }
+    });
   }
 
-  cancel(): void {
-    this.registerForm.reset();
-    }
-  
   get username(): FormControl {
     return this.registerForm.get('username') as FormControl;
   }

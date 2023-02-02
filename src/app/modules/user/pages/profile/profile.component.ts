@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     username: ['', Validators.required],
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
-    email: ['', Validators.pattern(/^[^\s@]+@[^\s@%]+\.[^\s@]+$/)],
+    email: ['', [Validators.pattern(/^[^\s@]+@[^\s@%]+\.[^\s@]+$/), Validators.required]],
     phone: [''],
     birthDate: [new Date()],
     address: ['']
@@ -106,6 +106,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
       this.user.address = this.address.value;
       this.userSvc.update(this.user).subscribe(user => {
         if (user) {
+          const key = (this.isAdmin) ? 'CURRENT_ADMIN' : 'CURRENT_USER';
+          localStorage.setItem(key, JSON.stringify(user));
           this.profileForm.disable();
           this.snackBar.open('Changes saved.', '', { duration: 1000 });
         }

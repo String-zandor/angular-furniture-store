@@ -77,11 +77,14 @@
                 <mat-label>E-mail Address</mat-label>
                 <input id="email" type="text" formControlName="email" matInput>
             </mat-form-field>
-
-            <div *ngIf="email.invalid && (email.dirty || email.touched)">
-                <div *ngIf="email.errors?.['pattern']">
+            <div class="mat-error" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <mat-error *ngIf="email.errors?.['pattern']">
                     Enter a valid email address.
-                </div>
+                </mat-error>
+                <mat-error *ngIf="email.errors?.['required']">
+                    Email address is required.
+                </mat-error>
+
             </div>
 
             <h3>Shipping Address</h3>

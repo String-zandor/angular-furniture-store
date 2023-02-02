@@ -549,6 +549,28 @@
       "phone": "",
       "birthDate": "1970-01-01T00:00:00.000Z",
       "address": ""
+    },
+    {
+      "key": 4,
+      "username": "zajoc",
+      "firstName": "Zandor",
+      "lastName": "Ajoc",
+      "email": "zajoc@77global.biz",
+      "phone": "",
+      "birthDate": "",
+      "address": "",
+      "id": 4
+    },
+    {
+      "key": 5,
+      "username": "ninasimone",
+      "firstName": "Nina",
+      "lastName": "Simone",
+      "email": "ns@gmail.com",
+      "phone": "09123456789",
+      "birthDate": "1955-11-22T00:00:00.000Z",
+      "address": "Earth",
+      "id": 5
     }
   ],
   "auth": [
@@ -570,8 +592,22 @@
       "id": 3,
       "username": "harryangel",
       "password": "1234",
-      "active": true,
+      "active": false,
       "role": "USER"
+    },
+    {
+      "username": "zajoc",
+      "password": "1234",
+      "active": true,
+      "role": "USER",
+      "id": 4
+    },
+    {
+      "username": "ninasimone",
+      "password": "1234",
+      "active": true,
+      "role": "USER",
+      "id": 5
     }
   ],
   "orders": [
