@@ -18,10 +18,10 @@ export class MailService {
   mailgun = new Mailgun(formData)
   mg = this.mailgun.client({
     username: 'api',
-    key: '3ab416fead4c50165535a63268ae596f-75cd784d-0170875c'
+    key: '9bca49cf01a4bd3bb5f8e4e1ec932014-75cd784d-38711068'
   })
 
-  email = "roycemontoya77@gmail.com"
+  
   userid!:number
 
   async sendOneTimePasswordMail(email:string){

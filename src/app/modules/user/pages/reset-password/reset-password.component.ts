@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-reset-password',
@@ -7,13 +7,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent {
-  resetPasswordForm: FormGroup;
-  constructor(private formBuilder: FormBuilder){
-    this.resetPasswordForm = this.formBuilder.group({
-      password:[''],
-      passwordConfirm:['']
-    })
+  constructor(){
   }
+  resetPasswordForm = new FormGroup({
+    password: new FormControl('')
+  })
   showPassword(){
     console.log('showPassword')
   }
