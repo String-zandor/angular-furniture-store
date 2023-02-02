@@ -107,4 +107,12 @@ export class AuthService {
     this.userSubject.next(null);
     this.adminSubject.next(null);
   }
+
+  updateUserCred(user: UserCred): Observable<UserCred> {
+    return this.http.put<UserCred>(`${this.serverUrl}/auth/${user.id}`, user);
+  }
+
+  getUserCred(key: number): Observable<UserCred> {
+    return this.http.get<UserCred>(`${this.serverUrl}/auth/${key}`);
+  }
 }

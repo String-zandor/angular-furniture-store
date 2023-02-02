@@ -392,6 +392,26 @@
       "userId": 3,
       "id": 2,
       "checkout": true
+    },
+    {
+      "product": {
+        "id": 3,
+        "srcUrl": [
+          "assets/products/TABLES/3.1.png",
+          "assets/products/TABLES/3.png"
+        ],
+        "name": "Black Metal Accent Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Best"
+        },
+        "price": 23000,
+        "postingDate": "2015-07-01 12:00AM"
+      },
+      "qty": 1,
+      "userId": 2,
+      "id": 3
     }
   ],
   "users": [
@@ -444,7 +464,7 @@
     {
       "id": 3,
       "username": "john",
-      "password": "1234",
+      "password": "123123",
       "active": true,
       "role": "USER"
     }
@@ -1740,7 +1760,7 @@
     },
     {
       "id": 3,
-      "otp": "4863610"
+      "otp": "33929810"
     }
   ]
 }
