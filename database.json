@@ -660,7 +660,7 @@
       "id": 3,
       "username": "harryangel",
       "password": "1234",
-      "active": false,
+      "active": true,
       "role": "USER"
     },
     {
