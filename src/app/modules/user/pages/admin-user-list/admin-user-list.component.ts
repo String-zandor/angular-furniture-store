@@ -1,10 +1,7 @@
-import { DIALOG_DATA } from '@angular/cdk/dialog';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, map, mergeMap, Observable, Subscription } from 'rxjs';
 import { UserService } from 'src/app/modules/user/services/user.service';
-import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 import { DialogData } from 'src/app/shared/models/dialog-data';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { AuthService } from '../../services/auth.service';

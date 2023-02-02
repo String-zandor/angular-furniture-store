@@ -41,26 +41,22 @@ export class SortComponent implements OnDestroy, OnInit{
     this.sortDescending('postingDate')
   }
   sortAscending(key : string){
-    console.log('inside sort ascending')
     this.subscription.push(this.productsToSort$!.subscribe((product:Product[]) =>{
 
       product.sort((a:Product,b:Product) => {
         return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? 1 : -1 ));
       })
       this.sort.emit(product)
-      console.log(product)
     }))
     
   }
 
   sortDescending(key: string){
-    console.log('inside sort desc')
     this.subscription.push(this.productsToSort$!.subscribe((product:Product[]) =>{
       product.sort((a:Product,b:Product) => {
         return ((a[key as keyof Product]  == b[key as keyof Product]) ? 0 : ((a[key as keyof Product]>    b[key as keyof Product]) ? -1 : 1 ));
       })
       this.sort.emit(product)
-      console.log(product)
     }))
   }
 
