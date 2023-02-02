@@ -33,7 +33,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmit(){
     console.log('sending email to uzer...')
-    // this.mailService.sendOneTimePasswordMail(this.forgotPasswordForm.value.email as string)
+    this.mailService.sendOneTimePasswordMail(this.forgotPasswordForm.value.email as string)
     this.timer=true
     this.sendOtpAgain=false
     this.showOtpUi = true
