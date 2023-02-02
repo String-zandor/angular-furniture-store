@@ -406,10 +406,10 @@
     {
       "id": 2,
       "key": 2,
-      "username": "johnnyfav",
+      "username": "john",
       "firstName": "Johnny",
       "lastName": "Favorite",
-      "email": "angelheartsteele@gmail.com",
+      "email": "vapepis795@ekcsoft.com",
       "phone": "09666666666",
       "birthDate": "1943-12-25T00:00:00.000Z",
       "address": "Earth"
@@ -1740,7 +1740,7 @@
     },
     {
       "id": 3,
-      "otp": "4863610"
+      "otp": "43710510"
     }
   ]
 }

@@ -25,26 +25,26 @@ export class MailService {
   userid!:number
 
   async sendOneTimePasswordMail(email:string){
-    // let user:UserCred 
+
     let emailPresent = await this.getEmailPresentResult(email)
 
     if(!emailPresent){
       console.log('email not present',emailPresent,this.userid)
       return
     }
-    console.log('emailpresent ',emailPresent,this.userid)
+    console.log('emailpresent ',emailPresent,this.userid,email)
     let otp = this.getOneTimePassword()
     
     this.mg.messages
     .create('sandbox2934a2c85ebf413688f4f41cb32e413c.mailgun.org', {
-      from: "Grey Space <admin@GreySpace>",
+      from: "Grey Space <admin@GreySpace.com>",
       to: [email],
       subject: "Grey Space - Password Reset OTP",
       html: "<h1>Verification Code</h1><br>"+
       "<p>Please use the verification code below to sign in.</p><br>"+` <h2> ${otp}</h2>`+"<p> If you didn’t request this, you can ignore this email.</p><br><p> Thanks,</p><p> Grey Space Team</p>"
     })
     .then(msg => {console.log(msg), this.saveOtpIntoDatabase(this.userid, otp)}) // logs response data
-    .catch(err => console.log(err));
+    .catch(err => (console.log(err.message), alert("'"+email+"' is not added as recepient")));
     
     console.log(this.mailgun)
   }

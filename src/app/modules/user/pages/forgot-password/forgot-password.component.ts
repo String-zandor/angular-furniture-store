@@ -78,7 +78,7 @@ export class ForgotPasswordComponent implements OnInit {
       tap (console.log),
       map(otp => this.otpForm.get('otp')?.value === otp.otp)
     ).subscribe(
-      
+      console.log
     )
     
   }
