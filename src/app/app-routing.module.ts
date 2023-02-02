@@ -5,7 +5,6 @@ import { UserAuthGuard } from './core/guards/user-auth.guard';
 import { SearchResultComponent } from './modules/product/pages/search-result/search-result.component';
 import { ForgotPasswordComponent } from './modules/user/pages/forgot-password/forgot-password.component';
 
-//New import
 import { RegisterComponent } from './modules/user/pages/register/register.component';
 import { ResetPasswordComponent } from './modules/user/pages/reset-password/reset-password.component';
 import { PagenotfoundComponent } from './shared/pages/pagenotfound/pagenotfound.component';

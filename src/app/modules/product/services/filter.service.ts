@@ -6,11 +6,6 @@ import { DisplayService } from './display.service';
   providedIn: 'root'
 })
 export class FilterService {
-  /***
-   * 
-   * TODO: for implementation
-   * 
-   */
   activeCateg: string[] = [];
 
   constructor(private display: DisplayService) { }
