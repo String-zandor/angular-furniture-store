@@ -10,8 +10,8 @@
         <br>
         <mat-form-field>
             <mat-label>Room</mat-label>
-            <input type="text" matInput [formControl]="room" [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete">
+            <input type="text" matInput [formControl]="room" [matAutocomplete]="autoRoom">
+            <mat-autocomplete #autoRoom="matAutocomplete">
                 <mat-option *ngFor="let room of roomOptions$ | async" [value]="room">
                     {{room}}
                 </mat-option>
@@ -23,8 +23,8 @@
         <br>
         <mat-form-field>
             <mat-label>Category</mat-label>
-            <input type="text" matInput [formControl]="category" [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete">
+            <input type="text" matInput [formControl]="category" [matAutocomplete]="autoCateg">
+            <mat-autocomplete #autoCateg="matAutocomplete">
                 <mat-option *ngFor="let category of categOptions$ | async" [value]="category">
                     {{category}}
                 </mat-option>

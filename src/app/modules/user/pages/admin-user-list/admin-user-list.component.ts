@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { BehaviorSubject, combineLatest, distinctUntilChanged, map, merge, mergeMap, Observable, of, Subscription, switchMap } from 'rxjs';
-import { User, UserCred } from 'src/app/modules/user/models/user';
+import { BehaviorSubject, map, mergeMap, Observable, Subscription } from 'rxjs';
 import { UserService } from 'src/app/modules/user/services/user.service';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 import { AuthService } from '../../services/auth.service';
