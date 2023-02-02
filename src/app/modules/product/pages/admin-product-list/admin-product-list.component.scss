@@ -1,5 +1,5 @@
 .admin-filter{
-    border: solid;
+    
     padding: 0;
     margin-top: 100px;
     display: flex;
@@ -12,13 +12,47 @@
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
+    gap: 15px;
   }
   
   app-product-item{
     position: relative;
     display: inline-block;
-    padding: 10px;
     
     
+  }
+
+  .add-product{
+    display: flex;
+    justify-content: right;
+    padding: 0px 100px 10px 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+  }
+
+  .add-product button{
+    background-color: var(--bgcolor-light);
+    
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 1rem;
+    border: none;
+    transition: transform .2s;
+    
+  }
+
+  .add-product button:hover{
+    background-color: rgb(113, 135, 113);
+    transform: scale(1.02);
+
+  }
+
+  .add-product .ri-add-fill{
+    font-size: 20px;
+
   }
   

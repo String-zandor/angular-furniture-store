@@ -4,16 +4,24 @@
         <div class="row">
             <ng-container *ngIf="product">
                 <div class="col">
+                    
                     <div class="img-container">
+                        <div class ="btn">
+                            <button type="button" (click)="executeAction('DELETE')" ><i class="ri-delete-bin-line"></i></button>
+                            <button type="button" (click)="executeAction('EDIT')" ><i class="ri-pencil-line"></i></button>
+                            
+                        </div>
                         <img src={{url}} *ngFor="let url of product.srcUrl" alt="picture">
                     </div>
                     <ul class="content">
                         <li>{{product.name}}</li>
+                        <mat-divider></mat-divider>
                         <li>₱{{product.price}}</li>
-                        <li> {{product.description.desc}}</li>
+                        <mat-divider></mat-divider>
                     </ul>
-                    <button type="button" (click)="executeAction('EDIT')" >Edit</button>
-                    <button type="button" (click)="executeAction('DELETE')" >Delete</button>
+                    
+                    
+                    
                 </div>
             </ng-container>
             
