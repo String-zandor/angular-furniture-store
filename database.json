@@ -655,6 +655,48 @@
       "userId": 2,
       "id": 16,
       "checkout": true
+    },
+    {
+      "product": {
+        "id": 4,
+        "srcUrl": [
+          "assets/products/TABLES/4.1.png",
+          "assets/products/TABLES/4.png"
+        ],
+        "name": "Brass Finish Coffee Table",
+        "room": "Living",
+        "category": "Tables",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 17500,
+        "postingDate": "2019-01-01 12:00AM"
+      },
+      "qty": 2,
+      "userId": 2,
+      "id": 17,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 2,
+        "srcUrl": [
+          "assets/products/TABLES/2.1.png",
+          "assets/products/TABLES/2.png"
+        ],
+        "name": "Nested Coffee Table",
+        "category": "Tables",
+        "room": "Living",
+        "description": {
+          "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+        },
+        "price": 10500,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 3,
+      "userId": 2,
+      "id": 18,
+      "checkout": true
     }
   ],
   "users": [
@@ -772,6 +814,62 @@
         "address": "Earth"
       },
       "id": 1
+    },
+    {
+      "user": 2,
+      "status": "pending",
+      "subtotal": 66500,
+      "deliveryfee": 100,
+      "total": 66600,
+      "orderDate": "2023-02-02T08:56:03.522Z",
+      "cart": [
+        {
+          "product": {
+            "id": 4,
+            "srcUrl": [
+              "assets/products/TABLES/4.1.png",
+              "assets/products/TABLES/4.png"
+            ],
+            "name": "Brass Finish Coffee Table",
+            "room": "Living",
+            "category": "Tables",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+            },
+            "price": 17500,
+            "postingDate": "2019-01-01 12:00AM"
+          },
+          "qty": 2,
+          "userId": 2,
+          "id": 17
+        },
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/TABLES/2.1.png",
+              "assets/products/TABLES/2.png"
+            ],
+            "name": "Nested Coffee Table",
+            "category": "Tables",
+            "room": "Living",
+            "description": {
+              "desc": "Lorem ipsum dolor sit amet. Et autem quas sed nemo Quis qui voluptatibus voluptatem ea sunt tenetur. Et pariatur praesentium est voluptas recusandae non accusamus tenetur! Sit aliquid consectetur aut fuga aliquid nam galisum reiciendis ut ipsa ullam."
+            },
+            "price": 10500,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 3,
+          "userId": 2,
+          "id": 18
+        }
+      ],
+      "shipping": {
+        "name": "Johnny Favorite",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 2
     }
   ]
 }

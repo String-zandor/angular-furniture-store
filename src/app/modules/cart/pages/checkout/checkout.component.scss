@@ -47,18 +47,18 @@ mat-stepper {
     background-color: transparent;
     border: none;
     outline: none;
-
+    color: white;
 
 }
 
 .form input:focus {
-    color: var(--bgcolor-light);
+    color: white;
 
 }
 
 .form .name input {
     font-size: 30px;
-    color: var(--bgcolor-light);
+    color: white;
 
 }
 
