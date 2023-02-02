@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     password: ['', Validators.required],
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
-    email: ['', Validators.pattern(/^[^\s@]+@[^\s@%]+\.[^\s@]+$/)],
+    email: ['', [Validators.pattern(/^[^\s@]+@[^\s@%]+\.[^\s@]+$/), Validators.required]],
   });
 
   constructor(private fb: FormBuilder,
