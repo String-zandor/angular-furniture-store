@@ -3,7 +3,7 @@
     padding: 10px;
     color: rgb(255, 255, 255);
     
-    // background-color: rgb(154,157,152);
+    
     background-color: transparent;
     border: solid rgb(154,157,152);
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -40,6 +40,20 @@ input[type=number] {
 img{
     grid-area: img-div;
     transition: all 0.8s ease-in-out;
+}
+
+
+
+p{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+.img-container a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
 }
 
 img:hover{

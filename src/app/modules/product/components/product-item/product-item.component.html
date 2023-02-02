@@ -5,18 +5,20 @@
             <div class="col">
 
                 <div class="img-container">
-                   
+                    <p><a routerLink="/products/{{product.id}}"><i class="ri-search-eye-line"></i></a></p>
+                    
+                  
                     <img src={{url}} *ngFor="let url of product.srcUrl" alt="picture">
+                    <p><a routerLink="/products/{{product.id}}"><i class="ri-search-eye-line"></i></a></p>
                 </div>
 
                 <ul class="content">
 
                     <li><span>{{product.price | currency: 'PHP' : 'symbol' : '1.2-2'}}</span></li>
                     <mat-divider></mat-divider>
-                    <li><a routerLink="/products/{{product.id}}">{{product.name}}</a></li>
+                    <li>{{product.name}}</li>
                     <mat-divider></mat-divider>
-                    <li> {{product.description.desc}}</li>
-                    <mat-divider></mat-divider>
+                    
                 </ul>
                 <div class="add-quantity">
 
