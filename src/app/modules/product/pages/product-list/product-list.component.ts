@@ -49,7 +49,7 @@ export class ProductListComponent {
   getProducts() {
     this.subscriptions.push(
       this.products$!.subscribe(products => {
-        this.displaySvc.updateDisplay(products)
+        this.displaySvc.forSorting(products)
       })
     );
   }
