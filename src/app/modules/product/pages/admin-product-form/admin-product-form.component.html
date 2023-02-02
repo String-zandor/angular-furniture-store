@@ -1,86 +1,131 @@
-<div class="margin-test">
-    <form [formGroup]="productForm">
-        <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input matInput id="name" type="text" formControlName="name" />
-        </mat-form-field>
-        <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
-            Product name is required.
-        </mat-error>
-        <br>
-        <mat-form-field>
-            <mat-label>Room</mat-label>
-            <input type="text" matInput [formControl]="room" [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let room of roomOptions$ | async" [value]="room">
-                    {{room}}
-                </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
-        <mat-error *ngIf="room.invalid && (room.dirty || room.touched)">
-            Product room is required.
-        </mat-error>
-        <br>
-        <mat-form-field>
-            <mat-label>Category</mat-label>
-            <input type="text" matInput [formControl]="category" [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let category of categOptions$ | async" [value]="category">
-                    {{category}}
-                </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
-        <mat-error *ngIf="category.invalid && (category.dirty || category.touched)">
-            Product category is required.
-        </mat-error>
-        <br>
-        <mat-form-field>
-            <mat-label>Color</mat-label>
-            <input matInput id="color" type="text" formControlName="color" />
-        </mat-form-field>
-        <mat-error *ngIf="color.invalid && (color.dirty || color.touched)">
-            Product color is required.
-        </mat-error>
-        <br>
-        <div formGroupName="description">
-            <mat-form-field>
-                <mat-label>Description</mat-label>
-                <input matInput id="desc" type="text" formControlName="desc" /> <br>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Dimensions</mat-label>
-                <input matInput id="dimensions" type="text" formControlName="dimensions" /> <br>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Material</mat-label>
-                <input matInput id="material" type="text" formControlName="material" /> <br>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Weight</mat-label>
-                <input matInput id="weight" type="text" formControlName="weight" /> <br>
-            </mat-form-field>
+<div class="product-form-container">
+    <div class = "image-upload">
+
+        <h1>Add product</h1>
+        
+        <div class ="upload-files">
+            <i class="ri-image-add-fill"></i>
+            <input type="file" accept="images/*" multiple (change)="onFilesSelect($event)" [formControl]="photosCtrl" />
+            
         </div>
-        <br>
-        <mat-form-field>
-            <mat-label>Price</mat-label>
-            <input matInput id="price" type="number" formControlName="price" /> <br>
-        </mat-form-field>
-        <mat-error *ngIf="price.invalid && (price.dirty || price.touched)">
-            Product price should be greater than 0.
-        </mat-error>
-        <br>
-    </form>
+        
+        <button type="button" (click)="resetPhotos()">Clear</button>
+    
+        <div class = "save-cancel-btn">
+            <button type="button" (click)="onSubmit()"
+            [disabled]="productForm.untouched ||(productForm.invalid && (productForm.dirty || productForm.touched))">
+            Publish Product</button>
+            <button type="button" (click)="cancel()">Cancel</button>
+    
+        </div>
+    
+    </div>
 
-    <input type="file" accept="images/*" multiple (change)="onFilesSelect($event)" [formControl]="photosCtrl" />
-    <button type="button" (click)="resetPhotos()">Clear</button>
-    <br><br>
+    
 
-    <button type="button" (click)="onSubmit()"
-        [disabled]="productForm.untouched ||(productForm.invalid && (productForm.dirty || productForm.touched))">
-        Save
-    </button>
-    <button type="button" (click)="cancel()">Cancel</button>
+    <div>
+        <form [formGroup]="productForm">
+            <div class = "product-details">
+            
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput id="name" type="text" formControlName="name" />
+                        </mat-form-field>
+                        <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+                            Product name is required.
+                        </mat-error>
+                    
+                
+                
+                
+                    
+                        <mat-form-field>
+                            <mat-label>Room</mat-label>
+                            <input type="text" matInput [formControl]="room" [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let room of roomOptions$ | async" [value]="room">
+                                    {{room}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                        <mat-error *ngIf="room.invalid && (room.dirty || room.touched)">
+                            Product room is required.
+                        </mat-error>
+                    
+    
+                    
+                        <mat-form-field>
+                            <mat-label>Category</mat-label>
+                            <input type="text" matInput [formControl]="category" [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let category of categOptions$ | async" [value]="category">
+                                    {{category}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                        <mat-error *ngIf="category.invalid && (category.dirty || category.touched)">
+                            Product category is required.
+                        </mat-error>
+    
+                    
+                
+    
+                
+                    
+                        <mat-form-field>
+                            <mat-label>Color</mat-label>
+                            <input matInput id="color" type="text" formControlName="color" />
+                        </mat-form-field>
+                        <mat-error *ngIf="color.invalid && (color.dirty || color.touched)">
+                            Product color is required.
+                        </mat-error>
+                    
+                
+            
+        </div>
+        
+       
+            
+            <div class = "product-description" formGroupName="description">
+                <mat-form-field>
+                    <mat-label>Description</mat-label>
+                    <input matInput id="desc" type="text" formControlName="desc" /> <br>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Dimensions</mat-label>
+                    <input matInput id="dimensions" type="text" formControlName="dimensions" /> <br>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Material</mat-label>
+                    <input matInput id="material" type="text" formControlName="material" /> <br>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Weight</mat-label>
+                    <input matInput id="weight" type="text" formControlName="weight" /> <br>
+                </mat-form-field>
+            
+            
+    
+    
+            <mat-form-field>
+                <mat-label>Price</mat-label>
+                <input matInput id="price" type="number" formControlName="price" /> <br>
+            </mat-form-field>
+            <mat-error *ngIf="price.invalid && (price.dirty || price.touched)">
+                Product price should be greater than 0.
+            </mat-error>
+        </div>
+        </form>
+    
+
+    </div>
+    
+    
+   
+    
+
+    
 </div>

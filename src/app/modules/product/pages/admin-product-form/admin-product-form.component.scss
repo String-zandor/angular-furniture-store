@@ -1,3 +1,102 @@
-.margin-test {
-    padding-top: 200px;
+h1{
+    
+    font-size: 30px;
+    background-color: var(--bgcolor-dark) ;
+    padding: 2%;
+   
 }
+.save-cancel-btn{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+    
+}
+
+.upload-files{
+    display: grid;
+    place-items: center;
+   
+}
+.upload-files input{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+}
+
+form{
+    width: 500px !important;
+}
+
+
+.image-upload{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    
+}
+.ri-image-add-fill{
+    font-size: 200px;
+    background-color: rgb(100, 167, 123,0.1) ;
+    border: dashed rgb(100, 167, 123);
+    padding: 250px;
+    position: relative;
+    align-self: flex-start auto;
+    
+    
+}
+
+.ri-image-add-fill:hover{
+    background-color: rgba(141, 218, 168, 0.034) ;
+    
+    
+    
+}
+.image-upload button{
+    transition: 0.2s;
+    background-color: transparent;
+    color: white;
+    padding: 2% 6%;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgb(79, 118, 79);
+    margin: 5%
+}
+
+.product-form-container{
+    
+    
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px 20px 0px;
+    transform: scale(0.80);
+    
+}
+
+.product-details{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5%;
+    max-width: 100%;
+
+    
+    
+
+}
+
+.product-description{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5%;
+
+}
+
