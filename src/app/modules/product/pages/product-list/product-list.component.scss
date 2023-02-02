@@ -4,11 +4,7 @@ mat-divider{
   }
   
   // -------------IMAGE DISPLAY-------------- 
-  // .home-img{
-      
-  //   margin-top: 100px;
-  //   display: flex;
-  //   justify-content: center;
+  
     
     
   // }
@@ -40,7 +36,7 @@ mat-divider{
     justify-content: space-between;
     max-width: 100%;
     
-    
+    overflow-x: hidden;
     
   }
   h2{
@@ -56,6 +52,10 @@ mat-divider{
   
   
   // -------------SEARCH RESULT STATUS--------------- 
+  
+  .search-status{
+    margin-top: 100px;
+  }
   .product-board .search-status{
     display: absolute;
     bottom: 0;
@@ -93,4 +93,13 @@ mat-divider{
       width: 100%;
       
     }
+    .product-board .filter{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      overflow-x: hidden;
+      flex-wrap: wrap;
+      
+      
+    } 
   }

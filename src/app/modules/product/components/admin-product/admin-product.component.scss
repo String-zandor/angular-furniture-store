@@ -1,9 +1,43 @@
+.col .btn{
+    border-bottom: var(--border-hover);
+    position: absolute;
+    top:0; left:0; right: 0;
+    
+    z-index: -1000;
+    transform: translateY(-100%);
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.col:hover .btn{
+    z-index: 5;
+    transform: translateY(20%);
+    opacity: 100;
+}
+
+.btn button{
+    background-color: rgb(73, 88, 73,0.5);
+    border: none;
+    font-size: larger;
+    border-radius: 60%;
+    padding: 5px;
+    color: white;
+    transition: 0.2s;
+}
+
+.btn button:hover{
+    transform: scale(1.1);
+    background-color: rgba(106, 128, 106, 0.5);
+    
+}
+
+
+
 .product-container{
     position: relative;
     padding: 10px;
     color: rgb(255, 255, 255);
-    
-    // background-color: rgb(154,157,152);
     background-color: transparent;
     border: solid var(--bgcolor-dark);
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

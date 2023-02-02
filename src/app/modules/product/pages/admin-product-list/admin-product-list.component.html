@@ -5,11 +5,12 @@
     <!-- FILTER -->
     <app-filter (filter)="filter($event)" [products$]="allProducts$"></app-filter>
 
-    <br>
+    
 </div>
+<mat-divider></mat-divider>
 <!-- ADD PRODUCT -->
-<div>
-    <button type="button" (click)="addProduct()">+ New Product</button>
+<div class = "add-product">
+    <button type="button" (click)="addProduct()"><i class="ri-add-fill"></i>Add product</button>
 </div>
 
 
