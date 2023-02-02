@@ -1,23 +1,105 @@
-<div *ngIf="product">
-    <img src="{{url}}" *ngFor="let url of product.srcUrl" alt="product">
-    <ul>
-        <li>Name: {{product.name}}</li>
-        <li>Category: {{product.category}}</li>
-        <li>Color: {{product.color}}</li>
-        <li>Description: {{product.description.desc}}</li>
-        <li>Material: {{product.description.material}}</li>
-        <li>Dimensions: {{product.description.dimensions}}</li>
-        <li>Weight: {{product.description.weight}}</li>
-        <li>Price: {{product.price | currency: 'PHP' : 'symbol' : '1.0-2'}}</li>
-    </ul>
-    <br>
-    <button type="button" (click)="decrement()" [disabled]="currentVal <= 1">-</button>
-    <input type="number" [formControl]="qtyCtrl" />
-    <button type="button" (click)="increment()">+</button>
 
-    <br>
-    <button type="button" (click)="addToCart()" [disabled]="currentVal < 1">Add To Cart</button>
+    <div class = "product-detail-container" *ngIf="product">
+        
+        <div class = "img-container">
+            <img src="{{url}}" *ngFor="let url of product.srcUrl" alt="product">
+        </div>
+        
+        
+        <div class = "product-details">
+            <ul>
+                <h1>{{product.name}}</h1>
+                <h2>{{product.price | currency: 'PHP' : 'symbol' : '1.0-2'}}</h2>
+                <h3>Tax included. Shipping calculated at checkout.</h3>
+                
+                <mat-divider></mat-divider>
+                
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Description
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>{{product.description.desc}}</p>
+                        <p>Color: {{product.color}}</p>
+                    </mat-expansion-panel>
+    
+                    <mat-divider></mat-divider>
+    
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Materials
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>{{product.description.material}}</p>
+                    </mat-expansion-panel>
 
-    <br>
-    <button type="button" (click)="goBack()" [disabled]="currentVal < 1">Go Back</button>
-</div>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Dimensions & Weight
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <li>Dimensions: {{product.description.dimensions}}</li>
+                        <li>Weight: {{product.description.weight}}</li>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                           Shipping & Delivery
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>Metro Manila: Delivery including assembling and handling fee is P700</p>
+                        <p>Outside Metro Manila: The shipping fee is automatically calculated via Transportify Courier upon checkout. If you prefer other shipping options or if you're having errors with the shipping calculator, please reach out to us via our Facebook or Instagram pages.</p>
+                        <p>We can deliver within 3 to 5 business days for on stock items.For pre-order items, we typically deliver within 5-8 weeks or the indicated date on the product page.</p>
+                    </mat-expansion-panel>
+
+                </mat-accordion>
+                
+                
+               
+               
+                
+            
+            
+            
+            
+            
+            </ul>
+
+            <div class = "btn">
+                
+                <div class="add-quantity-btn">
+                    <div>
+                        <button class = "min" type="button"  (click)="decrement()" [disabled]="currentVal <= 1">-</button>
+                        <input type="number" [formControl]="qtyCtrl" />
+                        <button class = "max" type="button" (click)="increment()">+</button>
+                        
+                    </div>
+                    
+                    <button class = "add" type="button" (click)="addToCart()" [disabled]="currentVal < 1">Add To Cart</button>
+                    
+                    
+                </div>
+                
+        
+                <div class = "btn-2">
+                   
+                    <button type="button" (click)="goBack()" [disabled]="currentVal < 1">Go Back</button>
+        
+                </div>
+
+                
+               
+    
+            </div>
+
+        </div>
+        
+        
+        
+    </div>
+

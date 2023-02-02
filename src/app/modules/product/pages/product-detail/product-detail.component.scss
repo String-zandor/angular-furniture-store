@@ -1,3 +1,10 @@
+h3{
+  font-size: smaller;
+}
+.mat-expansion-panel{
+  background-color: transparent;
+  border: none;
+}
 
 // hide built-in increment for input type number
 input::-webkit-outer-spin-button,
@@ -5,3 +12,115 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.product-detail-container{
+  margin-top: 100px;
+  padding:50px;
+  display: flex;
+  justify-content: space-around;
+
+  
+}
+
+img{
+  grid-area: img-div;
+  transition: all 0.8s ease-in-out;
+  width: 400x;
+  height: 400px;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+img:hover{
+  opacity: 0;
+  cursor: pointer;
+}
+
+.img-container{
+  display: grid;
+  place-items: center;
+  grid-template-areas: "img-div";
+  
+
+}
+
+button{
+  outline: none;
+}
+
+.btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  
+}
+
+//------------------- ADD QUANTITY BUTTON ------------
+.add-quantity-btn{
+  display: flex;
+  justify-content: space-around;
+  
+  max-width: 100%;
+  
+}
+.add-quantity-btn input{
+  
+  text-align: center;
+  background: transparent;
+  border: none;
+  width: 90px;
+  color: rgb(255, 255, 255);
+  
+  
+}
+
+.add-quantity-btn .add{
+  width:500px;
+  background-color: var(--bgcolor-dark);
+  color: white;
+  border: none;
+  padding: 10px;
+  
+}
+
+.add-quantity-btn .min{
+  padding: 10px;
+  background-color: rgb(154,157,152);;
+  color: white;
+  border: none;
+}
+
+.add-quantity-btn .max{
+  padding: 10px;
+  background-color: white;
+  color: #1c1c1c;
+  border: none;
+}
+
+.btn-2{
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
+}
+
+.btn-2 button{
+  text-decoration: underline;
+  color: white;
+  border: none;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.btn-2 button:hover{
+  
+  color: var(--bgcolor-light);
+  
+}
+
+.add-quantity-btn button:hover{
+  
+  background-color: var(--bgcolor-light);
+  
+}
+
