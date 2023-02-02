@@ -42,6 +42,20 @@ img{
     transition: all 0.8s ease-in-out;
 }
 
+
+
+p{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+.img-container a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+
 img:hover{
     opacity: 0;
     cursor: pointer;
