@@ -520,27 +520,73 @@
     },
     {
       "product": {
-        "id": 7,
+        "id": 2,
         "srcUrl": [
-          "assets/products/TABLES/7.1.png",
-          "assets/products/TABLES/7.png"
+          "assets/products/TABLES/2.1.png",
+          "assets/products/TABLES/2.png"
         ],
-        "name": "Mild Steel Dining Table",
+        "name": "Nested Coffee Table",
         "category": "Tables",
-        "room": "Dining",
+        "room": "Living",
+        "description": {
+          "desc": "Nesting coffee tables, which are built of solid wood. Because they may be arranged in pairs or separately, their geometric form creates harmony in the living area. They are ideal for creating a polished appearance."
+        },
+        "price": 10500,
+        "postingDate": "2015-08-01 01:00PM"
+      },
+      "qty": 1,
+      "userId": 2,
+      "id": 11,
+      "checkout": true
+    },
+    {
+      "product": {
+        "id": 5,
+        "srcUrl": [
+          "assets/products/TABLES/5.1.png",
+          "assets/products/TABLES/5.png"
+        ],
+        "name": "Blackened Side Table",
+        "room": "Living",
+        "category": "Tables",
         "color": "Black",
         "description": {
-          "desc": "Ready for a casual gathering is our dining table made of mild steel.",
+          "desc": "Blackened side tables are functional furniture items for every space in your house.",
           "dimensions": "6ft x 6ft",
           "material": "Cotton",
           "weight": "8kg"
         },
-        "price": 20500,
+        "price": 15500,
         "postingDate": "\"2023-01-26T13:43:57.019Z\""
       },
-      "qty": 10,
+      "qty": 1,
+      "userId": 2,
+      "id": 12
+    },
+    {
+      "product": {
+        "id": 16,
+        "srcUrl": [
+          "assets/products/CHAIRS/7.1.png",
+          "assets/products/CHAIRS/7.png"
+        ],
+        "name": "Flootie Carmine Sofa",
+        "category": "Chairs",
+        "room": "Living",
+        "color": "Grey",
+        "description": {
+          "desc": "Fan-pleated arms of the Carmine give it a subtle grace. The seat and back are customized to provide support.",
+          "dimensions": "6ft x 6ft",
+          "material": "Cotton",
+          "weight": "8kg"
+        },
+        "price": 56000,
+        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+      },
+      "qty": 2,
       "userId": 3,
-      "id": 8
+      "id": 13,
+      "checkout": true
     },
     {
       "product": {
@@ -558,33 +604,33 @@
         "price": 17500,
         "postingDate": "2019-01-01 12:00AM"
       },
-      "qty": 3,
+      "qty": 2,
       "userId": 3,
-      "id": 9
+      "id": 14
     },
     {
       "product": {
-        "id": 14,
+        "id": 1,
         "srcUrl": [
-          "assets/products/CHAIRS/5.1.png",
-          "assets/products/CHAIRS/5.png"
+          "assets/products/TABLES/1.1.png",
+          "assets/products/TABLES/1.png"
         ],
-        "name": "Avery Sleeper Sofa",
+        "name": "Glass Oval Cocktail Table",
+        "category": "Tables",
         "room": "Living",
-        "category": "Chairs",
-        "color": "White",
+        "color": "Vintage White",
         "description": {
-          "desc": "With separately enclosed coil couch seat cushions, this sleeper sofa transforms into comfy seating throughout the day. It was designed to fit easily into tiny spaces.",
+          "desc": "A minimalist design with a refined twist is decorated with graceful scrollwork. Wide-beveled glass tabletop is supported by a sleek black metal frame with flowing, smooth contours.",
           "dimensions": "6ft x 6ft",
-          "material": "Cotton",
-          "weight": "8kg"
+          "material": "memory foam",
+          "weight": "10kg"
         },
-        "price": 64500,
-        "postingDate": "\"2023-01-26T13:43:57.019Z\""
+        "price": 12000,
+        "postingDate": "2023-01-28T15:24:41.683Z"
       },
       "qty": 1,
       "userId": 3,
-      "id": 10
+      "id": 15
     }
   ],
   "users": [
@@ -608,37 +654,25 @@
       "address": "Earth"
     },
     {
-      "id": 3,
       "key": 3,
-      "username": "harryangel",
-      "firstName": "Harry",
-      "lastName": "Angel",
-      "email": "angelheart@gmail.com",
-      "phone": "",
-      "birthDate": "1970-01-01T00:00:00.000Z",
-      "address": ""
-    },
-    {
-      "key": 4,
       "username": "zajoc",
       "firstName": "Zandor",
       "lastName": "Ajoc",
-      "email": "zajoc@77global.biz",
-      "phone": "",
-      "birthDate": "",
-      "address": "",
-      "id": 4
+      "email": "jameswiggins4545@gmail.com",
+      "phone": 9134567856,
+      "birthDate": null,
+      "address": "Pasay City",
+      "id": 3
+    }
+  ],
+  "otp": [
+    {
+      "id": 2,
+      "otp": "6263610"
     },
     {
-      "key": 5,
-      "username": "ninasimone",
-      "firstName": "Nina",
-      "lastName": "Simone",
-      "email": "ns@gmail.com",
-      "phone": "09123456789",
-      "birthDate": "1955-11-22T00:00:00.000Z",
-      "address": "Earth",
-      "id": 5
+      "id": 3,
+      "otp": "8124965"
     }
   ],
   "auth": [
@@ -652,30 +686,16 @@
     {
       "id": 2,
       "username": "johnnyfav",
-      "password": "1234",
-      "active": true,
-      "role": "USER"
-    },
-    {
-      "id": 3,
-      "username": "harryangel",
-      "password": "1234",
+      "password": "goodgoodgood",
       "active": true,
       "role": "USER"
     },
     {
       "username": "zajoc",
-      "password": "1234",
+      "password": "admin1234",
       "active": true,
       "role": "USER",
-      "id": 4
-    },
-    {
-      "username": "ninasimone",
-      "password": "1234",
-      "active": true,
-      "role": "USER",
-      "id": 5
+      "id": 3
     }
   ],
   "orders": [
@@ -2304,6 +2324,82 @@
         "address": "Earth"
       },
       "id": 24
+    },
+    {
+      "user": 2,
+      "status": "pending",
+      "subtotal": 10500,
+      "deliveryfee": 100,
+      "total": 10600,
+      "orderDate": "2023-02-03T02:09:43.215Z",
+      "cart": [
+        {
+          "product": {
+            "id": 2,
+            "srcUrl": [
+              "assets/products/TABLES/2.1.png",
+              "assets/products/TABLES/2.png"
+            ],
+            "name": "Nested Coffee Table",
+            "category": "Tables",
+            "room": "Living",
+            "description": {
+              "desc": "Nesting coffee tables, which are built of solid wood. Because they may be arranged in pairs or separately, their geometric form creates harmony in the living area. They are ideal for creating a polished appearance."
+            },
+            "price": 10500,
+            "postingDate": "2015-08-01 01:00PM"
+          },
+          "qty": 1,
+          "userId": 2,
+          "id": 11
+        }
+      ],
+      "shipping": {
+        "name": "Johnny Favorite",
+        "phone": "09666666666",
+        "address": "Earth"
+      },
+      "id": 25
+    },
+    {
+      "user": 3,
+      "status": "pending",
+      "subtotal": 112000,
+      "deliveryfee": 100,
+      "total": 112100,
+      "orderDate": "2023-02-03T02:55:08.965Z",
+      "cart": [
+        {
+          "product": {
+            "id": 16,
+            "srcUrl": [
+              "assets/products/CHAIRS/7.1.png",
+              "assets/products/CHAIRS/7.png"
+            ],
+            "name": "Flootie Carmine Sofa",
+            "category": "Chairs",
+            "room": "Living",
+            "color": "Grey",
+            "description": {
+              "desc": "Fan-pleated arms of the Carmine give it a subtle grace. The seat and back are customized to provide support.",
+              "dimensions": "6ft x 6ft",
+              "material": "Cotton",
+              "weight": "8kg"
+            },
+            "price": 56000,
+            "postingDate": "\"2023-01-26T13:43:57.019Z\""
+          },
+          "qty": 2,
+          "userId": 3,
+          "id": 13
+        }
+      ],
+      "shipping": {
+        "name": "Fiona Ajoc",
+        "phone": 9134567890,
+        "address": "Pasig City"
+      },
+      "id": 26
     }
   ]
 }
