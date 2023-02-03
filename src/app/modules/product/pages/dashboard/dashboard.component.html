@@ -1,35 +1,63 @@
 
-<div class = carouselExampleIndicators>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets\img\img-1.png" class="d-block w-100" width = 100% height = 500px alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="assets\img\img-5.png" class="d-block w-100" width = 100% height = 500px alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="assets\img\img-6.png" class="d-block w-100" width = 100% height = 500px alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-<mat-divider></mat-divider>
 
-<app-product-list [products$]="allProducts$" ></app-product-list>
+
+<div class = "dashboard">
+  
+  <div class = carouselExampleIndicators>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets\img\img-1.png" class="d-block w-100" width = 100% height = 500px alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets\img\img-5.png" class="d-block w-100" width = 100% height = 500px alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets\img\img-6.png" class="d-block w-100" width = 100% height = 500px alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</div>
+
+  <div class="pic-wrapper">
+    <a href = "/home"><h1>shop now</h1></a>
+    <figure class="pic-1"><img src="assets\img\img-1.png" class="d-block w-100" width = 100% height = 500px alt="..."></figure>
+    <figure class="pic-2"><img src="assets\img\img-2.png" class="d-block w-100" width = 100% height = 500px alt="..."></figure>
+    <figure class="pic-3"><img src="assets\img\img-4.png" class="d-block w-100" width = 100% height = 500px alt="..."></figure>
+    <figure class="pic-4"><img src="assets\img\img-5.png" class="d-block w-100" width = 100% height = 500px alt="..."></figure>
+  </div>
+
+  
+  
+  
+  <mat-divider></mat-divider>
+  <div class = "product-list">
+    <div class = "sample-space">
+      <img src="assets\img\9.png" class="d-block w-100" width = 100% alt="...">
+      <img src="assets\img\8.png" class="d-block w-100" width = 100% alt="...">
+      <img src="assets\img\10.png" class="d-block w-100" width = 100% alt="...">
+  
+    </div>
+    <app-product-list [products$]="allProducts$" ></app-product-list>
+
+  </div>
+ 
+
+</div>
+
 
 
 
